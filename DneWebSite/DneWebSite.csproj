@@ -4962,6 +4962,7 @@
     <Content Include="assets\vendor\bootstrap-treeview\LICENSE" />
     <Content Include="assets\vendor\bootstrap-treeview\package.json" />
     <Content Include="assets\vendor\bootstrap-treeview\README.md" />
+    <None Include="Properties\PublishProfiles\LCTSTest.pubxml" />
     <None Include="Properties\PublishProfiles\Localhost.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
