@@ -4,7 +4,7 @@
 		<h4 class="modal-title" id="myModalLabel" ng-bind="m.event.title"></h4>
 	</div>
 	<div class="modal-body">
-		<p>開始時間:{{m.event.start}}</p>
+		<p ng-if="m.event.start">開始時間:{{m.event.start}}</p>
 		
 		<p ng-if="m.event.end">結束時間:{{m.event.end}}</p>
 		<p>地點:{{m.event.location}}</p>
