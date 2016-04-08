@@ -44,36 +44,61 @@
 				header: {
 					left: 'prev,next today',
 		            center: 'title',
-		            right: 'month,agendaWeek,agendaDay'
+		            right: 'month,agendaWeek,agendaDay, agendaView'
 	            },
 	            timezone:'Asia/Taipei',
 	            lang:'zh-tw',
 	            weekends:false,
-	            defaultView:'agendaWeek',
+	            defaultView:'agendaDay',
 	            minTime:'07:00:00',
 	            maxTime:'19:00:00',
-	            
+	            firstHour:(new Date().getUTCHours-5),
 	            nowIndicator:true,
 	            allDaySlot:true,
+                contentHeight:'auto',
 	            theme:true,
-	            
+	            googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
 	            businessHours:{
 	            	start:'08:00',
 	            	end:'17:20',
-	            	dow:[1,2,3,4,5]
+	            	dow:[1,2,3,4,5,6]
 	            },
 	            //Event Handling
-            	eventClick:eventDetail
+	            eventClick: eventDetail,
+                eventAfterRender:function(event, element){
+                    element.attr('href', 'javascript:void(0)');
+                    element.find(".fc-event-title").remove();
+                    element.find(".fc-event-time").remove();
+                    var additionalInfo;
+                    if (event.allDay == true) {
+                        additionalInfo='<span>參與人員: </span>' + event.description + ''
+                        + '<span class="pull-right">地點:' +event.location+ '</span>' ;
+                    } else {
+                        additionalInfo =
+                            additionalInfo = '參與人員: ' + event.description + '<br/>'
+                        + '地點:' + event.location + '';
+                    }
+                    
+                    element.append(additionalInfo);
+                    //console.log(event);
+                }
             },
             
 
         }
         //資料庫應由資料庫來
-        var events=[
+		var events = {
+		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com',
+		    className: 'gcal-event'
+		}
+            /*[
+            
         		{
                     title:'核心訓練',
                     start:'15:15',
-                    end:'17:15',
+                    end: '17:15',
+                    location: '總處2008會議室',
+                    attendee: '88年後新進同仁',
                     dow:[1,3,5]
                 },
                 {
@@ -101,8 +126,8 @@
                      allDay: true,
                      dow: [1, 2, 3, 4, 5]
                  },
-
-        ]
+                 
+        ]*/
 
         var addEvent=function(){
         	events.push({

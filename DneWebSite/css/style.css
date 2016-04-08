@@ -15,6 +15,17 @@ about etc )
 10) IE 8 Support
 * */
 
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@font-face {
+  font-family: 'cwTeXFangSong';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
 /* 1 Typography
 ----------------------------------------------------------------------------- */
 html {
@@ -22,7 +33,7 @@ html {
 }
 body {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
+	font-size: 20px;
 	line-height: 1.50;
 	color: #666666;
 	background-color: #ffffff;
@@ -3517,7 +3528,7 @@ a.overlay.small i {
 .navbar-default .navbar-nav > li > a {
 	color: #666666;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 700;
 	padding: 12px 20px 12px 19px;
 	z-index: 102;
@@ -3596,8 +3607,8 @@ a.overlay.small i {
 
 /* second level menu items */
 .dropdown-menu > li > a {
-	padding: 12px 20px;
-	font-size: 15px;
+	padding: 4px 18px;
+	font-size: 18px;
 	color: #666666;
 	border-bottom: 1px solid #f1f1f1;
 	-webkit-transition: none;
@@ -3667,7 +3678,7 @@ a.overlay.small i {
 	left: 0;
 	top: 96%;
 	width: 100%;
-	padding: 20px 30px;
+	padding: 10px 20px;
 }
 
 /* mega menu menu items */
@@ -3678,12 +3689,12 @@ a.overlay.small i {
 }
 .mega-menu h4.title {
 	margin: 10px 0 5px;
-	font-size: 14px;
+	font-size: 20px;
 	
 }
 .mega-menu .menu > li > a {
 	padding: 5px 0;
-	font-size: 15px;
+	font-size: 18px;
 	color: #666666;
 	border-bottom: 1px solid #f1f1f1;
 	display: block;
@@ -3726,7 +3737,7 @@ a.overlay.small i {
 	content: "\f107";
 	position: absolute;
 	left: auto;
-	top: 15px;
+	top: 16px;
 	right: 6px;
 	line-height: 1;
 	color: #d1d1d1;
@@ -3743,7 +3754,7 @@ a.overlay.small i {
 .dropdown .dropdown>a:before {
 	content: "\f105";
 	right: 10px;
-	top: 15px;
+	top: 10px;
 	margin-left: 0;
 	visibility: visible;
 	color: #666;
@@ -4770,17 +4781,18 @@ footer:not(.light) .footer-content .tag a,
 	margin: 0 2px 2px 0;
 }
 .social-links li a {
-	width: 45px;
+	min-width: 45px;
 	height: 45px;
 	display: block;
 	text-align: center;
-	font-size: 20px;
+	font-size: 16px;
 	background: #e84c3d;
 	border: 1px solid #e84c3d;
 	color: #fff;
+    text-decoration:none;
 }
 .social-links.large li a {
-	width: 60px;
+	min-width: 60px;
 	height: 60px;
 	font-size: 24px;
 }
@@ -4843,7 +4855,7 @@ footer:not(.light) .footer-content .tag a,
 }
 .header-top .social-links li a {
 	border: none;
-	width: 25px;
+	min-width: 25px;
 	height: 30px;
 	color: #999999;
 	background-color: transparent;

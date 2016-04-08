@@ -22,8 +22,14 @@ $(document).ready(function(){
             },
             nowIndicator:true,
             allDaySlot:true,
-            theme:true,
-            events: [
+            theme: true,
+            googleCalendarApiKey:'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
+            events: {
+                googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com',
+                
+            }
+                /*
+                [
                 {
                     title:'GEH履約協商會議',
                     start: '2016-02-17 09:45',
@@ -42,7 +48,7 @@ $(document).ready(function(){
                     end:'17:15',
                     dow:[1,3,5]
                 }
-            ]
+            ]*/
         });
 })  ;      
 

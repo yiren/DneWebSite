@@ -13,9 +13,9 @@ namespace DneWebSite.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Lungmen()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
         }
