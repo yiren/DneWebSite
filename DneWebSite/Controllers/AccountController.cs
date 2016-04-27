@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DneWebSite.Models;
+using System.DirectoryServices.AccountManagement;
+using System.DirectoryServices;
+
 
 namespace DneWebSite.Controllers
 {
@@ -66,29 +69,110 @@ namespace DneWebSite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LdapLoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            bool isAuthenticated;
+            #region AD Authentication
+            using (var context = new PrincipalContext(ContextType.Domain, "dnesvr02.d027.com.tw"))
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                isAuthenticated= context.ValidateCredentials(model.UserName, model.Password);
+                if (isAuthenticated == false)
+                {
+                    ModelState.AddModelError("", "Invalid username or password.");
                     return View(model);
+                }
+                ApplicationUser user = UserManager.FindByName(model.UserName);
+                if (user == null)
+                {
+                    user = new ApplicationUser();
+
+                    using (var searcher = new PrincipalSearcher())
+                    {
+                        searcher.QueryFilter = new UserPrincipal(context, model.UserName, model.Password, true);
+                        UserPrincipal result = (UserPrincipal)searcher.FindOne();
+                        user.Email = result.EmailAddress;
+                        user.EmailConfirmed = true;
+                        user.UserName = result.SamAccountName;
+                        user.FullName = result.DisplayName;
+                        var userSec = result.DisplayName.First().ToString();
+                        switch (userSec)
+                        {
+                            case "A":
+                                user.Section = "策劃組";
+                                break;
+                            case "B":
+                                user.Section = "PE_II";
+                                break;
+                            case "C":
+                                user.Section = "土木組";
+                                break;
+                            case "E":
+                                user.Section = "電氣組";
+                                break;
+                            case "J":
+                                user.Section = "儀控組";
+                                break;
+                            case "L":
+                                user.Section = "PE I";
+                                break;
+                            case "M":
+                                user.Section = "機械組";
+                                break;
+                            case "P":
+                                user.Section = "廠佈組";
+                                break;
+                            case "N":
+                                user.Section = "核析組";
+                                break;
+                            
+                                
+                            default:
+                                user.Section = "處長室";
+                                break;
+                        }
+
+
+                        //Console.WriteLine("UserName:" + result.DisplayName);
+                        //Console.WriteLine("UserEmail:" + result.EmailAddress);
+                        //foreach (var g in result.GetGroups())
+                        //{
+                        //    if (g.ToString().StartsWith("dne") || g.ToString().Contains("pe"))
+                        //    {
+                        //        //Console.WriteLine("User Dept: " + g);
+                        //        RoleManager
+                        //    }
+
+                        //}
+                    }
+
+
+                    IdentityResult identityResult
+                     = await UserManager.CreateAsync(user, model.Password);
+                    if (identityResult != IdentityResult.Success)
+                    {
+                        foreach (var error in identityResult.Errors)
+                        {
+                            ModelState.AddModelError("", error);
+                        }
+                        return View(model);
+                    }
+                }
+                
+                
+                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                return RedirectToLocal(returnUrl);
+                
             }
+            #endregion
+
+           
+
+           
         }
 
         //
@@ -278,8 +362,39 @@ namespace DneWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
-            // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+
+            var ctx = Request.GetOwinContext();
+            if (provider == "DNEADFS")
+            {
+                ctx.Authentication.Challenge(
+                    new AuthenticationProperties
+                    {
+                        RedirectUri = Url.Action("LoginCallbackWithAdfs", "Account", new { provider })
+                    },
+                    provider);
+                //return new ChallengeResult(provider, Url.Action("LoginCallBackWithAdfs", "Account", new { ReturnUrl = returnUrl }));
+            }
+
+            return new HttpUnauthorizedResult();
+            //// Request a redirect to the external login provider
+            //return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+        }
+
+        public ActionResult LoginCallbackWithAdfs(string provider)
+        {
+            var ctx = Request.GetOwinContext();
+            var result = ctx.Authentication.AuthenticateAsync("ExternalCookie").Result;
+            ctx.Authentication.SignOut("ExternalCookie");
+
+            if (result != null)
+            {
+                var claims = result.Identity.Claims.ToList();
+                claims.Add(new Claim(ClaimTypes.AuthenticationMethod, provider));
+
+                var ci = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
+                ctx.Authentication.SignIn(ci);
+            }
+            return RedirectToAction("About", "Home");
         }
 
         //
@@ -395,6 +510,13 @@ namespace DneWebSite.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+        
+        public ActionResult EasyLogOff()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
@@ -422,6 +544,10 @@ namespace DneWebSite.Controllers
 
             base.Dispose(disposing);
         }
+
+
+
+        
 
         #region Helpers
         // Used for XSRF protection when adding external logins

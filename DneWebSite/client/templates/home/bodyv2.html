@@ -1,0 +1,266 @@
+<!-- banner start -->
+<!-- ================ -->
+<div class="banner">
+    <div class="section">
+        
+        <div ng-controller="gridCtrl as g">
+            <pre>enableFilter:{{g.gridOptions.enableFiltering}}</pre>
+            <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">Toggle Filtering</button>
+            <div class="col-md-6">
+                <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- slideshow start -->
+	<!-- ================ -->
+    
+	<div class="slideshow">
+		
+        <div class="row">
+            
+            <div class="col-md-12">
+                <!-- slider revolution start -->
+                <!-- ================ -->
+               
+                <div class="slider-banner-container">
+                    <div class="slider-banner">
+                        <ul>
+
+                            <!-- slide 5 start -->
+                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="核一廠">
+
+                                <!-- main image -->
+                                <img src="images/home/pic1.png" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                            </li>
+                            <!-- slide 5 end -->
+                            <!-- slide 5 start -->
+                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="核一廠">
+
+                                <!-- main image -->
+                                <img src="images/home/pic2.png" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                            </li>
+                            <!-- slide 5 end -->
+                            <!-- slide 5 start -->
+                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="核一廠">
+
+                                <!-- main image -->
+                                <img src="images/home/seoa.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                            </li>
+                            <!-- slide 5 end -->
+                            <!-- slide 1 start -->
+                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="核一廠">
+
+                                <!-- main image -->
+                                <img src="images/home/nuclear1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                            </li>
+                            <!-- slide 1 end -->
+                            <!-- slide 4 start -->
+                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="核二廠">
+
+                                <!-- main image -->
+                                <img src="images/home/nuclear2_3.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+
+                            </li>
+                            <!-- slide 4 end -->
+
+                        </ul>
+                        <div class="tp-bannertimer tp-bottom"></div>
+                    </div>
+                </div>
+       
+                <!-- slider revolution end -->
+            </div>
+       
+            <div class="col-md-4">
+               
+            </div>
+        </div>
+	</div>
+    
+	<!-- slideshow end -->
+
+</div>
+<!-- banner end -->
+
+
+<!-- ================ -->
+
+
+
+<div class="section">
+    <!-- tabs start -->
+    <div class="tabs-style-2">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#h2tab1" role="tab" data-toggle="tab"><i class="fa fa-newspaper-o pr-5"></i>行事曆</a></li>
+            <li><a href="#h2tab2" role="tab" data-toggle="tab"><i class="fa fa-calendar pr-5"></i>佈告欄</a></li>
+            <li><a href="#h2tab3" role="tab" data-toggle="tab"><i class="fa fa-plus-square pr-5"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content" >
+            <div class="tab-pane fade in active" id="h2tab1">
+                <div ng-controller="calViewCtrl as c">
+                    <h1 class="text-center title">行事曆</h1>
+                    <div class="separator"></div>
+                    <div ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
+                </div> 
+            </div>
+            <div class="tab-pane fade" id="h2tab2">
+                <div ng-controller="gridCtrl as g">
+                    <div ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="h2tab3">
+                <table class="table table-bordered table-condensed table-hover">
+                    <tr>
+                        <th>發佈時間</th>
+                        <th>標題</th>
+                        <th>張貼部門</th>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- calendar end -->
+
+<!-- parallax section start -->
+<!-- ================ -->
+<div class="section parallax light-translucent-bg parallax-bg-2">
+	<div class="container">
+		<div class="call-to-action">
+			<div class="row">
+				<div class="col-md-8">
+					<h1 class="title text-center"></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- parallax section end -->
+
+
+<!--
+<div class="section">
+    <div class="container">
+        <h1 class="text-center title">Google Calendar Reader Plug-in Test</h1>
+        <div class="separator"></div>
+        <div id="eventlist">
+            <div class="gcf-header-block">
+                <div class="gcf-title-block">
+                    <span class="gcf-title"></span>
+                </div>
+            </div>
+            <div class="gcf-item-container-block">
+                <div class="gcf-item-block">
+                    <div class="gcf-item-header-block">
+                        <div class="gcf-item-date-block">
+                            <span class="gcf-item-daterange"></span>
+                        </div>
+                        <div class="gcf-item-title-block">
+                            <strong class="gcf-item-title"></strong>
+                        </div>
+                    </div>
+                    <div class="gcf-item-body-block">
+                        <div class="gcf-item-description">
+                        </div>
+                        <div class="gcf-item-location">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gcf-last-update-block">
+                LastUpdate: <span class="gcf-last-update"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+-->
+<!-- parallax section start -->
+<!-- ================ -->
+
+<!-- parallax section end -->
+<!-- section start -->
+<!-- ================ -->
+<div class="gray-bg section">
+    <div class="container">
+        <h1 class="text-center title">核心業務</h1>
+        <div class="separator"></div>
+        <div class="row grid-space-20">
+            <div class="col-md-4">
+                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="300">
+                    <div class="overlay-container shadow">
+                        <img src="images/portfolio-3.png" alt="">
+                    </div>
+                    <h3><a href="../../../lungmen.html">龍門計畫</a></h3>
+                    <p>(簡單說明)</p>
+                    <a href="../../../lungmen.html" class="btn btn-default">了解更多.....</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="200">
+                    <div class="overlay-container shadow">
+                        <img src="images/portfolio-2.png" alt="">
+
+                    </div>
+                    <h3><a href="portfolio-item.html">電廠改善工程</a></h3>
+                    <p>(簡單說明)</p>
+                    <a href="#" class="btn btn-default">了解更多.....</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="100">
+                    <div class="overlay-container shadow">
+                        <img src="images/portfolio-1.png" alt="">
+                    </div>
+                    <h3><a href="portfolio-item.html">研究發展計畫</a></h3>
+                    <p>(簡單說明)</p>
+                    <a href="#" class="btn btn-default">了解更多.....</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- section end -->
+<div class="section parallax light-translucent-bg parallax-bg">
+    <div class="container">
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="title text-center"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery REVOLUTION Slider  -->
+<script type="text/javascript" src="../../../plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="../../../plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+
+<script src="../../../js/rev-slider-init.js"></script>
+
+
+<script src="../../../js/animations-init.js"></script>
+

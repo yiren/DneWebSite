@@ -12,28 +12,33 @@
         		$stateProvider
         			.state('home',{
         				url:'/',
-        				templateUrl:'client/templates/home/body.html',
+        				templateUrl:'/../client/templates/home/body.html',
         				controller:'homeCtrl'
         			})
-                    .state('sitemap',{
-                        url:'/sitemap',
-                        templateUrl:'client/templates/sitemap.html',
+
+                    .state('v1',{
+                        url:'/v1',
+                        templateUrl:'/../client/templates/home/bodyv1.html',
                         controller:'homeCtrl'
                     })
-                    .state('caladmin',{
-                        url:'/caladmin',
-                        templateUrl:'client/templates/caladmin/caladmin.html',
-                        controller:'calAdminCtrl as admin'
-
+                    .state('v2',{
+                        url:'/v2',
+                        templateUrl:'/../client/templates/home/bodyv2.html',
+                        controller:'homeCtrl'
+                    })
+                    .state('sitemap',{
+                        url:'/sitemap',
+                        templateUrl:'/../client/templates/home/sitemap.html',
+                        controller:'homeCtrl'
                     })
                     .state('downloads',{
                         url:'/downloads',
-                        templateUrl:'client/templates/downloads/downloads.html',
+                        templateUrl:'/../client/templates/home/downloads.html',
                         controller:'homeCtrl'
                     })
-                    .state('lungmenHome',{
-                        url:'/engineering/lungmen/home',
-                        templateUrl:'client/templates/engineering/lungmen/home.html',
+                    .state('lungmenIntro',{
+                        url:'/engineering/lungmen/intro',
+                        templateUrl:'/../client/templates/engineering/lungmen/lungmen.html',
                         controller:'homeCtrl'
                     })
                 ;

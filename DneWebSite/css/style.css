@@ -32,7 +32,7 @@ html {
 	height: 100%;
 }
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'cwTeXFangSong','Open Sans', sans-serif;
 	font-size: 20px;
 	line-height: 1.50;
 	color: #666666;
@@ -347,7 +347,7 @@ tbody {
 	border-bottom: none;
 }
 .header {
-	padding: 20px 0;
+	padding: 5px 0;
 	border-bottom: 1px solid #eaeaea;
 	background-color: #fff;
 }

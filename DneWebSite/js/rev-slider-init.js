@@ -6,8 +6,8 @@ $(document).ready(function(){
 
 			$('.slider-banner-container .slider-banner').show().revolution({
 				delay:8000,
-				startwidth:1280,
-				startheight:420,
+				startwidth:640,
+				startheight:350,
 				
 				navigationArrows:"solo",
 				
@@ -34,7 +34,7 @@ $(document).ready(function(){
 				stopLoop:"off",
 				stopAfterLoops:-1,
 				stopAtSlide:-1,
-				onHoverStop: "off",
+				onHoverStop: "on",
 
 				shuffle:"off",
 				

@@ -1,0 +1,17 @@
+{
+  "name": "dneweb",
+  "version": "1.0.0",
+  "description": "dnewebsite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dne"
+  ],
+  "author": "joombuopre",
+  "license": "ISC",
+  "dependencies": {
+    "nodeman": "^1.1.2"
+  }
+}

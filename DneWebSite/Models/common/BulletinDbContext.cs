@@ -12,13 +12,16 @@ namespace DneWebSite.Models.bulletin
     class BulletinDbContext:DbContext
     {
         public BulletinDbContext()
-            :base()
+            :base("BulltinDb")
         {
 
         }
 
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<FileDetail> FileDetails { get; set; }
+        
+        
         public DbSet<DneMeeting> DneMeetings { get; set; }
+        public DbSet<MeetingFile> FileDetails { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostFile> PostFiles { get; set; }
     }
 }

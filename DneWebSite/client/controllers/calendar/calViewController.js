@@ -44,53 +44,125 @@
 				header: {
 					left: 'prev,next today',
 		            center: 'title',
-		            right: 'month,agendaWeek,agendaDay, agendaView'
+		            right: 'month,basicWeek,basicDay'
 	            },
 	            timezone:'Asia/Taipei',
 	            lang:'zh-tw',
 	            weekends:false,
-	            defaultView:'agendaDay',
+	            defaultView:'basicDay',
 	            minTime:'07:00:00',
 	            maxTime:'19:00:00',
 	            firstHour:(new Date().getUTCHours-5),
 	            nowIndicator:true,
 	            allDaySlot:true,
                 contentHeight:'auto',
-	            theme:true,
-	            googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
+                theme: false,
+               // loading:true,
+	            views:{
+	                basic: {
+                        timeFormat:"HH:mm"
+	                },
+	                agenda: {
+	                    timeFormat: "HH:mm"
+	                },
+	                month: {
+	                    timeFormat: "HH:mm"
+	                }
+	            },
 	            businessHours:{
 	            	start:'08:00',
 	            	end:'17:20',
-	            	dow:[1,2,3,4,5,6]
+	            	dow:[1,2,3,4,5]
 	            },
 	            //Event Handling
 	            eventClick: eventDetail,
-                eventAfterRender:function(event, element){
+	            viewRender: function (view, element) {
+	                if (view.name == 'basicDay') {
+	                    var additionalColumn = '<tr><td><div class="row"><div class="col-md-2">日期</div><div class="col-md-5">重要事項</div><div class="col-md-2">出席人員</div><div class="col-md-1">地點</div></div></td></tr>'
+                        ;
+	                    //if (event.allDay == true) {
+	                    //    additionalInfo='<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
+	                    //    + '<span class="pull-right">地點:' + event.location + '</span>';
+	                    //} else {
+	                    //    additionalInfo =
+	                    //        additionalInfo = '<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
+	                    //    + '<span class="pull-right">地點:' + event.location + '</span>';
+	                    //}
+	                   
+	                    element.find('.fc-head').append(additionalColumn);
+	                }
+                    
+	                //console.log(view);
+	                //console.log(element);
+	            },
+	            dayRender: function (date, cell) {
+	               // console.log(date);
+	               // console.log(cell);
+	            },
+	            eventRender: function (event, element, view) {
+
+	               
                     element.attr('href', 'javascript:void(0)');
-                    element.find(".fc-event-title").remove();
-                    element.find(".fc-event-time").remove();
-                    var additionalInfo;
-                    if (event.allDay == true) {
-                        additionalInfo='<span>參與人員: </span>' + event.description + ''
-                        + '<span class="pull-right">地點:' +event.location+ '</span>' ;
-                    } else {
-                        additionalInfo =
-                            additionalInfo = '參與人員: ' + event.description + '<br/>'
-                        + '地點:' + event.location + '';
+                    
+                    //element.find(".fc-title").remove();
+                    
+                    //var prefix = '<div class="row">';
+
+                    //var time = '<div class="col-md-4">' +
+                    //            +'<span class="fc-content></span>'
+
+                    //            + '</div>';
+
+                    
+	                //var suffix = '</div>';
+                    if (view.name == 'basicDay') {
+                        var additionalInfo = '<div class="col-md-2 nowrap">' + event.description + '</div>'
+                            + '<div class="col-md-1 nowrap">' + event.location + '</div>';
+                        
+                        if (event.allDay==false) {
+                            
+                            //if (event.allDay == true) {
+                            //    additionalInfo='<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
+                            //    + '<span class="pull-right">地點:' + event.location + '</span>';
+                            //} else {
+                            //    additionalInfo =
+                            //        additionalInfo = '<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
+                            //    + '<span class="pull-right">地點:' + event.location + '</span>';
+                            //}
+                            element.find('.fc-content').addClass('row');
+                            element.find('.fc-time').addClass("col-md-2 nowrap");
+                            element.find('.fc-title').addClass("col-md-5 nowrap");
+                            element.find('.fc-content').append(additionalInfo);
+                        } else {
+                            element.find('.fc-content').addClass('row');
+                            element.find('.fc-content').prepend('<div class="col-md-2">全天</div>');
+                            element.find('.fc-title').addClass("col-md-5 nowrap");
+                            element.find('.fc-content').append(additionalInfo);
+                        }
                     }
                     
-                    element.append(additionalInfo);
-                    //console.log(event);
+                    
+                    
+                    
+                    
+                    
+                    
+                    //element.append(additionalInfo);
+                    console.log(event);
+                    //console.log(element);
+                    //console.log(view);
                 }
-            },
+            }
             
 
         }
         //資料庫應由資料庫來
 		var events = {
-		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com',
-		    className: 'gcal-event'
+		    googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
+		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com'
 		}
+
+        
             /*[
             
         		{
@@ -138,7 +210,10 @@
                 });
         }
 
-        var eventSources=[events]
+        var eventSources=[{
+            googleCalendarApiKey: 'AIzaSyBGsSycErhrJgP8vlFfzbtCpNuStqcWjHo',
+            googleCalendarId: 'c26rmjc50kbd6rqpvpb6ka555c@group.calendar.google.com'
+        }];
 
 		angular.extend(this, {
 			uiConfig:uiConfig,

@@ -1,16 +1,17 @@
-<!-- banner start -->
-<!-- ================ -->
-<div class="banner">
 
-	<!-- slideshow start -->
-	<!-- ================ -->
-	<div class="slideshow">
-		
+<div>
+    
+    <!-- slideshow start -->
+    <!-- ================ -->
+
+    <div class="slideshow">
 
         <div class="row">
+
             <div class="col-md-12">
                 <!-- slider revolution start -->
                 <!-- ================ -->
+
                 <div class="slider-banner-container">
                     <div class="slider-banner">
                         <ul>
@@ -66,74 +67,87 @@
                         <div class="tp-bannertimer tp-bottom"></div>
                     </div>
                 </div>
+
                 <!-- slider revolution end -->
             </div>
 
-            
+            <div class="col-md-4">
+
+            </div>
         </div>
-	</div>
-	<!-- slideshow end -->
+    </div>
+
+    <!-- slideshow end -->
 
 </div>
 <!-- banner end -->
 
 
 <div class="section">
-    <!-- tabs start -->
-    <div class="tabs-style-2">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><a href="#h2tab1" role="tab" data-toggle="tab"><i class="fa fa-newspaper-o pr-5"></i>行事曆</a></li>
-            <li><a href="#h2tab2" role="tab" data-toggle="tab"><i class="fa fa-calendar pr-5"></i>佈告欄</a></li>
-            <li><a href="#h2tab3" role="tab" data-toggle="tab"><i class="fa fa-plus-square pr-5"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content" ng-controller="calViewCtrl as c">
-            <div class="tab-pane fade in active" id="h2tab1">
-                <div class="container">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div ng-controller="calViewCtrl as c">
                     <h1 class="text-center title">行事曆</h1>
                     <div class="separator"></div>
-                    <div ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
-                </div> 
-            </div>
-            <div class="tab-pane fade" id="h2tab2">
-                <table class="table table-bordered table-condensed table-hover">
-                    <tr>
-                        <th>發佈時間</th>
-                        <th>標題</th>
-                        <th>張貼部門</th>
-                    </tr>
-                    <tr>
+                    <div id="calendar" ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
+                </div>
 
-                    </tr>
-                </table>
             </div>
-            <div class="tab-pane fade" id="h2tab3">
-                
+        </div>
+    </div>
+    
+    </div>
+<!-- parallax section start -->
+<!-- ================ -->
+<div class="section parallax light-translucent-bg parallax-bg-2">
+    <div class="container">
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="title text-center"></h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<!-- parallax section end -->
+    
+<div class="section">
+        
+    <div class="container" ng-controller="gridCtrl as g">
+           
+        <div class="row">
+            <h1 class="text-center title">佈告欄</h1>
+            <div class="separator"></div>
+            
+            <div class="col-md-12">
+                <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">啟用簡易搜尋</button>
+                <a href="/posts" target="_blank" class="btn btn-info pull-right">管理</a>
+                <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
+                </div>
+                
+                <span class="clearfix"></span>
+            </div>
+        </div>
+            
+    </div>
+</div>
+	
+
+
+<!-- ================ -->
+
+
+
+
 
 
 
 
 <!-- calendar end -->
-
-<!-- parallax section start -->
-<!-- ================ -->
-<div class="section parallax light-translucent-bg parallax-bg-2">
-	<div class="container">
-		<div class="call-to-action">
-			<div class="row">
-				<div class="col-md-8">
-					<h1 class="title text-center"></h1>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- parallax section end -->
 
 
 
@@ -177,7 +191,17 @@
 -->
 <!-- parallax section start -->
 <!-- ================ -->
-
+<div class="section parallax light-translucent-bg parallax-bg">
+    <div class="container">
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="title text-center"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- parallax section end -->
 <!-- section start -->
 <!-- ================ -->
@@ -221,20 +245,15 @@
     </div>
 </div>
 <!-- section end -->
-<div class="section parallax light-translucent-bg parallax-bg">
-    <div class="container">
-        <div class="call-to-action">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 class="title text-center"></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="assets/jquery.googlecalreader-1.1.min.js"></script>
-<script src="js/rev-slider-init.js"></script>
-<script src="js/fullcalendar-init.js"></script>
 
-<script src="js/animations-init.js"></script>
+
+<!-- jQuery REVOLUTION Slider  -->
+<script type="text/javascript" src="../../../plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="../../../plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+
+<script src="../../../js/rev-slider-init.js"></script>
+
+
+<script src="../../../js/animations-init.js"></script>
 

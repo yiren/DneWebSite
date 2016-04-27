@@ -6,8 +6,14 @@
         'ui.calendar',
         'ui.bootstrap',
         'ui.bootstrap.datetimepicker',
-        'ngAnimate'
+        'ngAnimate',
+        'ui.grid',
+        'ui.grid.resizeColumns',
+        'ui.grid.selection',
+        'duScroll'
 
-    ]);
+    ])
+    .value('duScrollDuration', 2000)
+    .value('duScrollOffset',30);
         
 })();

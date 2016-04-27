@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using DneWebSite.Models;
+using Microsoft.Owin.Security.WsFederation;
 
 namespace DneWebSite
 {
@@ -26,6 +27,7 @@ namespace DneWebSite
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
+                //AuthenticationMode=Microsoft.Owin.Security.AuthenticationMode.Active
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
@@ -34,16 +36,34 @@ namespace DneWebSite
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
-            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            });
 
+            //app.Properties["Microsoft.Owin.Security.Constants.DefaultSignInAsAuthenticationType"] = "ExternalCookie";
+            //app.UseCookieAuthentication(new CookieAuthenticationOptions
+            //{
+            //    AuthenticationType = "ExternalCookie",
+            //    AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Passive
+            //});
+            //app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+
+            //var dneADFS = new WsFederationAuthenticationOptions
+            //{
+            //    MetadataAddress= "https://10.20.1.2/federationmetadata/2007-06/federationmetadata.xml",
+            //    AuthenticationType="DNEADFS",
+            //    BackchannelCertificateValidator=null,
+            //    Caption="DNE AD",
+            //    Wreply= "https://10.20.3.131/account/logincallbackwithadfs",
+            //    Wtrealm= "https://10.20.3.131/account/logincallbackwithadfs"
+            //};
+
+            //app.UseWsFederationAuthentication(dneADFS);
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
-            app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
+            //app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
 
             // Enables the application to remember the second login verification factor such as phone or email.
             // Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
             // This is similar to the RememberMe option when you log in.
-            app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            //app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(

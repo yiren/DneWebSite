@@ -622,8 +622,9 @@ be a descendant of the grid when it is being dragged.
 
 
 .fc-day-grid-event .fc-content { /* force events to be one-line tall */
-	white-space: nowrap;
-	overflow: hidden;
+	white-space: normal;
+	overflow:visible; /*Original Hidden*/
+    white-space:normal;
 }
 
 .fc-day-grid-event .fc-time {
@@ -1034,18 +1035,19 @@ be a descendant of the grid when it is being dragged.
 .fc-time-grid-event .fc-time,
 .fc-time-grid-event .fc-title {
 	padding: 0 1px;
+    white-space:normal;
 }
 
 .fc-time-grid-event .fc-time {
 	font-size: .85em;
-	white-space: nowrap;
+	
 }
 
 /* short mode, where time and title are on the same line */
 
 .fc-time-grid-event.fc-short .fc-content {
 	/* don't wrap to second line (now that contents will be inline) */
-	white-space: nowrap;
+	white-space:normal;
 }
 
 .fc-time-grid-event.fc-short .fc-time,
@@ -1053,10 +1055,11 @@ be a descendant of the grid when it is being dragged.
 	/* put the time and title on the same line */
 	display: inline-block;
 	vertical-align: top;
+    white-space:normal;
 }
 
 .fc-time-grid-event.fc-short .fc-time span {
-	display: none; /* don't display the full time text... */
+	/*display: none;  don't display the full time text... */
 }
 
 .fc-time-grid-event.fc-short .fc-time:before {

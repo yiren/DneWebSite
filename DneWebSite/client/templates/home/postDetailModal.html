@@ -1,0 +1,26 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="m.cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">詳細內容</h4>
+	</div>
+	<div class="modal-body">
+        
+		<p>公佈日期:{{m.event.entity.PostDate}}</p>
+		
+		<p>類別:{{m.event.entity.Category}}</p>
+		<p>標題:{{m.event.entity.Title}}</p>
+        <p>內容:{{m.event.entity.Content}}</p>
+		<p>張貼部門:{{m.event.entity.Section}}</p>
+        
+        <p>附件下載:</p>
+        <div ng-repeat="a in m.event.entity.PostFiles">
+            <a ng-href="../../../upload/bulltin/post/{{a.FileId+a.Extension}}">{{a.FileName}}</a>
+        </div>
+        <span class="pull-left">修改者:{{m.event.entity.ModifiedBy}}</span>
+        <span class="pull-right">最後修改日期:{{m.event.entity.LastModifiedDate}}</span>
+        <span class="clearfix"></span>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" ng-click="m.cancel()">關閉</button>
+		
+</div>

@@ -46,6 +46,21 @@ namespace DneWebSite.Models
         public string Email { get; set; }
     }
 
+    public class LdapLoginViewModel
+    {
+        [Required]
+        [Display(Name = "開機帳號")]
+        public string UserName { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "密碼")]
+        public string Password { get; set; }
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
+    }
+
     public class LoginViewModel
     {
         [Required]

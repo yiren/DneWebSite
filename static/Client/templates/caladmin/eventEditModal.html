@@ -1,0 +1,94 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="edit.cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel" ng-bind="edit.event.title"></h4>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">標題</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" placeholder="標題" ng-model="edit.event.title">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">開始時間</label>
+				<div class="col-sm-10" ng-controller="datetimeCtrl as dt" id="datetimepicker">
+					<input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="dt.myDate" is-open="dt.isOpen"/>
+			    <span class="input-group-btn">
+			        <button type="button" class="btn btn-default" ng-click="dt.openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+			    </span>	
+				</div>
+			</div> 
+
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">結束時間</label>
+				<div class="col-sm-10" ng-controller="datetimeCtrl as dt" id="datetimepicker">
+					<input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="dt.myDate" is-open="dt.isOpen"  />
+			    <span class="input-group-btn">
+			        <button type="button" class="btn btn-default" ng-click="dt.openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+			    </span>	
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">參與人員</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" rows="3" ng-model="edit.event.attendee"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">地點</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" placeholder="地點" ng-model="edit.event.location">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">重複</label>
+				<div class="col-sm-10">
+					<div class="checkbox">
+				      	<label>
+				          	<input type="checkbox">週一
+				        </label>
+				        <label>
+				          	<input type="checkbox">週二
+				        </label>
+				        <label>
+				          	<input type="checkbox">週三
+				        </label>
+				        <label>
+				          	<input type="checkbox">週四
+				        </label>
+				        <label>
+				          	<input type="checkbox">週五
+				        </label>
+				    </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">背景顏色</label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label>
+				        	<input type="radio" name="eventColor"><span style="display:inline-block;width:13px;height:13px;background:#2e6da4;"></span>		        
+				        </label>
+				        <label>
+				        	<input type="radio" name="eventColor"><span style="display:inline-block;width:13px;height:13px;background:#5cb85c;"></span>		        
+				        </label>
+				        <label>
+				        	<input type="radio" name="eventColor"><span style="display:inline-block;width:13px;height:13px;background:#d9534f;"></span>		        
+				        </label>
+				        <label>
+				        	<input type="radio" name="eventColor"><span style="display:inline-block;width:13px;height:13px;background:#f0ad4e;"></span>		        
+				        </label>
+				    </div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" ng-click="edit.cancel()">取消</button>
+		<button type="button" class="btn btn-sm btn-default" ng-click="edit.save()">儲存變更</button>
+		<button type="button" class="btn btn-sm btn-danger pull-left" ng-click="edit.delete()">刪除</button>
+</div>
