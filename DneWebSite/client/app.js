@@ -14,6 +14,6 @@
 
     ])
     .value('duScrollDuration', 2000)
-    .value('duScrollOffset',30);
+    .value('duScrollOffset',40);
         
 })();

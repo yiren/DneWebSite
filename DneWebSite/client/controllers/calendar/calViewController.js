@@ -141,14 +141,43 @@
                         }
                     }
                     
+                    if (view.name == 'basicWeek') {
+                        element.find('.fc-title').addClass("nowrap");
+                    }
+                    if (view.name == 'month') {
+                        element.find('.fc-title').addClass("nowrap");
+                    }
                     
-                    
-                    
-                    
-                    
+                    var dutyOut = '公出';
+                    var vac = '請假';
+                    var training = '受訓';
+                    var aboard = '出國';
+                    var supOutage = '大修';
+                    var cancel = '取消';
+                    var dateChanged = '改期';
+                    var speech = '演講';
+                    if (event.title.indexOf(dutyOut) >= 0 || event.title.indexOf(vac) >= 0
+                        || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0) {
+                        //element.find('fc-event-skin').addClass('fc-event-dutyOut');
+                        //console.log(element.find('fc-event-skin'));
+                        //console.log("公出");
+                        element.addClass('fc-event-dutyOut');
+                        //element.css('background-color', ' #770ECC');
+                    }
+
+                    if (event.title.indexOf(supOutage) >= 0) {
+                        element.addClass('fc-event-supOutage');
+                    }
+                    if (event.title.indexOf(cancel) >= 0 || event.title.indexOf(dateChanged) >= 0) {
+                        element.addClass('fc-event-changed');
+                    }
+
+                    if (event.title.indexOf(speech) >= 0) {
+                        element.addClass('fc-event-speech');
+                    }
                     
                     //element.append(additionalInfo);
-                    console.log(event);
+                    //console.log(event);
                     //console.log(element);
                     //console.log(view);
                 }

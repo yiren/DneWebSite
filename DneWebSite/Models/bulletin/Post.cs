@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +16,25 @@ namespace DneWebSite.Models.bulletin
     public class Post
     {
         public Guid PostId { get; set; }
+        [DisplayName("公佈時間")]
         public string PostDate { get; set; }
+        [DisplayName("標題")]
+        [Required]
         public string Title { get; set; }
+        [DisplayName("內容")]
+        [Required]
         public string Content { get; set; }
+        [DisplayName("最後修改日期")]
         public string LastModifiedDate { get; set; }
+        [DisplayName("建立者")]
         public string CreatedBy { get; set; }
+        [DisplayName("修改者")]
         public string ModifiedBy { get; set; }
+        [Required]
+        [DisplayName("張貼部門")]
         public Section Section { get; set; }
-        
+        [Required]
+        [DisplayName("類別")]
         public Category Category { get; set; }
 
         [JsonIgnore]

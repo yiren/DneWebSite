@@ -92,7 +92,7 @@ h6 {
 
 .sidebar .title {
 	margin-bottom: 15px;
-	margin-top: 20px;
+	margin-top: 10px;
 	position: relative;
 }
 .page-header {
@@ -2085,7 +2085,9 @@ tbody {
 ---------------------------------- */
 .btn {
 	padding: 10px 12px;
-	font-size: 14px;
+    /*Google Web Font
+	font-size: 14px;*/
+    font-size: 18px;
 	line-height: 1.42857143;
 	min-width: 160px;
 	text-align: center;
@@ -2951,10 +2953,10 @@ ul.pagination li > a:focus {
 ---------------------------------- */
 .nav-pills > li > a {
 	border-radius: 0;
-	padding: 10px 15px;
+	padding: 5px 10px;
 	border: 1px solid transparent;
 	color: #666666;
-	font-size: 13px;
+	font-size: 16px;
 	text-transform: uppercase;
 	font-weight: 700;
 }

@@ -41,6 +41,11 @@
                         templateUrl:'/../client/templates/engineering/lungmen/lungmen.html',
                         controller:'homeCtrl'
                     })
+                    .state('meeting', {
+                        url: '/regular/meeting',
+                        templateUrl: '/../client/templates/regular/meeting.html',
+                        controller: 'homeCtrl'
+                    })
                 ;
     })
     

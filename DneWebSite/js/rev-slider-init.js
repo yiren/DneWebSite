@@ -5,9 +5,9 @@ $(document).ready(function(){
 			$(".tp-bannertimer").show();
 
 			$('.slider-banner-container .slider-banner').show().revolution({
-				delay:8000,
+				delay:6000,
 				startwidth:640,
-				startheight:350,
+				startheight:600,
 				
 				navigationArrows:"solo",
 				

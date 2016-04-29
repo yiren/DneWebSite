@@ -45,7 +45,8 @@ namespace DneWebSite.Controllers
         // GET: Posts
         public ActionResult Index(int id=1)
         {
-            var posts = db.Posts.AsNoTracking().OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
+            var user = UserManager.FindByName(User.Identity.Name);
+            var posts = db.Posts.AsNoTracking().Where(p => p.CreatedBy.Equals(user.FullName)).OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
             if (Request.IsAjaxRequest())
             {
                 return PartialView("_PostList", posts);
@@ -137,6 +138,7 @@ namespace DneWebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            
             Post post = db.Posts.Include(p=>p.PostFiles).SingleOrDefault(p => p.PostId==id);
             if (post == null)
             {
@@ -203,7 +205,7 @@ namespace DneWebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Include(p=>p.PostFiles).SingleOrDefault(p=>p.PostId==id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -216,10 +218,52 @@ namespace DneWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Post post = db.Posts.Find(id);
-            db.Posts.Remove(post);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Post post = db.Posts.Include(p => p.PostFiles).SingleOrDefault(p => p.PostId == id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            var user = UserManager.FindByName(User.Identity.Name);
+            if (user.FullName.Equals(post.CreatedBy))
+            {
+                try
+                {
+                    foreach (var file in post.PostFiles)
+                    {
+
+                        PostFile fileDetail = db.PostFiles.Find(file.FileId);
+                        if (fileDetail == null)
+                        {
+                            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                        }
+
+                        //Remove from database
+                        db.PostFiles.Remove(fileDetail);
+                        db.SaveChanges();
+
+                        //Delete file from the file system
+                        var path = Path.Combine(Server.MapPath("~/upload/bulltin/post"), fileDetail.FileId + fileDetail.Extension);
+                        if (System.IO.File.Exists(path))
+                        {
+                            System.IO.File.Delete(path);
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
+                }
+                db.Posts.Remove(post);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }else
+            {
+
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+
+            
         }
 
         public FileResult Download(string p, string d)
