@@ -10,7 +10,8 @@
         'ui.grid',
         'ui.grid.resizeColumns',
         'ui.grid.selection',
-        'duScroll'
+        'duScroll',
+        'feeds'
 
     ])
     .value('duScrollDuration', 2000)

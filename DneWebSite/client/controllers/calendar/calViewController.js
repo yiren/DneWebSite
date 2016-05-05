@@ -156,6 +156,7 @@
                     var cancel = '取消';
                     var dateChanged = '改期';
                     var speech = '演講';
+                    var project ='專案討論';
                     if (event.title.indexOf(dutyOut) >= 0 || event.title.indexOf(vac) >= 0
                         || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0) {
                         //element.find('fc-event-skin').addClass('fc-event-dutyOut');
@@ -172,7 +173,7 @@
                         element.addClass('fc-event-changed');
                     }
 
-                    if (event.title.indexOf(speech) >= 0) {
+                    if (event.title.indexOf(speech) >= 0 ||event.title.indexOf(project) >= 0) {
                         element.addClass('fc-event-speech');
                     }
                     

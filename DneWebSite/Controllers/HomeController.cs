@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace DneWebSite.Controllers
 {
+    
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -13,7 +14,9 @@ namespace DneWebSite.Controllers
             return View();
         }
 
-        public ActionResult Miscellaneous()
+
+        
+        public ActionResult IndexV1()
         {
             
 

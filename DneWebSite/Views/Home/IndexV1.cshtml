@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "V1";
+    Layout = "~/Views/Shared/_Layoutv1.cshtml";
+}
+
+
+
+<div ui-view></div>
+
+
+@section scripts{
+
+
+
+    <!-- Controllers -->
+
+    <script src="~/client/controllers/calendar/calViewController.js"></script>
+    <script src="~/client/controllers/calendar/calModalController.js"></script>
+    <script src="~/client/controllers/calendar/datetimeController.js"></script>
+    <script src="~/client/controllers/RSSFeed/feedController.js"></script>
+    <script src="~/client/controllers/uiGridController.js"></script>
+
+    <!-- Directives -->
+    <script src="~/client/directives/directives.js"></script>
+
+    <!-- Servicess -->
+    <script src="~/client/services/calService.js"></script>
+    <script src="~/client/services/service.js"></script>
+}
+
