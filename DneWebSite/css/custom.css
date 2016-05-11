@@ -157,7 +157,7 @@ File Description: Place here your custom CSS styles
 /* FullCalendar Customization*/
 
 .fc-event-dutyOut{
-    background-color: #770ECC !important;
+    background-color: gray !important;
 }
 .fc-event-supOutage{
     background-color: #579970 !important;

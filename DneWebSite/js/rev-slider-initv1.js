@@ -7,7 +7,7 @@ $(document).ready(function(){
 			$('.slider-banner-container .slider-banner-fullscreen').show().revolution({
 				delay:6000,
 				startwidth:640,
-				startheight: 350,
+				
                 dottedOverlay: "twoxtwo",
 				
 				navigationArrows:"solo",
@@ -38,7 +38,7 @@ $(document).ready(function(){
 				stopLoop:"off",
 				stopAfterLoops:-1,
 				stopAtSlide:-1,
-				onHoverStop: "on",
+				onHoverStop: "off",
 
 				shuffle:"on",
 				

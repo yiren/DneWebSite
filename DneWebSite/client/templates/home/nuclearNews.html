@@ -1,0 +1,23 @@
+
+
+<div class="section" id="nuclearNews">
+    <div id="my-feeds" class="container row" ng-controller="FeedsController">
+        <h1 class="text-center title">國際核能最新消息</h1>
+        <div class="separator"></div>
+        <div ng-controller="FeedWidgetController" ng-repeat="feed in feeds track by feed.id" class="col-md-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div ng-include src="RSSReader/feed-widget-control.html"></div>
+                    <h2 ng-click="toggleFeed();" class="panel-title">{{feed.title}}</h2>
+                </div>
+                <div ng-if="!collapsed" class="panel-body feed-body">
+                    <div class="feed-block" feed-widget>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

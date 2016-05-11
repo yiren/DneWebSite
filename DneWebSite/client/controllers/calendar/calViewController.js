@@ -12,9 +12,9 @@
 			var modalInstance=$modal.open({
 				animation:true,
 				templateUrl:'client/templates/home/eventDetailModal.html',
-				controller:'calModalCtrl as m',
+				controller:'modalCtrl as m',
 				resolve:{
-					event:function(){
+					data:function(){
 						return event;
 					}
 				}
@@ -149,14 +149,15 @@
                     }
                     
                     var dutyOut = '公出';
-                    var vac = '請假';
+                    var vac = '假';
                     var training = '受訓';
                     var aboard = '出國';
                     var supOutage = '大修';
                     var cancel = '取消';
                     var dateChanged = '改期';
                     var speech = '演講';
-                    var project ='專案討論';
+                    var project = '專案討論';
+
                     if (event.title.indexOf(dutyOut) >= 0 || event.title.indexOf(vac) >= 0
                         || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0) {
                         //element.find('fc-event-skin').addClass('fc-event-dutyOut');

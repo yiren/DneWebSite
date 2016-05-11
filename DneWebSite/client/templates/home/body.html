@@ -1,19 +1,19 @@
 
-<div>
-    
+<div>  
     <!-- slideshow start -->
     <!-- ================ -->
-
-    <div>
-
-        <div class="row">
+        <div class="row ">
 
             <div class="col-md-10">
                 <!-- slider revolution start -->
                 <!-- ================ -->
 
                 <div ng-include src="'client/templates/home/imageSilder.html'"></div>
-
+                <div class="section" style="margin-left:10px" ng-controller="calViewCtrl as c" id="calendar">
+                    <h1 class="text-center title">行事曆</h1>
+                    <div class="separator"></div>
+                    <div  ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
+                </div>
                 <!-- slider revolution end -->
             </div>
 
@@ -21,33 +21,14 @@
                 <div ng-include src="'client/templates/home/quicksidebar.html'"></div>
             </div>
         </div>
-    </div>
-
     <!-- slideshow end -->
-
 </div>
 <!-- banner end -->
 
-<div class="section" id="nuclearNews">
-    <div id="my-feeds" class="container row" ng-controller="FeedsController">
-        <h1 class="text-center title">國際核能最新消息</h1>
-        <div class="separator"></div>
-        <div ng-controller="FeedWidgetController" ng-repeat="feed in feeds track by feed.id" class="col-md-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div ng-include src="RSSReader/feed-widget-control.html"></div>
-                    <h2 ng-click="toggleFeed();" class="panel-title">{{feed.title}}</h2>
-                </div>
-                <div ng-if="!collapsed" class="panel-body feed-body">
-                    <div class="feed-block" feed-widget>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--Calendar-->
 
 
-</div>
+
 <!-- parallax section start -->
 <!-- ================ -->
 <div class="section parallax light-translucent-bg parallax-bg-2">
@@ -63,48 +44,8 @@
 </div>
 <!-- parallax section end -->
 
-<div class="section" id="calendar">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <div ng-controller="calViewCtrl as c">
-                    <h1 class="text-center title">行事曆</h1>
-                    <div class="separator"></div>
-                    <div  ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    
-    </div>
-
-
-
-
-   
-<div class="section" id="bulltin">
-        
-    <div class="container" ng-controller="gridCtrl as g">
-           
-        <div class="row">
-            <h1 class="text-center title">佈告欄</h1>
-            <div class="separator"></div>
-            
-            <div class="col-md-12">
-                <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">啟用簡易搜尋</button>
-                <a href="/posts" target="_blank" class="btn btn-info pull-right">管理</a>
-                <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
-                </div>
-                
-                <span class="clearfix"></span>
-            </div>
-        </div>
-            
-    </div>
-</div>
+<!--佈告欄-->
+<div ng-include src="'client/templates/home/bulltin.html'"></div>
 	
 <!-- parallax section start -->
 <!-- ================ -->
@@ -123,8 +64,8 @@
 
 <!-- ================ -->
 
-
-
+<!--核能最新消息-->
+<div ng-include src="'client/templates/home/nuclearNews.html'"></div>
 
 
 
@@ -188,6 +129,11 @@
 <!-- parallax section end -->
 <!-- section start -->
 <!-- ================ -->
+
+<!--核心業務-->
+
+<!-- section start -->
+<!-- ================ -->
 <div class="gray-bg section">
     <div class="container">
         <h1 class="text-center title">核心業務</h1>
@@ -228,7 +174,5 @@
     </div>
 </div>
 <!-- section end -->
-
-
 
 

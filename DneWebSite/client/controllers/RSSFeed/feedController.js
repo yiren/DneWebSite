@@ -32,7 +32,7 @@
   {
       "id": 2,
       "count": 10,
-      "title": "NEI",
+      "title": "Nuclear Energy Institute",
       "url": "http://www.nei.org/rss-feeds?feed=News"
   },
   {

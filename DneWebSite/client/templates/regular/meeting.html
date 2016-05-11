@@ -54,7 +54,12 @@
             <!-- ================ -->
             <div class="main col-md-9">
 
-              
+               <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">啟用簡易搜尋</button>
+                <a href="/dnemeeting" target="_blank" class="btn btn-info pull-right">管理</a>
+                <div id="meetingGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
+                </div>
+                
+                <span class="clearfix"></span>
 
 
             </div>

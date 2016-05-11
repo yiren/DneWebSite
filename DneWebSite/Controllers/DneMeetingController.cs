@@ -12,7 +12,7 @@ using DneWebSite.Models.dneMeeting;
 
 namespace ConfirmEmail.Controllers
 {
-    
+    [Authorize]
     public class DneMeetingController : Controller
     {
         private BulletinDbContext _db;

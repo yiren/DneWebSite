@@ -9,13 +9,14 @@
             <div class="col-md-12">
                 <!-- slider revolution start -->
                 <!-- ================ -->
-
+                
                 <div ng-include src="'../client/templates/home/imageSilderFull.html'"></div>
                 
                 <!-- slider revolution end -->
             </div>
 
         </div>
+    
 </div>
 
     <!-- slideshow end -->
@@ -24,68 +25,68 @@
 
 <div class="boxed pattern-1">
     <div class="page-wrapper">
-    <div class="section" id="calendar">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <div ng-controller="calViewCtrl as c">
-                        <h1 class="text-center title">行事曆</h1>
-                        <div class="separator"></div>
-                        <div ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- parallax section start -->
+        
+    <!-- slideshow start -->
     <!-- ================ -->
-    <div class="section parallax light-translucent-bg parallax-bg-2">
-        <div class="container">
-            <div class="call-to-action">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h1 class="title text-center"></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- parallax section end -->
+        <div class="row section">
 
-    <div class="section" id="bulltin">
-
-        <div class="container" ng-controller="gridCtrl as g">
-
-            <div class="row">
-                <h1 class="text-center title">佈告欄</h1>
+            <div class="col-md-12">
+                <!-- slider revolution start -->
+                <!-- ================ -->
+                <h1 class="text-center title">活動花絮</h1>
                 <div class="separator"></div>
+                <div ng-include src="'../client/templates/home/imageSilder.html'"></div>
 
-                <div class="col-md-12">
-                    <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">啟用簡易搜尋</button>
-                    <a href="/posts" target="_blank" class="btn btn-info pull-right">管理</a>
-                    <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
-                    </div>
-
-                    <span class="clearfix"></span>
-                </div>
+                <!-- slider revolution end -->
             </div>
 
         </div>
+    <!-- slideshow end -->
+
+<!-- banner end -->
+
+
+<!--Calendar-->
+<div ng-include src="'../client/templates/home/calendar.html'"></div>
+
+
+<!-- parallax section start -->
+<!-- ================ -->
+<div class="section parallax light-translucent-bg parallax-bg-2">
+    <div class="container">
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title text-center"></h1>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+<!-- parallax section end -->
 
+<!--佈告欄-->
+<div ng-include src="'../client/templates/home/bulltin.html'"></div>
+	
+<!-- parallax section start -->
+<!-- ================ -->
+<div class="section parallax light-translucent-bg parallax-bg">
+    <div class="container">
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="title text-center"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- parallax section end -->
 
+<!-- ================ -->
 
-    <!-- ================ -->
-
-
-
-
-
-
+<!--核能最新消息-->
+<div ng-include src="'../client/templates/home/nuclearNews.html'"></div>
 
 
 
@@ -149,6 +150,11 @@
 <!-- parallax section end -->
 <!-- section start -->
 <!-- ================ -->
+
+<!--核心業務-->
+
+<!-- section start -->
+<!-- ================ -->
 <div class="gray-bg section">
     <div class="container">
         <h1 class="text-center title">核心業務</h1>
@@ -157,9 +163,9 @@
             <div class="col-md-4">
                 <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="300">
                     <div class="overlay-container shadow">
-                        <img src="images/portfolio-3.png" alt="">
+                        <img src="../../../images/portfolio-3.png" alt="">
                     </div>
-                    <h3><a ui-sref="lungmenIntro">龍門計畫</a></h3>
+                    <h3><a href="../../../lungmen.html">龍門計畫</a></h3>
                     <p>(簡單說明)</p>
                     <a href="../../../lungmen.html" class="btn btn-default">了解更多.....</a>
                 </div>
@@ -167,7 +173,7 @@
             <div class="col-md-4">
                 <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="200">
                     <div class="overlay-container shadow">
-                        <img src="images/portfolio-2.png" alt="">
+                        <img src="../../../images/portfolio-2.png" alt="">
 
                     </div>
                     <h3><a href="portfolio-item.html">電廠改善工程</a></h3>
@@ -178,7 +184,7 @@
             <div class="col-md-4">
                 <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="100">
                     <div class="overlay-container shadow">
-                        <img src="images/portfolio-1.png" alt="">
+                        <img src="../../../images/portfolio-1.png" alt="">
                     </div>
                     <h3><a href="portfolio-item.html">研究發展計畫</a></h3>
                     <p>(簡單說明)</p>
@@ -188,10 +194,11 @@
         </div>
     </div>
 </div>
-    </div>
-    </div>
 <!-- section end -->
 
+</div>
+
+ </div>
 
 <!-- jQuery REVOLUTION Slider  -->
 <script type="text/javascript" src="../../../plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>

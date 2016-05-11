@@ -1,0 +1,22 @@
+
+
+<div class="section" id="bulltin">
+        
+    <div class="container" ng-controller="gridCtrl as g">
+           
+        <div class="row">
+            <h1 class="text-center title">佈告欄</h1>
+            <div class="separator"></div>
+            
+            <div class="col-md-12">
+                <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success">啟用簡易搜尋</button>
+                <a href="/posts" target="_blank" class="btn btn-info pull-right">管理</a>
+                <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
+                </div>
+                
+                <span class="clearfix"></span>
+            </div>
+        </div>
+            
+    </div>
+</div>

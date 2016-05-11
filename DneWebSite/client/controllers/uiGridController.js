@@ -8,14 +8,14 @@
         function uiGrid(i18nService, $modal, $scope, $http, $log, uiGridConstants) {
             var vm = this;
 
-            //Modal
+            //彈跳視窗
             var openDetailModal = function (post) {
                 var modalInstance = $modal.open({
                     animation: true,
                     templateUrl: 'client/templates/home/postDetailModal.html',
-                    controller: 'calModalCtrl as m',
+                    controller: 'modalCtrl as m',
                     resolve: {
-                        event: function () {
+                        data: function () {
                             return post;
                         }
                     }
@@ -33,8 +33,22 @@
                 //modalInstance.result.then(insertEvent(event));
             }
 
-            i18nService.setCurrentLang('en');
+          
 
+
+            //ui-grid欄位設定
+            var colDef=[
+                    { name: "日期", field: "PostDate", width: 120, enableColumnMenu: false },
+                    {
+                        name: "類別", field: "Category", width: 150, enableColumnMenu: false
+                        
+                    },
+                    { name: "標題", field: "Title", enableColumnMenu: false, enableSorting: false },
+                    { name: "張貼部門", field: "Section", width: 140, enableColumnMenu: false }
+            ];
+
+
+            //ui-grid的相關設定
             vm.gridOptions = {
                 enableFiltering:false,
                 enableColumnResizing:true,
@@ -52,26 +66,21 @@
                         console.log(row);
                     });
                 },
-                columnDefs: [
-                    { name: "日期", field: "PostDate", width: 120, enableColumnMenu: false },
-                    {
-                        name: "類別", field: "Category", width: 150, enableColumnMenu: false
-                        
-                    },
-                    { name: "標題", field: "Title", enableColumnMenu: false, enableSorting: false },
-                    { name: "張貼部門", field: "Section", width: 140, enableColumnMenu: false }
+                columnDefs: colDef
                     
 
-                ]
+               
             }
 
-            $http.get('/api/postsapi/').then(suc, err);
+
+            //取得Database中佈告資料
+            $http.get('/api/postsdata/').then(suc, err);
             function suc(res) {
                 vm.gridOptions.data = res.data;
-                console.log(res);
+                
             }
             function err(err) {
-                console.log(err);
+                
             }
 
 

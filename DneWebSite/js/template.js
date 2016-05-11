@@ -16,90 +16,13 @@
 		$(window).load(function() {
 			$("body").removeClass("no-trans");
 		});
-		// Enable Smooth Scroll only on Chrome and only on Win and Linux Systems
-		var platform = navigator.platform.toLowerCase();
-		if ((platform.indexOf('win') == 0 || platform.indexOf('linux') == 0) && !Modernizr.touch) {
-			if ($.browser.webkit) {
-				$.webkitSmoothScroll();
-				
-			}
-		};
-		//Show dropdown on hover only for desktop devices
-		//-----------------------------------------------
-		var delay=0, setTimeoutConst;
-		if ((Modernizr.mq('only all and (min-width: 768px)') && !Modernizr.touch) || $("html.ie8").length>0) {
-			$('.main-navigation .navbar-nav>li.dropdown, .main-navigation li.dropdown>ul>li.dropdown').hover(
-			function(){
-				var $this = $(this);
-				setTimeoutConst = setTimeout(function(){
-					$this.addClass('open').slideDown();
-					$this.find('.dropdown-toggle').addClass('disabled');
-				}, delay);
-
-			},	function(){ 
-				clearTimeout(setTimeoutConst );
-				$(this).removeClass('open');
-				$(this).find('.dropdown-toggle').removeClass('disabled');
-			});
-		};
-        
+		
+		
 
 		
 		
 
-		//Owl carousel
-		//-----------------------------------------------
-		if ($('.owl-carousel').length>0) {
-			$(".owl-carousel.carousel").owlCarousel({
-				items: 4,
-				pagination: false,
-				navigation: true,
-				navigationText: false
-			});
-			$(".owl-carousel.carousel-autoplay").owlCarousel({
-				items: 4,
-				autoPlay: 5000,
-				pagination: false,
-				navigation: true,
-				navigationText: false
-			});
-			$(".owl-carousel.clients").owlCarousel({
-				items: 4,
-				autoPlay: true,
-				pagination: false,
-				itemsDesktopSmall: [992,5],
-				itemsTablet: [768,4],
-				itemsMobile: [479,3]
-			});
-			$(".owl-carousel.content-slider").owlCarousel({
-				singleItem: true,
-				autoPlay: 5000,
-				navigation: false,
-				navigationText: false,
-				pagination: false
-			});
-			$(".owl-carousel.content-slider-with-controls").owlCarousel({
-				singleItem: true,
-				autoPlay: false,
-				navigation: true,
-				navigationText: false,
-				pagination: true
-			});
-			$(".owl-carousel.content-slider-with-controls-autoplay").owlCarousel({
-				singleItem: true,
-				autoPlay: 5000,
-				navigation: true,
-				navigationText: false,
-				pagination: true
-			});
-			$(".owl-carousel.content-slider-with-controls-bottom").owlCarousel({
-				singleItem: true,
-				autoPlay: false,
-				navigation: true,
-				navigationText: false,
-				pagination: true
-			});
-		};
+		
 
 		// Animations
 		//-----------------------------------------------
@@ -122,67 +45,7 @@
 			});
 		};
 
-		// Text Rotators
-		//-----------------------------------------------
-		if ($(".text-rotator").length>0) {
-			$(".text-rotator").each(function() {
-				var tr_animationEffect = $(this).attr("data-rotator-animation-effect");
-				$(this).Morphext({
-					animation: ""+tr_animationEffect+"", // Overrides default "bounceIn"
-					separator: ",", // Overrides default ","
-					speed: 5000 // Overrides default 2000
-				});
-			});
-		};
-
-		// Stats Count To
-		//-----------------------------------------------
-		if ($(".stats [data-to]").length>0) {
-			$(".stats [data-to]").each(function() {
-				var stat_item = $(this),
-				offset = stat_item.offset().top;
-				if($(window).scrollTop() > (offset - 800) && !(stat_item.hasClass('counting'))) {
-					stat_item.addClass('counting');
-					stat_item.countTo();
-				};
-				$(window).scroll(function() {
-					if($(window).scrollTop() > (offset - 800) && !(stat_item.hasClass('counting'))) {
-						stat_item.addClass('counting');
-						stat_item.countTo();
-					}
-				});
-			});
-		};
-
-		// Isotope filters
-		//-----------------------------------------------
-		if ($('.isotope-container').length>0 || $('.masonry-grid').length>0 || $('.masonry-grid-fitrows').length>0) {
-			$(window).load(function() {
-				$('.masonry-grid').isotope({
-					itemSelector: '.masonry-grid-item',
-					layoutMode: 'masonry'
-				});
-				$('.masonry-grid-fitrows').isotope({
-					itemSelector: '.masonry-grid-item',
-					layoutMode: 'fitRows'
-				});
-				$('.isotope-container').fadeIn();
-				var $container = $('.isotope-container').isotope({
-					itemSelector: '.isotope-item',
-					layoutMode: 'masonry',
-					transitionDuration: '0.6s',
-					filter: "*"
-				});
-				// filter items on button click
-				$('.filters').on( 'click', 'ul.nav li a', function() {
-					var filterValue = $(this).attr('data-filter');
-					$(".filters").find("li.active").removeClass("active");
-					$(this).parent().addClass("active");
-					$container.isotope({ filter: filterValue });
-					return false;
-				});
-			});
-		};
+		
 
 		//hc-tabs
 		//-----------------------------------------------
@@ -222,28 +85,7 @@
 
 		
 
-		// Magnific popup
-		//-----------------------------------------------
-		if (($(".popup-img").length > 0) || ($(".popup-iframe").length > 0) || ($(".popup-img-single").length > 0)) { 		
-			$(".popup-img").magnificPopup({
-				type:"image",
-				gallery: {
-					enabled: true,
-				}
-			});
-			$(".popup-img-single").magnificPopup({
-				type:"image",
-				gallery: {
-					enabled: false,
-				}
-			});
-			$('.popup-iframe').magnificPopup({
-				disableOn: 700,
-				type: 'iframe',
-				preloader: false,
-				fixedContentPos: false
-			});
-		};		
+		
 
 		// Fixed header
 		//-----------------------------------------------
@@ -276,32 +118,7 @@
 			};
 		});
 
-		// Sharrre plugin
-		//-----------------------------------------------
-		if ($('#share').length>0) {
-			$('#share').sharrre({
-				share: {
-					twitter: true,
-					facebook: true,
-					googlePlus: true
-				},
-				template: '<ul class="social-links clearfix"><li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li><li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li><li class="googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li></ul>',
-				enableHover: false,
-				enableTracking: true,
-				render: function(api, options){
-					$(api.element).on('click', '.twitter a', function() {
-						api.openPopup('twitter');
-					});
-					$(api.element).on('click', '.facebook a', function() {
-						api.openPopup('facebook');
-					});
-					$(api.element).on('click', '.googleplus a', function() {
-						api.openPopup('googlePlus');
-					});
-				}
-			});
-		};
-
+		
 		
 
 		
@@ -366,54 +183,7 @@
 			}, 100)
 		}
 
-		//Smooth Scroll
-		//-----------------------------------------------
-		if ($(".smooth-scroll").length>0) {
-			if($(".header.fixed").length>0) {
-				$('.smooth-scroll a[href*=#]:not([href=#]), a[href*=#]:not([href=#]).smooth-scroll').click(function() {
-					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-						var target = $(this.hash);
-						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-						if (target.length) {
-							$('html,body').animate({
-								scrollTop: target.offset().top-65
-							}, 1000);
-							return false;
-						}
-					}
-				});
-			} else {
-				$('.smooth-scroll a[href*=#]:not([href=#]), a[href*=#]:not([href=#]).smooth-scroll').click(function() {
-					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-						var target = $(this.hash);
-						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-						if (target.length) {
-							$('html,body').animate({
-								scrollTop: target.offset().top
-							}, 1000);
-							return false;
-						}
-					}
-				});
-			}
-		}
-
-		//Scroll Spy
-		//-----------------------------------------------
-		if($(".scrollspy").length>0) {
-			$("body").addClass("scroll-spy");
-			if($(".fixed.header").length>0) {
-				$('body').scrollspy({ 
-					target: '.scrollspy',
-					offset: 85
-				});
-			} else {
-				$('body').scrollspy({ 
-					target: '.scrollspy',
-					offset: 20
-				});
-			}
-		}
+		
 
 		
 
@@ -431,13 +201,7 @@
 			$("body,html").animate({scrollTop:0},800);
 		});
 		
-		//Modal
-		//-----------------------------------------------
-		if($(".modal").length>0) {
-			$(".modal").each(function() {
-				$(".modal").prependTo( "body" );
-			});
-		}
+		
 		
 		
 

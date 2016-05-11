@@ -12,11 +12,12 @@ using System.IO;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Webdiyer.WebControls.Mvc;
+using DneWebSite.Helper;
 
 namespace DneWebSite.Controllers
 {
 
-    [Authorize]
+    [RoleAuthorize(Roles ="Post")]
     public class PostsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
