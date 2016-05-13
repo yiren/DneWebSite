@@ -17,7 +17,22 @@
 			$("body").removeClass("no-trans");
 		});
 		
-		
+		var delay=0, setTimeoutConst;
+		if ((Modernizr.mq('only all and (min-width: 768px)') && !Modernizr.touch) || $("html.ie8").length>0) {
+			$('.main-navigation .navbar-nav>li.dropdown, .main-navigation li.dropdown>ul>li.dropdown').hover(
+			function(){
+				var $this = $(this);
+				setTimeoutConst = setTimeout(function(){
+					$this.addClass('open').slideDown();
+					$this.find('.dropdown-toggle').addClass('disabled');
+				}, delay);
+
+			},	function(){ 
+				clearTimeout(setTimeoutConst );
+				$(this).removeClass('open');
+				$(this).find('.dropdown-toggle').removeClass('disabled');
+			});
+		};
 
 		
 		

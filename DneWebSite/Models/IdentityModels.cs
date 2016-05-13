@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using DneWebSite.Models.common;
 
 namespace DneWebSite.Models
 {
@@ -27,7 +28,7 @@ namespace DneWebSite.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("IdentityDb", throwIfV1Schema: false)
+            : base(ConnectionStrings.baseConnectionString("IdentityData"), throwIfV1Schema: false)
         {
         }
 

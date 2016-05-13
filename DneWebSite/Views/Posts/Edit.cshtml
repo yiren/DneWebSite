@@ -57,9 +57,9 @@
                     <ul>
                         @foreach (var item in Model.PostFiles)
                         {
-                            <li>
+                            <li class="">
                                 <a href="/posts/download/?p=@(item.FileId + item.Extension)&d=@item.FileName">@item.FileName</a>
-                                <a href="javascript:void(0);" data-id="@item.FileId" class="deleteItem">X</a>
+                                <a href="javascript:void(0);" data-id="@item.FileId" class="deleteItem"><span class="fa fa-remove"></span></a>
                             </li>
                         }
                     </ul>

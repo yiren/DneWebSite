@@ -13,11 +13,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Webdiyer.WebControls.Mvc;
 using DneWebSite.Helper;
+using System.Security.Permissions;
 
 namespace DneWebSite.Controllers
 {
 
-    [RoleAuthorize(Roles ="Post")]
+    [ClaimsAuthorize(ClaimType ="role", ClaimValue ="Post")]
     public class PostsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
@@ -46,6 +47,7 @@ namespace DneWebSite.Controllers
         // GET: Posts
         public ActionResult Index(int id=1)
         {
+            var principal = System.Web.HttpContext.Current.User as System.Security.Claims.ClaimsPrincipal;
             var user = UserManager.FindByName(User.Identity.Name);
             var posts = db.Posts.AsNoTracking().Where(p => p.CreatedBy.Equals(user.FullName)).OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
             if (Request.IsAjaxRequest())
@@ -135,6 +137,7 @@ namespace DneWebSite.Controllers
         // GET: Posts/Edit/5
         public ActionResult Edit(Guid? id)
         {
+            var principal = System.Web.HttpContext.Current.User as System.Security.Claims.ClaimsPrincipal;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

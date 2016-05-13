@@ -63,7 +63,7 @@
                     vm.gridApi = gridApi;
                     gridApi.selection.on.rowSelectionChanged($scope, function (row) {
                         openDetailModal(row);
-                        console.log(row);
+                        //console.log(row);
                     });
                 },
                 columnDefs: colDef

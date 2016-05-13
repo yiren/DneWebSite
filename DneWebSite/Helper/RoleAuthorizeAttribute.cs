@@ -10,7 +10,7 @@ namespace DneWebSite.Helper
 {
     class RoleAuthorizeAttribute:AuthorizeAttribute
     {
-
+        
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             if (!filterContext.HttpContext.Request.IsAuthenticated)

@@ -28,7 +28,7 @@ $(document).ready(function(){
 				soloArrowRightHOffset:20,
 				soloArrowRightVOffset:0,
 
-				fullWidth:"on",
+				fullWidth:"off",
 				fullScreen: "on",
                 fullScreenAlignForce:"on",
                 
@@ -40,7 +40,7 @@ $(document).ready(function(){
 				stopAtSlide:-1,
 				onHoverStop: "off",
 
-				shuffle:"on",
+				shuffle:"off",
 				
 				autoHeight:"off",						
 				forceFullWidth:"on",						

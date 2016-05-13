@@ -1,15 +1,27 @@
 (function(){
-	'use strict'
+    'use strict'
 
-	angular.module('main')
+    angular.module('main')
 		.controller('modalCtrl', ['$uibModalInstance','$log','data',calModal]);
 
-	function calModal($uibModalInstance, $log, data){
+    function calModal($uibModalInstance, $log, data){
 
 
-		//var start=moment(event.start).toDate();
+        //var start=moment(event.start).toDate();
+        //console.log(data.start.format('YYYY-MM-DD'));
+        //console.log(data);
+        if (data.start !== undefined || data.end !== undefined) {
+            if (data.allDay === true) {
+                data.start=data.start.format('YYYY-MM-DD');
+                data.end=data.end.format('YYYY-MM-DD');
+            } else {
+                data.start=data.start.format('HH:mm');
+                data.end=data.end.format('HH:mm');
+            }
+            
 
-		
+            
+        }
 		//var datetimeConfig = {
 		//	datepickerOptions:{
 		//		showWeeks:false,
@@ -35,9 +47,8 @@
 		//	e.preventDefault();
 		//	e.stopPropagation();
 		//	this.isOpen2=true;
-		//}
+        //}
 
-	    
 		var save=function(){
 
 			$uibModalInstance.close();
@@ -46,7 +57,6 @@
 		var cancel=function(){
 			$uibModalInstance.dismiss('cancel');
 		};
-
 
 		angular.extend(this, {
 			save:save,

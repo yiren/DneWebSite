@@ -12,7 +12,7 @@ namespace DneWebSite.Models.BulltinRespository
         private BulletinDbContext db=new BulletinDbContext();
 
   
-
+        //For WebAPI Use Only
         public IQueryable GetPosts()
         {
             var data = from p in db.Posts
@@ -31,13 +31,6 @@ namespace DneWebSite.Models.BulltinRespository
                 };
 
             return data;
-        }
-
-        public bool AddPost(Post post) 
-        {
-
-
-            return false;
         }
     }
 }
