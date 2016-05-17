@@ -79,12 +79,14 @@ namespace DneWebSite.Controllers
             #region AD Authentication
             using (var context = new PrincipalContext(ContextType.Domain, "dnesvr02.d027.com.tw"))
             {
+                //透過AD檢查帳號
                 isAuthenticated= context.ValidateCredentials(model.UserName, model.Password);
                 if (isAuthenticated == false)
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "開機帳號或密碼錯誤");
                     return View(model);
                 }
+                //查詢DB有無帳號
                 ApplicationUser user = UserManager.FindByName(model.UserName);
                 if (user == null)
                 {
@@ -92,8 +94,14 @@ namespace DneWebSite.Controllers
 
                     using (var searcher = new PrincipalSearcher())
                     {
+
                         searcher.QueryFilter = new UserPrincipal(context, model.UserName, model.Password, true);
                         UserPrincipal result = (UserPrincipal)searcher.FindOne();
+                        if (result.Enabled == false)
+                        {
+                            ModelState.AddModelError("", "此帳號已停用");
+                            return View(model);
+                        }
                         user.Email = result.EmailAddress;
                         user.EmailConfirmed = true;
                         user.UserName = result.SamAccountName;
@@ -128,8 +136,9 @@ namespace DneWebSite.Controllers
                             case "N":
                                 user.Section = "核析組";
                                 break;
-                            
-                                
+                            case "H":
+                                user.Section = "AE人力";
+                                break;
                             default:
                                 user.Section = "處長室";
                                 break;
@@ -161,6 +170,24 @@ namespace DneWebSite.Controllers
                         return View(model);
                     }
                 }
+                else
+                {
+                    //檢查使用者部門是否有更換
+                    using (var searcher = new PrincipalSearcher())
+                    {
+
+                        searcher.QueryFilter = new UserPrincipal(context, model.UserName, model.Password, true);
+                        UserPrincipal result = (UserPrincipal)searcher.FindOne();
+                        //檢查全名，若有更動，則更新
+                        if (!user.FullName.Equals(result.DisplayName))
+                        {
+                            user.FullName = result.DisplayName;
+                        }
+                        
+                    }
+                }
+                        
+               
                 
                 
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -514,8 +541,9 @@ namespace DneWebSite.Controllers
         
         public ActionResult EasyLogOff()
         {
+            var user = UserManager.FindByName(User.Identity.Name);
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return View(user);
         }
         //
         // GET: /Account/ExternalLoginFailure

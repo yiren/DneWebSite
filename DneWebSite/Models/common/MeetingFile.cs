@@ -18,7 +18,7 @@ namespace DneWebSite.Models.common
         public string Extension { get; set; }
         //public Guid PostId { get; set; }
         //public virtual Post Post { get; set; }
-        public int MeetingId { get; set; }
-        public virtual DneMeeting Meeting { get; set; }
+        public Guid MeetingId { get; set; }
+        public virtual Meeting Meeting { get; set; }
     }
 }

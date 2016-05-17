@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,25 @@ namespace DneWebSite.Controllers
 {
     public class ErrorController : Controller
     {
+        private ApplicationUserManager _userManager;
+
+        public ErrorController(ApplicationUserManager userManager)
+        {
+
+            UserManager = userManager;
+        }
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        // GET: Posts
         // GET: Error
         public ActionResult Index()
         {
@@ -23,8 +44,9 @@ namespace DneWebSite.Controllers
 
         public ActionResult NoPermission()
         {
+            var user = UserManager.FindByName(User.Identity.Name);
             ViewBag.Message = "您沒有足夠的權限，請洽系統管理員。";
-            return View();
+            return View(user);
         }
 
         public ActionResult InternalError()

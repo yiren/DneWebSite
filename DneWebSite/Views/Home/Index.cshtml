@@ -1,6 +1,6 @@
 ﻿
 
-<div ui-view></div>
+<div ui-view class="anim-in-out anim-swap"></div>
 
 
 @section scripts{
@@ -13,9 +13,10 @@
     
     <script src="~/client/controllers/common/modalController.js"></script>
 
-    <script src="~/client/controllers/calendar/datetimeController.js"></script>
+    
     <script src="~/client/controllers/RSSFeed/feedController.js"></script>
-    <script src="~/client/controllers/uiGridController.js"></script>
+    <script src="~/client/controllers/postGridController.js"></script>
+    <script src="~/client/controllers/meetingGridController.js"></script>
 
 
 
@@ -23,6 +24,5 @@
     <script src="~/client/directives/directives.js"></script>
 
     <!-- Servicess -->
-    <script src="~/client/services/calService.js"></script>
     <script src="~/client/services/service.js"></script>
 }

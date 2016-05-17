@@ -37,6 +37,8 @@ namespace DneWebSite.Models.bulletin
         [DisplayName("類別")]
         public Category Category { get; set; }
 
+        public Boolean? IsDeleted { get; set; }
+
         [JsonIgnore]
         public virtual ICollection<PostFile> PostFiles{ get; set; }
     }

@@ -16,6 +16,7 @@ namespace DneWebSite.Models.BulltinRespository
         public IQueryable GetPosts()
         {
             var data = from p in db.Posts
+                       where p.IsDeleted !=true
                        orderby p.PostDate descending 
                 select new PostGridViewModel()
                 {

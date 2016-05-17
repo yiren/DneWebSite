@@ -2,8 +2,8 @@
 	'use strict'
 
 	angular.module('main')
-		.controller('calViewCtrl', ['$uibModal', 'calService',calendar]);
-
+		.controller('calViewCtrl', ['$uibModal', calendar]);
+    
 
 	function calendar($modal){
 

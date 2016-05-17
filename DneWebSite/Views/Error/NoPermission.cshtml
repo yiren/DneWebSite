@@ -1,4 +1,4 @@
-﻿
+﻿@model DneWebSite.Models.ApplicationUser
 @{
     
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -17,6 +17,8 @@
     </div>
 </div>
 <div class="container">
-    <h2>@ViewBag.Message</h2>
+    <h1>@Model.FullName 您好</h1>
+    <h2 class="text-warning">@ViewBag.Message</h2>
+    <a class="btn btn-primary" href="/account/easylogoff">登出</a>
 </div>
 

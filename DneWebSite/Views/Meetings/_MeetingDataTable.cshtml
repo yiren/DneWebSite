@@ -1,0 +1,44 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<DneWebSite.Models.dneMeeting.Meeting>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetingTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedBy)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.PostDate
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeetingTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedBy)
+                </td>
+                
+
+                <td>
+                        <a href="@Url.Action("Edit", new { id=item.MeetingId})" class="btn btn-default">編輯</a>
+                        <a href="@Url.Action("Delete", new { id=item.MeetingId})" class="btn btn-danger">刪除</a>
+                    
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

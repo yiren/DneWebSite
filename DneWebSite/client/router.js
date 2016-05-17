@@ -9,7 +9,7 @@
      			// default route
         		$urlRouterProvider.otherwise('/');
 
-        		$stateProvider
+                $stateProvider
         			.state('home',{
         				url:'/',
         				templateUrl:'/../client/templates/home/body.html',

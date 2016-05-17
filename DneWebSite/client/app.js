@@ -10,7 +10,8 @@
         'ui.grid.resizeColumns',
         'ui.grid.selection',
         'duScroll',
-        'feeds'
+        'feeds',
+        'anim-in-out'
     ])
     .value('duScrollDuration', 2000)
     .value('duScrollOffset',40);

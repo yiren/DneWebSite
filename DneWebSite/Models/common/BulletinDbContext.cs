@@ -23,7 +23,7 @@ namespace DneWebSite.Models.bulletin
 
         
         
-        public DbSet<DneMeeting> DneMeetings { get; set; }
+        public DbSet<Meeting> Meetings { get; set; }
         public DbSet<MeetingFile> FileDetails { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostFile> PostFiles { get; set; }

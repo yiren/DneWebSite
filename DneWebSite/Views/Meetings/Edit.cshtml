@@ -1,0 +1,94 @@
+﻿@model DneWebSite.Models.dneMeeting.Meeting
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+@using (Html.BeginForm("Create", "Meetings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>編輯會議紀錄</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MeetingId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MeetingTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MeetingTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MeetingTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostedBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostedBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+                @Html.Label("檔案", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" id="file" name="file" multiple="multiple" />
+                    <ul>
+                        @foreach (var item in Model.MeetingFiles)
+                        {
+                            <li class="">
+                                <a href="/meetings/download/?p=@(item.FileId + item.Extension)&d=@item.FileName">@item.FileName</a>
+                                <a href="javascript:void(0);" data-id="@item.FileId" class="deleteItem"><span class="fa fa-remove"></span></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="更新" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+</div>
+
+<div>
+    @Html.ActionLink("回會議紀錄清單", "Index")
+</div>
+@section Scripts{
+    <script>
+    $('.deleteItem').click(function (e) {
+           e.preventDefault();
+           var $ctrl = $(this);
+           if (confirm('您確定要刪除檔案嗎?')) {
+               $.ajax({
+                   url: '@Url.Action("DeleteFile", "Posts")',
+                type: 'POST',
+                data: { fileId: $(this).data('id') }
+                }).done(function (data) {
+                if (data.Result == "OK") {
+                $ctrl.closest('li').remove();
+                }
+                else if (data.Result.Message) {
+                alert(data.Result.Message);
+                }
+                }).fail(function () {
+                alert("伺服器或是您操作有問題，請洽系統管理原");
+                })
+
+                }
+    });
+    </script>
+}

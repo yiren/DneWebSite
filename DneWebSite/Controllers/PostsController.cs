@@ -26,7 +26,7 @@ namespace DneWebSite.Controllers
 
         public PostsController()
         {
-
+            
         }
         public PostsController(ApplicationUserManager userManager)
         {
@@ -47,9 +47,10 @@ namespace DneWebSite.Controllers
         // GET: Posts
         public ActionResult Index(int id=1)
         {
-            var principal = System.Web.HttpContext.Current.User as System.Security.Claims.ClaimsPrincipal;
+            
             var user = UserManager.FindByName(User.Identity.Name);
-            var posts = db.Posts.AsNoTracking().Where(p => p.CreatedBy.Equals(user.FullName)).OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
+            ViewBag.User = user.FullName;
+            var posts = db.Posts.AsNoTracking().Where(p => p.CreatedBy.Equals(user.FullName)&& p.IsDeleted!=true).OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
             if (Request.IsAjaxRequest())
             {
                 return PartialView("_PostList", posts);
@@ -59,27 +60,11 @@ namespace DneWebSite.Controllers
 
         
 
-        // GET: Posts/Details/5
-        public ActionResult Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Post post = db.Posts.Find(id);
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
-            return View(post);
-        }
 
         // GET: Posts/Create
         public ActionResult Create()
         {
-            var user = (System.Security.Claims.ClaimsIdentity)User.Identity;
             
-
             return View();
         }
 
@@ -126,6 +111,7 @@ namespace DneWebSite.Controllers
                 post.CreatedBy = user.FullName;
                 post.LastModifiedDate= DateTime.Now.ToString("yyyy/MM/dd");
                 post.ModifiedBy = user.FullName;
+                post.IsDeleted = false;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -137,7 +123,7 @@ namespace DneWebSite.Controllers
         // GET: Posts/Edit/5
         public ActionResult Edit(Guid? id)
         {
-            var principal = System.Web.HttpContext.Current.User as System.Security.Claims.ClaimsPrincipal;
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -222,7 +208,7 @@ namespace DneWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Post post = db.Posts.Include(p => p.PostFiles).SingleOrDefault(p => p.PostId == id);
+            Post post = db.Posts.Find(id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -230,35 +216,9 @@ namespace DneWebSite.Controllers
             var user = UserManager.FindByName(User.Identity.Name);
             if (user.FullName.Equals(post.CreatedBy))
             {
-                try
-                {
-                    foreach (var file in post.PostFiles)
-                    {
-
-                        PostFile fileDetail = db.PostFiles.Find(file.FileId);
-                        if (fileDetail == null)
-                        {
-                            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                        }
-
-                        //Remove from database
-                        db.PostFiles.Remove(fileDetail);
-                        db.SaveChanges();
-
-                        //Delete file from the file system
-                        var path = Path.Combine(Server.MapPath("~/upload/bulltin/post"), fileDetail.FileId + fileDetail.Extension);
-                        if (System.IO.File.Exists(path))
-                        {
-                            System.IO.File.Delete(path);
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-                }
-                db.Posts.Remove(post);
+                post.IsDeleted = true;
+                post.LastModifiedDate= DateTime.Now.ToString("yyyy/MM/dd");
+                post.ModifiedBy = user.FullName;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }else
@@ -269,6 +229,20 @@ namespace DneWebSite.Controllers
 
             
         }
+
+        [ClaimsAuthorize(ClaimType = "role", ClaimValue = "PostAdmin")]
+        public ActionResult Manage(int id = 1)
+        {
+
+            var meetings = db.Posts.AsNoTracking().Where(m => m.IsDeleted != true).OrderByDescending(m => m.PostDate).ToPagedList(id, 5);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_PostList", meetings);
+            }
+            return View("Index", meetings);
+        }
+
+
 
         public FileResult Download(string p, string d)
         {

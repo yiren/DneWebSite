@@ -48,11 +48,11 @@ namespace DneWebSite.Models
 
     public class LdapLoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="請輸入開機帳號")]
         [Display(Name = "開機帳號")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "請輸入密碼")]
         [DataType(DataType.Password)]
         [Display(Name = "密碼")]
         public string Password { get; set; }

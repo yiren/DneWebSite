@@ -235,18 +235,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DneMeetingController.cs" />
+    <Compile Include="Controllers\MeetingsDataController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MeetingsController.cs" />
     <Compile Include="Controllers\PostsDataController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
-    <Compile Include="Controllers\PostsV2Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\ClaimsAuthorizeAttribute.cs" />
-    <Compile Include="Helper\RoleAuthorizeAttribute.cs" />
     <Compile Include="MigrationsBulltin\201604200538099_initial.cs" />
     <Compile Include="MigrationsBulltin\201604200538099_initial.Designer.cs">
       <DependentUpon>201604200538099_initial.cs</DependentUpon>
@@ -262,6 +261,26 @@
     <Compile Include="MigrationsBulltin\201604280826549_AddDisplayName.cs" />
     <Compile Include="MigrationsBulltin\201604280826549_AddDisplayName.Designer.cs">
       <DependentUpon>201604280826549_AddDisplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201605130642158_addIsDeleted.cs" />
+    <Compile Include="MigrationsBulltin\201605130642158_addIsDeleted.Designer.cs">
+      <DependentUpon>201605130642158_addIsDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201605130729457_changeMeetingIdToGuid.cs" />
+    <Compile Include="MigrationsBulltin\201605130729457_changeMeetingIdToGuid.Designer.cs">
+      <DependentUpon>201605130729457_changeMeetingIdToGuid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201605130739494_changeTableName.cs" />
+    <Compile Include="MigrationsBulltin\201605130739494_changeTableName.Designer.cs">
+      <DependentUpon>201605130739494_changeTableName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201605130744391_changeDatetimeToString.cs" />
+    <Compile Include="MigrationsBulltin\201605130744391_changeDatetimeToString.Designer.cs">
+      <DependentUpon>201605130744391_changeDatetimeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201605160123362_addlLastModifiedAttr.cs" />
+    <Compile Include="MigrationsBulltin\201605160123362_addlLastModifiedAttr.Designer.cs">
+      <DependentUpon>201605160123362_addlLastModifiedAttr.cs</DependentUpon>
     </Compile>
     <Compile Include="MigrationsBulltin\Configuration.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.cs" />
@@ -279,10 +298,12 @@
     <Compile Include="Models\common\MeetingFile.cs" />
     <Compile Include="Models\bulletin\Post.cs" />
     <Compile Include="Models\common\PostFile.cs" />
-    <Compile Include="Models\dneMeeting\DneMeeting.cs" />
+    <Compile Include="Models\dneMeeting\Meeting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MeetingRespository\MeetingRepository.cs" />
     <Compile Include="Models\PostRespository\PostsRespository.cs" />
+    <Compile Include="Models\ViewModel\MeetingGridViewModel.cs" />
     <Compile Include="Models\ViewModel\PostGridViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -293,6 +314,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="client\controllers\meetingGridController.js" />
+    <Content Include="client\controllers\postGridController.js" />
+    <Content Include="client\templates\home\coreduty.html" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitattributes" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitignore" />
     <Content Include="plugins\bowerPackage\angular-feeds\app\angular-feeds\angular-feeds.css" />
@@ -593,6 +617,8 @@
     <Content Include="plugins\bowerPackage\angular-ui-grid\ui-grid.min.css" />
     <Content Include="plugins\bowerPackage\angular-ui-grid\ui-grid.min.js" />
     <Content Include="plugins\bowerPackage\angular-ui-grid\ui-grid.svg" />
+    <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\anim-in-out.js" />
+    <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\css\anim-in-out.css" />
     <Content Include="plugins\bowerPackage\bootstrap-additions\.gitignore" />
     <Content Include="plugins\bowerPackage\bootstrap-additions\dist\bootstrap-additions.css" />
     <Content Include="plugins\bowerPackage\bootstrap-additions\dist\bootstrap-additions.min.css" />
@@ -669,7 +695,6 @@
     <Content Include="plugins\bowerPackage\typed.js\LICENSE.txt" />
     <Content Include="plugins\bowerPackage\typed.js\main.css" />
     <Content Include="client\controllers\RSSFeed\feedController.js" />
-    <Content Include="client\controllers\uiGridController.js" />
     <Content Include="client\templates\engineering\lungmen\lungmen.html" />
     <Content Include="client\templates\home\bulltin.html" />
     <Content Include="client\templates\home\calendar.html" />
@@ -4159,6 +4184,9 @@
     <Content Include="plugins\template\fontello\font\fontello.eot" />
     <Content Include="plugins\template\fontello\font\fontello.ttf" />
     <Content Include="plugins\template\fontello\font\fontello.woff" />
+    <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\.bower.json" />
+    <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\bower.json" />
+    <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\scss\anim-in-out.scss" />
     <None Include="Properties\PublishProfiles\10.20.1.3.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\LCTSTest.pubxml" />
@@ -4210,9 +4238,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\DneMeeting\Create.cshtml" />
-    <Content Include="Views\DneMeeting\Edit.cshtml" />
-    <Content Include="Views\DneMeeting\Index.cshtml" />
     <Content Include="Views\Engineering\LungmenIntro.cshtml" />
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Delete.cshtml" />
@@ -4227,10 +4252,16 @@
     <Content Include="Views\Error\InternalError.cshtml" />
     <Content Include="Views\Shared\_Layoutv1.cshtml" />
     <Content Include="Views\Home\IndexV1.cshtml" />
+    <Content Include="Views\Account\EasyLogOff.cshtml" />
+    <Content Include="Views\Meetings\Create.cshtml" />
+    <Content Include="Views\Meetings\Delete.cshtml" />
+    <Content Include="Views\Meetings\Edit.cshtml" />
+    <Content Include="Views\Meetings\Index.cshtml" />
+    <Content Include="Views\Meetings\_MeetingDataTable.cshtml" />
+    <Content Include="Views\Meetings\_MeetingList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\MeetingRespository\" />
     <Folder Include="upload\bulltin\dnemeeting\" />
     <Folder Include="upload\bulltin\post\" />
   </ItemGroup>
@@ -4251,6 +4282,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsBulltin\201604280826549_AddDisplayName.resx">
       <DependentUpon>201604280826549_AddDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201605130642158_addIsDeleted.resx">
+      <DependentUpon>201605130642158_addIsDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201605130729457_changeMeetingIdToGuid.resx">
+      <DependentUpon>201605130729457_changeMeetingIdToGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201605130739494_changeTableName.resx">
+      <DependentUpon>201605130739494_changeTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201605130744391_changeDatetimeToString.resx">
+      <DependentUpon>201605130744391_changeDatetimeToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201605160123362_addlLastModifiedAttr.resx">
+      <DependentUpon>201605160123362_addlLastModifiedAttr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsIdentity\201604260324202_InitialCreate.resx">
       <DependentUpon>201604260324202_InitialCreate.cs</DependentUpon>

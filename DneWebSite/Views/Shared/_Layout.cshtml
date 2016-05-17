@@ -29,7 +29,8 @@
 
     <link href="~/css/animations.css" rel="stylesheet">
 
-
+    <!-- TimeLine CSS -->
+    <link href="~/css/shortcode_timeline1.css" rel="stylesheet">
 
     <!-- FullCalendar -->
 
@@ -544,7 +545,10 @@
                                     <ul class="nav nav-pills nav-stacked">
                                         <li><a href="http://portal.taipower.com.tw/wps/portal/!ut/p/.scr/Login">單一入口網站</a></li>
                                         <li><a ng-href="http://{{h.host}}/Aa/tel-mail/dnetel.htm" target="_blank">電話簿</a></li>
-
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a href="/account/easylogoff" target="_blank">登出</a></li>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
@@ -646,7 +650,10 @@
     <!-- UI Grid -->
     <script src="~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.js"></script>
 
-    <!-- Angular Reader -->
+    <!-- Page Animation Grid -->
+    <script src="~/plugins/bowerPackage/angular-ui-router-anim-in-out/anim-in-out.js"></script>
+
+    <!-- Angular RSS Reader -->
     <script src="~/plugins/bowerPackage/angular-feeds/app/angular-feeds/angular-feeds.min.js"></script>
 
     <!-- Angular ScrollSpy -->

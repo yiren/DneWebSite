@@ -1,0 +1,44 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<DneWebSite.Models.dneMeeting.Meeting>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home pr-10"></i><a href="/">首頁</a></li>
+                    <li class="active">會議紀錄管理</li>
+                </ol>
+            </div>
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+
+
+    <h2>會議紀錄清單</h2>
+
+    <div>
+        <a href="@Url.Action("Create")" class="btn btn-info">新增會議紀錄</a>
+        <a class="btn btn-primary pull-right" href="/account/easylogoff">登出</a>
+    </div>
+    
+
+
+    <div id="meetings">
+    @Html.Partial("_MeetingList", Model)
+    </div>
+</div>
+
+
+@{Html.RegisterMvcPagerScriptResource();}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

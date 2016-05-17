@@ -9,7 +9,7 @@
     @using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-        <h2>新增佈告 @User.Identity.Name</h2>
+        <h2>新增佈告</h2>
         <div class="form-horizontal">
             <h4>佈告表單</h4>
             <hr />

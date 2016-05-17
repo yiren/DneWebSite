@@ -1,0 +1,53 @@
+﻿@model DneWebSite.Models.dneMeeting.Meeting
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<
+<div class="container">
+    <<h2>刪除佈告</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedBy)
+        </dd>
+        <dt>
+            檔案/附件
+        </dt>
+        @foreach (var file in Model.MeetingFiles)
+        {
+            <dd><a href="/meetings/download/?p=@(file.FileId + file.Extension)&d=@file.FileName">@file.FileName</a></dd>
+        }
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="確認刪除" class="btn btn-default" /> |
+            @Html.ActionLink("回到會議紀錄管理清單", "Index")
+        </div>
+    }
+</div>
