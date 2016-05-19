@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-10">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home pr-10"></i><a href="/">首頁</a></li>
+                    <li><i class="fa fa-home pr-10"></i><a href="/#home">首頁</a></li>
                     <li class="active">公佈欄管理</li>
                 </ol>
             </div>
@@ -28,7 +28,7 @@
 
     <div>
         <a href="@Url.Action("Create")" class="btn btn-info">新增佈告</a>
-        <a class="btn btn-primary pull-right" href="/account/easylogoff">登出</a>
+        <a class="btn btn-primary pull-right" href="/account/easylogoff">@ViewBag.User 登出</a>
     </div>
 
     <div id="posts">

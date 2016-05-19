@@ -14,7 +14,7 @@
         
         <p>附件下載:</p>
         <div ng-repeat="a in m.data.entity.PostFiles">
-            <a ng-href="../../../upload/bulltin/post/{{a.FileId+a.Extension}}">{{a.FileName}}</a>
+            <a ng-href="/posts/download/?p={{a.FileId+a.Extension}}+&d={{a.FileName}}">{{a.FileName}} <span class="fa fa-download"></span></a>
         </div>
         <span class="pull-left">修改者:{{m.data.entity.ModifiedBy}}</span>
         <span class="pull-right">最後修改日期:{{m.data.entity.LastModifiedDate}}</span>

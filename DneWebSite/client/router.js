@@ -10,20 +10,14 @@
         		$urlRouterProvider.otherwise('/');
 
                 $stateProvider
-        			.state('home',{
+        			.state('cover',{
         				url:'/',
-        				templateUrl:'/../client/templates/home/body.html',
+        				templateUrl:'/../client/templates/home/imageSilderFull.html',
         				controller:'homeCtrl'
         			})
-
-                    .state('v1',{
-                        url:'/v1',
-                        templateUrl:'/../client/templates/home/bodyv1.html',
-                        controller:'homeCtrl'
-                    })
-                    .state('v2',{
-                        url:'/v2',
-                        templateUrl:'/../client/templates/home/bodyv2.html',
+                    .state('home',{
+                        url:'/home',
+                        templateUrl:'/../client/templates/home/body.html',
                         controller:'homeCtrl'
                     })
                     .state('sitemap',{

@@ -7,7 +7,7 @@
 
 
 <div class="container">
-@using (Html.BeginForm("Create", "Meetings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "Meetings", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -74,7 +74,7 @@
            var $ctrl = $(this);
            if (confirm('您確定要刪除檔案嗎?')) {
                $.ajax({
-                   url: '@Url.Action("DeleteFile", "Posts")',
+                   url: '@Url.Action("DeleteFile", "Meetings")',
                 type: 'POST',
                 data: { fileId: $(this).data('id') }
                 }).done(function (data) {

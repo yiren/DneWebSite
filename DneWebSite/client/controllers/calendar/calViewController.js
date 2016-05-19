@@ -4,7 +4,7 @@
 	angular.module('main')
 		.controller('calViewCtrl', ['$uibModal', calendar]);
     
-
+    //行事曆相關設定
 	function calendar($modal){
 
 		//Modal

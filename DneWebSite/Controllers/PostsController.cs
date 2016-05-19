@@ -50,7 +50,9 @@ namespace DneWebSite.Controllers
             
             var user = UserManager.FindByName(User.Identity.Name);
             ViewBag.User = user.FullName;
+
             var posts = db.Posts.AsNoTracking().Where(p => p.CreatedBy.Equals(user.FullName)&& p.IsDeleted!=true).OrderByDescending(p => p.PostDate).ToPagedList(id, 5);
+            //分頁套件寫法
             if (Request.IsAjaxRequest())
             {
                 return PartialView("_PostList", posts);
@@ -76,7 +78,7 @@ namespace DneWebSite.Controllers
             
             if (ModelState.IsValid)
             {
-                
+                #region 檔案上傳資料庫更新及實體檔案存檔
                 List<PostFile> fileDetails = new List<PostFile>();
                 for (int i = 0; i < Request.Files.Count; i++)
                 {
@@ -105,6 +107,8 @@ namespace DneWebSite.Controllers
                     
                     //post.CreatedBy=
                 }
+                #endregion
+
                 var user = UserManager.FindByName(User.Identity.Name);
                 post.PostDate = DateTime.Now.ToString("yyyy/MM/dd");
                 post.PostId = Guid.NewGuid();
@@ -174,6 +178,8 @@ namespace DneWebSite.Controllers
                 }
                 var user = UserManager.FindByName(User.Identity.Name);
 
+
+                //設定佈告紀錄相關屬性
                 entry.PostId = post.PostId;
                 entry.Section = post.Section;
                 entry.Title = post.Title;
@@ -209,23 +215,19 @@ namespace DneWebSite.Controllers
         public ActionResult DeleteConfirmed(Guid id)
         {
             Post post = db.Posts.Find(id);
+
             if (post == null)
             {
                 return HttpNotFound();
             }
-            var user = UserManager.FindByName(User.Identity.Name);
-            if (user.FullName.Equals(post.CreatedBy))
-            {
-                post.IsDeleted = true;
-                post.LastModifiedDate= DateTime.Now.ToString("yyyy/MM/dd");
-                post.ModifiedBy = user.FullName;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }else
-            {
 
-                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
-            }
+            var user = UserManager.FindByName(User.Identity.Name);
+            post.IsDeleted = true;
+            post.LastModifiedDate= DateTime.Now.ToString("yyyy/MM/dd");
+            post.ModifiedBy = user.FullName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            
 
             
         }
@@ -243,13 +245,15 @@ namespace DneWebSite.Controllers
         }
 
 
-
+        [AllowAnonymous]
         public FileResult Download(string p, string d)
         {
             return File(Path.Combine(Server.MapPath("~/upload/bulltin/post"), p),
                 System.Net.Mime.MediaTypeNames.Application.Octet, d);
         }
 
+
+        //處理編輯頁面動態刪除附檔案
         [HttpPost]
         public JsonResult DeleteFile(string fileId)
         {

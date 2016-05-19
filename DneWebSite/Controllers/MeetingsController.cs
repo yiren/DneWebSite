@@ -18,7 +18,7 @@ using System.Security.Claims;
 
 namespace DneWebSite.Controllers
 {
-    [Authorize]
+    [ClaimsAuthorize(ClaimType ="role", ClaimValue ="Meeting")]
     public class MeetingsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
@@ -50,7 +50,6 @@ namespace DneWebSite.Controllers
         {
             var user = UserManager.FindByName(User.Identity.Name);
             ViewBag.User = user.FullName;
-            
             var meetings = db.Meetings.AsNoTracking().Where(m=>m.PostedBy.Equals(user.FullName)&& m.IsDeleted !=true).OrderByDescending(m => m.PostDate).ToPagedList(id, 5);
             if (Request.IsAjaxRequest())
             {
@@ -186,8 +185,11 @@ namespace DneWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
+            var user = UserManager.FindByName(User.Identity.Name);
             Meeting meeting = db.Meetings.Find(id);
             meeting.IsDeleted = true;
+            meeting.LastModifiedBy = user.FullName;
+            meeting.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
             db.SaveChanges();
             return RedirectToAction("Index");
         }

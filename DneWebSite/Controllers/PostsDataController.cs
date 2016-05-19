@@ -14,6 +14,7 @@ using DneWebSite.Models.BulltinRespository;
 
 namespace DneWebSite.Controllers
 {
+    //AngularJS取得資料End Point
     public class PostsDataController : ApiController
     {
         private PostsRespository _db=new PostsRespository();

@@ -14,6 +14,7 @@ using DneWebSite.Models.MeetingRespository;
 
 namespace DneWebSite.Controllers
 {
+    //AngularJS取得資料End Point
     public class MeetingsDataController : ApiController
     {
         private BulletinDbContext db = new BulletinDbContext();

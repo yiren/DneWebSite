@@ -209,7 +209,9 @@ File Description: Place here your custom CSS styles
 /*transparent header*/
 .header.transparent:not(.dark) .navbar-default .navbar-nav > li > a
  {
-    color:#ffffff;   
+    color:#0d8609;   
+    
+    text-shadow:1px 1px 1px #ffffff;
  }
 
 .header.transparent:not(.dark) .navbar-default .navbar-nav > li > a:hover,
@@ -217,9 +219,13 @@ File Description: Place here your custom CSS styles
 .header.transparent:not(.dark) .main-navigation .navbar-nav > .open > a:hover,
 .header.transparent:not(.dark) .main-navigation .navbar-nav > .open > a:focus
  {
-    color:#666666;   
+    color:#666666; 
+    
  }
 
+.content-margin{
+    margin-top:80px;
+}
 
 .object-visible .navbar-default .navbar-nav > li > a
 {

@@ -1,11 +1,12 @@
 ﻿(function() {
         'use strict';
-
+        //佈告欄
         angular.module('main')
             .controller('postGridCtrl', ['i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants', uiGrid]);
 
 
         function uiGrid(i18nService, $modal, $scope, $http, $log, uiGridConstants) {
+            //Two-Way Binding
             var vm = this;
 
             //彈跳視窗
@@ -33,10 +34,17 @@
                 //modalInstance.result.then(insertEvent(event));
             }
 
-          
+             //取得Database中佈告資料
+            $http.get('/api/postsdata/').then(suc, err);
+            function suc(res) {
+                vm.gridOptions.data = res.data;
+                
+            }
+            function err(err) {
+                
+            }
 
-
-            //ui-grid欄位設定
+            //ui-grid 欄位設定與後端資料繫結
             var colDef=[
                     { name: "日期", field: "PostDate", width: 120, enableColumnMenu: false },
                     {
@@ -49,7 +57,7 @@
 
             vm.searchTextToggle = "啟用";
 
-            //ui-grid的相關設定
+            //ui-grid的參數設定，進階設定可參考官網
             vm.gridOptions = {
                 enableFiltering:false,
                 enableColumnResizing:true,
@@ -58,12 +66,11 @@
                 paginationPageSizes: [25, 50, 75],
                 enableRowSelection: true,
                 enableRowHeaderSelection: false,
-                multiSelect:false,
+                multiSelect: false,
                 onRegisterApi: function (gridApi) {
                     //console.log(gridApi);
                     gridApi.selection.on.rowSelectionChanged($scope, function (row) {
                         openDetailModal(row);
-                        //console.log(row);
                     });    
 
                     vm.gridApi = gridApi;
@@ -74,17 +81,9 @@
             }
 
 
-            //取得Database中佈告資料
-            $http.get('/api/postsdata/').then(suc, err);
-            function suc(res) {
-                vm.gridOptions.data = res.data;
-                
-            }
-            function err(err) {
-                
-            }
+           
 
-
+            //Toggle搜尋
             vm.toggleFiltering = function () {
                 
                 vm.gridOptions.enableFiltering = !vm.gridOptions.enableFiltering;
@@ -93,8 +92,6 @@
                 } else {
                     vm.searchTextToggle = "啟用";
                 }
-
-
                 vm.gridApi.core.notifyDataChange(uiGridConstants.dataChange.COLUMN);
 
             };

@@ -1,0 +1,52 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<DneWebSite.Models.WANO.Item>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home pr-10"></i><a href="/#home">首頁</a></li>
+                    <li class="active">WANO事項</li>
+                </ol>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+
+
+    <h2>WANO追蹤事項清單</h2>
+
+    <div>
+        
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Action("Create")" class="btn btn-info">新增WANO追蹤事項</a>
+            <a class="btn btn-primary pull-right" href="/account/easylogoff">@ViewBag.User 登出</a>
+        }
+        else
+        {
+            <a href="/account/login?returnUrl=/wano" class="btn btn-primary pull-right">登入</a>
+        }
+        
+    </div>
+
+
+
+    <div id="wano">
+        @Html.Partial("_WanoList", Model)
+    </div>
+</div>
+
+
+@{Html.RegisterMvcPagerScriptResource();}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

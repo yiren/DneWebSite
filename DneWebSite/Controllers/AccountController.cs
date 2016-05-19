@@ -64,6 +64,8 @@ namespace DneWebSite.Controllers
             return View();
         }
 
+        
+
         //
         // POST: /Account/Login
         [HttpPost]
@@ -106,43 +108,8 @@ namespace DneWebSite.Controllers
                         user.EmailConfirmed = true;
                         user.UserName = result.SamAccountName;
                         user.FullName = result.DisplayName;
-                        var userSec = result.DisplayName.First().ToString();
-                        switch (userSec)
-                        {
-                            case "A":
-                                user.Section = "策劃組";
-                                break;
-                            case "B":
-                                user.Section = "PE_II";
-                                break;
-                            case "C":
-                                user.Section = "土木組";
-                                break;
-                            case "E":
-                                user.Section = "電氣組";
-                                break;
-                            case "J":
-                                user.Section = "儀控組";
-                                break;
-                            case "L":
-                                user.Section = "PE I";
-                                break;
-                            case "M":
-                                user.Section = "機械組";
-                                break;
-                            case "P":
-                                user.Section = "廠佈組";
-                                break;
-                            case "N":
-                                user.Section = "核析組";
-                                break;
-                            case "H":
-                                user.Section = "AE人力";
-                                break;
-                            default:
-                                user.Section = "處長室";
-                                break;
-                        }
+                        user.Section = GetUserSection(result);
+                        
 
 
                         //Console.WriteLine("UserName:" + result.DisplayName);
@@ -182,6 +149,8 @@ namespace DneWebSite.Controllers
                         if (!user.FullName.Equals(result.DisplayName))
                         {
                             user.FullName = result.DisplayName;
+                            user.Section = GetUserSection(result);
+                            UserManager.Update(user);
                         }
                         
                     }
@@ -196,12 +165,48 @@ namespace DneWebSite.Controllers
                 
             }
             #endregion
-
-           
-
-           
+  
         }
 
+        private string GetUserSection(UserPrincipal user)
+        {
+            //以使用者全名的第一個字母來區分組別
+            var userSec = user.DisplayName.First().ToString();
+            switch (userSec)
+            {
+                case "A":
+                    return "策劃組";
+                case "B":
+                    return "PE_II";
+                case "C":
+                    return "土木組";
+                    
+                case "E":
+                    return "電氣組";
+                    
+                case "J":
+                    return "儀控組";
+                    
+                case "L":
+                    return "PE I";
+                    
+                case "M":
+                    return "機械組";
+                    
+                case "P":
+                    return "廠佈組";
+                    
+                case "N":
+                    return "核析組";
+                    
+                case "H":
+                    return "AE人力";
+                    
+                default:
+                    return "處長室";
+                    
+            }
+        }
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

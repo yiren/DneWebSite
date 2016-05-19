@@ -1,34 +1,33 @@
 
-<div>  
+
+<div class="container">
     <!-- slideshow start -->
     <!-- ================ -->
-        <div class="row ">
+    <div class="row content-margin">
 
-            <div class="col-md-10">
-                <!-- slider revolution start -->
-                <!-- ================ -->
+        <div class="col-md-10  ">
+            <!-- slider revolution start -->
+            <!-- ================ -->
 
-                <div ng-include src="'client/templates/home/imageSilder.html'"></div>
-                <div class="section" style="margin-left:10px" ng-controller="calViewCtrl as c" id="calendar">
+            <div ng-include src="'client/templates/home/imageSilder.html'"></div>
+            <div class="section" style="margin-left:10px" ng-controller="calViewCtrl as c" id="calendar">
                     <h1 class="text-center title">行事曆</h1>
                     <div class="separator"></div>
                     <div  ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
-                </div>
-                <!-- slider revolution end -->
-            </div>
-
-            <div class="col-md-2">
-                <div ng-include src="'client/templates/home/quicksidebar.html'"></div>
-            </div>
+              </div>
+            <!-- slider revolution end -->
         </div>
-    <!-- slideshow end -->
+        <div class="col-md-2">
+            <div ng-include src="'client/templates/home/quicksidebar.html'"></div>
+        </div>
+
+    </div>
 </div>
+    <!-- slideshow end -->
 <!-- banner end -->
 
+
 <!--Calendar-->
-
-
-
 <!-- parallax section start -->
 <!-- ================ -->
 <div class="section parallax light-translucent-bg parallax-bg-2">
@@ -45,12 +44,12 @@
 <!-- parallax section end -->
 
 <!--佈告欄-->
-<div ng-include src="'client/templates/home/bulltin.html'"></div>
-	
+<div class="section" ng-include="" src="'client/templates/home/bulltin.html'"></div>
+
 <!-- parallax section start -->
 <!-- ================ -->
 <div class="section parallax light-translucent-bg parallax-bg">
-    <div class="container">
+    <div>
         <div class="call-to-action">
             <div class="row">
                 <div class="col-md-8">
@@ -63,56 +62,11 @@
 <!-- parallax section end -->
 
 <!-- ================ -->
-
 <!--核能最新消息-->
-<div ng-include src="'client/templates/home/nuclearNews.html'"></div>
+<div class="section" ng-include src="'client/templates/home/nuclearNews.html'"></div>
 
 
 
-
-
-<!-- calendar end -->
-
-
-
-<!--
-<div class="section">
-    <div class="container">
-        <h1 class="text-center title">Google Calendar Reader Plug-in Test</h1>
-        <div class="separator"></div>
-        <div id="eventlist">
-            <div class="gcf-header-block">
-                <div class="gcf-title-block">
-                    <span class="gcf-title"></span>
-                </div>
-            </div>
-            <div class="gcf-item-container-block">
-                <div class="gcf-item-block">
-                    <div class="gcf-item-header-block">
-                        <div class="gcf-item-date-block">
-                            <span class="gcf-item-daterange"></span>
-                        </div>
-                        <div class="gcf-item-title-block">
-                            <strong class="gcf-item-title"></strong>
-                        </div>
-                    </div>
-                    <div class="gcf-item-body-block">
-                        <div class="gcf-item-description">
-                        </div>
-                        <div class="gcf-item-location">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gcf-last-update-block">
-                LastUpdate: <span class="gcf-last-update"></span>
-            </div>
-
-        </div>
-    </div>
-</div>
-
--->
 <!-- parallax section start -->
 <!-- ================ -->
 <div class="section parallax light-translucent-bg parallax-bg">
@@ -127,52 +81,13 @@
     </div>
 </div>
 <!-- parallax section end -->
-<!-- section start -->
-<!-- ================ -->
 
-<!--核心業務-->
+<!-- jQuery REVOLUTION Slider  -->
+<script type="text/javascript" src="../../../plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="../../../plugins/template/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 
-<!-- section start -->
-<!-- ================ -->
-<div class="gray-bg section">
-    <div class="container">
-        <h1 class="text-center title">核心業務</h1>
-        <div class="separator"></div>
-        <div class="row grid-space-20">
-            <div class="col-md-4">
-                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="300">
-                    <div class="overlay-container shadow">
-                        <img src="images/portfolio-3.png" alt="">
-                    </div>
-                    <h3><a href="../../../lungmen.html">龍門計畫</a></h3>
-                    <p>(簡單說明)</p>
-                    <a href="../../../lungmen.html" class="btn btn-default">了解更多.....</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="200">
-                    <div class="overlay-container shadow">
-                        <img src="images/portfolio-2.png" alt="">
 
-                    </div>
-                    <h3><a href="portfolio-item.html">電廠改善工程</a></h3>
-                    <p>(簡單說明)</p>
-                    <a href="#" class="btn btn-default">了解更多.....</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-style-1 white-bg object-non-visible" data-animation-effect="fadeInLeft" data-effect-delay="100">
-                    <div class="overlay-container shadow">
-                        <img src="images/portfolio-1.png" alt="">
-                    </div>
-                    <h3><a href="portfolio-item.html">研究發展計畫</a></h3>
-                    <p>(簡單說明)</p>
-                    <a href="#" class="btn btn-default">了解更多.....</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- section end -->
+<script src="../../../js/rev-slider-init.js"></script>
 
+<script src="../../../js/animations-init.js"></script>
 

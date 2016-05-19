@@ -1,37 +1,25 @@
 ﻿(function () {
     angular.module('main')
 
-    .controller('FeedsController', ['$scope', '$compile', '$http', 'storage', function ($scope, $compile, $http, storage) {
+    .controller('FeedsController', ['$scope', '$compile', '$http', function ($scope, $compile, $http, storage) {
       $scope.isOrigin = function () {
           var url = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
           return window.parent.location.href.indexOf(url) !== -1;
       };
 
-      //$scope.$watch('feeds', function (newValue, oldValue) {
-      //    if (newValue) {
-      //        storage.set('feeds', newValue);
-      //    }
-      //}, true);
-
-      //if (!storage.get('feeds')) {
-      //    $http.get('feeds.json').success(function (feeds) {
-      //        $scope.feeds = feeds;
-      //    });
-      //}
-      //else {
-      //    $scope.feeds = storage.get('feeds');
-        //}
-
+      
+      //RSS 來源網址及顯示名稱等參數設定
       $scope.feeds = [
   {
       "id": 1,
       "title": "NRC News Releases",
       "url": "http://www.nrc.gov/public-involve/rss.cfm?feed=news",
-      "count": 10
+      //顯示幾筆
+      "count": 5
   },
   {
       "id": 2,
-      "count": 10,
+      "count": 5,
       "title": "Nuclear Energy Institute",
       "url": "http://www.nei.org/rss-feeds?feed=News"
   },
@@ -39,12 +27,13 @@
       "id": 3,
       "title": "World Nuclear News",
       "url": "http://www.world-nuclear-news.org/rss.aspx?fid=790",
-      "count": 10
+      "count": 5
   }
       ];
       
       
-  }])
+    }])
+   //預設，沒事別修改
   .directive('feedWidget', ['$compile', function ($compile) {
       return {
           restrict: 'A',
@@ -56,22 +45,14 @@
           }]
       };
   }])
+  //預設，沒事別修改
   .controller('FeedWidgetController', ['$scope', function ($scope) {
       $scope.toggleFeed = function () {
           $scope.collapsed = !$scope.collapsed;
       };
 
   }])
-  .factory('storage', function () {
-      return {
-          set: function (name, obj) {
-              localStorage[name] = angular.toJson(obj);
-          },
-          get: function (name) {
-              return angular.fromJson(localStorage[name]);
-          }
-      };
-  });
+  
 
     
 })();

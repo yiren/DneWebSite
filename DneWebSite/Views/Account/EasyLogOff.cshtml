@@ -1,11 +1,14 @@
 ﻿@model DneWebSite.Models.ApplicationUser
 @{
     ViewBag.Title = "EasyLogOff";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Cover.cshtml";
 }
 
 <div class="container">
-    <h1>@Model.FullName ，您已登出</h1>
-    <h2><a href="/">按此回首頁</a></h2>
+    <div class="content-margin">
+        <h1>@Model.FullName ，您已登出</h1>
+        <h2><a href="/#home">按此回首頁</a></h2>
+    </div>
+    
 </div>
 

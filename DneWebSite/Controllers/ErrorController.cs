@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using DneWebSite.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,10 @@ namespace DneWebSite.Controllers
     public class ErrorController : Controller
     {
         private ApplicationUserManager _userManager;
+        public ErrorController()
+        {
 
+        }
         public ErrorController(ApplicationUserManager userManager)
         {
 
@@ -30,6 +34,7 @@ namespace DneWebSite.Controllers
         }
         // GET: Posts
         // GET: Error
+ 
         public ActionResult Index()
         {
             ViewBag.Message = "您可能進行不正常操作，請洽系統管理員。";
@@ -38,7 +43,7 @@ namespace DneWebSite.Controllers
 
         public ActionResult BadRequest()
         {
-            ViewBag.Message = "您可能進行不正常操作，請洽系統管理員。";
+            ViewBag.Message = "您可能進行不正常操作，請重新操作，請洽系統管理員。";
             return View();
         }
 

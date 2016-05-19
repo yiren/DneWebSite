@@ -1,0 +1,60 @@
+﻿@model DneWebSite.Models.WANO.Item
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Cover.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="content-margin">
+    <h4>事項詳細資料</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           追蹤事項
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+        <dt>
+            相關檔案
+        </dt>
+        @foreach (var file in Model.ItemFiles)
+        {
+            <dd><a href="/wano/download/?p=@(file.ItemId + file.Extension)&d=@file.FileName">@file.FileName</a></dd>
+        }
+    </dl>
+      </div>
+    <p>
+    @Html.ActionLink("更新", "Edit", new { id = Model.ItemId }) |
+    @Html.ActionLink("回到WANO追蹤事項清單", "Index")
+</p>
+
+</div>

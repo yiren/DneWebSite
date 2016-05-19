@@ -1,0 +1,64 @@
+﻿@model DneWebSite.Models.WANO.Item
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Cover.cshtml";
+}
+
+
+<div class="container">
+    <div class="content-margin">
+    <h4>刪除追蹤事項</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            事項名稱
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+
+        <dt>
+            相關檔案
+        </dt>
+        @foreach (var file in Model.ItemFiles)
+        {
+            <dd><a href="/wano/download/?p=@(file.FileName + file.Extension)&d=@file.FileName">@file.FileName</a></dd>
+        }
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="確認刪除" class="btn btn-danger" /> |
+            @Html.ActionLink("回到WANO事項清單", "Index")
+        </div>
+    }
+        </div>
+</div>

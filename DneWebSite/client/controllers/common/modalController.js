@@ -10,6 +10,8 @@
         //var start=moment(event.start).toDate();
         //console.log(data.start.format('YYYY-MM-DD'));
         //console.log(data);
+
+        //如果是行事曆資料，要格式化時間格式
         if (data.start !== undefined || data.end !== undefined) {
             if (data.allDay === true) {
                 data.start=data.start.format('YYYY-MM-DD');
@@ -58,6 +60,8 @@
 			$uibModalInstance.dismiss('cancel');
 		};
 
+
+        //作資料繫結
 		angular.extend(this, {
 			save:save,
 			cancel:cancel,

@@ -1,6 +1,7 @@
 (function(){
     'use strict';
     
+    //angular應用程式入口，載入相關套件
     angular.module("main", [
         'ui.router',
         'ui.calendar',

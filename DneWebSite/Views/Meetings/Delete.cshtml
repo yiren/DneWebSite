@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<
+
 <div class="container">
-    <<h2>刪除佈告</h2>
+    <h2>刪除佈告</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -46,7 +46,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="確認刪除" class="btn btn-default" /> |
+            <input type="submit" value="確認刪除" class="btn btn-danger" /> |
             @Html.ActionLink("回到會議紀錄管理清單", "Index")
         </div>
     }
