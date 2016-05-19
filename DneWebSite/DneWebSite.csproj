@@ -3235,7 +3235,6 @@
     <Content Include="css\animations.css" />
     <Content Include="css\print-invoice.css" />
     <Content Include="css\shortcode_timeline1.css" />
-    <Content Include="css\shortcode_timeline2.css" />
     <Content Include="css\skins\blue.css" />
     <Content Include="css\skins\brown.css" />
     <Content Include="css\skins\dark_cyan.css" />
