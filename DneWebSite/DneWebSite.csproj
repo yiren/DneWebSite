@@ -4080,33 +4080,6 @@
     <Content Include="plugins\respond.js" />
     <Content Include="plugins\respond.min.js" />
     <Content Include="plugins\_references.js" />
-    <Content Include="upload\bulltin\dnemeeting\29d55735-96dc-410a-be24-dc2935dca48a.jpg" />
-    <Content Include="upload\bulltin\dnemeeting\3409ff76-70f2-4db2-af1e-d834a83d0d6c.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\3d71ceac-3e34-490f-b064-85330fecedc5.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\439f181e-84a3-4a1e-b3a2-8e8a80f8657c.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\9493ba3a-d81b-4991-8bd9-10a27c51043e.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\a4915d57-079e-4601-bc25-68d3d8b55d64.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\b3b748dd-426d-447b-9fa6-2d99a6b91391.pdf" />
-    <Content Include="upload\bulltin\dnemeeting\e7e32596-a894-4230-9db1-833bef969558.jpg" />
-    <Content Include="upload\bulltin\dnemeeting\e8843654-ad06-4fce-977e-dd15ae873b85.pdf" />
-    <Content Include="upload\bulltin\post\0508253a-de88-42af-b3f8-6a3fcf7cedc5.jpg" />
-    <Content Include="upload\bulltin\post\2553053d-8454-4515-ac48-0dfaf3580068.jpg" />
-    <Content Include="upload\bulltin\post\35f99152-cb88-4e7a-8562-19d5d1ccc165.jpg" />
-    <Content Include="upload\bulltin\post\449e6589-6854-4f36-9998-80a65f39136b.jpg" />
-    <Content Include="upload\bulltin\post\4bfab069-2618-4f96-9fa1-178364116288.jpg" />
-    <Content Include="upload\bulltin\post\509f1bdd-87ff-499f-8cec-a39c09652069.jpg" />
-    <Content Include="upload\bulltin\post\560a8d0b-b749-41ed-8f82-2b7fb28b8395.jpg" />
-    <Content Include="upload\bulltin\post\5月份課程行事曆.pdf.pdf" />
-    <Content Include="upload\bulltin\post\6bca676c-d717-4256-be1c-d5dd8304bc4d.jpg" />
-    <Content Include="upload\bulltin\post\7cfd72bb-7957-438a-ac50-f61154707f26.jpg" />
-    <Content Include="upload\bulltin\post\900f97b8-d023-46a9-8ad5-407a2d6f6f3d.jpg" />
-    <Content Include="upload\bulltin\post\965692a1-5b23-43ab-ae92-e5023c963297.jpg" />
-    <Content Include="upload\bulltin\post\a38a188c-3986-4c0b-9ccd-a91a17436cfb.jpg" />
-    <Content Include="upload\bulltin\post\ad7fea6b-922c-462d-a170-afbba325d936.jpg" />
-    <Content Include="upload\bulltin\post\DNE.jpg.jpg" />
-    <Content Include="upload\bulltin\post\e183b9dc-61a5-461c-bf47-40a7f6dd1e67.jpg" />
-    <Content Include="upload\bulltin\post\fc9de7d7-caa0-4670-8ed9-9306c01038f7.jpg" />
-    <Content Include="upload\bulltin\post\Visio-NIM2.pdf.pdf" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -4168,13 +4141,13 @@
     <Content Include="Views\Wano\Index.cshtml" />
     <Content Include="Views\Wano\_WanoList.cshtml" />
     <Content Include="Views\Wano\_WanoDataTable.cshtml" />
-    <Content Include="upload\wano\00000000-0000-0000-0000-000000000000.doc" />
-    <Content Include="upload\wano\8990effd-9e11-4139-bbeb-53bb30cc52e2.xlsx" />
-    <Content Include="upload\wano\核三  TSM工作分工及現況追蹤表.xlsx.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\regular\" />
+    <Folder Include="upload\bulltin\dnemeeting\" />
+    <Folder Include="upload\bulltin\post\" />
+    <Folder Include="upload\wano\" />
     <Folder Include="Views\Engineering\" />
   </ItemGroup>
   <ItemGroup>

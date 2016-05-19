@@ -79,14 +79,15 @@
                                     <li>
                                         <strong>龍門計畫業務</strong>
                                         <ul class="list">
-                                            <li><i class="icon-right-open"></i><a href="lungmen.html">龍門計畫簡介</a></li>
+                                            <li><i class="icon-right-open"></i><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
                                             <li>
                                                 <strong>SEO相關業務</strong>
                                                 <ul class="list">
                                                     <li><i class="icon-right-open"></i><a href="http://10.20.1.5/source/2lco/asp/ddasp.asp" target="_blank">送LCO品質文件清單</a></li>
-                                                    <li><i class="icon-right-open"></i><a href="http://10.144.101.5/support/" target="_blank">電氣Raceway Support管制表</a></li>
+                                                    <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/support/" target="_blank">電氣Raceway Support管制表</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="http://10.20.3.133" target="_blank">龍門軟體構型管理系統</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -117,7 +118,7 @@
                                         <ul class="list"></ul>
                                     </li>
                                     <li>
-                                        <a href="#">支援大修心得簡報</a>
+                                        <a ng-href="http://{{h.host}}/train_material-0/NPPMtn/" target="_blank">支援大修心得簡報</a>
                                     </li>
                                 </ul>
                                 
@@ -137,9 +138,9 @@
                                     <li>
                                         <strong>SEO業務相關系統</strong>
                                         <ul class="list">
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/overtime/" target="_blank">SEO(AE)加班請假管理系統</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/seo/" target="_blank">編號暨文件修改登錄</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/overtime/" target="_blank">SEO(AE)加班請假管理系統</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/seo/" target="_blank">編號暨文件修改登錄</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -148,26 +149,26 @@
                                         <strong>SEO案件查詢</strong>
                                         <ul class="list">
                                             <li><i class="icon-right-open"></i><a href="http://203.67.79.80/lungmencts/default.aspx">Lungmen CTS</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/document/">管制文件查詢</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/documentfpr/Fpr_List.aspx">FPR處理現況</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/rap">RAP處理現況</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/document/">管制文件查詢</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/documentfpr/Fpr_List.aspx">FPR處理現況</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/rap">RAP處理現況</a></li>
                                             <li><i class="icon-right-open"></i><a href="http://10.144.102.191/dcis_iodb_control/">IO/FXDB、DCT查詢</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/seo/filesearch.aspx">SEO歸檔文件查詢</a></li>
-                                            <li><i class="icon-right-open"></i><a href="http://10.144.101.5/carms/carmslist.aspx" target="_blank">涉及CARMS資料修改查詢</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/seo/filesearch.aspx">SEO歸檔文件查詢</a></li>
+                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host2}}/carms/carmslist.aspx" target="_blank">涉及CARMS資料修改查詢</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                                <a href="http://10.144.101.5/seoHtml/DneControlLog/DneControlLog.asp" target="_blank">Control Log(新版)</a><br />
-                                <a href="http://10.144.101.5/designdocument/">DNE Control Log(舊版)</a><br />
-                                <a href="http://10.144.101.5/seoHtml/GeIms/J05.asp" target="_blank">GEH IMS-J05查詢</a><br />
-                                <a href="http://10.144.101.5/seoHtml/GeIms/J07.asp" target="_blank">GEH IMS-J07查詢</a><br />
+                                <a ng-href="http://{{h.host2}}/seoHtml/DneControlLog/DneControlLog.asp" target="_blank">Control Log(新版)</a><br />
+                                <a ng-href="http://{{h.host2}}/designdocument/">DNE Control Log(舊版)</a><br />
+                                <a ng-href="http://{{h.host2}}/seoHtml/GeIms/J05.asp" target="_blank">GEH IMS-J05查詢</a><br />
+                                <a ng-href="http://{{h.host2}}/seoHtml/GeIms/J07.asp" target="_blank">GEH IMS-J07查詢</a><br />
                                 <a ng-href="http://{{h.host}}/Resource/Objectopia.htm" target="_blank">Hitachi Objectopia</a>
                                 <h2>核能單位</h2>
                                 <ul class="list">
                                     <li>
                                         <strong>總處核能單位</strong>
                                         <ul class="list">
-                                            <li><i class="icon-right-open"></i><a href="http://10.141.200.68/" target="_blank">核能發電處</a></li>
+                                            <li><i class="icon-right-open"></i><a href="http://10.18.8.153/" target="_blank">核能發電處</a></li>
                                             <li><i class="icon-right-open"></i><a href="http://10.19.1.1/" target="_blank">核能安全處</a></li>
                                             <li><i class="icon-right-open"></i><a href="http://10.57.50.20/nbmd/" target="_blank">核能後端營運處</a></li>
                                             <li><i class="icon-right-open"></i><a href="ftp://10.16.7.109/002%C1%60%B8g%B2z%B0%C6%C1%60%B8g%B2z%AB%C7/%AE%D6%AF%E0%B7%BE%B3q%A4p%B2%D5/" target="_blank">核能溝通中心</a></li>
@@ -258,7 +259,7 @@
                                     <li><i class="icon-right-open"></i><a target="_blank" href="http://10.10.7.200/tph2h2/index.asp">總管理處同心園地</a></li>
                                     <li><i class="icon-right-open"></i><a target="_blank" href="http://10.19.1.1/同心園地.htm">核能發電系統同心園地</a></li>
                                     <li><i class="icon-right-open"></i><a target="_blank" href="#">核技處同心園地</a></li>
-                                    <li><i class="icon-right-open"></i><a target="_blank" href="http://10.144.101.5/board/board.aspx">核技處留言板</a></li>
+                                    <li><i class="icon-right-open"></i><a target="_blank" ng-href="http://{{h.host2}}/board/board.aspx">核技處留言板</a></li>
 
                                     <li><i class="icon-right-open"></i><a target="_blank" href="http://10.18.8.153/d05608/together/index.html">核發處同心園地</a></li>
                                     <li><i class="icon-right-open"></i><a target="_blank" href="http://10.19.1.1/核安同心園地.htm">核安處同心園地</a></li>
@@ -277,3 +278,55 @@
         <!-- main-container end -->        <!-- footer start (Add "light" class to #footer in order to enable light footer) -->
         <!-- ================ -->
    
+<!-- Modal -->
+    <div class="modal fade" id="newJournal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="newJournalLabel">新到期刊</h4>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="list-icons">
+                        <li><span class="fa fa-clone"></span><a href="http://10.16.10.96/tnhtml/booknew.htm" target="_blank"> 新到圖書</a></li>
+                        <li><span class="fa fa-clone"></span><a href="http://10.16.10.96/tnhtml/magznew.htm" target="_blank"> 新到期刊</a></li>
+                        <li><a href="http://10.16.10.96/tnhtml/drawnew.htm" target="_blank"><span class="fa fa-clone"></span> 新到圖面</a></li>
+                        <li><a href="http://10.16.10.96/tnhtml/specnew81.htm" target="_blank"><span class="fa fa-clone"></span> 新到規範</a></li>
+                        <li><a href="http://10.16.10.96/tnhtml/specnew80.htm" target="_blank"><span class="fa fa-clone"></span> 新到說明書</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="newJournalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="newJournalCommentLabel">核能外文期刊閱覽評註</h4>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="list-icons">
+                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/AmericanSociety.htm" target="_blank"> American Society of Civil Engineering</a></li>
+                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/Corrosion.htm" target="_blank"> Corrosion</a></li>
+                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/ICRP.htm" target="_blank"> ICRP</a></li>
+                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/JournalofG&Geo.htm"><span class="fa fa-clone"></span> Journal of Geotechnical and Geo environmental Engineering</a></li>
+                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/NEI.htm" target="_blank"><span class="fa fa-clone"></span> Nuclear Engineering International</a></li>
+                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/Serch.htm" target="_blank"><span class="fa fa-clone"></span> Serch</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page wrapper start -->
+    <!-- ================ -->
