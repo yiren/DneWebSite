@@ -12,18 +12,13 @@ namespace DneWebSite.Models.bulletin
 {
     class BulletinDbContext:DbContext
     {
-
-
-
-
         public BulletinDbContext()
             :base(ConnectionStrings.baseConnectionString("BulltinDb"))
         {
 
         }
 
-        
-        
+       
         public DbSet<Meeting> Meetings { get; set; }
         public DbSet<MeetingFile> FileDetails { get; set; }
         public DbSet<Post> Posts { get; set; }
