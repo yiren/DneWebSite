@@ -10,7 +10,9 @@ namespace DneWebSite.Models.common
 {
     class ConnectionStrings
     {
-        private static string dbInstance = "10.20.3.131\\SQLEXPRESS2014";
+        private static string dbInstance = "";
+        private static string user = "";
+        private static string passowrd = "";
         //For Entity Framework Model or Database設定使用，因為要設定ORM metadata
         public static string BulltinConnectionString(string name)
         {
@@ -33,8 +35,8 @@ namespace DneWebSite.Models.common
                 InitialCatalog = name,
                 PersistSecurityInfo = true,
                 MultipleActiveResultSets = true,
-                UserID = "sa",
-                Password = "LGA2011"
+                UserID = user,
+                Password = password
             };
             
             return sqlBuilder.ToString();
