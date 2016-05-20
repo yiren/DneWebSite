@@ -12,7 +12,7 @@ namespace DneWebSite.Models.common
     {
         private static string dbInstance = "";
         private static string user = "";
-        private static string passowrd = "";
+        private static string password = "";
         //For Entity Framework Model or Database設定使用，因為要設定ORM metadata
         public static string BulltinConnectionString(string name)
         {
