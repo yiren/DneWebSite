@@ -231,7 +231,7 @@ namespace DneWebSite.Controllers
 
             
         }
-
+        //管理者頁面，可以看到所有布告
         [ClaimsAuthorize(ClaimType = "role", ClaimValue = "PostAdmin")]
         public ActionResult Manage(int id = 1)
         {
@@ -244,6 +244,18 @@ namespace DneWebSite.Controllers
             return View("Index", meetings);
         }
 
+        //管理者頁面可以看到所有被刪除的Post
+        [ClaimsAuthorize(ClaimType = "role", ClaimValue = "PostAdmin")]
+        public ActionResult DeletedList(int id = 1)
+        {
+
+            var meetings = db.Posts.AsNoTracking().Where(m => m.IsDeleted == true).OrderByDescending(m => m.PostDate).ToPagedList(id, 5);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_PostList", meetings);
+            }
+            return View("Index", meetings);
+        }
 
         [AllowAnonymous]
         public FileResult Download(string p, string d)
