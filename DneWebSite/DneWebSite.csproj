@@ -334,6 +334,10 @@
     <Content Include="client\controllers\meetingGridController.js" />
     <Content Include="client\controllers\postGridController.js" />
     <Content Include="client\templates\home\coreduty.html" />
+    <Content Include="images\background-1.jpg" />
+    <Content Include="images\background-2.jpg" />
+    <Content Include="images\background-3.jpg" />
+    <Content Include="images\background-4.jpg" />
     <Content Include="images\dne_small_2.png" />
     <Content Include="images\download-1.jpg" />
     <Content Include="images\download-2.jpg" />

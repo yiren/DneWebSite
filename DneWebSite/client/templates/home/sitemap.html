@@ -206,14 +206,13 @@
                                     <li>
                                         <strong>處內一般業務</strong>
                                         <ul class="list">
-                                            <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/nuclearjournal/nuclearjournallist.aspomponents-tabs-and-pills.html">核能月刊</a></li>
+                                            <li><a ng-href="http://{{h.host}}/nuclearjournal/nuclearjournallist.asp"><i class="icon-right-open"></i>核能月刊</a></li>
                                             <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/safety/safety1.htm">核安文化</a></li>
                                             <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/km/km1.htm">資通安全</a></li>
                                             <li><i class="icon-right-open"></i><a ui-sref="meeting">會議紀錄</a></li>
                                             <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/source/nedmeeting/loginpjtor.asp">設備預約</a></li>
                                             <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/Resource/MeetingRoomList.asp">會議室預約</a></li>
                                         </ul>
-                                    </li>
                                     <li>
                                         <strong>內部規章</strong>
                                         <ul class="list">
@@ -225,8 +224,8 @@
                                     <li>
                                         <strong>處資料室</strong>
                                         <ul class="list">
-                                            <li><i class="icon-right-open"></i><a href="#" data-toggle="modal" data-target="#newJournal">新到期刊</a></li>
-                                            <li><i class="icon-right-open"></i><a href="#" data-toggle="modal" data-target="#newJournalComment">核能外文期刊閱覽評註</a></li>
+                                            <li><a href="#/sitemap" data-toggle="modal" data-target="#newJournal"><i class="icon-right-open"></i>新到期刊</a></li>
+                                            <li><a href="#/sitemap" data-toggle="modal" data-target="#newJournalComment"><i class="icon-right-open"></i>核能外文期刊閱覽評註</a></li>
                                             <li><i class="icon-right-open"></i><a ng-href="http://{{h.host}}/feedback/feedbacklist.asp" target="_blank">核能發電回饋系統</a></li>
                                             <li><i class="icon-right-open"></i><a href="http://10.16.10.96/webhelp/tn.htm" target="_blank">核能資訊檢索系統</a></li>
 
@@ -278,55 +277,3 @@
         <!-- main-container end -->        <!-- footer start (Add "light" class to #footer in order to enable light footer) -->
         <!-- ================ -->
    
-<!-- Modal -->
-    <div class="modal fade" id="newJournal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="newJournalLabel">新到期刊</h4>
-                </div>
-                <div class="modal-body">
-
-                    <ul class="list-icons">
-                        <li><span class="fa fa-clone"></span><a href="http://10.16.10.96/tnhtml/booknew.htm" target="_blank"> 新到圖書</a></li>
-                        <li><span class="fa fa-clone"></span><a href="http://10.16.10.96/tnhtml/magznew.htm" target="_blank"> 新到期刊</a></li>
-                        <li><a href="http://10.16.10.96/tnhtml/drawnew.htm" target="_blank"><span class="fa fa-clone"></span> 新到圖面</a></li>
-                        <li><a href="http://10.16.10.96/tnhtml/specnew81.htm" target="_blank"><span class="fa fa-clone"></span> 新到規範</a></li>
-                        <li><a href="http://10.16.10.96/tnhtml/specnew80.htm" target="_blank"><span class="fa fa-clone"></span> 新到說明書</a></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="newJournalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="newJournalCommentLabel">核能外文期刊閱覽評註</h4>
-                </div>
-                <div class="modal-body">
-
-                    <ul class="list-icons">
-                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/AmericanSociety.htm" target="_blank"> American Society of Civil Engineering</a></li>
-                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/Corrosion.htm" target="_blank"> Corrosion</a></li>
-                        <li><span class="fa fa-clone"></span><a ng-href="http://{{h.host}}/eReferenceRoom/ICRP.htm" target="_blank"> ICRP</a></li>
-                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/JournalofG&Geo.htm"><span class="fa fa-clone"></span> Journal of Geotechnical and Geo environmental Engineering</a></li>
-                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/NEI.htm" target="_blank"><span class="fa fa-clone"></span> Nuclear Engineering International</a></li>
-                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/Serch.htm" target="_blank"><span class="fa fa-clone"></span> Serch</a></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- page wrapper start -->
-    <!-- ================ -->

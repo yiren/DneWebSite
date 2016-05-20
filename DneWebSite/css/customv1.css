@@ -10,6 +10,16 @@ File Description: Place here your custom CSS styles
 */
 
 
+.abstract{
+     background-image: url('../images/background-4.jpg');
+    background-color:rgb(68,68,68);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
+    background-size:cover;
+}
+
+
 .verticaltext {
     
     padding: 10px;
@@ -205,9 +215,6 @@ File Description: Place here your custom CSS styles
 	color: #ffffff ;
 }
 
-.navbar-default .navbar-nav > li > a {
-	color: #fafafa ;
-}
 /*transparent header*/
 .header.transparent:not(.dark) .navbar-default .navbar-nav > li > a
  {
@@ -292,7 +299,14 @@ File Description: Place here your custom CSS styles
 	color: #4cae4c;
 }
 
-
+/* mega menu menu items on focus/hover and when opened */
+.mega-menu .menu > li > a:hover,
+.mega-menu .menu > li > a:focus {
+	background-color: #ffffff;
+	color: #4cae4c !important;
+	border-color: #f1f1f1;
+	text-decoration: none;
+}
 
 
 
