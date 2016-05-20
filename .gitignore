@@ -210,3 +210,12 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+#ConnectString Data
+Models/common/ConnectionStrings.cs
+
+#upload fold files
+upload/bulltin/dnemeeting/*.*
+upload/bulltin/post/*.*
+upload/wano
+
