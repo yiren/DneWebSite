@@ -49,7 +49,7 @@ namespace DneWebSite.Controllers
         [AllowAnonymous]
         public ActionResult Index(int id=1)
         {   
-            var items = db.Items.AsNoTracking().Where(i=>i.IsDeleted != true).OrderByDescending(p => p.LastModifiedDate).ToPagedList(id, 5);
+            var items = db.Items.AsNoTracking().Where(i=>i.IsDeleted != true).OrderByDescending(p => p.LastModifiedDate).ToPagedList(id, 10);
             //分頁套件寫法
             if (Request.IsAjaxRequest())
             {

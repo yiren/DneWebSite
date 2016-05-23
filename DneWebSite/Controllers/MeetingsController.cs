@@ -50,7 +50,7 @@ namespace DneWebSite.Controllers
         {
             var user = UserManager.FindByName(User.Identity.Name);
             ViewBag.User = user.FullName;
-            var meetings = db.Meetings.AsNoTracking().Where(m=>m.PostedBy.Equals(user.FullName)&& m.IsDeleted !=true).OrderByDescending(m => m.PostDate).ToPagedList(id, 5);
+            var meetings = db.Meetings.AsNoTracking().Where(m=>m.PostedBy.Equals(user.FullName)&& m.IsDeleted !=true).OrderByDescending(m => m.PostDate).ToPagedList(id, 10);
             if (Request.IsAjaxRequest())
             {
                 return PartialView("_MeetingList", meetings);
