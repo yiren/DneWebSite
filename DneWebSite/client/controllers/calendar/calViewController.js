@@ -94,7 +94,7 @@
 	                    element.find('.fc-head').append(additionalColumn);
 	                }
                     
-	                console.log(view);
+	                //console.log(view);
 	                //console.log(element);
 	            },
 	            dayRender: function (date, cell) {
