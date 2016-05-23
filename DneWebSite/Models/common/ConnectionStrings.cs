@@ -10,9 +10,9 @@ namespace DneWebSite.Models.common
 {
     class ConnectionStrings
     {
-        private static string dbInstance = "";
-        private static string user = "";
-        private static string password = "";
+        private static string dbInstance = "10.20.3.131";
+        private static string user = "sa";
+        private static string password = "LGA2011";
         //For Entity Framework Model or Database設定使用，因為要設定ORM metadata
         public static string BulltinConnectionString(string name)
         {
