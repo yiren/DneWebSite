@@ -10,9 +10,7 @@ namespace DneWebSite.Models.common
 {
     class ConnectionStrings
     {
-        private static string dbInstance = "10.20.3.131";
-        private static string user = "sa";
-        private static string password = "LGA2011";
+        private static string dbInstance = "10.20.3.131\\SQLEXPRESS2014";
         //For Entity Framework Model or Database設定使用，因為要設定ORM metadata
         public static string BulltinConnectionString(string name)
         {
@@ -31,7 +29,7 @@ namespace DneWebSite.Models.common
 
             var sqlBuilder = new SqlConnectionStringBuilder()
             {
-                DataSource = "10.20.3.131",
+                DataSource = dbInstance,
                 InitialCatalog = name,
                 PersistSecurityInfo = true,
                 MultipleActiveResultSets = true,
