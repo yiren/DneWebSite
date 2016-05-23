@@ -42,18 +42,20 @@
         </div>
         <div class="form-group">
                 @Html.Label("檔案", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="file" name="file" multiple="multiple" />
-                    <ul>
-                        @foreach (var item in Model.MeetingFiles)
-                        {
-                            <li class="">
-                                <a href="/meetings/download/?p=@(item.FileId + item.Extension)&d=@item.FileName">@item.FileName</a>
-                                <a href="javascript:void(0);" data-id="@item.FileId" class="deleteItem"><span class="fa fa-remove"></span></a>
-                            </li>
-                        }
-                    </ul>
-                </div>
+            <div class="col-md-10">
+                <input type="file" id="file" name="file" multiple="multiple"/>
+                <ul>
+                    @foreach (var item in Model.MeetingFiles)
+                    {
+                        <li class="">
+                            <a href="/meetings/download/?p=@(item.FileId + item.Extension)&d=@item.FileName">@item.FileName</a>
+                            <a href="javascript:void(0);" data-id="@item.FileId" class="deleteItem"><span class="fa fa-remove"></span></a>
+                        </li>
+                    }
+                </ul>
+                <p class="text-warning">上傳檔案總大小預設10Mb，超過10Mb將無法上傳</p>
+            </div>
+
             </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
