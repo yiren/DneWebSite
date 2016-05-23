@@ -31,12 +31,12 @@ namespace DneWebSite.Models.common
 
             var sqlBuilder = new SqlConnectionStringBuilder()
             {
-                DataSource = dbInstance,
+                DataSource = "10.20.3.131",
                 InitialCatalog = name,
                 PersistSecurityInfo = true,
                 MultipleActiveResultSets = true,
-                UserID = user,
-                Password = password
+                UserID = "sa",
+                Password = "LGA2011"
             };
             
             return sqlBuilder.ToString();
