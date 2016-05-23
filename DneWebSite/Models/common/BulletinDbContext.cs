@@ -13,7 +13,7 @@ namespace DneWebSite.Models.bulletin
     class BulletinDbContext:DbContext
     {
         public BulletinDbContext()
-            :base(ConnectionStrings.baseConnectionString("BulltinDb"))
+            :base("BulltinDb")
         {
 
         }

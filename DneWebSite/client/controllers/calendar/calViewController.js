@@ -7,6 +7,8 @@
     //行事曆相關設定
 	function calendar($modal){
 
+	    var vm = this;
+
 		//Modal
 		var openDetailModal=function(event){
 			var modalInstance=$modal.open({
@@ -92,7 +94,7 @@
 	                    element.find('.fc-head').append(additionalColumn);
 	                }
                     
-	                //console.log(view);
+	                console.log(view);
 	                //console.log(element);
 	            },
 	            dayRender: function (date, cell) {
@@ -188,7 +190,7 @@
 
         }
         //資料庫應由資料庫來
-		var events = {
+		vm.events = {
 		    googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
 		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com'
 		}
@@ -232,24 +234,15 @@
                  
         ]*/
 
-        var addEvent=function(){
-        	events.push({
-                    title:'核發處聯合晨會',
-                    start:'08:15',
-                    
-                    dow:[1,2,3,4,5]
-                });
-        }
+       
 
-        var eventSources=[{
+        vm.eventSources=[{
             googleCalendarApiKey: 'AIzaSyBGsSycErhrJgP8vlFfzbtCpNuStqcWjHo',
             googleCalendarId: 'c26rmjc50kbd6rqpvpb6ka555c@group.calendar.google.com'
         }];
 
 		angular.extend(this, {
-			uiConfig:uiConfig,
-			eventSources:eventSources,
-			addEvent: addEvent
+			uiConfig:uiConfig
 		});
 	}
 

@@ -14,11 +14,11 @@
         //如果是行事曆資料，要格式化時間格式
         if (data.start !== undefined || data.end !== undefined) {
             if (data.allDay === true) {
-                data.start=data.start.format('YYYY-MM-DD');
-                data.end=data.end.format('YYYY-MM-DD');
+                data.startTime=data.start.format('YYYY-MM-DD');
+                data.endTime=data.end.format('YYYY-MM-DD');
             } else {
-                data.start=data.start.format('HH:mm');
-                data.end=data.end.format('HH:mm');
+                data.startTime=data.start.format('HH:mm');
+                data.endTime=data.end.format('HH:mm');
             }
             
 

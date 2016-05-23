@@ -28,7 +28,7 @@ namespace DneWebSite.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base(ConnectionStrings.baseConnectionString("IdentityData"), throwIfV1Schema: false)
+            : base("IdentityData", throwIfV1Schema: false)
         {
         }
 
