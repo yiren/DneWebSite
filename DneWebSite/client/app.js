@@ -10,6 +10,7 @@
         'ui.grid',
         'ui.grid.resizeColumns',
         'ui.grid.selection',
+        'ui.grid.pagination',
         'duScroll',
         'feeds',
         'anim-in-out'
