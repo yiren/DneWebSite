@@ -40,6 +40,11 @@
                         templateUrl: '/../client/templates/regular/meeting.html',
                         controller: 'homeCtrl'
                     })
+                    .state('books', {
+                        url: '/regular/books',
+                        templateUrl: '/../client/templates/regular/books.html',
+                        controller: 'homeCtrl'
+                    })
                 ;
     })
     

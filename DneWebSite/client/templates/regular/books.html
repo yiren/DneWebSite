@@ -1,0 +1,105 @@
+﻿
+            
+            <!-- banner start -->
+			<!-- ================ -->
+			<div class="banner">
+				<div class="fixed-image section light-translucent-bg" style="background-image:url('../../../images/newjournal.jpg');background-position:bottom">
+					<div class="container">
+					<div class="space-top"></div>
+					
+					</div>
+				</div>
+			</div>
+			<!-- banner end -->
+            
+            <!-- page-intro start-->
+			<!-- ================ -->
+			<div class="page-intro">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<ol class="breadcrumb">
+								<li><i class="fa fa-home pr-10"></i><a ui-sref="home">首頁</a></li>
+								<li class=""><a ui-sref="home">日常業務</a></li>
+								<li class="active">處資料室</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- page-intro end -->
+            
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container" ng-controller="homeCtrl as h">
+
+				<div class="container">
+					<div class="row">
+						<!-- sidebar start -->
+						<aside class="col-md-3">
+							<div class="sidebar">
+								<div class="block clearfix">
+									<h3 class="title">處資料室</h3>
+									<div class="separator"></div>
+									<nav class="affix-menu scrollspy">
+										<ul class="smooth-scroll nav nav-pills nav-stacked">
+                                            <li><a href="#newJournal" du-smooth-scroll du-scrollspy>新到期刊</a></li>
+                                            <li><a href="#comment" du-smooth-scroll du-scrollspy>核能外文期刊閱覽評註</a></li>
+											
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</aside>
+						<!-- sidebar end -->
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-9">
+
+                            <!-- section start -->
+                            <!-- ================ -->
+                            <div id="newJournal" class="section clearfix">
+
+                                <h2 class="text-left title">新到期刊</h2>
+                                <div class="separator-2"></div>
+                                <ul class="list-icons">
+                                    <li><a href="http://10.16.10.96/tnhtml/booknew.htm" target="_blank"><span class="fa fa-clone"></span> 新到圖書</a></li>
+                                    <li><a href="http://10.16.10.96/tnhtml/magznew.htm" target="_blank"><span class="fa fa-clone"></span> 新到期刊</a></li>
+                                    <li><a href="http://10.16.10.96/tnhtml/drawnew.htm" target="_blank"><span class="fa fa-clone"></span> 新到圖面</a></li>
+                                    <li><a href="http://10.16.10.96/tnhtml/specnew81.htm" target="_blank"><span class="fa fa-clone"></span> 新到規範</a></li>
+                                    <li><a href="http://10.16.10.96/tnhtml/specnew80.htm" target="_blank"><span class="fa fa-clone"></span> 新到說明書</a></li>
+                                </ul>
+                            </div>
+                            <!-- section end -->
+
+                             <!-- section start -->
+                            <!-- ================ -->
+                            <div id="comment" class="section clearfix">
+
+                                <h2 class="text-left title">核能外文期刊閱覽評註</h2>
+                                <div class="separator-2"></div>
+                                <div class="col-md-9">
+                                   <ul class="list-icons">
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/AmericanSociety.htm" target="_blank"><span class="fa fa-clone"></span> American Society of Civil Engineering</a></li>
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/Corrosion.htm" target="_blank"><span class="fa fa-clone"></span> Corrosion</a></li>
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/ICRP.htm" target="_blank"><span class="fa fa-clone"></span> ICRP</a></li>
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/JournalofG&Geo.htm"><span class="fa fa-clone"></span> Journal of Geotechnical and Geo environmental Engineering</a></li>
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/NEI.htm" target="_blank"><span class="fa fa-clone"></span> Nuclear Engineering International</a></li>
+                                        <li><a ng-href="http://{{h.host}}/eReferenceRoom/Serch.htm" target="_blank"><span class="fa fa-clone"></span> Serch</a></li>
+                                    </ul>
+                                </div>
+                               
+                                
+                         </div>
+                     
+
+						</div>
+						<!-- main end -->
+
+                       
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+			

@@ -114,8 +114,10 @@
                     //            +'<span class="fc-content></span>'
 
                     //            + '</div>';
-
-                    
+                    //如果沒有輸入出席人員，則顯示空白字串
+                    if (event.description == null ||event.description == undefined) {
+                        event.description='';
+                    }
 	                //var suffix = '</div>';
                     if (view.name == 'basicDay') {
                         var additionalInfo = '<div class="col-md-2 nowrap">' + event.description + '</div>'
