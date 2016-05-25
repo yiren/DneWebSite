@@ -336,6 +336,7 @@
     <Content Include="client\templates\error\underConstruction.html" />
     <Content Include="client\templates\home\coreduty.html" />
     <Content Include="client\templates\regular\books.html" />
+    <Content Include="images\admin-1.jpg" />
     <Content Include="images\background-1.jpg" />
     <Content Include="images\background-2.jpg" />
     <Content Include="images\background-3.jpg" />
