@@ -45,6 +45,11 @@
                         templateUrl: '/../client/templates/regular/books.html',
                         controller: 'homeCtrl'
                     })
+                    .state('underConstruction', {
+                        url: '/underConstruction',
+                        templateUrl: '/../client/templates/error/underConstruction.html',
+                        controller: 'homeCtrl'
+                    })
                 ;
     })
     

@@ -333,12 +333,14 @@
   <ItemGroup>
     <Content Include="client\controllers\meetingGridController.js" />
     <Content Include="client\controllers\postGridController.js" />
+    <Content Include="client\templates\error\underConstruction.html" />
     <Content Include="client\templates\home\coreduty.html" />
     <Content Include="client\templates\regular\books.html" />
     <Content Include="images\background-1.jpg" />
     <Content Include="images\background-2.jpg" />
     <Content Include="images\background-3.jpg" />
     <Content Include="images\background-4.jpg" />
+    <Content Include="images\craftsmen-1020156_1280.jpg" />
     <Content Include="images\dne_small_2.png" />
     <Content Include="images\download-1.jpg" />
     <Content Include="images\download-2.jpg" />
@@ -357,6 +359,7 @@
     <Content Include="images\sitemap-1.jpg" />
     <Content Include="images\sitemap-2.jpg" />
     <Content Include="images\sitemap-3.jpg" />
+    <Content Include="images\underConstruction-1.jpg" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitattributes" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitignore" />
     <Content Include="plugins\bowerPackage\angular-feeds\app\angular-feeds\angular-feeds.css" />
