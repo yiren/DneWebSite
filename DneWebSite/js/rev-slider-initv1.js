@@ -5,7 +5,7 @@ $(document).ready(function(){
 			$(".tp-bannertimer").show();
 
 			$('.slider-banner-container .slider-banner-fullscreen').show().revolution({
-				delay:6000,
+				delay:8000,
 				startwidth:640,
 				
                 dottedOverlay: "twoxtwo",
