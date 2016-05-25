@@ -447,3 +447,8 @@ File Description: Place here your custom CSS styles
   -webkit-filter: blur(3px);
   filter: blur(3px);
 }
+
+
+.cursor-pointer{
+    cursor:pointer;
+}
