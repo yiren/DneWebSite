@@ -308,7 +308,10 @@ File Description: Place here your custom CSS styles
 	text-decoration: none;
 }
 
+.tp-caption {
+    width: 90%;
 
+}
 
 
 .svg-container{
