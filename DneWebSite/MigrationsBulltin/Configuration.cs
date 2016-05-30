@@ -37,32 +37,6 @@ namespace DneWebSite.MigrationsBulltin
             context.SaveChanges();
 
 
-            if (context.Posts.Count() <1000)
-            {
-                List<Post> posts = new List<Post>();
-                Random rnd = new Random();
-                for (int i = 1; i < 10000; i++)
-                {
-                    Post post = new Post()
-                    {
-                        Category = (Category)rnd.Next(1, 5),
-                        Section = (Section)rnd.Next(1, 5),
-                        Content = "Test Data Content" + i,
-                        Title = "Test Data Title" + i,
-                        PostDate = (DateTime.Now - TimeSpan.FromDays((double)i)).ToString("yyyy/MM/dd"),
-                        PostId = Guid.NewGuid()
-
-                    };
-                    posts.Add(post);
-                }
-                foreach (var post in posts)
-                {
-                    context.Posts.AddOrUpdate(post);
-                }
-                context.SaveChanges();
-            }
-
-
 
         }
     }
