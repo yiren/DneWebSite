@@ -48,6 +48,10 @@
     <link href="~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
 
 
+    <!-- qTip2 -->
+
+    <link href="~/plugins/bowerPackage/qtip2/jquery.qtip.css" rel="stylesheet">
+
     <!-- Angular Reader -->
 
     <link href="~/plugins/bowerPackage/angular-feeds/app/angular-feeds/angular-feeds.min.css" rel="stylesheet">
@@ -155,7 +159,7 @@
                                         <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                             <ul class="nav navbar-nav navbar-right">
                                                 <li class="dropdown">
-                                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">關於本處</a>
+                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">關於本處</a>
                                                     <ul class="dropdown-menu">
                                                         <li class="dropdown">
                                                             <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">組織與人員</a>
@@ -269,8 +273,8 @@
                                                         <li class="dropdown">
                                                             <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">公文查詢</a>
                                                             <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/swims/CorrespondenceList.asp">公文查詢(新版)</a></li>
-                                                                <li><a href="http://10.20.1.4/source/neddoc/asp/ddasp.asp">公文查詢(舊版)</a></li>
+                                                                <li><a id="newDoc" ng-href="http://{{h.host}}/swims/CorrespondenceList.asp">公文查詢(新版)</a></li>
+                                                                <li><a id="oldDoc" href="http://10.20.1.4/source/neddoc/asp/ddasp.asp">公文查詢</a></li>
                                                             </ul>
                                                         </li>
 
@@ -530,6 +534,10 @@
 
     <!-- UI Grid -->
     <script src="~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.js"></script>
+
+    <!-- qTip2 -->
+    <script src="~/plugins/bowerPackage/qtip2/jquery.qtip.min.js"></script>
+    <script src="~/js/qTip2.js"></script>
 
     <!-- Angular RSS Reader -->
     <script src="~/plugins/bowerPackage/angular-feeds/app/angular-feeds/angular-feeds.min.js"></script>

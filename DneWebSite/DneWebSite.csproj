@@ -362,6 +362,7 @@
     <Content Include="images\sitemap-2.jpg" />
     <Content Include="images\sitemap-3.jpg" />
     <Content Include="images\underConstruction-1.jpg" />
+    <Content Include="js\qTip2.js" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitattributes" />
     <Content Include="plugins\bowerPackage\angular-feeds\.gitignore" />
     <Content Include="plugins\bowerPackage\angular-feeds\app\angular-feeds\angular-feeds.css" />
@@ -732,6 +733,15 @@
     <Content Include="plugins\bowerPackage\bootstrap\package.js" />
     <Content Include="plugins\bowerPackage\json3\lib\json3.js" />
     <Content Include="plugins\bowerPackage\json3\lib\json3.min.js" />
+    <Content Include="plugins\bowerPackage\qtip2\basic\jquery.qtip.css" />
+    <Content Include="plugins\bowerPackage\qtip2\basic\jquery.qtip.js" />
+    <Content Include="plugins\bowerPackage\qtip2\basic\jquery.qtip.min.css" />
+    <Content Include="plugins\bowerPackage\qtip2\basic\jquery.qtip.min.js" />
+    <Content Include="plugins\bowerPackage\qtip2\imagesloaded.pkg.min.js" />
+    <Content Include="plugins\bowerPackage\qtip2\jquery.qtip.css" />
+    <Content Include="plugins\bowerPackage\qtip2\jquery.qtip.js" />
+    <Content Include="plugins\bowerPackage\qtip2\jquery.qtip.min.css" />
+    <Content Include="plugins\bowerPackage\qtip2\jquery.qtip.min.js" />
     <Content Include="plugins\bowerPackage\typed.js\.gitignore" />
     <Content Include="plugins\bowerPackage\typed.js\dist\typed.min.js" />
     <Content Include="plugins\bowerPackage\typed.js\gulpfile.js" />
@@ -4076,6 +4086,11 @@
     <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\bower.json" />
     <Content Include="plugins\bowerPackage\angular-ui-router-anim-in-out\scss\anim-in-out.scss" />
     <Content Include="client\templates\home\filedownload\form\請購需求單_%28非經SAP請採流程%29.doc" />
+    <Content Include="plugins\bowerPackage\qtip2\.bower.json" />
+    <Content Include="plugins\bowerPackage\qtip2\basic\jquery.qtip.min.map" />
+    <Content Include="plugins\bowerPackage\qtip2\bower.json" />
+    <Content Include="plugins\bowerPackage\qtip2\jquery.qtip.min.map" />
+    <Content Include="plugins\bowerPackage\qtip2\README.md" />
     <None Include="Properties\PublishProfiles\10.20.1.3%28test%29.pubxml" />
     <None Include="Properties\PublishProfiles\10.20.1.3.pubxml" />
     <None Include="Properties\PublishProfiles\10.20.1.4.pubxml" />
