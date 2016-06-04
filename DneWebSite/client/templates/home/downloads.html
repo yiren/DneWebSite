@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home pr-10"></i><a ui-sref="home">首頁</a></li>
-                    <li class="active">常用下載</li>
+                    <li class="active">常用表單/資料</li>
                 </ol>
             </div>
         </div>
@@ -37,18 +37,18 @@
             <div class="col-md-3">
                 <div class="sidebar">
                     <div class="block clearfix">
-                        <h3 class="title">常用表單</h3>
+                        <h3 class="title">參考文件及常用表單</h3>
                         <div class="separator"></div>
                         <nav class="affix-menu scrollspy">
-                            <ul class="smooth-scroll nav nav-pills nav-stacked">                  
-                                <li><a href="#general" du-smooth-scroll du-scrollspy>一般常用表格</a></li>
-                                <li><a href="#document" du-smooth-scroll du-scrollspy>公文常用表格</a></li>
-                                <li><a href="#form" du-smooth-scroll du-scrollspy>申請單與費用表格</a></li>
+                            <ul class="smooth-scroll nav nav-pills nav-stacked">
+                                <li><a href="#reference" du-smooth-scroll du-scrollspy>常用參考文件</a></li>
+                                <li><a href="#general" du-smooth-scroll du-scrollspy>文書類常用表單</a></li>
+                                <li><a href="#form" du-smooth-scroll du-scrollspy>申請單與費用報支表格</a></li>
                                 <li><a href="#meeting" du-smooth-scroll du-scrollspy>會議記錄格式</a></li>
                                 <li><a href="#powerpoint" du-smooth-scroll du-scrollspy>簡報格式</a></li>
                                 <li><a href="#personnel" du-smooth-scroll du-scrollspy>人資服務相關表格</a></li>
                                 <li><a href="#other" du-smooth-scroll du-scrollspy>其他下載/連結</a></li>
-                                
+
                             </ul>
                         </nav>
                     </div>
@@ -62,12 +62,12 @@
             <!-- ================ -->
             <div class="main col-md-9">
 
-                <div id="general">
-                    <h2 class="page-header"><span class="fa fa-info-circle"></span> 一般常用表格</h2>
+                <div id="reference">
+                    <h2 class="page-header"><span class="fa fa-info-circle"></span> 常用參考文件</h2>
                     <table class="table table-striped table-bordered table-hover table-condensed">
                         <thead>
                             <tr>
-                                <th>檔案名稱</th>
+                                <th>文件名稱</th>
                                
                             </tr>
                         </thead>
@@ -76,63 +76,73 @@
                                 <td><span class="fa fa-file-text-o"></span> 緊急通報窗口名冊 <a ng-href="http://{{h.host}}/procedure-format/procedure-format-9.pdf"> <span class="fa fa-download"></span></a></td>
                             </tr>
                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 核技處公務電話紀錄<a ng-href="http://{{h.host}}/format/telrecord.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 出席會議情形報告單<a href="http://10.16.13.31:8000/doc/20101025101214.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 公司會議出席名冊<a href="http://10.16.13.31:8000/ftp/20100920014249.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                            
-
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> SEO_DEO案件資訊註記單<a ng-href="http://{{h.host}}/format/seo_deo_remark.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> DEO處理單R1填寫說明<a ng-href="http://{{h.host}}/format/DEO%E8%99%95%E7%90%86%E5%96%AER1%E5%A1%AB%E5%AF%AB%E8%AA%AA%E6%98%8E.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 替代方案DEO技術服務案文件處理單R1-1000421<a ng-href="http://{{h.host}}/format/%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88DEO%E6%8A%80%E8%A1%93%E6%9C%8D%E5%8B%99%E6%A1%88%E6%96%87%E4%BB%B6%E8%99%95%E7%90%86%E5%96%AER1-1000421.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="document">
-                    <h2 class="page-header"><span class="fa fa-navicon"></span> 公文相關表格</h2>
-                    <table class="table table-striped table-bordered table-hover table-condensed">
-                        <thead>
-                            <tr>
-                                <th>檔案名稱</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 公文書寫教材<a ng-href="http://{{h.host}}/writing/公文書寫教材-史秘書.ppt"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                            <tr>
                                 <td><span class="fa fa-file-text-o"></span> 檔案分類表<a ng-href="http://{{h.host}}/核技處檔案分類表105-file-sort.xls" target="blank"> <span class="fa fa-download"></span></a></td>
                             </tr>
-                           
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 本處公司稿以總經理署名之例行性公文授權項目<a ng-href="http://{{h.host}}/writing/公司稿授權處長核定之項目.pdf"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td><span class="fa fa-external-link"></span> 會計部門免會辦須知<a href="http://d018.taipower.com.tw/index.php/m-internal-regulations/m-company-rules-and-regulations" target="_blank"> <span class="fa fa-link"></span></a></td>
+                            </tr>
                             <tr>
                                 <td><span class="fa fa-external-link"></span> 總管理處分層負責表-共同事項<a href="http://10.2.1.2:8080/joomla158s/index.php?option=com_content&view=article&id=72:2009-07-17-06-37-57&catid=87:分層負責&Itemid=81" target="_blank"> <span class="fa fa-link"></span></a></td>
                             </tr>
-                            
+
                             <tr>
                                 <td><span class="fa fa-file-text-o"></span> 處內分層負責表<a ng-href="http://{{h.host}}/Aa/Aa01/step_960601.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="fa fa-file-text-o"></span> 文件保存期限<a ng-href="http://{{h.host}}/nedpe/saveperiod/default-sp.htm"> <span class="fa fa-link"></span></a></td>
                             </tr>
                             <tr>
                                 <td><span class="fa fa-file-text-o"></span> 設計文件分級<a ng-href="http://{{h.host}}/nedpe/documentlevel/index-dl.htm" target="blank"> <span class="fa fa-link"></span></a></td>
                             </tr>
+
+
                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 核技處英文簽辦用簽
+                                <td><span class="fa fa-file-text-o"></span> 員工廉政倫理規範簽報知會表<a ng-href="http://{{h.host}}/format/user.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 受贈財務事件處理程序<a ng-href="http://{{h.host}}/format/gift.pdf"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+                <div id="general">
+                    <h2 class="page-header"><span class="fa fa-navicon"></span> 文書類常用表單</h2>
+                    <table class="table table-striped table-bordered table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th>表單名稱</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 蓋用印信申請表<a href="http://10.16.13.31:8000/doc/20160120030053.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 核能技術處蓋用印信申請<a href="http://10.16.13.31:8000/doc/20101206104352.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 出席會議情形報告單<a href="http://10.16.13.31:8000/doc/20101025101214.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 核技處公務電話紀錄<a ng-href="http://{{h.host}}/format/telrecord.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 公司會議出席名冊<a href="http://10.16.13.31:8000/ftp/20100920014249.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="fa fa-file-text-o"></span> 核技處英文簽辦用簽
                                     <a ng-href="http://{{h.host}}/format/ned-e5.doc">首頁 <span class="fa fa-download"></span></a>
                                     /
                                     <a ng-href="http://{{h.host}}/format/ned-e6.doc">次頁 <span class="fa fa-download"></span></a>
@@ -143,15 +153,21 @@
                             </tr>
 
                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 本處公司稿以總經理署名之例行性公文授權項目<a ng-href="http://{{h.host}}/writing/公司稿授權處長核定之項目.pdf"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-
-                           
-
-                            <tr>
-                                <td><span class="fa fa-external-link"></span> 會計部門免會辦須知<a href="http://d018.taipower.com.tw/index.php/m-internal-regulations/m-company-rules-and-regulations" target="_blank"> <span class="fa fa-link"></span></a></td>
+                                <td><span class="fa fa-file-text-o"></span> SEO_DEO案件資訊註記單<a ng-href="http://{{h.host}}/format/seo_deo_remark.doc"> <span class="fa fa-download"></span></a></td>
                             </tr>
                             
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> DEO處理單R1填寫說明<a ng-href="http://{{h.host}}/format/DEO%E8%99%95%E7%90%86%E5%96%AER1%E5%A1%AB%E5%AF%AB%E8%AA%AA%E6%98%8E.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="fa fa-file-text-o"></span> 替代方案DEO技術服務案文件處理單R1-1000421<a ng-href="http://{{h.host}}/format/%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88DEO%E6%8A%80%E8%A1%93%E6%9C%8D%E5%8B%99%E6%A1%88%E6%96%87%E4%BB%B6%E8%99%95%E7%90%86%E5%96%AER1-1000421.doc"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+
+                            
+
+
+
 
                         </tbody>
                     </table>
@@ -159,22 +175,16 @@
                 <!-- page-title end -->
                 
                 <div id="form">
-                    <h2 class="page-header"><span class="fa fa-paperclip"></span> 申請單與費用報支相關表格</h2>
+                    <h2 class="page-header"><span class="fa fa-paperclip"></span> 申請單與費用報支相關表單</h2>
                     <table class="table table-striped table-bordered table-hover table-condensed">
                         <thead>
                             <tr>
-                                <th>檔案名稱</th>
+                                <th>表單名稱</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 蓋用印信申請表<a href="http://10.16.13.31:8000/doc/20160120030053.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 核能技術處蓋用印信申請<a href="http://10.16.13.31:8000/doc/20101206104352.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
-                            </tr>
+                            
                             <tr>
                                 <td><span class="fa fa-external-link"></span> 單據粘存單<a href="http://d018.taipower.com.tw/index.php/m-general-forms-download-files" target="_blank"> <span class="fa fa-link"></span></a></td>
                             </tr>
@@ -194,12 +204,7 @@
                             <tr>
                                 <td><span class="fa fa-file-text-o"></span> 台電公司支出證明單<a ng-href="http://{{h.host}}/format/tpc-payment.doc"> <span class="fa fa-download"></span></a></td>
                             </tr>
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 員工廉政倫理規範簽報知會表<a ng-href="http://{{h.host}}/format/user.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 受贈財務事件處理程序<a ng-href="http://{{h.host}}/format/gift.pdf"> <span class="fa fa-download"></span></a></td>
-                            </tr>
+                           
                             <tr>
                                 <td>
                                     <span class="fa fa-external-link"></span> 龍門施工處會議室設備借用申請單
@@ -226,13 +231,14 @@
                                 <td><span class="fa fa-file-text-o"></span> (一般)會議紀錄格式暨相關規定<a ng-href="http://{{h.host}}/report/gine.doc"> <span class="fa fa-download"></span></a></td>
                             </tr>
                             <tr>
+                                <td><span class="fa fa-file-text-o"></span> 公司會議紀錄格式<a href="client/templates/home/filedownload/公司會議紀錄.doc" target="_blank"> <span class="fa fa-download"></span></a></td>
+                            </tr>
+                            <tr>
+                                
                                 <td><span class="fa fa-file-text-o"></span> 會議紀錄格式(中文版)<a ng-href="http://{{h.host}}/report/meetform1.doc"> <span class="fa fa-download"></span></a></td>
                             </tr>
                             <tr>
                                 <td><span class="fa fa-file-text-o"></span> 會議紀錄格式(英文版)<a ng-href="http://{{h.host}}/report/meetform2.doc"> <span class="fa fa-download"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="fa fa-file-text-o"></span> 簽名冊格式<a ng-href="http://{{h.host}}/report/signform.doc"> <span class="fa fa-download"></span></a></td>
                             </tr>
                         </tbody>                     
                     </table> 
@@ -256,7 +262,7 @@
                                 <td><span class="fa fa-file-text-o"></span> 公司重要簡報參考<a href="ftp://10.16.16.21:61/" target="_blank"> <span class="fa fa-download"></span></a></td>
                             </tr>
                             <tr>
-                                <td><span class="fa fa-file-text-o"></span> 簡報元素下載區<a ui-sref="underConstruction"> <span class="fa fa-download"></span></a></td>
+                                <td><span class="fa fa-file-text-o"></span> 簡報元素下載區<a href="ftp://10.144.103.4/temp/%C2%B2%B3%F8%A4%B8%AF%C0%A4U%B8%FC%B0%CF/" target="_blank"> <span class="fa fa-link"></span></a></td>
                             </tr>
                            
                             

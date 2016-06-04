@@ -50,7 +50,7 @@
 	            },
 	            timezone:'Asia/Taipei',
 	            lang:'zh-tw',
-	            weekends:false,
+	            weekends:true,
 	            defaultView:'basicDay',
 	            minTime:'07:00:00',
 	            maxTime:'19:00:00',
@@ -117,6 +117,9 @@
                     //如果沒有輸入出席人員，則顯示空白字串
                     if (event.description == null ||event.description == undefined) {
                         event.description='';
+                    }
+                    if (event.location == null ||event.location == undefined) {
+                        event.location='';
                     }
 	                //var suffix = '</div>';
                     if (view.name == 'basicDay') {
