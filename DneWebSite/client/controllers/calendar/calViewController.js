@@ -79,41 +79,26 @@
 	            //Event Handling
 	            eventClick: eventDetail,
 	            viewRender: function (view, element) {
+                    //自行格式化"日"表格
 	                if (view.name == 'basicDay') {
 	                    var additionalColumn = '<tr><td><div class="row"><div class="col-md-2">日期</div><div class="col-md-5">重要事項</div><div class="col-md-2">出席人員</div><div class="col-md-1">地點</div></div></td></tr>'
                         ;
-	                    //if (event.allDay == true) {
-	                    //    additionalInfo='<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
-	                    //    + '<span class="pull-right">地點:' + event.location + '</span>';
-	                    //} else {
-	                    //    additionalInfo =
-	                    //        additionalInfo = '<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
-	                    //    + '<span class="pull-right">地點:' + event.location + '</span>';
-	                    //}
+	                   
 	                   
 	                    element.find('.fc-head').append(additionalColumn);
 	                }
                     
-	                //console.log(view);
-	                //console.log(element);
+	                
 	            },
 	            dayRender: function (date, cell) {
-	               // console.log(date);
-	               // console.log(cell);
+	              
 	            },
 	            eventRender: function (event, element, view) {
 
 	               
                     element.attr('href', 'javascript:void(0)');
                     
-                    //element.find(".fc-title").remove();
                     
-                    //var prefix = '<div class="row">';
-
-                    //var time = '<div class="col-md-4">' +
-                    //            +'<span class="fc-content></span>'
-
-                    //            + '</div>';
                     //如果沒有輸入出席人員，則顯示空白字串
                     if (event.description == null ||event.description == undefined) {
                         event.description='';
@@ -121,21 +106,14 @@
                     if (event.location == null ||event.location == undefined) {
                         event.location='';
                     }
-	                //var suffix = '</div>';
+	               
                     if (view.name == 'basicDay') {
                         var additionalInfo = '<div class="col-md-2 nowrap">' + event.description + '</div>'
                             + '<div class="col-md-1 nowrap">' + event.location + '</div>';
                         
                         if (event.allDay==false) {
                             
-                            //if (event.allDay == true) {
-                            //    additionalInfo='<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
-                            //    + '<span class="pull-right">地點:' + event.location + '</span>';
-                            //} else {
-                            //    additionalInfo =
-                            //        additionalInfo = '<br/><span class="pull-right">出席人員: ' + event.description + '</span>'
-                            //    + '<span class="pull-right">地點:' + event.location + '</span>';
-                            //}
+                            
                             element.find('.fc-content').addClass('row');
                             element.find('.fc-time').addClass("col-md-2 nowrap");
                             element.find('.fc-title').addClass("col-md-5 nowrap");
@@ -167,11 +145,9 @@
 
                     if (event.title.indexOf(dutyOut) >= 0 || event.title.indexOf(vac) >= 0
                         || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0) {
-                        //element.find('fc-event-skin').addClass('fc-event-dutyOut');
-                        //console.log(element.find('fc-event-skin'));
-                        //console.log("公出");
+                        
                         element.addClass('fc-event-dutyOut');
-                        //element.css('background-color', ' #770ECC');
+                       
                     }
 
                     if (event.title.indexOf(supOutage) >= 0) {
@@ -185,16 +161,13 @@
                         element.addClass('fc-event-speech');
                     }
                     
-                    //element.append(additionalInfo);
-                    //console.log(event);
-                    //console.log(element);
-                    //console.log(view);
+                  
                 }
             }
             
 
         }
-        //資料庫應由資料庫來
+        //資料從Google Calendar來
 		vm.events = {
 		    googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
 		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com'

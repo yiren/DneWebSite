@@ -1,6 +1,6 @@
 ﻿(function() {
         'use strict';
-
+        //會議紀錄
         angular.module('main')
             .controller('meetingGridCtrl', ['i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants', uiGrid]);
 

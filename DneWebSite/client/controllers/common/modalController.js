@@ -1,6 +1,6 @@
 (function(){
     'use strict'
-
+    //¼u¸õµøµ¡
     angular.module('main')
 		.controller('modalCtrl', ['$uibModalInstance','$log','data',calModal]);
 

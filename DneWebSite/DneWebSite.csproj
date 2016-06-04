@@ -787,7 +787,6 @@
     <Content Include="images\home\pic5.jpg" />
     <Content Include="js\rev-slider-init.js" />
     <Content Include="js\rev-slider-initv1.js" />
-    <Content Include="js\template.js" />
     <Content Include="js\templatev1.js" />
     <Content Include="plugins\template\fontello\css\animation.css" />
     <Content Include="plugins\template\fontello\css\fontello-codes.css" />
@@ -3256,7 +3255,6 @@
     <Content Include="temp\caladmin\eventEditModal.html" />
     <Content Include="css\animate.css" />
     <Content Include="css\animations.css" />
-    <Content Include="css\print-invoice.css" />
     <Content Include="css\shortcode_timeline1.css" />
     <Content Include="css\skins\blue.css" />
     <Content Include="css\skins\brown.css" />
@@ -3282,7 +3280,6 @@
     <Content Include="js\animations-init.js" />
     <Content Include="js\fullcalendar-init.js" />
     <Content Include="js\parallax-init.js" />
-    <Content Include="js\template2.js" />
     <Content Include="plugins\template\charts\Chart.js" />
     <Content Include="plugins\template\charts\Chart.min.js" />
     <Content Include="plugins\template\fullcalendar\CHANGELOG.txt" />
