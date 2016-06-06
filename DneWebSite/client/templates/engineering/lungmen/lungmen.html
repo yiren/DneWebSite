@@ -31,7 +31,7 @@
             
 			<!-- main-container start -->
 			<!-- ================ -->
-			<section class="main-container">
+			<section class="main-container" ng-controller="homeCtrl as h">
 
 				<div class="container">
 					<div class="row">
@@ -69,20 +69,20 @@
                                     <li>
                                         <span class="fa fa-pencil-square-o"></span> FSAR
                                         <ul class="no-list-style">
-                                            <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/2007/" target="_blank">FSAR 2007</a></li>
-                                            <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/2013/" target="_blank">FSAR 2012</a></li>
-                                            <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/2013/" target="_blank">FSAR 2015</a></li>
+                                            <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/2007/" target="_blank">FSAR 2007</a></li>
+                                            <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/2013/" target="_blank">FSAR 2012</a></li>
+                                            <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/2013/" target="_blank">FSAR 2015</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <span class="fa fa-pencil-square-o"></span> 龍門SER
                                         <ul class="no-list-style">
-                                            <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/LungmenSER/" target="_blank">SER 2010</a></li>
-                                            <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/LungmenSER2013/" target="_blank">SER 2013</a></li>
+                                            <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/LungmenSER/" target="_blank">SER 2010</a></li>
+                                            <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/LungmenSER2013/" target="_blank">SER 2013</a></li>
                                         </ul>
                                     </li>
-                                    <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/FSAR/FSARTXT/LungmenSRP/" target="_blank">龍門SRP</a></li>
-                                    <li><span class="fa fa-file-o"></span> <a href="http://10.144.101.3/LMSealPlan/龍門電廠停工-封存計畫.pdf" target="_blank">龍門電廠停工封存計畫</a></li>
+                                    <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/FSAR/FSARTXT/LungmenSRP/" target="_blank">龍門SRP</a></li>
+                                    <li><span class="fa fa-file-o"></span> <a ng-href="http://{{h.host}}/LMSealPlan/龍門電廠停工-封存計畫.pdf" target="_blank">龍門電廠停工封存計畫</a></li>
                                 </ul>
                             </div>
                             <!-- section end -->
@@ -94,7 +94,7 @@
                                 <h2 class="text-left title">核管會議網站</h2>
                                 <div class="separator-2"></div>
                                 <div class="col-md-5">
-                                    <a href="http://10.144.101.3/nednl/index.htm" title="核管會議網站" target="_blank">
+                                    <a ng-href="http://{{h.host}}/nednl/index.htm" title="核管會議網站" target="_blank">
                                         <i class="fa fa-external-link"> 核管會議網站</i>
                                     </a>
                                 </div>
@@ -107,7 +107,9 @@
                             <div id="chronicle" class="section">
                                 <h2 class="text-left title">龍門大事紀</h2>
                                 <div class="text-right"><span class="separator-2"></span></div>
+                                <!--大事紀一左一右-->
                                 <ul class="timeline-v1">
+                                    <!--左-->
                                     <li>
                                         <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
                                         <div class="timeline-panel">
@@ -122,6 +124,7 @@
 
                                         </div>
                                     </li>
+                                    <!--右-->
                                     <li class="timeline-inverted">
                                         <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
                                         <div class="timeline-panel">
@@ -289,6 +292,37 @@
 
                                         </div>
                                     </li>
+                                     <li class="timeline-inverted">
+                                        <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p class="pull-left">2015年11月</p>
+                                                <h4>行政院原子能委員會核定封存前終期安全分析報告(FSAR)進版內容更新FSAR 2015B</h4>
+
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p class="pull-right">2016年5月</p>
+                                                <h4 class="timeline-block">
+                                                    行政院原子能委員會正式發行龍門SER與核定龍門中期安全分析報告(FSAR 2015B)
+                                                </h4>
+
+
+                                            </div>
+
+                                        </div>
+                                    </li>
                                     <!--
         <li class="timeline-inverted">
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
@@ -316,8 +350,8 @@
 
                                 <h2 class="text-left title">重要參考文件</h2>
                                 <div class="separator-2"></div>
-                                <p>龍門計畫因政府封存政策影響，相關文件資料暫無法持續更新，若有需要，請點選下面圖片或<a href="http://10.144.101.3/" target="_blank"><strong>點我</strong>連結舊網查詢</a></p>
-                                <a href="http://10.144.101.3/" target="_blank"><img src="images/lungmen/oldPage_Lungmen.png" /></a>
+                                <p>龍門計畫因政府封存政策影響，相關文件資料暫無法持續更新，若有需要，請點選下面圖片或<a ng-href="http://{{h.host}}/" target="_blank"><strong>點我</strong>連結舊網查詢</a></p>
+                                <a ng-href="http://{{h.host}}/" target="_blank"><img src="images/lungmen/oldPage_Lungmen.png" /></a>
                             </div>
                             <!-- section end -->
 
