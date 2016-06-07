@@ -54,7 +54,8 @@ namespace DneWebSite.Models.bulletin
         機械組 = 6,
         儀控組 = 7,
         電氣組 = 8,
-        處長室 = 9,
+        人資服務=9,
+        政風=10,
     }
 
     public enum Category
