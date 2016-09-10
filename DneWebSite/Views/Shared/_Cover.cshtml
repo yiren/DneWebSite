@@ -66,7 +66,12 @@
     <!-- Custom css -->
     <link href="~/css/customv1.css" rel="stylesheet">
     
-    
+    <script>
+        window.onload = function () {
+            document.body.style.zoom = "100%";
+            document.body.style.msTransformOrigin = "center top";
+        }
+    </script>
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -157,7 +162,7 @@
 
                                         <!-- Collect the nav links, forms, and other content for toggling -->
                                         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                                            <ul class="nav navbar-nav navbar-right">
+                                            <ul class="nav navbar-nav navbar-left">
                                                 <li class="dropdown">
                                                     <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">關於本處</a>
                                                     <ul class="dropdown-menu">
@@ -325,9 +330,9 @@
                                                                     <h4>內部規章</h4>
                                                                     <div class="divider"></div>
                                                                     <ul class="menu">
-                                                                        <li><a href="http://w3-old.taipower.com.tw/" target="_blank"><i class="icon-right-open"></i>公司章則(W3舊網->各項規章)</a></li>
-                                                                        <li><a href="http://10.18.8.153/d05607/procedure/核發處內部規章/new_page_2.htm" target="_blank"><i class="icon-right-open"></i>核能事業部章則</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/procedure/index.htm"><i class="icon-right-open"></i>處內章則/程序書</a></li>
+                                                                        <li><a ui-sref="companyReg"><i class="icon-right-open"></i>公司章則</a></li>
+                                                                        <li><a ui-sref="departmentReg"><i class="icon-right-open"></i>核能事業部章則</a></li>
+                                                                        <li><a ng-href="http://{{h.host}}/procedure/index.htm"><i class="icon-right-open"></i>處內章則</a></li>
 
 
                                                                     </ul>
