@@ -79,7 +79,7 @@ namespace DneWebSite.Controllers
             }
             bool isAuthenticated;
             #region AD Authentication
-            using (var context = new PrincipalContext(ContextType.Domain, "dnesvr02.d027.com.tw"))
+            using (var context = new PrincipalContext(ContextType.Domain, "d027.msad.taipower.com.tw"))
             {
                 //透過AD檢查帳號
                 isAuthenticated= context.ValidateCredentials(model.UserName, model.Password);
