@@ -7,6 +7,7 @@
  */
 'use strict';
 
+
 angular.module('feeds-directives', []).directive('feed', ['feedService', '$compile', '$templateCache', '$http', function (feedService, $compile, $templateCache, $http) {
   return  {
     restrict: 'E',
@@ -78,7 +79,7 @@ angular.module('feeds-services', []).factory('feedService', ['$q', '$sce', 'feed
       if (feedCache.hasCache(feedURL)) {
         return deferred.resolve(sanitizeFeedEntry(feedCache.get(feedURL)));
       }
-
+      google.load('feeds', '1');
       var feed = new google.feeds.Feed(feedURL);
       if (count) {
         feed.includeHistoricalEntries();

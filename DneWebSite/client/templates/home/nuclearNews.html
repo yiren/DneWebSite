@@ -4,6 +4,8 @@
     <div id="my-feeds" class="row" ng-controller="FeedsController">
         <h1 class="text-center title">國際核能最新消息</h1>
         <div class="separator"></div>
+        <h3 style="text-align:center"><span class="fa fa-warning"></span> 因Google Feeds API終止服務，需另尋套件取得相關下列核能國際資訊</h3>
+        
         <div ng-controller="FeedWidgetController" ng-repeat="feed in feeds track by feed.id" class="col-md-4">
             <div class="panel panel-success">
                 <div class="panel-heading">
@@ -16,6 +18,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
 

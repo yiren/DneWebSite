@@ -64,7 +64,6 @@
     <link href="~/css/customv1.css" rel="stylesheet">
     
     
-    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -480,11 +479,14 @@
 
     <!-- JavaScript files placed at the end of the document so the pages load faster
         ================================================== -->
-
-    <!-- Google Feed API -->
+     
     <script type="text/javascript"
             src="https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22feeds%22%2C%22version%22%3A%221.0%22%2C%22nocss%22%3Atrue%7D%5D%7D"></script>
-
+   <!-- Google Feed API
+    <script type="text/javascript"
+            src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("feeds", "1");</script>
+-->
     <!-- Jquery and Bootstap core js files -->
     <script type="text/javascript" src="~/plugins/template/jquery.min.js"></script>
 
@@ -528,7 +530,7 @@
     <script src="~/js/qTip2.js"></script>
 
     <!-- Angular RSS Reader -->
-    <script src="~/plugins/bowerPackage/angular-feeds/app/angular-feeds/angular-feeds.min.js"></script>
+    <script src="~/plugins/bowerPackage/angular-feeds/app/angular-feeds/angular-feeds.js"></script>
 
     <!-- Angular ScrollSpy -->
     <script src="~/plugins/bowerPackage/angular-scroll/angular-scroll.min.js"></script>
