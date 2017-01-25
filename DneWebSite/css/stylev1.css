@@ -15,17 +15,20 @@ about etc )
 10) IE 8 Support
 * */
 
+
+
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 @font-face {
   font-family: 'cwTeXFangSong';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 200;
   src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
   src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
        url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
        url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
        url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
 }
+    
 /* 1 Typography
 ----------------------------------------------------------------------------- */
 html {
@@ -33,7 +36,7 @@ html {
 }
 body {
 	font-family: 'cwTeXFangSong','Open Sans', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.50;
 	color: #666666;
 	background-color: #ffffff;
@@ -3523,6 +3526,7 @@ a.overlay.small i {
 ----------------------------------------------------------------------------- */
 /* first level menu */
 .navbar.navbar-default {
+    font-size:24px;
 	border-radius: 0px;
 	margin: 12px 0 5px;
 	background-color: #fafafa;

@@ -168,10 +168,7 @@
 
         }
         //資料從Google Calendar來
-		vm.events = {
-		    googleCalendarApiKey: 'AIzaSyC7RwCZBBk5R7Ch_Syv1YmO_GfHfYE-Tmw',
-		    googleCalendarId: '13juf6evptsnbc83704vkhgh00@group.calendar.google.com'
-		}
+		
 
         
             /*[
@@ -212,7 +209,6 @@
                  
         ]*/
 
-       
 
         vm.eventSources=[{
             googleCalendarApiKey: 'AIzaSyBGsSycErhrJgP8vlFfzbtCpNuStqcWjHo',
