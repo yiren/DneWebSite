@@ -58,6 +58,12 @@
                         templateUrl: '/../client/templates/error/underConstruction.html',
                         controller: 'homeCtrl'
                     })
+                     //公司章則
+                    .state('govReg', {
+                        url: '/govReg',
+                        templateUrl: '/../client/templates/regular/govReg.html',
+                        controller: 'homeCtrl'
+                    })
                     //公司章則
                     .state('companyReg', {
                         url: '/companyReg',

@@ -12,7 +12,6 @@
         'ui.grid.selection',
         'ui.grid.pagination',
         'duScroll',
-        'feeds',
         'anim-in-out'
     ])
     .value('duScrollDuration', 2000)

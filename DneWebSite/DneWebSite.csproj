@@ -336,6 +336,7 @@
     <Content Include="client\templates\error\underConstruction.html" />
     <Content Include="client\templates\home\coreduty.html" />
     <Content Include="client\templates\regular\books.html" />
+    <Content Include="client\templates\regular\govReg.html" />
     <Content Include="client\templates\regular\companyReg.html" />
     <Content Include="client\templates\regular\departmentReg.html" />
     <Content Include="images\admin-1.jpg" />
@@ -4110,6 +4111,7 @@
     <Content Include="plugins\respond.js" />
     <Content Include="plugins\respond.min.js" />
     <Content Include="plugins\_references.js" />
+    <Content Include="Views\Shared\_Cover.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -4155,7 +4157,6 @@
     <Content Include="Views\Error\BadRequest.cshtml" />
     <Content Include="Views\Error\NoPermission.cshtml" />
     <Content Include="Views\Error\InternalError.cshtml" />
-    <Content Include="Views\Shared\_Cover.cshtml" />
     <Content Include="Views\Home\IndexV1.cshtml" />
     <Content Include="Views\Account\EasyLogOff.cshtml" />
     <Content Include="Views\Meetings\Create.cshtml" />
@@ -4174,6 +4175,7 @@
     <Content Include="upload\bulltin\dnemeeting\file" />
     <Content Include="upload\bulltin\post\file" />
     <Content Include="upload\wano\file" />
+    <Content Include="Views\Shared\_Cover_before_Bundle.cshtml" />
     <None Include="Web.10.20.1.3.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

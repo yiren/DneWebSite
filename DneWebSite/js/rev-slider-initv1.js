@@ -43,7 +43,7 @@ $(document).ready(function(){
 				shuffle:"off",
 				
 				autoHeight:"off",						
-				forceFullWidth:"on",						
+				forceFullWidth:"off",						
 										
 				hideThumbsOnMobile:"off",
 				hideNavDelayOnMobile:1500,						
