@@ -11,14 +11,14 @@
                 //新增頁面及對應的html
                 $stateProvider
                     //進入頁
-        			.state('cover',{
-        				url:'/',
-        				templateUrl:'/../client/templates/home/imageSilderFull.html',
-        				controller:'homeCtrl'
-        			})
+        			//.state('cover',{
+        			//	url:'/',
+        			//	templateUrl:'/../client/templates/home/imageSilderFull.html',
+        			//	controller:'homeCtrl'
+        			//})
                     //首頁
                     .state('home',{
-                        url:'/home',
+                        url:'/',
                         templateUrl:'/../client/templates/home/body.html',
                         controller:'homeCtrl'
                     })

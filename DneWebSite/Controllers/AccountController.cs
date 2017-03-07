@@ -155,10 +155,7 @@ namespace DneWebSite.Controllers
                         
                     }
                 }
-                        
-               
-                
-                
+
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                 return RedirectToLocal(returnUrl);

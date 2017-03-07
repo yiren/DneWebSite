@@ -349,6 +349,8 @@
     <Content Include="images\download-1.jpg" />
     <Content Include="images\download-2.jpg" />
     <Content Include="images\favicon.ico" />
+    <Content Include="images\home\lin.jpg" />
+    <Content Include="images\home\lin2.jpg" />
     <Content Include="images\jogging.jpg" />
     <Content Include="images\loader.gif" />
     <Content Include="images\meeting-1.jpg" />
