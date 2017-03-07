@@ -15,6 +15,8 @@ namespace DneWebSite
                     "~/plugins/template/modernizr.js",
                     "~/plugins/template/jquery.parallax-1.1.3.js",
                     "~/plugins/template/jquery.appear.js",
+                    "~/plugins/template/rs-plugin/js/jquery.themepunch.revolution.min.js",
+                    "~/plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js",
                     "~/js/templatev1.js",
                     "~/js/rev-slider-initv1.js",
                     "~/js/rev-slider-init.js",
@@ -32,7 +34,11 @@ namespace DneWebSite
                     "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",
                     "~/client/app.js",
                     "~/client/router.js",
-                    "~/client/controllers/homecontroller.js"
+                    "~/client/controllers/homecontroller.js",
+                    "~/client/controllers/meetingGridController.js",
+                    "~/client/controllers/postGridController.js",
+                    "~/client/controllers/calendar/calViewController.js",
+                    "~/client/controllers/common/modalController.js"
                 ));
 
             //bundles.Add(new ScriptBundle("~/revSlider").Include("~/"));
