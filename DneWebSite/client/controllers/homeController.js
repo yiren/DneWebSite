@@ -2,7 +2,14 @@
 	'use strict';
 
 	angular.module('main')
-        .controller('homeCtrl', ['$log', '$state', function ($log, $state) {
+        .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
+            $scope.$on('$viewContentLoaded', function () {
+                //call it here
+                console.log("preload");
+                ngDialog.open({
+                    template: "client/templates/home/popup.html",
+                });
+            });
             var vm = this;
             //舊網主機位址
             vm.host = '10.20.1.4';

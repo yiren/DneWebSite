@@ -6,8 +6,6 @@
 [![github tag](https://img.shields.io/github/tag/likeastore/ngDialog.svg)](https://github.com/likeastore/ngDialog/tags)
 [![Download Count](https://img.shields.io/npm/dm/ng-dialog.svg)](http://www.npmjs.com/package/ng-dialog)
 [![Code Climate](https://codeclimate.com/github/likeastore/ngDialog/badges/gpa.svg)](https://codeclimate.com/github/likeastore/ngDialog)
-[![Issue Stats](http://issuestats.com/github/likeastore/ngdialog/badge/pr?style=flat)](http://issuestats.com/github/likeastore/ngDialog)
-[![Issue Stats](http://issuestats.com/github/likeastore/ngdialog/badge/issue?style=flat)](http://issuestats.com/github/likeastore/ngDialog)
 
 > Modal dialogs and popups provider for [AngularJS](http://angularjs.org/) applications.
 
@@ -31,14 +29,22 @@ npm install ng-dialog
 
 ## Usage
 
-You need only to include ``ngDialog.js``,  ``ngDialog.css`` and  ``ngDialog-theme-default.css`` (as minimal setup) to your project and then you can start using the ``ngDialog`` provider in your directives, controllers and services. For example in controllers:
+You need only to include ``ngDialog.js``,  ``ngDialog.css`` and  ``ngDialog-theme-default.css`` (as minimal setup) to your project and then you can start using the ``ngDialog`` provider in your directives, controllers and services.  For example:
+
+    <link rel="stylesheet" href="lib/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="lib/ng-dialog/css/ngDialog-theme-default.min.css">
+    <script src="lib/ng-dialog/js/ngDialog.min.js"></script>
+
+Define the className to be the ``ngDialog-theme-default``. 
+
+For example in controllers:
 
 ```javascript
 var app = angular.module('exampleApp', ['ngDialog']);
 
 app.controller('MainCtrl', function ($scope, ngDialog) {
     $scope.clickToOpen = function () {
-        ngDialog.open({ template: 'popupTmpl.html' });
+        ngDialog.open({ template: 'popupTmpl.html', className: 'ngdialog-theme-default' });
     };
 });
 ```
@@ -48,6 +54,15 @@ app.controller('MainCtrl', function ($scope, ngDialog) {
 Your help is appreciated! If you've found a bug or if something is not clear, please raise an issue.
 
 Ideally, if you've found an issue, you will submit a PR that meets our [contributor guidelines][contributor-guidelines].
+
+### Running Tests
+
+```bash
+git clone git@github.com:likeastore/ngDialog.git
+cd ngDialog
+npm i
+npm run test
+```
 
 ## API
 
@@ -83,7 +98,7 @@ Also it is possible to use a simple string as template together with ``plain`` o
 It's not always necessary to place your external html template inside ``<script>`` tag. You could put these templates into ``$templateCache`` like this:
 
 ```javascript
-angular.module('dialog.templates').run([$templateCache, function($templateCache) {
+angular.module('dialog.templates').run(['$templateCache', function($templateCache) {
     $templateCache.put('templateId', 'template content');
 }]);
 ```
@@ -219,8 +234,27 @@ ngDialog.open({
     className: 'ngdialog-theme-default'
 });
 ```
+Note: If the className is not mentioned, the dialog will not display correctly.
 
 Check [themes](https://github.com/likeastore/ngDialog#themes) block to learn more.
+
+##### ``appendClassName {String}``
+
+Unlike the `className` property, which overrides any default classes specified through the `setDefaults()` method ([see docs](https://github.com/likeastore/ngDialog#setdefaultsoptions)), `appendClassName` allows for the addition of a class on top of any defaults.
+
+For example, the following would add both the `ngdialog-theme-default` and `ngdialog-custom` classes to the dialog opened:
+
+```javascript
+ngDialogProvider.setDefaults({
+    className: 'ngdialog-theme-default'
+});
+```
+```javascript
+ngDialog.open({
+    template: 'template.html',
+    appendClassName: 'ngdialog-custom'
+});
+```
 
 ##### ``disableAnimation {Boolean}``
 
@@ -350,6 +384,54 @@ If specified, the value is not validated against the DOM. See [Accessibility](#A
 Specifies the CSS selector for the element to be referenced by the ``aria-describedby`` attribute on the dialog element. Default value is ``null`` (unspecified)
 
 If specified, the first matching element is used. See [Accessibility](#Accessibility) for more information.
+
+##### ``width {Number | String}``
+
+This option allows you to control the dialog's width. Default value is `null` (unspecified)
+
+If you provide a Number, 'px' will be appended. To use a custom metric, use a String, e.g. `'40%'`.
+
+For example, the following will add `width: 400px;` to the dialog when opened:
+
+```
+ngDialog.open({
+    template: 'template.html',
+    width: 400
+});
+```
+
+In another example, the following will add `width: 40%;`:
+
+```
+ngDialog.open({
+    template: 'template.html',
+    width: '40%'
+});
+```
+
+##### ``height {Number | String}``
+
+This option allows you to control the dialog's height. Default value is `null` (unspecified)
+
+If you provide a Number, 'px' will be appended. To use a custom metric, use a String, e.g. `'40%'`.
+
+For example, the following will add `height: 400px;` to the dialog when opened:
+
+```
+ngDialog.open({
+    template: 'template.html',
+    height: 400
+});
+```
+
+In another example, the following will add `height: 40%;`:
+
+```
+ngDialog.open({
+    template: 'template.html',
+    height: '40%'
+});
+```
 
 #### Returns:
 
