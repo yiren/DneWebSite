@@ -16,7 +16,7 @@ about etc )
 * */
 
 
-
+/*
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 @font-face {
   font-family: 'cwTeXFangSong';
@@ -28,16 +28,16 @@ about etc )
        url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
        url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
 }
-    
+*/  
 /* 1 Typography
 ----------------------------------------------------------------------------- */
 html {
 	height: 100%;
 }
 body {
-	font-family: 'cwTeXFangSong','Open Sans', Calibri;
+	font-family: 'Open Sans', Calibri;
 	font-size: 20px;
-	line-height: 1.0;
+	line-height: 1.3;
 	color: #666666;
 	background-color: #ffffff;
 }

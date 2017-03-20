@@ -8,6 +8,10 @@ namespace DneWebSite
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/slider")
+                .Include("~/js/rev-slider-init.js"))
+                ;
+
             bundles.Add(new ScriptBundle("~/script")
                 .Include(
                     "~/plugins/template/jquery.min.js",
@@ -19,8 +23,6 @@ namespace DneWebSite
                     "~/plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js",
                     "~/plugins/bowerPackage/qtip2/jquery.qtip.min.js",
                     "~/js/templatev1.js",
-                    "~/js/rev-slider-initv1.js",
-                    "~/js/rev-slider-init.js",
                     "~/js/qTip2.js",
                     "~/plugins/bowerPackage/angular/angular.min.js",
                     "~/plugins/bowerPackage/angular-ui-router/release/angular-ui-router.min.js",

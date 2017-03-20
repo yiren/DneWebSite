@@ -5,9 +5,10 @@
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
             $scope.$on('$viewContentLoaded', function () {
                 //call it here
-                console.log("preload");
+                //console.log("preload");
                 ngDialog.open({
                     template: "client/templates/home/popup.html",
+                    width:600
                 });
             });
             var vm = this;
