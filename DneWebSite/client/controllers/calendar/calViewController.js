@@ -132,7 +132,8 @@
                     if (view.name == 'month') {
                         element.find('.fc-title').addClass("nowrap");
                     }
-                    
+
+                    var busOut = '出差';
                     var dutyOut = '公出';
                     var vac = '假';
                     var training = '受訓';
@@ -144,7 +145,8 @@
                     var project = '專案討論';
 
                     if (event.title.indexOf(dutyOut) >= 0 || event.title.indexOf(vac) >= 0
-                        || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0) {
+                        || event.title.indexOf(training) >= 0 || event.title.indexOf(aboard) >= 0
+                        || event.title.indexOf(busOut) >= 0) {
                         
                         element.addClass('fc-event-dutyOut');
                        
