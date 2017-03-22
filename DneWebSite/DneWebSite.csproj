@@ -351,6 +351,7 @@
     <Content Include="images\download-2.jpg" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\home\fatherday1.png" />
+    <Content Include="images\home\floatinghouse.png" />
     <Content Include="images\home\lin.jpg" />
     <Content Include="images\home\lin2.jpg" />
     <Content Include="images\home\lunarcong.jpg" />
