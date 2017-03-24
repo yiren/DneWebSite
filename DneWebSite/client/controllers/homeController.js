@@ -3,14 +3,15 @@
 
 	angular.module('main')
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
-            $scope.$on('$viewContentLoaded', function () {
-                //call it here
-                //console.log("preload");
-                ngDialog.open({
-                    template: "client/templates/home/popup.html",
-                    width:600
-                });
-            });
+            //頁面載入彈跳視窗
+            //$scope.$on('$viewContentLoaded', function () {
+            //    //call it here
+            //    //console.log("preload");
+            //    ngDialog.open({
+            //        template: "client/templates/home/popup.html",
+            //        width:600
+            //    });
+            //});
             var vm = this;
             //舊網主機位址
             vm.host = '10.20.1.4';
