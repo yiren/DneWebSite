@@ -335,6 +335,7 @@
     <Content Include="client\controllers\postGridController.js" />
     <Content Include="client\templates\error\underConstruction.html" />
     <Content Include="client\templates\home\coreduty.html" />
+    <Content Include="client\templates\home\personnelDownload.html" />
     <Content Include="client\templates\home\popup.html" />
     <Content Include="client\templates\regular\books.html" />
     <Content Include="client\templates\regular\govReg.html" />

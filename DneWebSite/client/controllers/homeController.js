@@ -8,7 +8,7 @@
                 //console.log("preload");
                 ngDialog.open({
                     template: "client/templates/home/popup.html",
-                    width:600
+                    width:700
                 });
             });
             var vm = this;
