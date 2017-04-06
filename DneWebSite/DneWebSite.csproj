@@ -351,14 +351,18 @@
     <Content Include="images\download-1.jpg" />
     <Content Include="images\download-2.jpg" />
     <Content Include="images\favicon.ico" />
-    <Content Include="images\home\fatherday1.png" />
-    <Content Include="images\home\floatinghouse.png" />
-    <Content Include="images\home\lin.jpg" />
-    <Content Include="images\home\lin2.jpg" />
-    <Content Include="images\home\lunarcong.jpg" />
-    <Content Include="images\home\mountain.png" />
-    <Content Include="images\home\shinyeh1.png" />
-    <Content Include="images\home\tpe101.png" />
+    <Content Include="images\home\Played\fatherday1.png" />
+    <Content Include="images\home\Played\floatinghouse.png" />
+    <Content Include="images\home\Played\lin.jpg" />
+    <Content Include="images\home\Played\lin2.jpg" />
+    <Content Include="images\home\Played\lunarcong.jpg" />
+    <Content Include="images\home\Played\mountain.png" />
+    <Content Include="images\home\Played\shinyeh1.png" />
+    <Content Include="images\home\Played\tpe101.png" />
+    <Content Include="images\home\Playing\Austrianfields.jpg" />
+    <Content Include="images\home\Playing\dneElunar.jpg" />
+    <Content Include="images\home\Playing\finland.jpg" />
+    <Content Include="images\home\Playing\windpower.jpg" />
     <Content Include="images\jogging.jpg" />
     <Content Include="images\loader.gif" />
     <Content Include="images\meeting-1.jpg" />
@@ -809,7 +813,7 @@
     <Content Include="images\home\bg1_small.jpg" />
     <Content Include="images\home\bg2_o.jpg" />
     <Content Include="images\home\bg2_v.jpg" />
-    <Content Include="images\home\pic5.jpg" />
+    <Content Include="images\home\Played\pic5.jpg" />
     <Content Include="js\rev-slider-init.js" />
     <Content Include="js\rev-slider-initv1.js" />
     <Content Include="js\templatev1.js" />
@@ -3296,10 +3300,10 @@
     <Content Include="css\skins\yellow.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="images\home\pic3.jpg" />
-    <Content Include="images\home\pic4.jpg" />
-    <Content Include="images\home\nuclear2_turbine.JPG" />
-    <Content Include="images\home\seoa.jpg" />
+    <Content Include="images\home\Played\pic3.jpg" />
+    <Content Include="images\home\Played\pic4.jpg" />
+    <Content Include="images\home\Played\nuclear2_turbine.JPG" />
+    <Content Include="images\home\Played\seoa.jpg" />
     <Content Include="images\lungmen\ABWR.jpg" />
     <Content Include="images\turbine_2.png" />
     <Content Include="js\animations-init.js" />
@@ -4215,6 +4219,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="client\templates\home\filedownload\powerpoint\" />
+    <Folder Include="images\home\ToBePlayed\" />
     <Folder Include="images\regular\" />
     <Folder Include="Views\Engineering\" />
   </ItemGroup>
