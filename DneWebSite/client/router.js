@@ -76,6 +76,12 @@
                         templateUrl: '/../client/templates/regular/departmentReg.html',
                         controller: 'homeCtrl'
                     })
+                    //事業部章則
+                    .state('dcrList', {
+                        url: '/dcrList',
+                        templateUrl: '/../client/templates/engineering/dcrList.html',
+                        controller: 'homeCtrl'
+                    })
                 ;
     })
     

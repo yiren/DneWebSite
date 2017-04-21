@@ -1,4 +1,5 @@
 ﻿using DneWebSite.Models.common;
+using DneWebSite.Models.DCR;
 using DneWebSite.Models.dneMeeting;
 using DneWebSite.Models.WANO;
 using System;
@@ -26,6 +27,7 @@ namespace DneWebSite.Models.bulletin
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemFile> ItemFiles { get; set; }
 
-        
+        public DbSet<Dcr> Dcrs { get; set; }
+
     }
 }
