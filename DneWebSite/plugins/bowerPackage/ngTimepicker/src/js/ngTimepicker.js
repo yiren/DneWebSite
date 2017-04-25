@@ -55,6 +55,11 @@ angular.module('jkuri.timepicker', [])
 					}
 				}
 			};
+            
+            scope.$watch(attrs['ngModel'], function (newTime) {
+                scope.initTime = newTime;
+                reinitTime();
+            });
 
 			var reinitTime = function () {
 				var time = scope.initTime.split(':');
@@ -79,10 +84,12 @@ angular.module('jkuri.timepicker', [])
 					}
 				} else {
 					if (parseInt(scope.hour, 10) < 12) {
+            if (parseInt(scope.hour, 10) === 11) {
+				      scope.toggleMeridian();
+				    } 
 						scope.hour = parseInt(scope.hour, 10) + 1;
 					} else if (parseInt(scope.hour, 10) === 12) {
 						scope.hour = 1;
-						scope.toggleMeridian();
 					}
 				}
 
@@ -101,10 +108,12 @@ angular.module('jkuri.timepicker', [])
 						scope.hour = parseInt(scope.hour, 10) - 1;
 					}
 				} else {
-					if (parseInt(scope.hour, 10) === 0) {
+					if (parseInt(scope.hour, 10) === 1) {
 						scope.hour = 12;
-						scope.toggleMeridian();
 					} else {
+            if (parseInt(scope.hour, 10) === 12) {
+              scope.toggleMeridian();
+            }
 						scope.hour = parseInt(scope.hour, 10) - 1;
 					}
 				}
@@ -121,7 +130,11 @@ angular.module('jkuri.timepicker', [])
 				if (scope.minutes > 59) {
 					scope.minutes = '00';
 					scope.incrementHour();
-				}
+				} else {
+          if (parseInt(scope.minutes, 10) < 10) {
+            scope.minutes = '0' + scope.minutes;
+          }          
+        }
 				setTime();
 			};
 
@@ -134,6 +147,12 @@ angular.module('jkuri.timepicker', [])
 				if (parseInt(scope.minutes, 10) === 0) {
 					scope.minutes = '00';
 				}
+        else {
+          if (parseInt(scope.minutes, 10) < 10) {
+            scope.minutes = '0' + scope.minutes;
+          }
+        }
+        
 				setTime();
 			};
 

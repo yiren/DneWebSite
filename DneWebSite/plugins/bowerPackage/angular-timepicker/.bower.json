@@ -1,6 +1,6 @@
 {
   "name": "angular-timepicker",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "homepage": "https://github.com/Geta/angular-timepicker",
   "authors": [
     "Dzulqarnain Nasir (dzul@geta.no)"
@@ -14,23 +14,23 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "angular-mocks": "~1.2.25",
-    "jquery": "~2.1.1"
-  },
+  "main": [
+    "dist/angular-timepicker.js",
+    "dist/angular-timepicker.min.js",
+    "dist/angular-timepicker.min.js.map"
+  ],
   "dependencies": {
-    "angular": "~1.2.25",
-    "angular-dateparser": "~1.0.10",
-    "angular-ui-bootstrap": "~0.11.0"
+    "angular": "^1.6.4",
+    "angular-dateParser": "^1.1.0",
+    "angular-ui-bootstrap": "^2.5.0"
   },
-  "_release": "1.0.8",
+  "_release": "1.0.11",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.8",
-    "commit": "27293c8a57b2063906ebebaf84e23b27071682a4"
+    "tag": "v1.0.11",
+    "commit": "f8b90904747bfd44d6e5091cc5856a73e09774c3"
   },
-  "_source": "git://github.com/Geta/angular-timepicker.git",
+  "_source": "https://github.com/Geta/angular-timepicker.git",
   "_target": "^1.0.8",
-  "_originalSource": "angular-timepicker",
-  "_direct": true
+  "_originalSource": "angular-timepicker"
 }

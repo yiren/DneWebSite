@@ -11,6 +11,21 @@ namespace DneWebSite
             bundles.Add(new ScriptBundle("~/slider")
                 .Include("~/js/rev-slider-init.js"))
                 ;
+            bundles.Add(new ScriptBundle("~/script/jq")
+                .Include(
+                    "~/Scripts/jquery-{version}.min.js",
+                    "~/Scripts/jquery-ui-{version}.min.js",
+                    "~/Scripts/bootstrap.min.js"));
+            //css  
+            bundles.Add(new StyleBundle("~/css/base").Include(
+                    "~/Content/bootstrap.min.css",
+                    "~/Content/bootstrap.theme.min.css",
+                    "~/Content/themes/base/jquery-ui.min.css",
+                    "~/Content/themes/cupertino/jquery-ui.cupertino.min.css",
+                    
+                   "~/plugins/bowerPackage/fontawesome/css/font-awesome.min.css"
+
+                   ));
 
             bundles.Add(new ScriptBundle("~/script")
                 .Include(
@@ -32,7 +47,6 @@ namespace DneWebSite
                     "~/plugins/bowerPackage/fullcalendar/dist/fullcalendar.min.js",
                     "~/plugins/bowerPackage/fullcalendar/dist/gcal.js",
                     "~/plugins/bowerPackage/fullcalendar/dist/lang-all.js",
-                    "~/plugins/bowerPackage/angular-ui-router-anim-in-out/anim-in-out.js",
                     "~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.js",
                     "~/plugins/bowerPackage/angular-scroll/angular-scroll.min.js",
                     "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",

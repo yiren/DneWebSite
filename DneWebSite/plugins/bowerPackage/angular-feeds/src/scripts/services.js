@@ -22,7 +22,7 @@ angular.module('feeds-services', []).factory('feedService', ['$q', '$sce', 'feed
         feed.includeHistoricalEntries();
         feed.setNumEntries(count);
       }
-        
+
       feed.load(function (response) {
         if (response.error) {
           deferred.reject(response.error);

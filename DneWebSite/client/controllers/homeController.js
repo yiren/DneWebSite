@@ -3,13 +3,13 @@
 
 	angular.module('main')
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
-            //頁面載入彈跳視窗
+            //首頁popup視窗
             //$scope.$on('$viewContentLoaded', function () {
             //    //call it here
             //    //console.log("preload");
             //    ngDialog.open({
             //        template: "client/templates/home/popup.html",
-            //        width:600
+            //        width:700
             //    });
             //});
             var vm = this;

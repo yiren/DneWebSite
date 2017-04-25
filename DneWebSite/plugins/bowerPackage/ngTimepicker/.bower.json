@@ -25,14 +25,13 @@
     "angular": "~1.4.1",
     "fontawesome": "~4.3.0"
   },
-  "_release": "7252d522b7",
+  "_release": "89369a1a44",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "7252d522b794ac9b8c36ab67c72a7a736e659892"
+    "commit": "89369a1a4438339b09def0457927d414e4fbb095"
   },
-  "_source": "git://github.com/jkuri/ngTimepicker.git",
+  "_source": "https://github.com/jkuri/ngTimepicker.git",
   "_target": "*",
-  "_originalSource": "ngTimepicker",
-  "_direct": true
+  "_originalSource": "ngTimepicker"
 }
