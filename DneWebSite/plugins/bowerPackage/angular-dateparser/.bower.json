@@ -1,6 +1,7 @@
 {
   "name": "angular-dateParser",
-  "version": "1.0.12",
+  "version": "1.2.0",
+  "main": "./dist/angular-dateparser.js",
   "homepage": "https://github.com/dnasir/angular-dateParser",
   "authors": [
     "Dzulqarnain Nasir"
@@ -11,23 +12,22 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "test"
   ],
   "dependencies": {
-    "angular": "1.x",
-    "angular-i18n": "1.x"
+    "angular": "^1.6.4",
+    "angular-i18n": "^1.6.4"
   },
   "devDependencies": {
-    "angular-mocks": "1.x"
+    "angular-mocks": "^1.6.4"
   },
-  "_release": "1.0.12",
+  "_release": "1.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.12",
-    "commit": "e68810a0ba25a65b23dccf2fd039aac19fff3034"
+    "tag": "1.2.0",
+    "commit": "eeb9e292965b0f8354095d36f3656120fa1d84d3"
   },
   "_source": "https://github.com/dnasir/angular-dateParser.git",
-  "_target": "~1.0.10",
-  "_originalSource": "angular-dateparser"
+  "_target": "^1.1.0",
+  "_originalSource": "angular-dateParser"
 }
