@@ -1,4 +1,5 @@
 ﻿using DneWebSite.Models.common;
+using DneWebSite.Models.common.DBInitializer;
 using DneWebSite.Models.DCR;
 using DneWebSite.Models.dneMeeting;
 using DneWebSite.Models.WANO;
@@ -16,7 +17,7 @@ namespace DneWebSite.Models.bulletin
         public BulletinDbContext()
             :base("BulltinDb")
         {
-
+            
         }
 
        
@@ -28,6 +29,8 @@ namespace DneWebSite.Models.bulletin
         public DbSet<ItemFile> ItemFiles { get; set; }
 
         public DbSet<Dcr> Dcrs { get; set; }
+
+        public DbSet<DcrEvaluation> DcrEvaluations { get; set; }
 
     }
 }

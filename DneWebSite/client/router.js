@@ -4,9 +4,8 @@
     angular
         .module("main")
         .config(
-                function($stateProvider, $urlRouterProvider){
-     			
-     			// 預設頁面
+                function($stateProvider, $urlRouterProvider){    			
+     			//預設頁面
         		$urlRouterProvider.otherwise('/');
                 //新增頁面及對應的html
                 $stateProvider

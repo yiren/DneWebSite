@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,68 +9,136 @@ namespace DneWebSite.Models.DCR
 {
     public class Dcr
     {
+        [Key]
         public Guid DcrId { get; set; }
+        [Required]
+        [DisplayName("編號")]
+        [StringLength(100)]
         public string DcrNo { get; set; }
 
+        [Required]
+        [DisplayName("提案電廠")]
+        [StringLength(15)]
+        public string Plant { get; set; }
+
+        [Required]
+        [DisplayName("類別")]
+        [StringLength(15)]
         public string Classification { get; set; }
+        [DisplayName("可行性評估編號")]
+        [StringLength(150)]
+        public string DcrEvaluationNo { get; set; }
 
-        public string EvaluationNo { get; set; }
+        public Guid? DcrEvaluationId { get; set; }
 
-        public Guid? EvaluationId { get; set; }
+        [Required]
+        [DisplayName("要求修改內容")]
 
         public string Subject { get; set; }
+        [Required]
+        [DisplayName("來文文號")]
+        [StringLength(100)]
+        public string SourceNo { get; set; }
+        [Required]
+        [DisplayName("收文文號")]
+        [StringLength(100)]
+        public string DneNo { get; set; }
 
-        public string DocIncomeNo { get; set; }
+        [Required]
+        [DisplayName("收文日期")]
+        [StringLength(50)]
+        public string ReceivedDate { get; set; }
 
-        public string DocReceivedNo { get; set; }
-
-        public DateTime DocReceivedDate { get; set; }
-
+        [Required]
+        [DisplayName("主辦組")]
+        [StringLength(20)]
         public string MainSection { get; set; }
-        
+
+        [Required]
+        [DisplayName("承辦人")]
+        [StringLength(20)]
+        public string Engineer { get; set; }
+
+        [DisplayName("會辦組別")]
         public string AssistSection { get; set; }
 
-        public DateTime CloseDate { get; set; }
+        [DisplayName("結案回覆日期")]
+        [StringLength(50)]
+        public string CloseDate { get; set; }
+        [DisplayName("是否結案")]
+        public bool IsClosed { get; set; }
 
+        [DisplayName("備註")]
         public string Note { get; set; }
 
+        [DisplayName("更新人員")]
+        [StringLength(30)]
+        public string LastModifiedBy { get; set; }
+        [DisplayName("最後更新日期")]
+        [StringLength(30)]
+        public string LastModifiedDate { get; set; }
+
         //核發
-        public DateTime SubmitToOperDepDate { get; set; }
-
-        public DateTime OperDepReviewDate { get; set; }
-
+        [DisplayName("送會辦日期")]
+        public string SubmitToOperDepDate { get; set; }
+        [DisplayName("審查日期")]
+        
+        public string OperDepReviewDate { get; set; }
+        [DisplayName("結果")]
         public string OperDepReviewResult { get; set; }
-
-        public bool IsOperDep { get; set; }
+        [Required]
+        [DisplayName("是否送核發處")]
+        public bool HasOperDep { get; set; }
 
         //核安
-        public DateTime SubmitToSafeDepDate { get; set; }
-
-        public DateTime SafeDepReviewDate { get; set; }
-
+        [DisplayName("送會辦日期")]
+        [StringLength(50)]
+        public string SubmitToSafeDepDate { get; set; }
+        [DisplayName("審查日期")]
+        [StringLength(50)]
+        public string SafeDepReviewDate { get; set; }
+        [DisplayName("結果")]
+        [StringLength(20)]
         public string SafeDepReviewResult { get; set; }
 
-        public bool IsSafeDep { get; set; }
+        [ScaffoldColumn(false)]
+        [DisplayName("是否送核安處")]
+        public bool HasSafeDep { get; set; }
 
         //核安會
-        public DateTime SubmitToSafeRegDate { get; set; }
+        [DisplayName("送會辦日期")]
+        [StringLength(50)]
+        public string SubmitToSafeRegDate { get; set; }
 
-        public DateTime SafeRegReviewDate { get; set; }
-
+        [DisplayName("審查日期")]
+        [StringLength(50)]
+        public string SafeRegReviewDate { get; set; }
+        [DisplayName("結果")]
+        [StringLength(20)]
         public string SafeRegReviewResult { get; set; }
 
-        public bool IsSafeReg { get; set; }
+        [Required]
+        [DisplayName("是否送核安會")]
+        public bool HasSafeReg { get; set; }
 
         //AEC
-        public DateTime SubmitToAECDate { get; set; }
+        [DisplayName("陳報日期")]
+        [StringLength(50)]
+        public string SubmitToAECDate { get; set; }
 
+        [DisplayName("陳報文號")]
+        [StringLength(150)]
         public string SubmitDocNo { get; set; }
 
-        public DateTime AECApprovalDate { get; set; }
-
+        [DisplayName("核准日期")]
+        [StringLength(50)]
+        public string AECApprovalDate { get; set; }
+        [DisplayName("核准文號")]
+        [StringLength(150)]
         public string AECApprovalDoc { get; set; }
-
-        public bool IsAEC { get; set; }
+        [Required]
+        [DisplayName("是否需陳報AEC")]
+        public bool HasAEC { get; set; }
 
 
     }
