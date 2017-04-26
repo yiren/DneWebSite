@@ -79,9 +79,9 @@ namespace DneWebSite.Models.DCR
         public string LastModifiedDate { get; set; }
 
         //核發
-        [DisplayName("送會辦日期")]
+        [DisplayName("送會日期")]
         public string SubmitToOperDepDate { get; set; }
-        [DisplayName("審查日期")]
+        [DisplayName("審覆日期")]
         
         public string OperDepReviewDate { get; set; }
         [DisplayName("結果")]
@@ -91,10 +91,10 @@ namespace DneWebSite.Models.DCR
         public bool HasOperDep { get; set; }
 
         //核安
-        [DisplayName("送會辦日期")]
+        [DisplayName("送會日期")]
         [StringLength(50)]
         public string SubmitToSafeDepDate { get; set; }
-        [DisplayName("審查日期")]
+        [DisplayName("審覆日期")]
         [StringLength(50)]
         public string SafeDepReviewDate { get; set; }
         [DisplayName("結果")]
@@ -106,11 +106,11 @@ namespace DneWebSite.Models.DCR
         public bool HasSafeDep { get; set; }
 
         //核安會
-        [DisplayName("送會辦日期")]
+        [DisplayName("送會日期")]
         [StringLength(50)]
         public string SubmitToSafeRegDate { get; set; }
 
-        [DisplayName("審查日期")]
+        [DisplayName("審覆日期")]
         [StringLength(50)]
         public string SafeRegReviewDate { get; set; }
         [DisplayName("結果")]

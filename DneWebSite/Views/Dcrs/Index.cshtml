@@ -10,7 +10,7 @@
         <a href="@Url.Action("Create", "Dcrs")" class="btn btn-primary">新增DCR</a>
         @if (!User.Identity.IsAuthenticated)
         {
-            <a href="/account/login?ReturnUrl=%2FDcrs" class="btn btn-primary pull-right">管理</a>
+            <a href="/account/login?ReturnUrl=%2FDcrs" class="btn btn-success pull-right">管理</a>
         }
         else
         {
@@ -21,7 +21,7 @@
 
 
 
-    <table class="table table-condensed table-bordered table-striped">
+    <table class="table table-condensed table-bordered table-striped table-responsive table-hover">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Plant)
@@ -156,8 +156,8 @@
                                     <h3 class="modal-title" id="newOperDepLabel">核發處審查情況</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <h4><span class="text-success">送會辦日期:</span>@item.SubmitToOperDepDate</h4>
-                                    <h4><span class="text-success">審查日期:</span>@item.OperDepReviewDate</h4>
+                                    <h4><span class="text-success">送會日期:</span>@item.SubmitToOperDepDate</h4>
+                                    <h4><span class="text-success">審覆日期:</span>@item.OperDepReviewDate</h4>
                                     <h4><span class="text-success">結果:</span>@item.OperDepReviewResult</h4>
                                 </div>
                                 <div class="modal-footer">
@@ -174,8 +174,8 @@
                                     <h3 class="modal-title" id="newSafeDepLabel">核安處審查情況</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <h4><span class="text-success">送會辦日期:</span>@item.SubmitToSafeDepDate</h4>
-                                    <h4><span class="text-success">審查日期:</span>@item.SafeDepReviewDate</h4>
+                                    <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeDepDate</h4>
+                                    <h4><span class="text-success">審覆日期:</span>@item.SafeDepReviewDate</h4>
                                     <h4><span class="text-success">結果:</span>@item.SafeDepReviewResult</h4>
                                 </div>
                                 <div class="modal-footer">
@@ -192,8 +192,8 @@
                                     <h3 class="modal-title" id="newSafeRegLabel">核安會審查情況</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <h4><span class="text-success">送會辦日期:</span>@item.SubmitToSafeRegDate</h4>
-                                    <h4><span class="text-success">審查日期:</span>@item.SafeRegReviewDate</h4>
+                                    <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeRegDate</h4>
+                                    <h4><span class="text-success">審覆日期:</span>@item.SafeRegReviewDate</h4>
                                     <h4><span class="text-success">結果:</span>@item.SafeRegReviewResult</h4>
                                 </div>
                                 <div class="modal-footer">

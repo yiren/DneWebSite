@@ -23,7 +23,13 @@ namespace DneWebSite.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Dcrs.ToList());
+            return View(db.Dcrs
+                .OrderBy(d=>d.IsClosed)
+                .OrderByDescending(d=>d.ReceivedDate)
+                .OrderByDescending(d => d.Plant)
+                .OrderByDescending(d=>d.DcrNo)
+                .OrderByDescending(d=>d.MainSection)
+                .ToList());
         }
 
         // GET: Dcrs/Create
@@ -77,6 +83,10 @@ namespace DneWebSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (dcr.CloseDate != string.Empty)
+                {
+                    dcr.IsClosed = true;
+                }
                 dcr.LastModifiedBy = User.Identity.Name;
                 dcr.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
                 db.Entry(dcr).State = EntityState.Modified;
@@ -119,7 +129,7 @@ namespace DneWebSite.Controllers
         }
 
         // GET: Dcrs/Delete/5
-        [HttpPost]
+        
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -136,7 +146,6 @@ namespace DneWebSite.Controllers
 
         // POST: Dcrs/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
             Dcr dcr = db.Dcrs.Find(id);

@@ -3,36 +3,25 @@
     "name": "Geta AS",
     "url": "http://geta.no/"
   },
-  "contributors": [
-    "Dzulqarnain Nasir <dzul@geta.no>"
-  ],
+  "contributors": "Dzulqarnain Nasir <dzul@geta.no>",
   "name": "angular-timepicker",
-  "version": "1.0.11",
-  "main": "dist/angular-timepicker.js",
+  "version": "1.0.8",
   "homepage": "https://github.com/Geta/angular-timepicker",
-  "license": "MIT",
+  "licenses": {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT"
+  },
   "bugs": "https://github.com/Geta/angular-timepicker/issues",
   "repository": {
     "type": "git",
     "url": "git@github.com:Geta/angular-timepicker.git"
   },
-  "dependencies": {
-    "angular": "^1.6.4",
-    "angular-dateParser": "^1.1.0",
-    "angular-ui-bootstrap": "^2.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "angular-mocks": "^1.6.4",
-    "bower": "^1.8.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-uglify": "^2.3.0",
-    "grunt-karma": "^2.0.0",
-    "jquery": "^2.2.3",
-    "karma": "^1.6.0"
-  },
-  "scripts": {
-    "test": "karma start",
-    "build": "grunt build"
+    "bower": "^1.3.5",
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-karma": "~0.5.0"
   }
 }

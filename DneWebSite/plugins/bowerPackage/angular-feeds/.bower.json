@@ -38,5 +38,6 @@
   },
   "_source": "https://github.com/siddii/angular-feeds.git",
   "_target": "^0.0.4",
-  "_originalSource": "angular-feeds"
+  "_originalSource": "angular-feeds",
+  "_direct": true
 }

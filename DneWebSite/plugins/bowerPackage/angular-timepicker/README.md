@@ -4,9 +4,9 @@ A simple dropdown style timepicker directive.
 
 ## Prerequisites
 
-1. [Angular 1.5.3+](http://angularjs.org)
-2. [Angular UI Bootstrap 1.3.1+](http://angular-ui.github.io/bootstrap/)
-3. [Angular DateParser 1.0.12+](https://github.com/dnasir/angular-dateParser)
+1. [Angular 1.2.0+](http://angularjs.org)
+2. [Angular UI Bootstrap 0.3.0+](http://angular-ui.github.io/bootstrap/)
+3. [Angular DateParser 1.0.0+](https://github.com/dnasir/angular-dateParser)
  
 ## Usage
 

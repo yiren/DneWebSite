@@ -20,7 +20,6 @@ angular.module('ui.bootstrap.demo').controller('AccordionDemoCtrl', function ($s
   };
 
   $scope.status = {
-    isCustomHeaderOpen: false,
     isFirstOpen: true,
     isFirstDisabled: false
   };
