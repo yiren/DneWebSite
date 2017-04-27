@@ -57,7 +57,9 @@ namespace DneWebSite.MigrationsBulltin
                     HasAEC = false,
                     HasSafeReg = false,
                     LastModifiedBy="¶À«Û´Ü",
-                    LastModifiedDate= "2017/04/20"
+                    LastModifiedDate= "2017/04/20",
+                    DcrStatus=DcrStatus.Closed,
+                    CloseDate="2017/04/27"
 
 
                 });
