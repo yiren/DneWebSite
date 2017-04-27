@@ -475,6 +475,10 @@
     <Content Include="images\sitemap-2.jpg" />
     <Content Include="images\sitemap-3.jpg" />
     <Content Include="images\underConstruction-1.jpg" />
+    <Content Include="js\dist\bundle.0015c08184ebbcef41f2.js" />
+    <Content Include="js\dist\manifest.1be39024adf0875eb202.js" />
+    <Content Include="js\dist\vendor.e3586f4d9873c45c34f7.js" />
+    <Content Include="js\index.js" />
     <Content Include="js\qTip2.js" />
     <Content Include="plugins\bowerPackage\angular-scroll\angular-scroll.js" />
     <Content Include="plugins\bowerPackage\angular-scroll\angular-scroll.min.js" />
@@ -600,6 +604,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="package.json" />
+    <Content Include="webpack.config.js" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
