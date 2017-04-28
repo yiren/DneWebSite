@@ -1,0 +1,49 @@
+﻿
+<div id="atome">
+
+	<div class="w--atome">
+		<div class="w--atome-spine">
+			<div class="w--atome-line lineX"></div>
+			<div class="w--atome-line lineY"></div>
+		</div>
+	</div>
+
+	<div class="w--atome-circle circle1"></div>
+	<div class="w--atome-circle circle2"></div>
+	<div class="w--atome-circle circle3"></div>
+	<div class="w--atome-circle circle4"></div>
+
+	<div class="w--atome-help">
+		<div class="w--atome-line lineX"></div>
+		<div class="w--atome-line lineY"></div>
+	</div>
+
+</div>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+	<filter id="goo">
+	  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+	  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+	  <feBlend in="SourceGraphic" in2="goo" />
+	</filter>
+  </defs>
+</svg>
+
+<script>
+    var guiControls = new function(){
+
+	this.help 			= function(){
+		document.body.classList.toggle("help");
+	};
+	this.small 			= function(){
+		document.body.classList.toggle("small");
+	};
+
+}
+var datGUI = new dat.GUI();
+//j'ajoute a mon ui les variable
+datGUI.add( guiControls, 'help' );
+datGUI.add( guiControls, 'small' );
+</script>

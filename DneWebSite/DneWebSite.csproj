@@ -123,6 +123,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,6 +133,9 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
@@ -475,9 +481,49 @@
     <Content Include="images\sitemap-2.jpg" />
     <Content Include="images\sitemap-3.jpg" />
     <Content Include="images\underConstruction-1.jpg" />
-    <Content Include="js\dist\bundle.0015c08184ebbcef41f2.js" />
-    <Content Include="js\dist\manifest.1be39024adf0875eb202.js" />
-    <Content Include="js\dist\vendor.e3586f4d9873c45c34f7.js" />
+    <Content Include="js\angularApp\app.js" />
+    <Content Include="js\angularApp\controllers\calendar\calViewController.js" />
+    <Content Include="js\angularApp\controllers\common\modalController.js" />
+    <Content Include="js\angularApp\controllers\homeController.js" />
+    <Content Include="js\angularApp\controllers\meetingGridController.js" />
+    <Content Include="js\angularApp\controllers\postGridController.js" />
+    <Content Include="js\angularApp\controllers\RSSFeed\feedController.js" />
+    <Content Include="js\angularApp\directives\directives.js" />
+    <Content Include="js\angularApp\router.js" />
+    <Content Include="js\angularApp\services\service.js" />
+    <Content Include="js\angularApp\templates\engineering\dcr\dcrList.html" />
+    <Content Include="js\angularApp\templates\engineering\lungmen\lungmen.html" />
+    <Content Include="js\angularApp\templates\error\underConstruction.html" />
+    <Content Include="js\angularApp\templates\home\body.html" />
+    <Content Include="js\angularApp\templates\home\bulltin.html" />
+    <Content Include="js\angularApp\templates\home\calendar.html" />
+    <Content Include="js\angularApp\templates\home\coreduty.html" />
+    <Content Include="js\angularApp\templates\home\downloads.html" />
+    <Content Include="js\angularApp\templates\home\eventDetailModal.html" />
+    <Content Include="js\angularApp\templates\home\imageSilder.html" />
+    <Content Include="js\angularApp\templates\home\imageSilderFull.html" />
+    <Content Include="js\angularApp\templates\home\nuclearNews.html" />
+    <Content Include="js\angularApp\templates\home\personnelDownload.html" />
+    <Content Include="js\angularApp\templates\home\popup.html" />
+    <Content Include="js\angularApp\templates\home\postDetailModal.html" />
+    <Content Include="js\angularApp\templates\home\quicksidebar.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\atom.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\atom2.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\atom3.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\atom4.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\atom5.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\revsidebar.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\slogan.html" />
+    <Content Include="js\angularApp\templates\home\RevSilder\slogan2.html" />
+    <Content Include="js\angularApp\templates\home\RSSReader\feed-widget-control.html" />
+    <Content Include="js\angularApp\templates\home\RSSReader\feed-widget.html" />
+    <Content Include="js\angularApp\templates\home\sitemap.html" />
+    <Content Include="js\angularApp\templates\regular\books.html" />
+    <Content Include="js\angularApp\templates\regular\companyReg.html" />
+    <Content Include="js\angularApp\templates\regular\departmentReg.html" />
+    <Content Include="js\angularApp\templates\regular\govReg.html" />
+    <Content Include="js\angularApp\templates\regular\meeting.html" />
+    <Content Include="js\index.html" />
     <Content Include="js\index.js" />
     <Content Include="js\qTip2.js" />
     <Content Include="plugins\bowerPackage\angular-scroll\angular-scroll.js" />
@@ -606,6 +652,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="package.json" />
     <Content Include="webpack.config.js" />
+    <Content Include="js\angularApp\templates\home\filedownload\form\公司會議紀錄.doc" />
+    <Content Include="js\angularApp\templates\home\filedownload\form\請購需求單_%28非經SAP請採流程%29.doc" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3643,6 +3691,7 @@
     <Folder Include="client\templates\home\filedownload\powerpoint\" />
     <Folder Include="images\home\ToBePlayed\" />
     <Folder Include="images\regular\" />
+    <Folder Include="js\angularApp\templates\home\filedownload\powerpoint\" />
     <Folder Include="Views\Engineering\" />
   </ItemGroup>
   <ItemGroup>

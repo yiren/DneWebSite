@@ -1,0 +1,49 @@
+﻿<div>		
+        <canvas width="400" height="400"></canvas>
+
+</div>
+
+
+<script>
+    var ctx = document.querySelector("canvas").getContext("2d");
+var angle = 0
+var x = 0, y= 0, z=50;
+var balls = [
+  {color: "red", x:0, y:0, z:0, angle:0, size:10, radiusX:100, radiusY:100, radiusZ:25, speed:0.03},
+  {color: "blue", x:15, y:25, z:0, angle:13, size:10, radiusX:100, radiusY:-70, radiusZ:40, speed:0.03},
+  {color: "pink", x:15, y:25, z:0, angle:13, size:10, radiusX:20, radiusY:-70, radiusZ:10, speed:-0.03},
+  {color: "purple", x:15, y:85, z:0, angle:6, size:10, radiusX:100, radiusY:-10, radiusZ:40, speed:0.035},
+  {color: "yellow", x:15, y:85, z:0, angle:4, size:10, radiusX:-50, radiusY:-50, radiusZ:3, speed:0.035},
+  {color: "green", x:15, y:85, z:0, angle:1, size:10, radiusX:-75, radiusY:100, radiusZ:25, speed:0.025},
+  {color: "orange", x:15, y:85, z:0, angle:4, size:10, radiusX:0, radiusY:100, radiusZ:15, speed:-0.040},
+  {color: "white", x:15, y:85, z:0, angle:1, size:15, radiusX:10, radiusY:2, radiusZ:4, speed:0.025},
+  ]
+function mainloop() {
+ requestAnimationFrame(mainloop);
+  ctx.fillStyle = "rgba(0,0,0,0.1)";
+ ctx.fillRect(0,0,400,400)
+ for(var i = 0; i<balls.length; i++) {
+   balls[i].angle+=balls[i].speed;
+   balls[i].x = Math.cos(balls[i].angle)*balls[i].radiusX;
+   balls[i].z = Math.sin(balls[i].angle)*balls[i].radiusZ;
+   balls[i].y = Math.cos(balls[i].angle)*balls[i].radiusY;
+   console.log(balls[i].x,balls[i].y,balls[i].z);
+ }
+
+ balls.sort(function(a,b) {
+    return a.z-b.z;
+ });
+ for(var i = 0; i<balls.length; i++) {
+   ctx.save();
+   ctx.translate(200,200);
+   ctx.scale((50+balls[i].z)/50, (50+balls[i].z)/50)
+   ctx.fillStyle = balls[i].color;
+   ctx.beginPath();
+   ctx.arc(balls[i].x, balls[i].y, balls[i].size, 0, Math.PI*2)
+   ctx.fill()
+   ctx.restore();
+   console.log("heeee")
+ }
+}
+mainloop();
+</script>

@@ -29,7 +29,14 @@ module.exports = {
     },{
       use:['style-loader','css-loader'],
       test:/\.css$/
+    },
+    { 
+      use: 'url-loader?limit=250000',
+      test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/ 
     }
+    // ,
+    //  { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "url-loader?limit=10000&mimetype=application/font-woff" },
+    //  { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "file-loader" }
     ]
   },
   plugins:[
@@ -37,9 +44,9 @@ module.exports = {
       //'manifest' is tell webpack that vendor code is changed
       names:['vendor','manifest']
     })
-    // ,
-    // new HtmlWebpackPlugin({
-    //   template:'js/dist/index.html'
-    // })
+    ,
+    new HtmlWebpackPlugin({
+      template:'js/index.html'
+    })
   ]
 };
