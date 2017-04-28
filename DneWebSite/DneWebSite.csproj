@@ -264,6 +264,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\ClaimsAuthorizeAttribute.cs" />
+    <Compile Include="Helper\EnumRadioButtonHelper.cs" />
     <Compile Include="MigrationsBulltin\201604200538099_initial.cs" />
     <Compile Include="MigrationsBulltin\201604200538099_initial.Designer.cs">
       <DependentUpon>201604200538099_initial.cs</DependentUpon>
@@ -331,6 +332,10 @@
     <Compile Include="MigrationsBulltin\201704250532014_addDcrLastModified.cs" />
     <Compile Include="MigrationsBulltin\201704250532014_addDcrLastModified.Designer.cs">
       <DependentUpon>201704250532014_addDcrLastModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201704260623077_addDcrStatus.cs" />
+    <Compile Include="MigrationsBulltin\201704260623077_addDcrStatus.Designer.cs">
+      <DependentUpon>201704260623077_addDcrStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="MigrationsBulltin\Configuration.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.cs" />
@@ -3679,6 +3684,7 @@
     <Content Include="Views\Shared\_DataLayout.cshtml" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <Content Include="Views\Dcrs\EditReview.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <None Include="Web.10.20.1.3.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3750,6 +3756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsBulltin\201704250532014_addDcrLastModified.resx">
       <DependentUpon>201704250532014_addDcrLastModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201704260623077_addDcrStatus.resx">
+      <DependentUpon>201704260623077_addDcrStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsIdentity\201604260324202_InitialCreate.resx">
       <DependentUpon>201604260324202_InitialCreate.cs</DependentUpon>

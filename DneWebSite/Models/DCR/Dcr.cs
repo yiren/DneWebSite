@@ -7,6 +7,18 @@ using System.Web;
 
 namespace DneWebSite.Models.DCR
 {
+    public enum DcrStatus
+    {   
+        [Display(Name ="審查中")]
+        [Description("審查中")]
+        Reviewing,
+        [Display(Name ="結案")]
+        [Description("結案")]
+        Closed,
+        [Display(Name = "有意見")]
+        [Description("有意見")]
+        HasComment
+    }
     public class Dcr
     {
         [Key]
@@ -62,11 +74,16 @@ namespace DneWebSite.Models.DCR
         [DisplayName("會辦組別")]
         public string AssistSection { get; set; }
 
-        [DisplayName("結案回覆日期")]
+        [DisplayName("審查結果")]
+        public DcrStatus DcrStatus { get; set; }
+
+        [DisplayName("回覆日期")]
         [StringLength(50)]
         public string CloseDate { get; set; }
         [DisplayName("是否結案")]
         public bool IsClosed { get; set; }
+
+
 
         [DisplayName("備註")]
         public string Note { get; set; }
