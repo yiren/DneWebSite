@@ -1,8 +1,8 @@
 ﻿
-uiGrid.$inject('i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants');
+postGridCtrl.$inject=['i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants'];
 
 
-export default function (i18nService, $modal, $scope, $http, $log, uiGridConstants) {
+export default function postGridCtrl(i18nService, $modal, $scope, $http, $log, uiGridConstants) {
     //Two-Way Binding
     var vm = this;
 
@@ -32,8 +32,9 @@ export default function (i18nService, $modal, $scope, $http, $log, uiGridConstan
     }
 
         //取得Database中佈告資料
-    $http.get('/api/postsdata/').then(suc, err);
+    $http.get('http://localhost:58318/api/postsdata').then(suc, err);
     function suc(res) {
+        console.log(res.data);
         vm.gridOptions.data = res.data;
         
     }
@@ -96,5 +97,3 @@ export default function (i18nService, $modal, $scope, $http, $log, uiGridConstan
 
     
 }
-}
-)();
