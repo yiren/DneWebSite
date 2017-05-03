@@ -528,6 +528,15 @@
     <Content Include="js\angularApp\templates\regular\departmentReg.html" />
     <Content Include="js\angularApp\templates\regular\govReg.html" />
     <Content Include="js\angularApp\templates\regular\meeting.html" />
+    <Content Include="js\dist\79393dd9c53fbb9b70a96853df2a72fd.png" />
+    <Content Include="js\dist\912ec66d7572ff821749319396470bde.svg" />
+    <Content Include="js\dist\965037b4ba4d5a223baf60b50ebe5097.jpg" />
+    <Content Include="js\dist\b537d150a87d24e078aedccd198b5303.jpg" />
+    <Content Include="js\dist\bundle.a45335199ac437998a78.js" />
+    <Content Include="js\dist\e58755d09b1606fc795659622ec9c468.png" />
+    <Content Include="js\dist\index.html" />
+    <Content Include="js\dist\manifest.1a637dd615043b8c3abf.js" />
+    <Content Include="js\dist\vendor.d143f59b68f41af18fa6.js" />
     <Content Include="js\index.html" />
     <Content Include="js\index.js" />
     <Content Include="js\qTip2.js" />

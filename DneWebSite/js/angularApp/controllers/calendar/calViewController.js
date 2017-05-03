@@ -13,7 +13,7 @@
 		var openDetailModal=function(event){
 			var modalInstance=$modal.open({
 				animation:true,
-				templateUrl:'client/templates/home/eventDetailModal.html',
+				template:require('../../templates/home/eventDetailModal.html'),
 				controller:'modalCtrl as m',
 				resolve:{
 					data:function(){
@@ -49,7 +49,8 @@
 		            right: 'month,basicWeek,basicDay'
 	            },
 	            timezone:'Asia/Taipei',
-	            lang:'zh-tw',
+	            locale:'zh-tw',
+                lang:'zh-tw',
 	            weekends:true,
 	            defaultView:'basicDay',
 	            minTime:'07:00:00',

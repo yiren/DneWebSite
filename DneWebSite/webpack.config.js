@@ -3,7 +3,7 @@ var path = require('path');
 var HtmlWebpackPlugin=require('html-webpack-plugin');
 
 const VENDOR_LIBS=[
-   'angular','angular-ui-router','angular-bootstrap',
+   'angular','angular-ui-router','angular-ui-bootstrap',
    'angular-ui-calendar','angular-ui-grid',
    'angular-animate','angular-scroll','ng-dialog',
   //  'qTip2',
@@ -15,11 +15,12 @@ const VENDOR_LIBS=[
 module.exports = {
   entry: {
     bundle:'./js/index.js',
-    vendor:VENDOR_LIBS
+    vendor:VENDOR_LIBS,
   },
   output: {
     path: path.join(__dirname, 'js/dist'),
     filename: '[name].[chunkhash].js',
+    publicPath:'js/dist/'
   },
   module:{
     rules:[{
@@ -32,8 +33,24 @@ module.exports = {
     },
     { 
       use: 'url-loader?limit=250000',
-      test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/ 
+      test: /\.(png|woff|woff2|eot|ttf|svg|gif|jpg)(\?|$)/ 
+    },
+    {
+      use: ['html-loader'],
+      test:/\.html$/
+      
     }
+    // ,
+    // {
+    //   use:[{
+    //     loader:'expose-loader',
+    //     options:'jQuery'
+    //   },{
+    //     loader:'expose-loader',
+    //     options:'$'
+    //   }],
+    //   test:require.resolve('jquery')
+    // }
     // ,
     //  { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "url-loader?limit=10000&mimetype=application/font-woff" },
     //  { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "file-loader" }
@@ -48,5 +65,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'js/index.html'
     })
+    // ,
+    // new webpack.ProvidePlugin({
+    //     $: "jquery",
+    //     jquery:"jquery",
+    //     "window.jQuery": "jquery",
+    //     jQuery:"jquery",
+    //     "moment": "moment",
+    //     "window.moment":"moment"
+    // })
   ]
+  ,
+  externals:{
+    jquery:'jQuery',
+    moment:'moment'
+  }
 };

@@ -1,6 +1,3 @@
-(function(){
-    'use strict'
-    //彈跳視窗
     angular.module('main')
 		.controller('modalCtrl', ['$uibModalInstance','$log','data',calModal]);
 
@@ -11,7 +8,6 @@
         //console.log(data.start.format('YYYY-MM-DD'));
         //console.log(data);
 
-        //如果是行事曆資料，要格式化時間格式
         if (data.start !== undefined || data.end !== undefined) {
             if (data.allDay === true) {
                 data.startTime=data.start.format('YYYY-MM-DD');
@@ -61,7 +57,7 @@
 		};
 
 
-        //作資料繫結
+        //嚙瑾嚙踝蕭嚙踝蕭繫嚙踝蕭
 		angular.extend(this, {
 			save:save,
 			cancel:cancel,
@@ -74,5 +70,3 @@
 			//timeOptions:datetimeConfig.timepickerOptions
 		});
 	}
-
-})();

@@ -2,30 +2,24 @@
 <html>
 
   <head>
-    
+
   </head>
 
-  <body>
-    <div class="container" id="bulltin">
-    
-    <div ng-controller="postGridCtrl as g">
-           
-        <div class="row">
-            <h1 class="text-center title">公佈欄</h1>
-            
-            <div class="col-md-12">
-                <button id='toggleFiltering' ng-click="g.toggleFiltering()" class="btn btn-success"><span ng-bind="g.searchTextToggle"></span>簡易搜尋</button>
-                <a href="/posts" target="_blank" class="btn btn-info pull-right">管理</a>
-                <div id="bulltinGrid" ui-grid="g.gridOptions" style="width:auto;height:auto" ui-grid-resize-columns ui-grid-selection ui-grid-pagination>
-                </div>
-                
-                <span class="clearfix"></span>
-            </div>
-        </div>
-            
-    </div>
-       
+  <body ng-app="main">
+    <ui-view></ui-view>
+
+
 </div>
+<!---->
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/moment/min/moment.min.js"></script>
+
+    <script src="../../node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="../../node_modules/fullcalendar/dist/gcal.js"></script>
+<script src="../../node_modules/fullcalendar/dist/lang-all.js"></script>
+<script src="../../plugins/template/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="../../plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+
   </body>
 
 </html>

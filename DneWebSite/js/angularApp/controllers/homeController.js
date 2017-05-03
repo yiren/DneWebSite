@@ -1,9 +1,6 @@
-(function(){
-	'use strict';
-
 	angular.module('main')
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
-            //­º­¶popupµøµ¡
+            //ï¿½ï¿½ï¿½ï¿½popupï¿½ï¿½ï¿½ï¿½
             //$scope.$on('$viewContentLoaded', function () {
             //    //call it here
             //    //console.log("preload");
@@ -13,13 +10,11 @@
             //    });
             //});
             var vm = this;
-            //ÂÂºô¥D¾÷¦ì§}
+            //ï¿½Âºï¿½ï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½}
             vm.host = '10.20.1.4';
             vm.host2 = '10.144.101.5';
             vm.goToHome = function () {
-		   	    //ui-router $state.go¥i¥H¸õ¨ìrouter.js©w¸qªºstate¸ô®|¦WºÙ
+		   	    
 		   	    $state.go('home');
 		   	}
-		   }])
-
-})();
+		   }]);

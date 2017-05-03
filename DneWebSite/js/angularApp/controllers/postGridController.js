@@ -1,8 +1,10 @@
 ﻿
-postGridCtrl.$inject=['i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants'];
 
 
-export default function postGridCtrl(i18nService, $modal, $scope, $http, $log, uiGridConstants) {
+angular.module('main')
+    .controller('postGridCtrl', ['i18nService', '$uibModal', '$scope', '$http', '$log', 'uiGridConstants', postGridCtrl]);
+
+function postGridCtrl(i18nService, $modal, $scope, $http, $log, uiGridConstants) {
     //Two-Way Binding
     var vm = this;
 
@@ -10,7 +12,7 @@ export default function postGridCtrl(i18nService, $modal, $scope, $http, $log, u
     var openDetailModal = function (post) {
         var modalInstance = $modal.open({
             animation: true,
-            templateUrl: 'client/templates/home/postDetailModal.html',
+            template: require('../templates/home/postDetailModal.html'),
             controller: 'modalCtrl as m',
             resolve: {
                 data: function () {
@@ -32,12 +34,15 @@ export default function postGridCtrl(i18nService, $modal, $scope, $http, $log, u
     }
 
         //取得Database中佈告資料
-    $http.get('http://localhost:58318/api/postsdata').then(suc, err);
-    function suc(res) {
-        console.log(res.data);
-        vm.gridOptions.data = res.data;
-        
-    }
+    
+        $http.get('/api/postsdata').then(suc, err);
+        function suc(res) {
+            //console.log(res.data);
+            vm.gridOptions.data = res.data;
+            
+        }
+    
+    
     function err(err) {
         
     }
