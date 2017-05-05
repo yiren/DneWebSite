@@ -1,4 +1,5 @@
 //Revolution Slider
+var $ =require('jquery');
 $(document).ready(function(){
 	if ($(".slider-banner-container").length>0) {
 			

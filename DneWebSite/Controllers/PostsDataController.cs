@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using DneWebSite.Models.bulletin;
 using DneWebSite.Models.BulltinRespository;
@@ -15,6 +16,7 @@ using DneWebSite.Models.BulltinRespository;
 namespace DneWebSite.Controllers
 {
     //AngularJS取得資料End Point
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PostsDataController : ApiController
     {
         private PostsRespository _db=new PostsRespository();
