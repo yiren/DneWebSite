@@ -12,7 +12,7 @@ using DneWebSite.Helper;
 using System.Data.Entity.Infrastructure;
 using Npoi.Mapper;
 using System.IO;
-using ClosedXML.Excel;
+using ClosedXML;
 
 namespace DneWebSite.Controllers
 {
@@ -162,36 +162,6 @@ namespace DneWebSite.Controllers
         [AllowAnonymous]
         public FileResult DownloadDcrList()
         {
-            var mapper =new Mapper();
-            var data = db.Dcrs.ToList();
-            string path = Path.Combine(Server.MapPath("~/upload"), "dcrs.xlsx");
-            //var wb = new XLWorkbook();
-            //var ws = wb.Worksheets.Add("Test");
-
-
-            //ws.Cell(1, 1).Value = data.AsEnumerable();
-            //ws.Columns().AdjustToContents();
-
-            //using (FileStream fs = new FileStream(path, FileMode.Create))
-            //{
-            //    wb.SaveAs(fs);
-            //    return File(fs, System.Net.Mime.MediaTypeNames.Application.Octet);
-            //}
-
-
-            using (FileStream fs = new FileStream(path, FileMode.Create))
-            {
-                mapper.Save(fs, data, "DCR清單");
-                return File(fs, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "DCR清單.xlsx");
-            }
-
-
-        }
-        
-
-        [AllowAnonymous]
-        public FileResult DownloadDcrList()
-        {
             var mapper = new Mapper();
             var data = db.Dcrs.ToList();
             string path = Path.Combine(Server.MapPath("~/upload"), "dcrs.xlsx");
@@ -217,7 +187,6 @@ namespace DneWebSite.Controllers
 
 
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
