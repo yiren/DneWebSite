@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<DneWebSite.Models.DCR.Dcr>
-@using DneWebSite.Models.DCR
 
 @{
     ViewBag.Title = "Index";
@@ -62,7 +61,7 @@
                 送外單位審查
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DcrStatus)
+                @Html.DisplayNameFor(model => model.CloseDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Note)
@@ -118,7 +117,7 @@
                     @if (item.HasOperDep)
                     {
                         <p>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#operDep-@item.DcrId">核發處審查情況</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#operDep">核發處審查情況</button>
                         </p>
 
                     }
@@ -126,7 +125,7 @@
                     {
 
                         <p>
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#safeDep-@item.DcrId">核安處審查情況</button>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#safeDep">核安處審查情況</button>
                         </p>
 
 
@@ -135,13 +134,13 @@
                     @if (item.HasSafeReg)
                     {
                         <p>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#safeReg-@item.DcrId">核安會審查情況</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#safeReg">核安會審查情況</button>
                         </p>
                     }
                     @if (item.HasAEC)
                     {
                         <p>
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aec-@item.DcrId">AEC陳報情況</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aec">AEC陳報情況</button>
                         </p>
                     }
                     @if (User.Identity.IsAuthenticated)
@@ -149,7 +148,7 @@
                         <div><a href="/dcrs/editreview/@item.DcrId" class="btn btn-default">編輯送審資料</a></div>
                     }
                     <!-- Modal -->
-                    <div class="modal fade" id="operDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="operDep" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -167,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="safeDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="safeDep" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -185,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="safeReg-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="safeReg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -203,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="aec-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="aec" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -225,15 +224,8 @@
                 </td>
 
                 <td>
-                    <div>
-                        @Html.DisplayFor(m=>@item.DcrStatus)
-                        @if (item.DcrStatus != DcrStatus.Reviewing && !item.CloseDate.Equals(string.Empty))
-                        {
-                            <div>(@item.CloseDate)</div>;
-                        }
-                    </div>
+                    @Html.DisplayFor(modelItem => item.CloseDate)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.Note)
                 </td>

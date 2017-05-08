@@ -8,8 +8,10 @@
  * File Description: Initializations of plugins 
  */
 
-(function($){
-	$(document).ready(function(){
+
+
+
+$(document).ready(function(){
         
          
         
@@ -499,9 +501,7 @@
 
 	}); // End document ready
 
-})(this.jQuery);
-
-if (jQuery(".btn-print").length>0) {
+if ($(".btn-print").length>0) {
 	function print_window() {
 		var mywindow = window;
 		mywindow.document.close();
