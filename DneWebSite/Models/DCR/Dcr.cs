@@ -72,6 +72,8 @@ namespace DneWebSite.Models.DCR
         [DisplayName("是否結案")]
         public bool IsClosed { get; set; }
 
+
+
         [DisplayName("備註")]
         public string Note { get; set; }
 
