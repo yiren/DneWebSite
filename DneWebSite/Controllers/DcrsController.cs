@@ -179,11 +179,13 @@ namespace DneWebSite.Controllers
             //}
 
 
-            using (FileStream fs = new FileStream(path, FileMode.Create))
-            {
+            using (FileStream fs = new FileStream(path, FileMode.Create)) {
                 mapper.Save(fs, data, "DCR清單");
-                return File(fs, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "DCR清單.xlsx");
             }
+            
+                
+            return File(path, System.Net.Mime.MediaTypeNames.Application.Octet, "DCR清單"+DateTime.Now.ToString("yyyy-MM-dd")+".xlsx");
+            
 
 
         }
