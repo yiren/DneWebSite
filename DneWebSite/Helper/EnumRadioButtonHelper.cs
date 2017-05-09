@@ -12,6 +12,7 @@ namespace DneWebSite.Helper
 {
     public static class EnumRadioButtonHelper
     {
+
         public static MvcHtmlString EnumRadioButton<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)
         {
             var metaData = ModelMetadata.FromLambdaExpression(expression, htmlHelper.ViewData);
