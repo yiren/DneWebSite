@@ -7,18 +7,7 @@ using System.Web;
 
 namespace DneWebSite.Models.DCR
 {
-    public enum DcrStatus
-    {   
-        [Display(Name ="審查中")]
-        [Description("審查中")]
-        Reviewing,
-        [Display(Name ="結案")]
-        [Description("結案")]
-        Closed,
-        [Display(Name = "有意見")]
-        [Description("有意見")]
-        HasComment
-    }
+    
     public class Dcr
     {
         [Key]

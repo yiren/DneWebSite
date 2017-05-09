@@ -44,6 +44,9 @@ namespace DneWebSite.Models.DCR
         [StringLength(50)]
         public string ReceivedDate { get; set; }
 
+        [DisplayName("審查結果")]
+        public DcrStatus DcrStatus { get; set; }
+
         [Required]
         [DisplayName("主辦組")]
         [StringLength(20)]

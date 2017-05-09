@@ -13,6 +13,7 @@ using System.Data.Entity.Infrastructure;
 using Npoi.Mapper;
 using System.IO;
 using ClosedXML;
+using ClosedXML.Excel;
 
 namespace DneWebSite.Controllers
 {
@@ -163,27 +164,36 @@ namespace DneWebSite.Controllers
         public FileResult DownloadDcrList()
         {
             var mapper = new Mapper();
-            var data = db.Dcrs.ToList();
+            AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<Dcr, DcrExcelViewModel>());
+
+            var data = db.Dcrs.OrderBy(d => d.IsClosed)
+                .ThenByDescending(d => d.ReceivedDate)
+                .ThenByDescending(d => d.Plant)
+                .ThenByDescending(d => d.DcrNo)
+                .ThenByDescending(d => d.MainSection)
+                .ToList();
+
+            List<DcrExcelViewModel> excelFormat = 
+                AutoMapper.Mapper.Map<List<DcrExcelViewModel>>(data);
+
             string path = Path.Combine(Server.MapPath("~/upload"), "dcrs.xlsx");
-            //var wb = new XLWorkbook();
-            //var ws = wb.Worksheets.Add("Test");
+            //string path2 = Path.Combine(Server.MapPath("~/upload"), "dcrs2.xlsx");
 
 
-            //ws.Cell(1, 1).Value = data.AsEnumerable();
-            //ws.Columns().AdjustToContents();
-
-            //using (FileStream fs = new FileStream(path, FileMode.Create))
-            //{
-            //    wb.SaveAs(fs);
-            //    return File(fs, System.Net.Mime.MediaTypeNames.Application.Octet);
-            //}
 
 
             using (FileStream fs = new FileStream(path, FileMode.Create)) {
-                mapper.Save(fs, data, "DCR清單");
+                mapper.Save(fs, excelFormat, "DCR清單");
             }
-            
-                
+
+            //using (FileStream fs = new FileStream(path2, FileMode.Create))
+            //{
+            //    var wb = new XLWorkbook(path);
+            //    var ws = wb.Worksheet(1);
+            //    ws.Columns().AdjustToContents();
+            //    wb.SaveAs(fs);
+            //}
+
             return File(path, System.Net.Mime.MediaTypeNames.Application.Octet, "DCR清單"+DateTime.Now.ToString("yyyy-MM-dd")+".xlsx");
             
 

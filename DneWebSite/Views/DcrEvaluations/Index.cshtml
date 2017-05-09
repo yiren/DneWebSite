@@ -1,0 +1,160 @@
+﻿@model IEnumerable<DneWebSite.Models.DCR.DcrEvaluation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DataLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcrEvaluationNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Classification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SourceNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MainSection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engineer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssistSection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CloseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsClosed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitToOperDepDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperDepReviewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperDepReviewResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasOperDep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitToSafeDepDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SafeDepReviewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SafeDepReviewResult)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcrEvaluationNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SourceNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceivedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MainSection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engineer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssistSection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CloseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsClosed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitToOperDepDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperDepReviewDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperDepReviewResult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasOperDep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitToSafeDepDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SafeDepReviewDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SafeDepReviewResult)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DcrEvaluationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DcrEvaluationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DcrEvaluationId })
+        </td>
+    </tr>
+}
+
+</table>
