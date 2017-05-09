@@ -7,15 +7,29 @@
 <div style="margin:30px">
     <h1>DCR管制追蹤</h1>
     <p>
-        <a href="@Url.Action("Create", "Dcrs")" class="btn btn-primary">新增DCR</a>
-        @if (!User.Identity.IsAuthenticated)
-        {
-            <a href="/account/login?ReturnUrl=%2FDcrs" class="btn btn-success pull-right">管理</a>
-        }
-        else
-        {
-            <a href="/account/EasyLogOff" class="btn btn-danger pull-right">登出</a>
-        }
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline">
+                    <li class="pull-left"><a href="@Url.Action("Create", "Dcrs")" class="btn btn-primary">新增DCR</a></li>
+                    <li class="pull-right"><a href="@Url.Action("DownloadDcrList","Dcrs")" class="btn btn-default">匯出Excel</a></li>
+                    <li class="pull-right">@if (!User.Identity.IsAuthenticated)
+                    {
+                        <a href="/account/login?ReturnUrl=%2FDcrs" class="btn btn-success">管理</a>
+                    }
+                    else
+                    {
+                        <a href="/account/EasyLogOff" class="btn btn-danger">登出</a>
+                    }</li>
+                </ul>
+                
+                
+                
+                
+            </div>
+        </div>
+        
+        
+        
 
     </p>
 
@@ -83,6 +97,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <div><a href="/dcrs/edit/@item.DcrId" class="btn btn-info">編輯基本資料</a></div>
+                        <div><a href="/dcrs/delete/@item.DcrId" class="btn btn-danger">刪除DCR</a></div>
                     }
                 </td>
                 <td>

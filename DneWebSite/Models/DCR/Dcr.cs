@@ -7,6 +7,7 @@ using System.Web;
 
 namespace DneWebSite.Models.DCR
 {
+    
     public class Dcr
     {
         [Key]
@@ -62,11 +63,16 @@ namespace DneWebSite.Models.DCR
         [DisplayName("會辦組別")]
         public string AssistSection { get; set; }
 
-        [DisplayName("結案回覆日期")]
+        [DisplayName("審查結果")]
+        public DcrStatus DcrStatus { get; set; }
+
+        [DisplayName("回覆日期")]
         [StringLength(50)]
         public string CloseDate { get; set; }
         [DisplayName("是否結案")]
         public bool IsClosed { get; set; }
+
+
 
         [DisplayName("備註")]
         public string Note { get; set; }
