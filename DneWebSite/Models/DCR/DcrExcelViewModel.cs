@@ -8,13 +8,16 @@ namespace DneWebSite.Models.DCR
 {
     public class DcrExcelViewModel
     {
-        public string DcrNo { get; set; }
+        
 
         
         [Column("提案電廠")]
         public string Plant { get; set; }
 
-      
+        [Column("編號")]
+        public string DcrNo { get; set; }
+
+
         [Column("類別")]
        
         public string Classification { get; set; }
@@ -51,10 +54,6 @@ namespace DneWebSite.Models.DCR
         [Column("回覆日期")]
       
         public string CloseDate { get; set; }
-        [Column("是否結案")]
-        public bool IsClosed { get; set; }
-
-
 
         [Column("備註")]
         public string Note { get; set; }
@@ -68,8 +67,7 @@ namespace DneWebSite.Models.DCR
         public string OperDepReviewDate { get; set; }
         [Column("(核發處)審查結果")]
         public string OperDepReviewResult { get; set; }
-     
-        
+           
         //核安
         [Column("(核安處)送會日期")]
         public string SubmitToSafeDepDate { get; set; }
@@ -77,8 +75,7 @@ namespace DneWebSite.Models.DCR
         public string SafeDepReviewDate { get; set; }
         [Column("(核安處)審查結果")]
         public string SafeDepReviewResult { get; set; }
-
-       
+      
         //核安會
         [Column("(核安會)送會日期")]
         public string SubmitToSafeRegDate { get; set; }
@@ -87,7 +84,6 @@ namespace DneWebSite.Models.DCR
         public string SafeRegReviewDate { get; set; }
         [Column("(核安會)結果")]
         public string SafeRegReviewResult { get; set; }
-
         
         //AEC
         [Column("(AEC)陳報日期")]

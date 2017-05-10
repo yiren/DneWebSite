@@ -14,6 +14,7 @@ using Npoi.Mapper;
 using System.IO;
 using ClosedXML;
 using ClosedXML.Excel;
+using Webdiyer.WebControls.Mvc;
 
 namespace DneWebSite.Controllers
 {
@@ -22,22 +23,39 @@ namespace DneWebSite.Controllers
     public class DcrsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
-
+        private List<Dcr> dcrsForExcelExport;
+        public DcrsController()
+        {
+             this.dcrsForExcelExport= new List<Dcr>();
+        }
+        
         // GET: Dcrs
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var data = db.Dcrs
+            var dbQuery = db.Dcrs
                 .OrderBy(d => d.IsClosed)
                 .ThenByDescending(d => d.ReceivedDate)
                 .ThenByDescending(d => d.Plant)
                 .ThenByDescending(d => d.DcrNo)
                 .ThenByDescending(d => d.MainSection)
+                .ToPagedList(page, 1);
 
-                .ToList();
 
-            return View(data);
+            InMemoryData.DcrDataForExcelExport(dbQuery);
+
+
+
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_DcrList", dbQuery);
+            }
+
+            return View(dbQuery);
         }
+
+       
 
         // GET: Dcrs/Create
         public ActionResult Create()
@@ -165,16 +183,11 @@ namespace DneWebSite.Controllers
         {
             var mapper = new Mapper();
             AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<Dcr, DcrExcelViewModel>());
-
-            var data = db.Dcrs.OrderBy(d => d.IsClosed)
-                .ThenByDescending(d => d.ReceivedDate)
-                .ThenByDescending(d => d.Plant)
-                .ThenByDescending(d => d.DcrNo)
-                .ThenByDescending(d => d.MainSection)
-                .ToList();
+           
+            
 
             List<DcrExcelViewModel> excelFormat = 
-                AutoMapper.Mapper.Map<List<DcrExcelViewModel>>(data);
+                AutoMapper.Mapper.Map<List<DcrExcelViewModel>>(InMemoryData.DcrDataInMemoryStore);
 
             string path = Path.Combine(Server.MapPath("~/upload"), "dcrs.xlsx");
             //string path2 = Path.Combine(Server.MapPath("~/upload"), "dcrs2.xlsx");
