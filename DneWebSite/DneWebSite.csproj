@@ -393,6 +393,14 @@
     <Compile Include="MigrationsBulltin\201705090614500_addDcrStatusToDcrEvaluations.Designer.cs">
       <DependentUpon>201705090614500_addDcrStatusToDcrEvaluations.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigrationsBulltin\201705150233085_increaseReviewResultLength.cs" />
+    <Compile Include="MigrationsBulltin\201705150233085_increaseReviewResultLength.Designer.cs">
+      <DependentUpon>201705150233085_increaseReviewResultLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsBulltin\201705150350047_ChangeDcrEnumToCht.cs" />
+    <Compile Include="MigrationsBulltin\201705150350047_ChangeDcrEnumToCht.Designer.cs">
+      <DependentUpon>201705150350047_ChangeDcrEnumToCht.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigrationsBulltin\Configuration.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.Designer.cs">
@@ -3596,7 +3604,6 @@
     <Content Include="plugins\bowerPackage\ng-dialog\bower.json" />
     <Content Include="plugins\bowerPackage\ng-dialog\package.json" />
     <Content Include="plugins\bowerPackage\ng-dialog\yarn.lock" />
-    <Content Include="bower.json" />
     <Content Include="plugins\bowerPackage\parallax\.bower.json" />
     <Content Include="plugins\bowerPackage\parallax\bower.json" />
     <Content Include="plugins\bowerPackage\parallax\LICENSE" />
@@ -3778,6 +3785,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsBulltin\201705090614500_addDcrStatusToDcrEvaluations.resx">
       <DependentUpon>201705090614500_addDcrStatusToDcrEvaluations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201705150233085_increaseReviewResultLength.resx">
+      <DependentUpon>201705150233085_increaseReviewResultLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201705150350047_ChangeDcrEnumToCht.resx">
+      <DependentUpon>201705150350047_ChangeDcrEnumToCht.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsIdentity\201604260324202_InitialCreate.resx">
       <DependentUpon>201604260324202_InitialCreate.cs</DependentUpon>

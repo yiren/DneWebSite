@@ -11,12 +11,12 @@ namespace DneWebSite.Models.DCR
     {
         [Display(Name = "審查中")]
         [Description("審查中")]
-        Reviewing,
-        [Display(Name = "結案")]
-        [Description("結案")]
-        Closed,
+        審查中,
+        [Display(Name = "同意")]
+        [Description("同意")]
+        同意,
         [Display(Name = "有意見")]
         [Description("有意見")]
-        HasComment
+        有意見
     }
 }

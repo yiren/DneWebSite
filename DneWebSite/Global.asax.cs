@@ -19,10 +19,10 @@ namespace DneWebSite
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ServicePointManager.ServerCertificateValidationCallback = delegate
-            {
-                return true;
-            };
+            //ServicePointManager.ServerCertificateValidationCallback = delegate
+            //{
+            //    return true;
+            //};
         }
     }
 }

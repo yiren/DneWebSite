@@ -83,6 +83,7 @@ namespace DneWebSite.Models.DCR
 
         public string OperDepReviewDate { get; set; }
         [DisplayName("結果")]
+        [StringLength(150)]
         public string OperDepReviewResult { get; set; }
         [Required]
         [DisplayName("是否送核發處")]
@@ -96,7 +97,7 @@ namespace DneWebSite.Models.DCR
         [StringLength(50)]
         public string SafeDepReviewDate { get; set; }
         [DisplayName("結果")]
-        [StringLength(20)]
+        [StringLength(150)]
         public string SafeDepReviewResult { get; set; }
 
         [ScaffoldColumn(false)]

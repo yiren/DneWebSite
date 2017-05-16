@@ -39,7 +39,7 @@ namespace DneWebSite.Controllers
                 .ThenByDescending(d => d.Plant)
                 .ThenByDescending(d => d.DcrNo)
                 .ThenByDescending(d => d.MainSection)
-                .ToPagedList(page, 1);
+                .ToPagedList(page, 5);
 
 
             InMemoryData.DcrDataForExcelExport(dbQuery);

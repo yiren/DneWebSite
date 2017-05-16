@@ -125,6 +125,13 @@
                                     @Html.ValidationMessageFor(model => model.CloseDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DcrStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EnumRadioButton(model => model.DcrStatus)
+                                    @Html.ValidationMessageFor(model => model.DcrStatus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
                     </div>
 
