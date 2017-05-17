@@ -29,7 +29,8 @@ namespace DneWebSite
 
             bundles.Add(new ScriptBundle("~/script")
                 .Include(
-                    "~/plugins/template/jquery.min.js",
+                    "~/Scripts/jquery-2.1.1.min.js",
+                    "~/Content/mdl-v1.1.2/material.min.js",
                     "~/plugins/template/bootstrap/js/bootstrap.min.js",
                     "~/plugins/template/modernizr.js",
                     "~/plugins/template/jquery.parallax-1.1.3.js",

@@ -75,12 +75,13 @@
                         templateUrl: '/../client/templates/regular/departmentReg.html',
                         controller: 'homeCtrl'
                     })
-                    //事業部章則
-                    .state('dcrList', {
-                        url: '/dcrList',
-                        templateUrl: '/../client/templates/engineering/dcrList.html',
+                    //廉政宣導
+                    .state('integrity', {
+                        url: '/integrity',
+                        templateUrl: '/../client/templates/home/integrity.html',
                         controller: 'homeCtrl'
                     })
+
                 ;
     })
     
