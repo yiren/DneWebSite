@@ -457,6 +457,47 @@ File Description: Place here your custom CSS styles
     cursor:pointer;
 }
 
+.fix-image-integrity-page {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height:100%;
+    position:fixed !important;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+}
+
+.container-for-card { 
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:100px;
+    
+}
+
+.panel-open panel-heading a:after {
+    content: "\f196";
+}
+
+
+
+.parallax-bg-integrity {
+    background: url("../images/integrity/integrity.jpg") 30% 50% no-repeat;
+}
+
+.float-side-menu{
+
+}
+@media (min-width: 700px) {
+    .container {
+        width: 800px;
+    }
+}
 
 @media (min-width: 990px) {
   .container {

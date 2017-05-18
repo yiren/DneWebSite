@@ -58,6 +58,7 @@ namespace DneWebSite
                     "~/client/controllers/meetingGridController.js",
                     "~/client/controllers/postGridController.js",
                     "~/client/controllers/calendar/calViewController.js",
+                    "~/client/controllers/integrityController.js",
                     "~/client/controllers/common/modalController.js"
                 ));
 
