@@ -33,21 +33,23 @@
         <th>
             @Html.DisplayNameFor(model => model.Engineer)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AssistSection)
-        </th>
+       
         <th>
             送外單位審查
         </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.CloseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcrStatus)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Note)
         </th>
 
 
-        <th></th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -88,9 +90,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Engineer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssistSection)
             </td>
             <td>
 
@@ -203,19 +202,18 @@
                 </div>
             </td>
 
+           
             <td>
-                @Html.DisplayFor(modelItem=>item.DcrStatus)
-                @if (item.IsClosed)
-                {
-                    <span>(@Html.DisplayFor(modelItem => item.CloseDate))</span>
-                }
-                
+                @Html.DisplayFor(modelItem => item.CloseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DcrStatus)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
 
-            <td></td>
+            
 
         </tr>
     }

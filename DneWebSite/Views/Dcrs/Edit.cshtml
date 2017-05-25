@@ -26,6 +26,10 @@
         @Html.HiddenFor(m=>m.SafeRegReviewDate)
         @Html.HiddenFor(m => m.SubmitToSafeRegDate)
         @Html.HiddenFor(m=>m.SafeRegReviewResult)
+        @Html.HiddenFor(m => m.HasAssistSection)
+        @Html.HiddenFor(m => m.AssistSectionReviewDate)
+        @Html.HiddenFor(m => m.AssistSectionReviewResult)
+        @Html.HiddenFor(m => m.AssistSections)
 
         <div class="form-horizontal">
             <h4>@Model.DcrNo 資訊更新</h4>
@@ -109,14 +113,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.AssistSection, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.AssistSection, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.AssistSection, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
+                           
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

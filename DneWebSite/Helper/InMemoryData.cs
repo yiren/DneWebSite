@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DneWebSite.Helper
 {
-    public class InMemoryData
+    public static class InMemoryData
     {
         public static List<Dcr> DcrDataInMemoryStore = new List<Dcr>();
         public static List<Dcr> DcrDataForExcelExport(List<Dcr> dcrs)

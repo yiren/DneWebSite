@@ -63,10 +63,10 @@ namespace DneWebSite.Models.DCR
         [DisplayName("會辦組別")]
         public string AssistSection { get; set; }
 
-        [DisplayName("審查結果")]
+        [DisplayName("回覆結果")]
         public DcrStatus DcrStatus { get; set; }
 
-        [DisplayName("回覆日期")]
+        [DisplayName("回覆電廠日期")]
         [StringLength(50)]
         public string CloseDate { get; set; }
         [DisplayName("是否結案")]
@@ -137,16 +137,30 @@ namespace DneWebSite.Models.DCR
         [StringLength(150)]
         public string SubmitDocNo { get; set; }
 
-        [DisplayName("核准日期")]
+        [DisplayName("回覆日期")]
         [StringLength(50)]
         public string AECApprovalDate { get; set; }
-        [DisplayName("核准文號")]
+        [DisplayName("回覆文號")]
         [StringLength(150)]
         public string AECApprovalDoc { get; set; }
         [Required]
         [DisplayName("是否需陳報AEC")]
         public bool HasAEC { get; set; }
 
+        //會辦組別
+        [DisplayName("會辦組別")]
+        [StringLength(100)]
+        public string AssistSections { get; set; }
+        [DisplayName("審查結果")]
+        [StringLength(150)]
+        public string AssistSectionReviewResult { get; set; }
+        [DisplayName("彙總日期")]
+        [StringLength(50)]
+        public string AssistSectionReviewDate { get; set; }
+       
 
+        [ScaffoldColumn(false)]
+        [DisplayName("是否有會辦組")]
+        public bool HasAssistSection { get; set; }
     }
 }

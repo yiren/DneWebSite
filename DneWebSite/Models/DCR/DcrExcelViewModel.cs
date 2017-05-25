@@ -40,20 +40,9 @@ namespace DneWebSite.Models.DCR
        
         [Column("主辦組")]
         public string MainSection { get; set; }
-
       
         [Column("承辦人")]
-        public string Engineer { get; set; }
-
-        [Column("會辦組別")]
-        public string AssistSection { get; set; }
-
-        [Column("審查結果")]
-        public DcrStatus DcrStatus { get; set; }
-
-        [Column("回覆日期")]
-      
-        public string CloseDate { get; set; }
+        public string Engineer { get; set; }      
 
         [Column("備註")]
         public string Note { get; set; }
@@ -92,9 +81,25 @@ namespace DneWebSite.Models.DCR
         [Column("(AEC)陳報文號")]
         public string SubmitDocNo { get; set; }
 
-        [Column("(AEC)核准日期")]
+        [Column("(AEC)回覆日期")]
         public string AECApprovalDate { get; set; }
-        [Column("(AEC)核准文號")]
+        [Column("(AEC)回覆文號")]
         public string AECApprovalDoc { get; set; }
+
+        [Column("(核技處)會辦組別")]
+        public string AssistSections { get; set; }
+
+        [Column("(核技處)審查結果")]
+        public string AssistSectionReviewResult { get; set; }
+
+        [Column("(核技處)彙總日期")]
+        public string AssistSectionReviewDate { get; set; }
+
+        [Column("回覆結果")]
+        public DcrStatus DcrStatus { get; set; }
+
+        [Column("回覆電廠日期")]
+
+        public string CloseDate { get; set; }
     }
 }
