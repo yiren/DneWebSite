@@ -8,67 +8,15 @@
         <div class="col-md-10">
             <!-- slider revolution start -->
             <!-- ================ -->
+            <div ng-include src="'client/templates/home/imageSilder.html'"></div>
+
 
             
-
-<div id="v0" class="slider-banner-container">
-    
-    <div class="slider-banner">
-        <ul>
-            
-            <!-- slide 5 start -->
-            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="2">
-                <!-- main image -->
-                <img src="../../../images/home/Playing/motherday2017-N.jpg" data-bgposition="center below" data-bgfit="cover" data-bgrepeat="no-repeat">
-            </li>
-            <!-- slide 5 end -->
-            <!-- slide 5 start -->
-            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="1">
-                <!-- main image -->
-                <img src="../../../images/home/Playing/autumnjapan2.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            </li>
-            
-            <!-- slide 5 end -->
-            <!-- slide 5 start -->
-            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="2">
-                <!-- main image -->
-                <img src="../../../images/home/Playing/windpower.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            </li>
-            <!-- slide 5 end -->
-
-             <!-- slide 5 start -->
-            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="1">
-                <!-- main image -->
-                <img src="../../../images/home/Playing/finland.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            </li>
-            <!-- slide 5 end -->
-            <!-- slide 5 start -->
-            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="2">
-                <!-- main image -->
-                <img src="../../../images/home/Playing/Austrianfields.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            </li>
-            <!-- slide 5 end -->
-
-            
-
-
-        </ul>
-        <div class="tp-bannertimer tp-bottom"></div>
-    </div>
-</div>
-
+        </div>
 <!-- jQuery REVOLUTION Slider  -->
 
 
-<script src="../../../js/rev-slider-init.js"></script>
-
-            <div class="section" style="margin-left:10px" ng-controller="calViewCtrl as c" id="calendar">
-                    <h1 class="text-center title">行事曆</h1>
-                    <div class="separator"></div>
-                    <div ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
-              </div>
-            <!-- slider revolution end -->
-        </div>
+        
         <div class="col-md-2">
             <div ng-include src="'client/templates/home/quicksidebar.html'"></div>
         </div>
@@ -77,7 +25,15 @@
 </div>
     <!-- slideshow end -->
 <!-- banner end -->
-
+<div class="container">
+    <div class="section" ng-controller="calViewCtrl as c" id="calendar">
+        <h1 class="text-center title">行事曆</h1>
+        <div class="separator"></div>
+        <div ui-calendar="c.uiConfig.calendar" ng-model="c.eventSources"></div>
+    </div>
+</div>
+<!-- slider revolution end -->
+        
 
 <!--Calendar-->
 <!-- parallax section start -->
