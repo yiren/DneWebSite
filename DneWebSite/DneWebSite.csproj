@@ -405,6 +405,10 @@
     <Compile Include="MigrationsBulltin\201705250129581_modifyAssistSectionColumnDesign.Designer.cs">
       <DependentUpon>201705250129581_modifyAssistSectionColumnDesign.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigrationsBulltin\201706060338394_addAECComment.cs" />
+    <Compile Include="MigrationsBulltin\201706060338394_addAECComment.Designer.cs">
+      <DependentUpon>201706060338394_addAECComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigrationsBulltin\Configuration.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.Designer.cs">
@@ -3865,6 +3869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsBulltin\201705250129581_modifyAssistSectionColumnDesign.resx">
       <DependentUpon>201705250129581_modifyAssistSectionColumnDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201706060338394_addAECComment.resx">
+      <DependentUpon>201706060338394_addAECComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsIdentity\201604260324202_InitialCreate.resx">
       <DependentUpon>201604260324202_InitialCreate.cs</DependentUpon>

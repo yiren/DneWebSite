@@ -73,7 +73,16 @@ namespace DneWebSite.Models.DCR
         public string SafeRegReviewDate { get; set; }
         [Column("(核安會)結果")]
         public string SafeRegReviewResult { get; set; }
-        
+
+        [Column("(核技處)會辦組別")]
+        public string AssistSections { get; set; }
+
+        [Column("(核技處)審查結果")]
+        public string AssistSectionReviewResult { get; set; }
+
+        [Column("(核技處)彙總日期")]
+        public string AssistSectionReviewDate { get; set; }
+
         //AEC
         [Column("(AEC)陳報日期")]
         public string SubmitToAECDate { get; set; }
@@ -85,15 +94,8 @@ namespace DneWebSite.Models.DCR
         public string AECApprovalDate { get; set; }
         [Column("(AEC)回覆文號")]
         public string AECApprovalDoc { get; set; }
-
-        [Column("(核技處)會辦組別")]
-        public string AssistSections { get; set; }
-
-        [Column("(核技處)審查結果")]
-        public string AssistSectionReviewResult { get; set; }
-
-        [Column("(核技處)彙總日期")]
-        public string AssistSectionReviewDate { get; set; }
+        [Column("(AEC)審查結果")]
+        public string AECComment { get; set; }
 
         [Column("回覆結果")]
         public DcrStatus DcrStatus { get; set; }

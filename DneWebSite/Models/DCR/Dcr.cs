@@ -143,6 +143,9 @@ namespace DneWebSite.Models.DCR
         [DisplayName("回覆文號")]
         [StringLength(150)]
         public string AECApprovalDoc { get; set; }
+        [DisplayName("AEC審查結果")]
+        public string AECComment { get; set; }
+
         [Required]
         [DisplayName("是否需陳報AEC")]
         public bool HasAEC { get; set; }
