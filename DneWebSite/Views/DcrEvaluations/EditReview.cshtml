@@ -1,0 +1,166 @@
+﻿@model DneWebSite.Models.DCR.DcrEvaluation
+
+@{
+    ViewBag.Title = "EditReview";
+    Layout = "~/Views/Shared/_DataLayout.cshtml";
+}
+
+<h2>EditReview</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>@Model.DcrEvaluationNo 現況更新</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.DcrEvaluationId)
+        @Html.HiddenFor(model => model.DcrEvaluationNo)
+        @Html.HiddenFor(model => model.Classification)
+
+        @Html.HiddenFor(m => m.Plant)
+        @Html.HiddenFor(m => m.Subject)
+        @Html.HiddenFor(m => m.SourceNo)
+        @Html.HiddenFor(m => m.DneNo)
+        @Html.HiddenFor(m => m.ReceivedDate)
+        @Html.HiddenFor(m => m.MainSection)
+        @Html.HiddenFor(m => m.Engineer)
+        @Html.HiddenFor(m => m.CloseDate)
+        @Html.HiddenFor(m => m.DcrStatus)
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">送審資訊</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HasOperDep, htmlAttributes: new { @class = "control-label col-md-6" })
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.HasOperDep)
+                                    @Html.ValidationMessageFor(model => model.HasOperDep, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SubmitToOperDepDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.SubmitToOperDepDate, new { htmlAttributes = new { @class = "form-control datepicker", @readonly = "true" } })
+                                @Html.ValidationMessageFor(model => model.SubmitToOperDepDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OperDepReviewDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.OperDepReviewDate, new { htmlAttributes = new { @class = "form-control datepicker", @readonly = "true" } })
+                                @Html.ValidationMessageFor(model => model.OperDepReviewDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OperDepReviewResult, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.OperDepReviewResult, new { @class = "form-control", rows = 4, @style = "width:100%;max-width:100%" })
+                                @Html.ValidationMessageFor(model => model.OperDepReviewResult, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HasSafeDep, htmlAttributes: new { @class = "control-label col-md-6" })
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.HasSafeDep)
+                                    @Html.ValidationMessageFor(model => model.HasSafeDep, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SubmitToSafeDepDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.SubmitToSafeDepDate, new { htmlAttributes = new { @class = "form-control datepicker", @readonly = "true" } })
+                                @Html.ValidationMessageFor(model => model.SubmitToSafeDepDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SafeDepReviewDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.SafeDepReviewDate, new { htmlAttributes = new { @class = "form-control datepicker", @readonly = "true" } })
+                                @Html.ValidationMessageFor(model => model.SafeDepReviewDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SafeDepReviewResult, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.SafeDepReviewResult, new { @class = "form-control", rows = 4, @style = "width:100%;max-width:100%" })
+                                @Html.ValidationMessageFor(model => model.SafeDepReviewResult, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HasAssistSection, htmlAttributes: new { @class = "control-label col-md-6" })
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.HasAssistSection)
+                                    @Html.ValidationMessageFor(model => model.HasAssistSection, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AssistSections, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AssistSections, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AssistSections, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AssistSectionReviewResult, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.AssistSectionReviewResult, new { @class = "form-control", rows = 4, @style = "width:100%;max-width:100%" })
+                                @Html.ValidationMessageFor(model => model.AssistSectionReviewResult, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AssistSectionReviewDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AssistSectionReviewDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AssistSectionReviewDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="更新" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

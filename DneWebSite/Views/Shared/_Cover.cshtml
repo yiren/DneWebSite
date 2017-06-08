@@ -204,7 +204,7 @@
                                                             <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">核電廠改善工作業務</a>
                                                             <ul class="dropdown-menu">
                                                                 <li><a href="@Url.Action("Index", "Dcrs")" target="_blank">DCR審查管制追蹤</a></li>
-                                                                <li><a ui-sref="underConstruction">DCR可行性管制追蹤</a></li>
+                                                                <li><a href="@Url.Action("Index","DcrEvaluations")">DCR可行性管制追蹤</a></li>
                                                             </ul>
                                                         </li>
                                                         <li class="dropdown">
@@ -217,6 +217,15 @@
                 
                                                         <li>
                                                             <a ng-href="http://{{h.host}}/資料/2工程業務/4支援大修心得簡報" target="_blank">支援大修心得簡報</a>
+                                                        </li>
+                                                        
+                                                        
+                                                        <li class="dropdown">
+                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">網頁測試(中)</a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="http://10.20.1.3/lcts/" target="_blank">Lungmen CTS(離線版)</a></li>
+
+                                                            </ul>
                                                         </li>
                                                     </ul>
                                                 </li>

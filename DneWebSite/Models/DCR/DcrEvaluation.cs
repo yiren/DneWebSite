@@ -9,11 +9,16 @@ namespace DneWebSite.Models.DCR
 {
     public class DcrEvaluation
     {
+
         [Key]
         public Guid DcrEvaluationId { get; set; }
+
         [DisplayName("可行性評估編號")]
         [StringLength(150)]
+        [Required]
         public string DcrEvaluationNo { get; set; }
+        
+
         [Required]
         [DisplayName("提案電廠")]
         [StringLength(15)]
@@ -23,8 +28,7 @@ namespace DneWebSite.Models.DCR
         [DisplayName("類別")]
         [StringLength(15)]
         public string Classification { get; set; }
-       
-
+        
 
         [Required]
         [DisplayName("要求修改內容")]
@@ -44,9 +48,6 @@ namespace DneWebSite.Models.DCR
         [StringLength(50)]
         public string ReceivedDate { get; set; }
 
-        [DisplayName("審查結果")]
-        public DcrStatus DcrStatus { get; set; }
-
         [Required]
         [DisplayName("主辦組")]
         [StringLength(20)]
@@ -60,7 +61,10 @@ namespace DneWebSite.Models.DCR
         [DisplayName("會辦組別")]
         public string AssistSection { get; set; }
 
-        [DisplayName("結案回覆日期")]
+        [DisplayName("回覆結果")]
+        public DcrStatus DcrStatus { get; set; }
+
+        [DisplayName("回覆電廠日期")]
         [StringLength(50)]
         public string CloseDate { get; set; }
         [DisplayName("是否結案")]
@@ -77,9 +81,9 @@ namespace DneWebSite.Models.DCR
         public string LastModifiedDate { get; set; }
 
         //核發
-        [DisplayName("送會辦日期")]
+        [DisplayName("送會日期")]
         public string SubmitToOperDepDate { get; set; }
-        [DisplayName("審查日期")]
+        [DisplayName("審覆日期")]
 
         public string OperDepReviewDate { get; set; }
         [DisplayName("結果")]
@@ -90,10 +94,10 @@ namespace DneWebSite.Models.DCR
         public bool HasOperDep { get; set; }
 
         //核安
-        [DisplayName("送會辦日期")]
+        [DisplayName("送會日期")]
         [StringLength(50)]
         public string SubmitToSafeDepDate { get; set; }
-        [DisplayName("審查日期")]
+        [DisplayName("審覆日期")]
         [StringLength(50)]
         public string SafeDepReviewDate { get; set; }
         [DisplayName("結果")]
@@ -104,6 +108,22 @@ namespace DneWebSite.Models.DCR
         [DisplayName("是否送核安處")]
         public bool HasSafeDep { get; set; }
 
+
+        //會辦組別
+        [DisplayName("會辦組別")]
+        [StringLength(100)]
+        public string AssistSections { get; set; }
+        [DisplayName("審查結果")]
+        [StringLength(150)]
+        public string AssistSectionReviewResult { get; set; }
+        [DisplayName("彙總日期")]
+        [StringLength(50)]
+        public string AssistSectionReviewDate { get; set; }
+
+
+        [ScaffoldColumn(false)]
+        [DisplayName("是否有會辦組")]
+        public bool HasAssistSection { get; set; }
 
 
 
