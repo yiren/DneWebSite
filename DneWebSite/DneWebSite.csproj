@@ -434,6 +434,7 @@
     <Compile Include="Models\common\DBInitializer\DcrDbInitializer.cs" />
     <Compile Include="Models\DCR\DcrEvaluation.cs" />
     <Compile Include="Models\DCR\Dcr.cs" />
+    <Compile Include="Models\DCR\DcrEvaluationExcelViewModel.cs" />
     <Compile Include="Models\DCR\DcrExcelViewModel.cs" />
     <Compile Include="Models\DCR\DcrStatus.cs" />
     <Compile Include="Models\dneMeeting\MeetingFile.cs" />

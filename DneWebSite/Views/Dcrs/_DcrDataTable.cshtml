@@ -61,11 +61,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DcrNo)
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <div><a href="/dcrs/edit/@item.DcrId" class="btn btn-info">編輯基本資料</a></div>
-                        <div><a href="/dcrs/delete/@item.DcrId" class="btn btn-danger">刪除DCR</a></div>
-                }
+               
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Classification)

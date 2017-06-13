@@ -18,6 +18,17 @@ namespace DneWebSite.Helper
             DcrDataInMemoryStore.AddRange(dcrs);
             return DcrDataInMemoryStore;
         }
-        
+
+        public static List<DcrEvaluation> DcrEvaluationDataInMemoryStore = new List<DcrEvaluation>();
+        public static List<DcrEvaluation> DcrEvaluationDataForExcelExport(List<DcrEvaluation> dcrEvaluations)
+        {
+            if (DcrEvaluationDataInMemoryStore.Count > 1)
+            {
+                DcrEvaluationDataInMemoryStore = new List<DcrEvaluation>();
+            }
+            DcrEvaluationDataInMemoryStore.AddRange(dcrEvaluations);
+            return DcrEvaluationDataInMemoryStore;
+        }
+
     }
 }

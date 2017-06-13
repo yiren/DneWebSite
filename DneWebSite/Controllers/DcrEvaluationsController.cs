@@ -9,13 +9,17 @@ using System.Web.Mvc;
 using DneWebSite.Models.DCR;
 using DneWebSite.Models.bulletin;
 using Webdiyer.WebControls.Mvc;
+using Npoi.Mapper;
+using DneWebSite.Helper;
+using System.IO;
 
 namespace DneWebSite.Controllers
 {
+    [Authorize]
     public class DcrEvaluationsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
-
+        [AllowAnonymous]
         // GET: DcrEvaluations
         public ActionResult Index(int page=1)
         {
@@ -27,6 +31,7 @@ namespace DneWebSite.Controllers
                 .ThenByDescending(d => d.MainSection)
                 .ToPagedList(page, 5);
 
+            InMemoryData.DcrEvaluationDataForExcelExport(dbQuery);
 
             if (Request.IsAjaxRequest())
             {
@@ -67,6 +72,8 @@ namespace DneWebSite.Controllers
             if (ModelState.IsValid)
             {
                 dcrEvaluation.DcrEvaluationId = Guid.NewGuid();
+                dcrEvaluation.LastModifiedBy = User.Identity.Name;
+                dcrEvaluation.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
                 db.DcrEvaluations.Add(dcrEvaluation);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,6 +106,10 @@ namespace DneWebSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (dcrEvaluation.DcrStatus > 0)
+                {
+                    dcrEvaluation.IsClosed = true;
+                }
                 dcrEvaluation.LastModifiedBy = User.Identity.Name;
                 dcrEvaluation.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
                 db.Entry(dcrEvaluation).State = EntityState.Modified;
@@ -162,6 +173,42 @@ namespace DneWebSite.Controllers
             db.DcrEvaluations.Remove(dcrEvaluation);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        public FileResult DownloadDcrEvaluationList()
+        {
+            var mapper = new Mapper();
+            AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<DcrEvaluation, DcrEvaluationExcelViewModel>());
+
+
+
+            List<DcrEvaluationExcelViewModel> excelFormat =
+                AutoMapper.Mapper.Map<List<DcrEvaluationExcelViewModel>>(InMemoryData.DcrEvaluationDataInMemoryStore);
+
+            string path = Path.Combine(Server.MapPath("~/upload"), "dcrEvaluations.xlsx");
+            //string path2 = Path.Combine(Server.MapPath("~/upload"), "dcrs2.xlsx");
+
+
+
+
+            using (FileStream fs = new FileStream(path, FileMode.Create))
+            {
+                mapper.Save(fs, excelFormat, "DCR可行性評估清單");
+            }
+
+            //using (FileStream fs = new FileStream(path2, FileMode.Create))
+            //{
+            //    var wb = new XLWorkbook(path);
+            //    var ws = wb.Worksheet(1);
+            //    ws.Columns().AdjustToContents();
+            //    wb.SaveAs(fs);
+            //}
+
+            return File(path, System.Net.Mime.MediaTypeNames.Application.Octet, "DCR可行性評估清單" + DateTime.Now.ToString("yyyy-MM-dd") + ".xlsx");
+
+
+
         }
 
         protected override void Dispose(bool disposing)

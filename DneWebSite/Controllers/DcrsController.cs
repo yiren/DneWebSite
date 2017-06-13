@@ -23,11 +23,7 @@ namespace DneWebSite.Controllers
     public class DcrsController : Controller
     {
         private BulletinDbContext db = new BulletinDbContext();
-        private List<Dcr> dcrsForExcelExport;
-        public DcrsController()
-        {
-             this.dcrsForExcelExport= new List<Dcr>();
-        }
+        
         
         // GET: Dcrs
         [AllowAnonymous]
