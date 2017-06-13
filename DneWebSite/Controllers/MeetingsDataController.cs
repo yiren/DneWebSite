@@ -11,19 +11,23 @@ using System.Web.Http.Description;
 using DneWebSite.Models.bulletin;
 using DneWebSite.Models.dneMeeting;
 using DneWebSite.Models.MeetingRespository;
+using DneWebSite.Models.ViewModel;
+using System.Threading.Tasks;
 
 namespace DneWebSite.Controllers
 {
     //AngularJS取得資料End Point
     public class MeetingsDataController : ApiController
     {
-        private BulletinDbContext db = new BulletinDbContext();
         private MeetingRepository _db = new MeetingRepository();
 
+        [HttpGet]
         // GET: api/DneMeetingData
-        public IQueryable GetMeetings()
+        public async Task<List<Object>> GetMeetings()
         {
-            return _db.GetMeetings();
+            var data= await _db.GetMeetings().ToListAsync();
+
+            return data;
         }
 
         // GET: api/DneMeetingData/5
@@ -120,18 +124,18 @@ namespace DneWebSite.Controllers
         //    return Ok(dneMeeting);
         //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
-        private bool DneMeetingExists(Guid id)
-        {
-            return db.Meetings.Count(e => e.MeetingId == id) > 0;
-        }
+        //private bool DneMeetingExists(Guid id)
+        //{
+        //    return db.Meetings.Count(e => e.MeetingId == id) > 0;
+        //}
     }
 }
