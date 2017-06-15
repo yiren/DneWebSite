@@ -87,7 +87,7 @@
             vm.toggleFiltering = function () {
                 
                 vm.gridOptions.enableFiltering = !vm.gridOptions.enableFiltering;
-                if (vm.gridOptions.enableFiltering==true) {
+                if (vm.gridOptions.enableFiltering===true) {
                     vm.searchTextToggle = "關閉";
                 } else {
                     vm.searchTextToggle = "啟用";

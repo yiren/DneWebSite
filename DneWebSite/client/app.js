@@ -12,7 +12,8 @@
         'ui.grid.selection',
         'ui.grid.pagination',
         'duScroll',
-        'ngDialog'
+        'ngDialog',
+        'toaster'
     ])
     .value('duScrollDuration', 2000)
     .value('duScrollOffset',40);

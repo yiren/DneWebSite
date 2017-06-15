@@ -124,8 +124,10 @@ namespace DneWebSite.Models.DCR
         [ScaffoldColumn(false)]
         [DisplayName("是否有會辦組")]
         public bool HasAssistSection { get; set; }
-
-
+        [DisplayName("後續DCR需/不需送總處協審")]
+        public FurtherDCRReview FurtherDCRReview { get; set; }
 
     }
+
+    
 }

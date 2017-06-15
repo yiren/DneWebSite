@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>核能技術處</title>
   
@@ -39,6 +40,10 @@
     <!-- UI Grid -->
 
     <link href="~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
+
+    <!--Angular Toaster-->
+    
+    <link href="~/plugins/bowerPackage/angularjs-toaster/toaster.css" rel="stylesheet">
 
 
     <!-- qTip2 -->
@@ -186,18 +191,9 @@
                                                             </ul>
 
                                                         </li>
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">運轉中電廠相關資料</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li class="dropdown">
-                                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">FSAR</a>
-                                                                    <ul class="dropdown-menu">
-                                                                        <li><a href="http://10.141.13.3/安管股/核一廠FSAR/核一廠FSAR章節.htm" target="_blank">核一廠FSAR</a></li>
-                                                                        <li><a href="http://10.142.20.9/FSAR" target="_blank">核二廠FSAR</a></li>
-                                                                        <li><a href="http://10.143.15.53/FSAR/FSAR目錄.htm" target="_blank">核三廠FSAR</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
+                                                        <li>
+                                                            <a href="http://10.19.1.7/FSAR/FSAR.htm" target="_blank">運轉中電廠FSAR</a>
+                                          
                                                         </li>
 
                                                         <li class="dropdown">
@@ -228,7 +224,7 @@
                                                             <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">網頁測試(中)</a>
                                                             <ul class="dropdown-menu">
                                                                 <li><a href="http://10.20.1.3/lcts/" target="_blank">Lungmen CTS(離線版)</a></li>
-                                                                <li><a href="@Url.Action("Index","DcrEvaluations")">DCR可行性案件管制追蹤(測試中)</a></li>
+                                                                <li><a href="@Url.Action("Index","DcrEvaluations")" target="_blank">DCR可行性案件管制追蹤(測試中)</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -476,6 +472,8 @@
 
     
     @Scripts.Render("/script")
+    
+    <script src="~/client/controllers/homeController.js" charset="UTF-8"></script>
     <script src="~/client/controllers/integrityController.js"></script>
     <script type="text/javascript">
         

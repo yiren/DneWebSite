@@ -8,7 +8,7 @@
 	function calendar($modal){
 
 	    var vm = this;
-
+	   
 		//Modal
 		var openDetailModal=function(event){
 			var modalInstance=$modal.open({
@@ -80,7 +80,7 @@
 	            eventClick: eventDetail,
 	            viewRender: function (view, element) {
                     //自行格式化"日"表格
-	                if (view.name == 'basicDay') {
+	                if (view.name === 'basicDay') {
 	                    var additionalColumn = '<tr><td><div class="row"><div class="col-md-2">日期</div><div class="col-md-5">重要事項</div><div class="col-md-2">出席人員</div><div class="col-md-1">地點</div></div></td></tr>'
                         ;
 	                   
@@ -100,18 +100,18 @@
                     
                     
                     //如果沒有輸入出席人員，則顯示空白字串
-                    if (event.description == null ||event.description == undefined) {
+                    if (event.description === null ||event.description == undefined) {
                         event.description='';
                     }
-                    if (event.location == null ||event.location == undefined) {
+                    if (event.location === null ||event.location == undefined) {
                         event.location='';
                     }
 	               
-                    if (view.name == 'basicDay') {
+                    if (view.name === 'basicDay') {
                         var additionalInfo = '<div class="col-md-2 nowrap">' + event.description + '</div>'
                             + '<div class="col-md-1 nowrap">' + event.location + '</div>';
                         
-                        if (event.allDay==false) {
+                        if (event.allDay===false) {
                             
                             
                             element.find('.fc-content').addClass('row');
@@ -126,10 +126,10 @@
                         }
                     }
                     
-                    if (view.name == 'basicWeek') {
+                    if (view.name === 'basicWeek') {
                         element.find('.fc-title').addClass("nowrap");
                     }
-                    if (view.name == 'month') {
+                    if (view.name === 'month') {
                         element.find('.fc-title').addClass("nowrap");
                     }
 

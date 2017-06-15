@@ -32,7 +32,7 @@ namespace DneWebSite.MigrationsBulltin
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
+            
             if (!context.DcrEvaluations.Any())
             {
                 context.DcrEvaluations.Add(new DcrEvaluation()
@@ -55,6 +55,32 @@ namespace DneWebSite.MigrationsBulltin
                     LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd"),
                     DcrStatus=DcrStatus.審查中
                 });
+            }else
+            {
+                if (context.DcrEvaluations.Count() < 3)
+                {
+                    context.DcrEvaluations.Add(new DcrEvaluation()
+                    {
+                        DcrEvaluationId = Guid.NewGuid(),
+                        DcrEvaluationNo = "DCR-K1-HPS4",
+                        Plant = "核依廠",
+                        Classification = "R1",
+                        SourceNo = "核二改簽字106184號",
+                        DneNo = "會收106-0309",
+                        Subject = "主變壓器避雷器及附屬計數器可行性評估",
+                        ReceivedDate = DateTime.Now.ToString("yyyy/MM/dd"),
+                        MainSection = "E",
+                        Engineer = "謝文龍",
+                        HasOperDep = true,
+                        SubmitToOperDepDate = DateTime.Now.ToString("yyyy/MM/dd"),
+                        HasSafeDep = true,
+                        SubmitToSafeDepDate = DateTime.Now.ToString("yyyy/MM/dd"),
+                        LastModifiedBy = "黃彥欽",
+                        LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd"),
+                        DcrStatus = DcrStatus.審查中,
+                        FurtherDCRReview=FurtherDCRReview.是
+                    });
+                }
             }
 
 

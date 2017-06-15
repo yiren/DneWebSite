@@ -73,6 +73,9 @@ namespace DneWebSite.Models.DCR
         [Column("回覆結果")]
         public DcrStatus DcrStatus { get; set; }
 
+        [Column("後續DCR需/不需送總處協審")]
+        public FurtherDCRReview FurtherDCRReview { get; set; }
+
         [Column("回覆電廠日期")]
 
         public string CloseDate { get; set; }

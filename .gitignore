@@ -220,3 +220,10 @@ Web*.config
 /DneWebSite/upload/bulltin/dnemeeting
 /DneWebSite/upload/bulltin/post
 /DneWebSite/upload/wano
+/DneWebSite/Content/bootstrap-material-design/bower_components
+/DneWebSite/Content/bootstrap-material-design/demo/imgs
+/DneWebSite/Content/bootstrap-material-design/grunt
+/DneWebSite/Content/bootstrap-material-design/less
+/DneWebSite/Content/bootstrap-material-design/sass
+/DneWebSite/Content/bootstrap-material-design/test
+/DneWebSite/Content/bootstrap-material-design/.idea

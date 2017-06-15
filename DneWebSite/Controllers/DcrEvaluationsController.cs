@@ -67,7 +67,7 @@ namespace DneWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection")] DcrEvaluation dcrEvaluation)
+        public ActionResult Create([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection,FurtherDCRReview")] DcrEvaluation dcrEvaluation)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace DneWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection")] DcrEvaluation dcrEvaluation)
+        public ActionResult Edit([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection,FurtherDCRReview")] DcrEvaluation dcrEvaluation)
         {
             if (ModelState.IsValid)
             {
@@ -137,7 +137,7 @@ namespace DneWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditReview([Bind(Include = "DcrId,DcrNo,Plant,Classification,DcrEvaluationNo,DcrEvaluationId,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer, DcrStatus,CloseDate,Note,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep,SubmitToSafeRegDate,SafeRegReviewDate,SafeRegReviewResult,HasSafeReg,SubmitToAECDate,SubmitDocNo,AECApprovalDate,AECApprovalDoc,HasAEC,AECComment, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection")] DcrEvaluation dcrEva)
+        public ActionResult EditReview([Bind(Include = "DcrId,DcrNo,Plant,Classification,DcrEvaluationNo,DcrEvaluationId,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer, DcrStatus,CloseDate,Note,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep,SubmitToSafeRegDate,SafeRegReviewDate,SafeRegReviewResult,HasSafeReg,SubmitToAECDate,SubmitDocNo,AECApprovalDate,AECApprovalDoc,HasAEC,AECComment, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection,FurtherDCRReview")] DcrEvaluation dcrEva)
         {
             if (ModelState.IsValid)
             {

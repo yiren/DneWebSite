@@ -19,4 +19,13 @@ namespace DneWebSite.Models.DCR
         [Description("有意見")]
         有意見
     }
+    public enum FurtherDCRReview
+    {
+        [Display(Name = "是")]
+        [Description("是")]
+        是,
+        [Display(Name = "否")]
+        [Description("否")]
+        否
+    }
 }

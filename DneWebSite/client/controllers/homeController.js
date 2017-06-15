@@ -1,9 +1,9 @@
-(function(){
+ï»¿(function(){
 	'use strict';
 
 	angular.module('main')
-        .controller('homeCtrl', ['$scope','$log', '$state','ngDialog', function ($scope,$log, $state, ngDialog) {
-            //­º­¶popupµøµ¡
+        .controller('homeCtrl', ['$scope','$log', '$state','ngDialog','toaster', function ($scope,$log, $state, ngDialog, toaster) {
+            //é¦–é popupè¦–çª—
             //$scope.$on('$viewContentLoaded', function () {
             //    //call it here
             //    //console.log("preload");
@@ -13,13 +13,25 @@
             //    });
             //});
             var vm = this;
-            //ÂÂºô¥D¾÷¦ì§}
+            //èˆŠç¶²ä¸»æ©Ÿä½å€
+            toaster.pop({
+                type: 'info',
+                title: 'å³æ™‚å…¬å‘Šæ¸¬è©¦',
+                body: 'di-html',
+                bodyOutputType: 'directive'
+            });
+            //alert("æœƒäº‚ç¢¼å—?")
             vm.host = '10.20.1.4';
             vm.host2 = '10.144.101.5';
             vm.goToHome = function () {
-		   	    //ui-router $state.go¥i¥H¸õ¨ìrouter.js©w¸qªºstate¸ô®|¦WºÙ
+		   	    //ui-router $state.goå¯ä»¥è·³åˆ°router.jså®šç¾©çš„stateè·¯å¾‘åç¨±
 		   	    $state.go('home');
 		   	}
-		   }])
+        }])
+     .directive('diHtml', [function () {
+         return {
+             template:"<span>æˆ‘æœƒè‡ªå·±æ¶ˆå¤±</span>"
+         }
+     }])
 
 })();
