@@ -99,6 +99,8 @@
     <!-- Jquery and Bootstap core js files -->
     
     @Scripts.Render("~/script/jq")
-    
+    <script>
+        $.material.init();
+    </script>
     @RenderSection("scripts", required: false)
 </body>

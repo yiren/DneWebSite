@@ -20,6 +20,9 @@ namespace DneWebSite
             bundles.Add(new StyleBundle("~/css/base").Include(
                     "~/Content/bootstrap.min.css",
                     "~/Content/bootstrap.theme.min.css",
+                    "~/Content/material-design-icons/iconfont/material-icons.css",
+                    "~/Content/bootstrap-material-design/dist/css/bootstrap-materail-design.min.css",
+                    "~/Content/bootstrap-material-design/dist/css/ripples.min.css",
                     "~/Content/themes/base/jquery-ui.min.css",
                     "~/Content/themes/cupertino/jquery-ui.cupertino.min.css",
                     
@@ -38,6 +41,8 @@ namespace DneWebSite
                     "~/plugins/template/rs-plugin/js/jquery.themepunch.revolution.min.js",
                     "~/plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js",
                     "~/plugins/bowerPackage/qtip2/jquery.qtip.min.js",
+                    "~/Content/bootstrap-material-design/dist/js/material.min.js",
+                    "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/js/templatev1.js",
                     "~/js/qTip2.js",
                     "~/plugins/bowerPackage/angular/angular.min.js",
