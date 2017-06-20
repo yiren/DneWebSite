@@ -14,7 +14,7 @@ namespace DneWebSite.Models.DCR
         [Column("提案電廠")]
         public string Plant { get; set; }
 
-        [Column("編號")]
+        [Column("DCR編號")]
         public string DcrNo { get; set; }
 
 
@@ -44,8 +44,7 @@ namespace DneWebSite.Models.DCR
         [Column("承辦人")]
         public string Engineer { get; set; }      
 
-        [Column("備註")]
-        public string Note { get; set; }
+       
 
         
         //核發
@@ -97,11 +96,11 @@ namespace DneWebSite.Models.DCR
         [Column("(AEC)審查結果")]
         public string AECComment { get; set; }
 
+        [Column("回覆電廠日期")]
+        public string CloseDate { get; set; }
         [Column("回覆結果")]
         public DcrStatus DcrStatus { get; set; }
-
-        [Column("回覆電廠日期")]
-
-        public string CloseDate { get; set; }
+        [Column("備註")]
+        public string Note { get; set; }
     }
 }

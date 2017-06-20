@@ -13,8 +13,8 @@ namespace DneWebSite
                 ;
             bundles.Add(new ScriptBundle("~/script/jq")
                 .Include(
-                    "~/Scripts/jquery-{version}.min.js",
-                    "~/Scripts/jquery-ui-{version}.min.js",
+                    "~/Scripts/jquery-2.1.1.min.js",
+                    "~/Scripts/jquery-ui-1.12.1.min.js",
                     "~/Content/bootstrap-material-design/dist/js/material.min.js",
                     "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/Scripts/bootstrap.min.js"));
@@ -35,7 +35,6 @@ namespace DneWebSite
             bundles.Add(new ScriptBundle("~/script")
                 .Include(
                     "~/Scripts/jquery-2.1.1.min.js",
-                    "~/Content/mdl-v1.1.2/material.min.js",
                     "~/plugins/template/bootstrap/js/bootstrap.min.js",
                     "~/plugins/template/modernizr.js",
                     "~/plugins/template/jquery.parallax-1.1.3.js",
@@ -47,7 +46,7 @@ namespace DneWebSite
                     "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/js/templatev1.js",
                     "~/js/qTip2.js",
-                    "~/plugins/bowerPackage/angular/angular.min.js",
+                    "~/plugins/bowerPackage/angular/angular.js",
                     "~/plugins/bowerPackage/angular-ui-router/release/angular-ui-router.min.js",
                     "~/plugins/bowerPackage/angular-animate/angular-animate.min.js",
                     "~/plugins/template/fullcalendar/lib/moment.min.js",
@@ -60,7 +59,15 @@ namespace DneWebSite
                     "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",
                     "~/plugins/bowerPackage/ng-dialog/js/ngDialog.min.js",
                     "~/plugins/bowerPackage/angularjs-toaster/toaster.min.js"
-                    
+                    //"~/client/app.js",
+                    //"~/client/router.js",
+                    //"~/client/controllers/homeController.js",
+                    //"~/client/controllers/meetingGridController.js",
+                    //"~/client/controllers/postGridController.js",
+                    //"~/client/controllers/calendar/calViewController.js",
+                    //"~/client/controllers/common/modalController.js",
+                    //"~/client/controllers/integrityController.js"
+
                 ));
 
             //bundles.Add(new ScriptBundle("~/revSlider").Include("~/"));
@@ -69,7 +76,12 @@ namespace DneWebSite
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
-
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval")
+                .Include(
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js"
+         
+                ));
 
             BundleTable.EnableOptimizations = true;
             

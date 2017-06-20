@@ -55,13 +55,14 @@ namespace DneWebSite.Models.DCR
         [StringLength(20)]
         public string MainSection { get; set; }
 
+       
+
         [Required]
         [DisplayName("承辦人")]
         [StringLength(20)]
         public string Engineer { get; set; }
 
-        [DisplayName("會辦組別")]
-        public string AssistSection { get; set; }
+        
 
         [DisplayName("回覆結果")]
         public DcrStatus DcrStatus { get; set; }
@@ -162,8 +163,5 @@ namespace DneWebSite.Models.DCR
         public string AssistSectionReviewDate { get; set; }
        
 
-        [ScaffoldColumn(false)]
-        [DisplayName("是否有會辦組")]
-        public bool HasAssistSection { get; set; }
     }
 }

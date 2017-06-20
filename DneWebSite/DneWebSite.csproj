@@ -421,6 +421,10 @@
     <Compile Include="MigrationsBulltin\201706150911528_addFurtherDcrReviewCol.Designer.cs">
       <DependentUpon>201706150911528_addFurtherDcrReviewCol.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigrationsBulltin\201706200257272_cleanCleanDcrAndEvaCols.cs" />
+    <Compile Include="MigrationsBulltin\201706200257272_cleanCleanDcrAndEvaCols.Designer.cs">
+      <DependentUpon>201706200257272_cleanCleanDcrAndEvaCols.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigrationsBulltin\Configuration.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.cs" />
     <Compile Include="MigrationsIdentity\201604260324202_InitialCreate.Designer.cs">
@@ -1321,6 +1325,11 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
     <Content Include="Scripts\respond.js" />
@@ -4363,6 +4372,7 @@
     </None>
     <None Include="Web.10.20.1.4.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -4854,6 +4864,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsBulltin\201706150911528_addFurtherDcrReviewCol.resx">
       <DependentUpon>201706150911528_addFurtherDcrReviewCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsBulltin\201706200257272_cleanCleanDcrAndEvaCols.resx">
+      <DependentUpon>201706200257272_cleanCleanDcrAndEvaCols.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigrationsIdentity\201604260324202_InitialCreate.resx">
       <DependentUpon>201604260324202_InitialCreate.cs</DependentUpon>

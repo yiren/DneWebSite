@@ -19,7 +19,7 @@
                 title: '權益小幫手',
                 body: 'di-html',
                 bodyOutputType: 'directive',
-                timeout:2000
+                timeout:3000
             });
             //toaster.pop({
             //    type: 'success',
@@ -38,7 +38,7 @@
         }])
      .directive('diHtml', [function () {
          return {
-             template:"<span style='font-size:16px'>員工團體保險已變更，請至公佈欄查閱相關訊息</span>"
+             template:"<span style='font-size:16px'>員工團體保險權益已變更，請至公佈欄查閱相關訊息</span>"
          }
      }])
 

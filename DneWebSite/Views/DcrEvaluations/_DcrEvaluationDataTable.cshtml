@@ -90,13 +90,12 @@
                     @Html.DisplayFor(modelItem => item.Engineer)
                 </td>
                 <td>
-                    @if (item.HasAssistSection)
-                {
+                   
                         <p>
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#assist-@item.DcrEvaluationId">核技處審查情況</button>
                         </p>
 
-                    }
+                   
                     @if (item.HasOperDep)
                 {
                         <p>

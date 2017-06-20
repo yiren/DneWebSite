@@ -39,8 +39,7 @@ namespace DneWebSite.Models.DCR
         [Column("承辦人")]
         public string Engineer { get; set; }      
 
-        [Column("備註")]
-        public string Note { get; set; }
+       
 
         
         //核發
@@ -70,14 +69,16 @@ namespace DneWebSite.Models.DCR
         [Column("(核技處)彙總日期")]
         public string AssistSectionReviewDate { get; set; }
 
+        [Column("回覆電廠日期")]
+        public string CloseDate { get; set; }
         [Column("回覆結果")]
         public DcrStatus DcrStatus { get; set; }
 
         [Column("後續DCR需/不需送總處協審")]
         public FurtherDCRReview FurtherDCRReview { get; set; }
 
-        [Column("回覆電廠日期")]
-
-        public string CloseDate { get; set; }
+        
+        [Column("備註")]
+        public string Note { get; set; }
     }
 }
