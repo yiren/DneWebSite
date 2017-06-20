@@ -16,17 +16,17 @@
             //舊網主機位址
             toaster.pop({
                 type: 'info',
-                title: '網頁小幫手',
+                title: '權益小幫手',
                 body: 'di-html',
                 bodyOutputType: 'directive',
                 timeout:2000
             });
-            toaster.pop({
-                type: 'success',
-                title: '更新訊息',
-                body: '核能檢索系統頁面更新囉!',
-                timeout: 3000
-            });
+            //toaster.pop({
+            //    type: 'success',
+            //    title: '更新訊息',
+            //    body: '核能檢索系統頁面更新囉!',
+            //    timeout: 3000
+            //});
 
             //alert("會亂碼嗎?")
             vm.host = '10.20.1.4';
@@ -38,7 +38,7 @@
         }])
      .directive('diHtml', [function () {
          return {
-             template:"<span style='font-size:16px'>網頁顯示有問題，可以按F5重新整理試試看喔!</span>"
+             template:"<span style='font-size:16px'>員工團體保險已變更，請至公佈欄查閱相關訊息</span>"
          }
      }])
 

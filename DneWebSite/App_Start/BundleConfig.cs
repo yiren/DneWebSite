@@ -15,6 +15,8 @@ namespace DneWebSite
                 .Include(
                     "~/Scripts/jquery-{version}.min.js",
                     "~/Scripts/jquery-ui-{version}.min.js",
+                    "~/Content/bootstrap-material-design/dist/js/material.min.js",
+                    "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/Scripts/bootstrap.min.js"));
             //css  
             bundles.Add(new StyleBundle("~/css/base").Include(
@@ -57,14 +59,8 @@ namespace DneWebSite
                     "~/plugins/bowerPackage/angular-scroll/angular-scroll.min.js",
                     "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",
                     "~/plugins/bowerPackage/ng-dialog/js/ngDialog.min.js",
-                    "~/plugins/bowerPackage/angularjs-toaster/toaster.min.js",
-                    "~/client/app.js",
-                    "~/client/router.js",
-                    "~/client/controllers/meetingGridController.js",
-                    "~/client/controllers/postGridController.js",
-                    "~/client/controllers/calendar/calViewController.js",
-                    "~/client/controllers/integrityController.js",
-                    "~/client/controllers/common/modalController.js"
+                    "~/plugins/bowerPackage/angularjs-toaster/toaster.min.js"
+                    
                 ));
 
             //bundles.Add(new ScriptBundle("~/revSlider").Include("~/"));

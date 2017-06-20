@@ -73,423 +73,428 @@
     <div class="scrollToTop">
         <i class="icon-up-open-big"></i>
 
-    </div> 
-        <header id="v1" class="header fixed clearfix transparent">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
+    </div>
+    <header id="v1" class="header fixed clearfix transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
 
-                        <!-- header-left start -->
-                        <!-- ================ -->
-                        <div class="clearfix">
+                    <!-- header-left start -->
+                    <!-- ================ -->
+                    <div class="clearfix">
 
-                            <!-- logo -->
-                            <div class="logo">
-                                <a ui-sref="home"><img id="logo" src="~/images/dne_small_2.png" alt="核能技術處"></a>
-                            </div>
-
+                        <!-- logo -->
+                        <div class="logo">
+                            <a ui-sref="home"><img id="logo" src="~/images/dne_small_2.png" alt="核能技術處"></a>
                         </div>
 
-                        <!-- header-left end -->
-
                     </div>
-                    <div class="col-md-9">
 
-                        <!-- header-right start -->
+                    <!-- header-left end -->
+
+                </div>
+                <div class="col-md-9">
+
+                    <!-- header-right start -->
+                    <!-- ================ -->
+                    <div class="clearfix">
+
+                        <!-- main-navigation start -->
                         <!-- ================ -->
-                        <div class="clearfix">
+                        <div class="main-navigation" ng-controller="homeCtrl as h">
 
-                            <!-- main-navigation start -->
+                            <!-- navbar start -->
                             <!-- ================ -->
-                            <div class="main-navigation" ng-controller="homeCtrl as h">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
 
-                                <!-- navbar start -->
-                                <!-- ================ -->
-                                <nav class="navbar navbar-default" role="navigation">
-                                    <div class="container-fluid">
+                                    <!-- Toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
 
-                                        <!-- Toggle get grouped for better mobile display -->
-                                        <div class="navbar-header">
-                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                                                <span class="sr-only">Toggle navigation</span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                            </button>
-                                        </div>
-
-                                        <!-- Collect the nav links, forms, and other content for toggling -->
-                                        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                                            <ul class="nav navbar-nav navbar-left">
-                                                <li class="dropdown">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">關於本處</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">組織與人員</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/1處組織系統圖/核能技術處組織系統圖.doc" target="_blank">處組織系統圖</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/2執行龍門計畫任務編組組織/核能技術處執行龍門計畫任務編組組織圖.doc" target="_blank">執行龍門計畫任務編組組織</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/3核技處工作執掌/核能技術處職掌.doc" target="_blank">核技處工作執掌</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/4辦事細則/核能技術處辦事細則.doc" target="_blank">辦事細則</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/5組織系統圖-英文/核能技術處組織系統圖-%20英文.doc" target="_blank">組織系統圖-英文</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/6執行龍門計畫任務編組組織-英文/核能技術處執行龍門計畫任務編組組織圖-英文.doc" target="_blank">執行龍門計畫任務編組組織-英文</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/7職務代理名單/核能技術處職務代理名單.doc" target="_blank">職務代理名單</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/8人力分析/核能技術處_人力分析圖.xls" target="_blank">人力分析</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a ng-href="http://{{h.host}}/資料/1關於本處/年度目標/年度目標.doc" target="_blank">年度目標</a>
-                                                        </li>
-                                                        
-
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">電話簿</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/電話簿/台北辦公室/dnetel.htm" target="_blank">台北辦公室</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/1關於本處/電話簿/SEO辦公室/dnelm-tel.htm" target="_blank">SEO辦公室</a></li>
-
-                                                            </ul>
-                                                        </li>
-                                                        <!--
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">內部規章</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/Aa/tel-mail/dnetel.htm" target="_blank">公司章則</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/Aa/tel-mail/dnelm-tel.htm" target="_blank">系統章則</a></li>
-                                                                <li class="dropdown">
-                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">處內章則</a>
-                                                                    <ul class="dropdown-menu">
-                                                                        <li><a ng-href="http://{{h.host}}/procedure/index.htm" target="_blank">作業程序書</a></li>
-                                                                        <li><a href="http://10.2.1.2/upfile/upload/組法組/103總處共同事項分層負責明細表(全版)文書類修正(發文版)1030217(1030812排版修改).doc" target="_blank">總管理處分層負責表</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/Aa/Aa01/step_960601.doc" target="_blank">處內分層負責表</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                         -->
-
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">工程業務</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">龍門計畫業務</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
-                                                                <li class="dropdown">
-                                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO相關業務</a>
-                                                                    <ul class="dropdown-menu">
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-left">
+                                            <li class="dropdown">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">關於本處</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">組織與人員</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/1處組織系統圖/核能技術處組織系統圖.doc" target="_blank">處組織系統圖</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/2執行龍門計畫任務編組組織/核能技術處執行龍門計畫任務編組組織圖.doc" target="_blank">執行龍門計畫任務編組組織</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/3核技處工作執掌/核能技術處職掌.doc" target="_blank">核技處工作執掌</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/4辦事細則/核能技術處辦事細則.doc" target="_blank">辦事細則</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/5組織系統圖-英文/核能技術處組織系統圖-%20英文.doc" target="_blank">組織系統圖-英文</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/6執行龍門計畫任務編組組織-英文/核能技術處執行龍門計畫任務編組組織圖-英文.doc" target="_blank">執行龍門計畫任務編組組織-英文</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/7職務代理名單/核能技術處職務代理名單.doc" target="_blank">職務代理名單</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/組織與人員/8人力分析/核能技術處_人力分析圖.xls" target="_blank">人力分析</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-href="http://{{h.host}}/資料/1關於本處/年度目標/年度目標.doc" target="_blank">年度目標</a>
+                                                    </li>
 
 
-                                                                        <li><a href="http://10.20.1.5/source/2lco/asp/ddasp.asp" target="_blank">送LCO品質文件清單</a></li>
-                                                                        <li><a ng-href="http://{{h.host2}}/support/" target="_blank">電氣Raceway Support管制表</a></li>
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">電話簿</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/電話簿/台北辦公室/dnetel.htm" target="_blank">台北辦公室</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/1關於本處/電話簿/SEO辦公室/dnelm-tel.htm" target="_blank">SEO辦公室</a></li>
 
-                                                                    </ul>
-                                                                </li>
-                                                                <li><a href="http://10.20.1.6" target="_blank">龍門軟體構型管理系統(測試版)</a></li>
-                                                            </ul>
+                                                        </ul>
+                                                    </li>
+                                                    <!--
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">內部規章</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host}}/Aa/tel-mail/dnetel.htm" target="_blank">公司章則</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/Aa/tel-mail/dnelm-tel.htm" target="_blank">系統章則</a></li>
+                                                            <li class="dropdown">
+                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">處內章則</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a ng-href="http://{{h.host}}/procedure/index.htm" target="_blank">作業程序書</a></li>
+                                                                    <li><a href="http://10.2.1.2/upfile/upload/組法組/103總處共同事項分層負責明細表(全版)文書類修正(發文版)1030217(1030812排版修改).doc" target="_blank">總管理處分層負責表</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/Aa/Aa01/step_960601.doc" target="_blank">處內分層負責表</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                     -->
 
-                                                        </li>
-                                                        <li>
-                                                            <a href="http://10.19.1.7/FSAR/FSAR.htm" target="_blank">運轉中電廠FSAR</a>
-                                          
-                                                        </li>
-
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">核電廠改善工作業務</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="@Url.Action("Index", "Dcrs")" target="_blank">DCR審查管制追蹤</a></li>
-                                                                
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a ng-href="http://{{h.host}}/資料/2工程業務/5核電廠主管作業觀察" target="_blank">核電廠主管作業觀察</a>
-                                                            
-                                                        </li>
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">WANO</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="/wano">追蹤事項</a></li>
-                                                            </ul>
-                                                        </li>
-
-                
-                                                        <li>
-                                                            <a ng-href="http://{{h.host}}/資料/2工程業務/4支援大修心得簡報" target="_blank">支援大修心得簡報</a>
-                                                        </li>
-                                                        
-                                                        
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">網頁測試(中)</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="http://10.20.1.3/lcts/" target="_blank">Lungmen CTS(離線版)</a></li>
-                                                                <li><a href="@Url.Action("Index","DcrEvaluations")" target="_blank">DCR可行性案件管制追蹤(測試中)</a></li>
-                                                                <li><a href="http://10.20.1.7/document" target="_blank">SEO管制文件查詢(台北主機測試中)</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li class="dropdown">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">查詢系統</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">公文查詢</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a id="newDoc" ng-href="http://{{h.host}}/swims/CorrespondenceList.asp">公文查詢(新版)</a></li>
-                                                                <li><a id="oldDoc" ng-href="http://{{h.host}}/source/neddoc/asp/ddasp.asp">公文查詢</a></li>
-                                                            </ul>
-                                                        </li>
-
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">處資料室</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ui-sref="books">核能外文期刊閱覽評註</a></li>
-                                                                <li><a href="http://10.16.10.96/webhelp/tn.htm" target="_blank">核能資訊檢索系統</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">本處刊物</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/nuclearjournal/nuclearjournallist.asp">核能月刊</a></li>
-
-                                         
-                                                            </ul>
-                                                        </li>
-
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO業務相關系統</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host2}}/overtime/" target="_blank">SEO(AE)加班請假管理系統</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/seo/" target="_blank">編號暨文件修改登錄</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
-                                                            </ul>
-                                                        </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">工程業務</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">龍門計畫業務</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
+                                                            <li class="dropdown">
+                                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO相關業務</a>
+                                                                <ul class="dropdown-menu">
 
 
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO案件查詢</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="http://203.67.79.80/lungmencts/default.aspx" target="_blank">Lungmen CTS</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/document/" target="_blank">管制文件查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/documentfpr/Fpr_List.aspx" target="_blank">FPR處理現況</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/rap" target="_blank">RAP處理現況</a></li>
-                                                                <li><a href="http://10.20.1.23/dcis_iodb_control/" target="_blank">IO/FXDB、DCT查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/seo/filesearch.aspx" target="_blank">SEO歸檔文件查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/carms/carmslist.aspx" target="_blank">涉及CARMS資料修改查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/seoHtml/DneControlLog/DneControlLog.asp" target="_blank">DNE Control Log(新版)</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/designdocument/">DNE Control Log(舊版)</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/seoHtml/GeIms/J05.asp" target="_blank">GEH IMS-J05查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host2}}/seoHtml/GeIms/J07.asp" target="_blank">GEH IMS-J07查詢</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/Resource/Objectopia.htm" target="_blank">Hitachi Objectopia</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        
+                                                                    <li><a href="http://10.20.1.5/source/2lco/asp/ddasp.asp" target="_blank">送LCO品質文件清單</a></li>
+                                                                    <li><a ng-href="http://{{h.host2}}/support/" target="_blank">電氣Raceway Support管制表</a></li>
+
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="http://10.20.1.6" target="_blank">龍門軟體構型管理系統(測試版)</a></li>
+                                                        </ul>
+
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://10.19.1.7/FSAR/FSAR.htm" target="_blank">運轉中電廠FSAR</a>
+
+                                                    </li>
+
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">核電廠改善工作業務</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="@Url.Action("Index", "Dcrs")" target="_blank">DCR審查管制追蹤</a></li>
+
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/5核電廠主管作業觀察" target="_blank">核電廠主管作業觀察</a>
+
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">WANO</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="/wano">追蹤事項</a></li>
+                                                        </ul>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/4支援大修心得簡報" target="_blank">支援大修心得簡報</a>
+                                                    </li>
+
+
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">網頁測試(中)</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="http://10.20.1.3/lcts/" target="_blank">Lungmen CTS(離線版)</a></li>
+                                                            <li><a href="@Url.Action("Index","DcrEvaluations")" target="_blank">DCR可行性案件管制追蹤(測試中)</a></li>
+                                                            <li><a href="http://10.20.1.7/document" target="_blank">SEO管制文件查詢(台北主機測試中)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">查詢系統</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">公文查詢</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a id="newDoc" ng-href="http://{{h.host}}/swims/CorrespondenceList.asp">公文查詢(新版)</a></li>
+                                                            <li><a id="oldDoc" ng-href="http://{{h.host}}/source/neddoc/asp/ddasp.asp">公文查詢</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">處資料室</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ui-sref="books">核能外文期刊閱覽評註</a></li>
+                                                            <li><a href="http://10.16.10.96/webhelp/tn.htm" target="_blank">核能資訊檢索系統</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">本處刊物</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host}}/nuclearjournal/nuclearjournallist.asp">核能月刊</a></li>
+
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO業務相關系統</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host2}}/overtime/" target="_blank">SEO(AE)加班請假管理系統</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/seo/" target="_blank">編號暨文件修改登錄</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
+                                                        </ul>
+                                                    </li>
+
+
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO案件查詢</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="http://203.67.79.80/lungmencts/default.aspx" target="_blank">Lungmen CTS</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/document/" target="_blank">管制文件查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/documentfpr/Fpr_List.aspx" target="_blank">FPR處理現況</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/rap" target="_blank">RAP處理現況</a></li>
+                                                            <li><a href="http://10.20.1.23/dcis_iodb_control/" target="_blank">IO/FXDB、DCT查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/seo/filesearch.aspx" target="_blank">SEO歸檔文件查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/carms/carmslist.aspx" target="_blank">涉及CARMS資料修改查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/seoHtml/DneControlLog/DneControlLog.asp" target="_blank">DNE Control Log(新版)</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/designdocument/">DNE Control Log(舊版)</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/seoHtml/GeIms/J05.asp" target="_blank">GEH IMS-J05查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host2}}/seoHtml/GeIms/J07.asp" target="_blank">GEH IMS-J07查詢</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/Resource/Objectopia.htm" target="_blank">Hitachi Objectopia</a></li>
+                                                        </ul>
+                                                    </li>
 
 
 
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown">
 
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">法遵專區</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a ui-sref="home">政府法令</a></li>
-                                                        <li><a ui-sref="companyReg">公司章則</a></li>
-                                                        <li><a ui-sref="departmentReg">系統章則</a></li>                    
-                                                        <li class="dropdown">
-                                                            <a ng-href="http://{{h.host}}/procedure/index.htm" class="dropdown-toggle" data-toggle="dropdown">單位章則</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a ng-href="http://{{h.host}}/procedure/index.htm">處內規章</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                            <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">其他</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=68&Itemid=316" target="_blank">公司章則作業注意事項(企劃處)</a></li>
-                                                                <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=177&Itemid=352" target="_blank">公司辦事細則(企劃處)</a></li>
-                                                                <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=177&Itemid=352" target="_blank">公司分層負責(企劃處)</a></li>
-                                                                <li><a ng-href="http://{{h.host}}/資料/8常用下載/1.常用參考資料/分層負責明細表.doc">處內分層負責</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
 
-                                                    <a href="http://10.18.8.153/IntegrityPage.html " target="_blank">廉政宣導</a>
-                                                   
-                                                </li>
-                                                <!-- mega-menu start -->
-                                                <li class="dropdown mega-menu">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">日常業務</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <h4>處內一般業務</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/2核安文化/safety1.htm"><i class="icon-right-open"></i>核安文化</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/3資通安全/km/km1.htm"><i class="icon-right-open"></i>資通安全</a></li>
-                                                                        <li><a ui-sref="meeting"><i class="icon-right-open"></i>會議紀錄</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/source/nedmeeting/loginpjtor.asp"><i class="icon-right-open"></i>設備預約</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/Resource/MeetingRoomList.asp"><i class="icon-right-open"></i>會議室預約</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/7會議室視訊會議操作說明/manual.pdf"><i class="icon-right-open"></i>會議室視訊會議操作手冊</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <h4>國際合作與訓練</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/7國際合作資訊/國際合作資訊 - 例行會議.docx" target="_blank"><i class="icon-right-open"></i>國際合作資訊</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/8研討會資料/report.htm" target="_blank"><i class="icon-right-open"></i>研討會資料</a></li>
-                                                                        <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/9訓練教材" target="_blank"><i class="icon-right-open"></i>訓練教材</a></li>
-                                                                    </ul>
-                                                                    
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <h4>其他</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        <li><a ng-href="http://{{h.host}}/feedback/feedbacklist.asp" target="_blank"><i class="icon-right-open"></i>核能發電回饋系統</a></li>
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">法遵專區</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a ui-sref="home">政府法令</a></li>
+                                                    <li><a ui-sref="companyReg">公司章則</a></li>
+                                                    <li><a ui-sref="departmentReg">系統章則</a></li>
+                                                    <li class="dropdown">
+                                                        <a ng-href="http://{{h.host}}/procedure/index.htm" class="dropdown-toggle" data-toggle="dropdown">單位章則</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a ng-href="http://{{h.host}}/procedure/index.htm">處內規章</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">其他</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=68&Itemid=316" target="_blank">公司章則作業注意事項(企劃處)</a></li>
+                                                            <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=177&Itemid=352" target="_blank">公司辦事細則(企劃處)</a></li>
+                                                            <li><a href="http://10.16.10.126/index.php?option=com_k2&view=item&layout=item&id=177&Itemid=352" target="_blank">公司分層負責(企劃處)</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/8常用下載/1.常用參考資料/分層負責明細表.doc">處內分層負責</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
 
-                                                                        <li><a href="http://portal.taipower.com.tw/wps/myportal/!ut/p/_s.7_0_A/7_0_86H/.cmd/ad/.c/6_0_779/.ce/7_0_86L/.p/5_0_7GL/.d/0#7_0_86L"><i class="icon-right-open"></i>台電分散式知識管理系統</a></li>
+                                                <a href="http://10.18.8.153/IntegrityPage.html " target="_blank">廉政宣導</a>
 
+                                            </li>
+                                            <!-- mega-menu start -->
+                                            <li class="dropdown mega-menu">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">日常業務</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <h4>處內一般業務</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
 
-
-                                                                    </ul>
-
-                                                                </div>
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/2核安文化/safety1.htm"><i class="icon-right-open"></i>核安文化</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/3資通安全/km/km1.htm"><i class="icon-right-open"></i>資通安全</a></li>
+                                                                    <li><a ui-sref="meeting"><i class="icon-right-open"></i>會議紀錄</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/source/nedmeeting/loginpjtor.asp"><i class="icon-right-open"></i>設備預約</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/Resource/MeetingRoomList.asp"><i class="icon-right-open"></i>會議室預約</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/1處內一般業務/7會議室視訊會議操作說明/manual.pdf"><i class="icon-right-open"></i>會議室視訊會議操作手冊</a></li>
+                                                                </ul>
                                                             </div>
+                                                            <div class="col-md-4">
+                                                                <h4>國際合作與訓練</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/7國際合作資訊/國際合作資訊 - 例行會議.docx" target="_blank"><i class="icon-right-open"></i>國際合作資訊</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/8研討會資料/report.htm" target="_blank"><i class="icon-right-open"></i>研討會資料</a></li>
+                                                                    <li><a ng-href="http://{{h.host}}/資料/4日常業務/3處資料室/9訓練教材" target="_blank"><i class="icon-right-open"></i>訓練教材</a></li>
+                                                                </ul>
 
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                
-                                                <!-- mega-menu end -->
-                                                <!-- mega-menu start -->
-                                                <li class="dropdown mega-menu">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">核能單位</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <h4>總處核能單位</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        <li><a href="http://10.18.8.153/" target="_blank">核能發電處</a></li>
-                                                                        <li><a href="http://10.19.1.1/" target="_blank">核能安全處</a></li>
-                                                                        <li><a href="http://10.57.50.20/nbmd/" target="_blank">核能後端營運處</a></li>
-                                                                        <li><a href="ftp://10.16.7.109/002%C1%60%B8g%B2z%B0%C6%C1%60%B8g%B2z%AB%C7/%AE%D6%AF%E0%B7%BE%B3q%A4p%B2%D5/" target="_blank">核能溝通小組</a></li>
-                                                                        <li><a href="http://10.27.1.119/" target="_blank">核能電廠緊執會</a></li>
-
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <h4>各核能發電廠及相關單位</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        <li><a href="http://10.141.200.68/" target="_blank">核一廠</a></li>
-                                                                        <li><a href="http://10.142.10.11/" target="_blank">核二廠</a></li>
-                                                                        <li><a href="http://10.143.13.205/" target="_blank">核三廠</a></li>
-                                                                        <li><a href="http://10.144.99.99/" target="_blank">龍門電廠</a></li>
-                                                                        <li><a href="http://10.144.99.99/revalidationweb/default.aspx" target="_blank">安全檢測小組</a></li>
-                                                                        <li><a href="http://10.67.32.12/" target="_blank">放射試驗室</a></li>
-                                                                        <li><a href="http://10.175.20.110/lm/" target="_blank">龍門施工處</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <h4>公司外核能相關單位</h4>
-                                                                    <div class="divider"></div>
-                                                                    <ul class="menu">
-                                                                        <li><a target="_blank" href="http://www.aec.gov.tw/">原子能委員會</a></li>
-                                                                        <li><a target="_blank" href="http://www.iner.gov.tw/siteiner/wSite/mp?mp=INER">核能研究所</a></li>
-                                                                        <li><a target="_blank" href="http://tnaweb.org.tw/">台灣核能級產業發展協會</a></li>
-                                                                        <li><a target="_blank" href="http://www.nrc.gov/">美國NRC</a></li>
-                                                                        <li><a target="_blank" href="http://www.epri.com/Pages/Default.aspx">EPRI</a></li>
-                                                                    </ul>
-                                                                </div>
                                                             </div>
+                                                            <div class="col-md-4">
+                                                                <h4>其他</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
+                                                                    <li><a ng-href="http://{{h.host}}/feedback/feedbacklist.asp" target="_blank"><i class="icon-right-open"></i>核能發電回饋系統</a></li>
 
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <!-- mega-menu end -->
+                                                                    <li><a href="http://portal.taipower.com.tw/wps/myportal/!ut/p/_s.7_0_A/7_0_86H/.cmd/ad/.c/6_0_779/.ce/7_0_86L/.p/5_0_7GL/.d/0#7_0_86L"><i class="icon-right-open"></i>台電分散式知識管理系統</a></li>
 
 
 
-                                                <!--
-                                                <li class="dropdown">
-                                                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">同心園地</a>
-                                                    <ul class="dropdown-menu">
+                                                                </ul>
 
-                                                        <li><a target="_blank" href="http://10.10.7.200/tph2h2/index.asp">總管理處同心園地</a></li>
-                                                        <li><a target="_blank" href="http://10.19.1.1/同心園地.htm">核能發電系統同心園地</a></li>
-                                                        <li><a target="_blank" href="http://10.20.1.6:8080/">核技處同心園地</a></li>
-                                                        <li><a ng-href="http://{{h.host2}}/board/board.aspx">核技處留言板</a></li>
+                                                            </div>
+                                                        </div>
 
-                                                        <li><a target="_blank" href="http://10.18.8.153/d05608/together/index.html">核發處同心園地</a></li>
-                                                        <li><a target="_blank" href="http://10.19.1.1/核安同心園地.htm">核安處同心園地</a></li>
+                                                    </li>
+                                                </ul>
+                                            </li>
 
-                                                        <li><a target="_blank" href="http://10.57.50.18/garden/">核後端同心園地</a></li>
 
-                                                    </ul>
-                                                </li>
-                                                -->
-                                            </ul>
+                                            <!-- mega-menu end -->
+                                            <!-- mega-menu start -->
+                                            <li class="dropdown mega-menu">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">核能單位</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <h4>總處核能單位</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
+                                                                    <li><a href="http://10.18.8.153/" target="_blank">核能發電處</a></li>
+                                                                    <li><a href="http://10.19.1.1/" target="_blank">核能安全處</a></li>
+                                                                    <li><a href="http://10.57.50.20/nbmd/" target="_blank">核能後端營運處</a></li>
+                                                                    <li><a href="ftp://10.16.7.109/002%C1%60%B8g%B2z%B0%C6%C1%60%B8g%B2z%AB%C7/%AE%D6%AF%E0%B7%BE%B3q%A4p%B2%D5/" target="_blank">核能溝通小組</a></li>
+                                                                    <li><a href="http://10.27.1.119/" target="_blank">核能電廠緊執會</a></li>
 
-                                        </div>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <h4>各核能發電廠及相關單位</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
+                                                                    <li><a href="http://10.141.200.68/" target="_blank">核一廠</a></li>
+                                                                    <li><a href="http://10.142.10.11/" target="_blank">核二廠</a></li>
+                                                                    <li><a href="http://10.143.13.205/" target="_blank">核三廠</a></li>
+                                                                    <li><a href="http://10.144.99.99/" target="_blank">龍門電廠</a></li>
+                                                                    <li><a href="http://10.144.99.99/revalidationweb/default.aspx" target="_blank">安全檢測小組</a></li>
+                                                                    <li><a href="http://10.67.32.12/" target="_blank">放射試驗室</a></li>
+                                                                    <li><a href="http://10.175.20.110/lm/" target="_blank">龍門施工處</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <h4>公司外核能相關單位</h4>
+                                                                <div class="divider"></div>
+                                                                <ul class="menu">
+                                                                    <li><a target="_blank" href="http://www.aec.gov.tw/">原子能委員會</a></li>
+                                                                    <li><a target="_blank" href="http://www.iner.gov.tw/siteiner/wSite/mp?mp=INER">核能研究所</a></li>
+                                                                    <li><a target="_blank" href="http://tnaweb.org.tw/">台灣核能級產業發展協會</a></li>
+                                                                    <li><a target="_blank" href="http://www.nrc.gov/">美國NRC</a></li>
+                                                                    <li><a target="_blank" href="http://www.epri.com/Pages/Default.aspx">EPRI</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <!-- mega-menu end -->
+                                            <!--
+                                            <li class="dropdown">
+                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">同心園地</a>
+                                                <ul class="dropdown-menu">
+
+                                                    <li><a target="_blank" href="http://10.10.7.200/tph2h2/index.asp">總管理處同心園地</a></li>
+                                                    <li><a target="_blank" href="http://10.19.1.1/同心園地.htm">核能發電系統同心園地</a></li>
+                                                    <li><a target="_blank" href="http://10.20.1.6:8080/">核技處同心園地</a></li>
+                                                    <li><a ng-href="http://{{h.host2}}/board/board.aspx">核技處留言板</a></li>
+
+                                                    <li><a target="_blank" href="http://10.18.8.153/d05608/together/index.html">核發處同心園地</a></li>
+                                                    <li><a target="_blank" href="http://10.19.1.1/核安同心園地.htm">核安處同心園地</a></li>
+
+                                                    <li><a target="_blank" href="http://10.57.50.18/garden/">核後端同心園地</a></li>
+
+                                                </ul>
+                                            </li>
+                                            -->
+                                        </ul>
 
                                     </div>
-                                </nav>
-                                <!-- navbar end -->
 
-                            </div>
-                            <!-- main-navigation end -->
+                                </div>
+                            </nav>
+                            <!-- navbar end -->
 
                         </div>
-                        <!-- header-right end -->
+                        <!-- main-navigation end -->
 
                     </div>
+                    <!-- header-right end -->
+
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
 
-        <!-- header end -->
-        
-        <!-- page wrapper start -->
-        <!-- ================ -->
+    <!-- header end -->
+    <!-- page wrapper start -->
+    <!-- ================ -->
 
 
 
-        @RenderBody()
+    @RenderBody()
 
 
-    
 
-    
+
+
     @Scripts.Render("/script")
-    
+
+
+    <script src="~/client/app.js"></script>
+    <script src="~/client/router.js"></script>
     <script src="~/client/controllers/homeController.js" charset="UTF-8"></script>
+    <script src="~/client/controllers/meetingGridController.js" ></script>
+    <script src="~/client/controllers/postGridController.js"></script>
+    <script src="~/client/controllers/calendar/calViewController.js"></script>
+    <script src="~/client/controllers/common/modalController.js"></script>
     <script src="~/client/controllers/integrityController.js"></script>
     <script type="text/javascript">
-        
-            
-            var $buoop = { vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,
-                text:"請升級至IE9以上版本或是使用Chrome瀏覽本網站"
-            };
-            function $buo_f() {
-                var e = document.createElement("script");
-                e.src = "//browser-update.org/update.min.js";
-                document.body.appendChild(e);
-            };
-            try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
-            catch (e) { window.attachEvent("onload", $buo_f) }
+
+
+        var $buoop = {
+            vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,
+            text: "請升級至IE9以上版本或是使用Chrome瀏覽本網站"
+        };
+        function $buo_f() {
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
+        catch (e) { window.attachEvent("onload", $buo_f) }
     </script>
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
