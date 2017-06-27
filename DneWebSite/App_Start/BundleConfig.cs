@@ -15,16 +15,16 @@ namespace DneWebSite
                 .Include(
                     "~/Scripts/jquery-2.1.1.min.js",
                     "~/Scripts/jquery-ui-1.12.1.min.js",
-                    "~/Content/bootstrap-material-design/dist/js/material.min.js",
-                    "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
+                    //"~/Content/bootstrap-material-design/dist/js/material.min.js",
+                    //"~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/Scripts/bootstrap.min.js"));
             //css  
             bundles.Add(new StyleBundle("~/css/base").Include(
                     "~/Content/bootstrap.min.css",
                     "~/Content/bootstrap.theme.min.css",
-                    "~/Content/material-design-icons/iconfont/material-icons.css",
-                    "~/Content/bootstrap-material-design/dist/css/bootstrap-materail-design.min.css",
-                    "~/Content/bootstrap-material-design/dist/css/ripples.min.css",
+                    //"~/Content/material-design-icons/iconfont/material-icons.css",
+                    //"~/Content/bootstrap-material-design/dist/css/bootstrap-materail-design.min.css",
+                    //"~/Content/bootstrap-material-design/dist/css/ripples.min.css",
                     "~/Content/themes/base/jquery-ui.min.css",
                     "~/Content/themes/cupertino/jquery-ui.cupertino.min.css",
                     

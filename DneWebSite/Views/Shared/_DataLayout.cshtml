@@ -96,11 +96,13 @@
     </div>
     <!-- JavaScript files placed at the end of the document so the pages load faster
         ================================================== -->
-    <!-- Jquery and Bootstap core js files -->
-    
-    @Scripts.Render("~/script/jq")
+    <!-- Jquery and Bootstap core js files 
     <script>
         $.material.init();
     </script>
+    -->
+    
+    @Scripts.Render("~/script/jq")
+    
     @RenderSection("scripts", required: false)
 </body>

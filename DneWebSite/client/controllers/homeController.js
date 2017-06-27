@@ -14,19 +14,19 @@
             //});
             var vm = this;
             //舊網主機位址
-            toaster.pop({
-                type: 'success',
-                title: '「台電綠網」宣導',
-                body: 'di-html',
-                bodyOutputType: 'directive',
-                timeout:4000
-            });
-            toaster.pop({
-                type: 'info',
-                title: '權益小幫手',
-                body: '員工團體保險權益已變更，請至公佈欄查閱相關訊息',
-                timeout: 2000
-            });
+            //toaster.pop({
+            //    type: 'success',
+            //    title: '「台電綠網」宣導',
+            //    body: 'di-html',
+            //    bodyOutputType: 'directive',
+            //    timeout:4000
+            //});
+            //toaster.pop({
+            //    type: 'info',
+            //    title: '踴躍參與106年員工廉政問卷調查',
+            //    body: '郵件主旨:台灣趨勢研究股份有限公司',
+            //    timeout: 5000
+            //});
 
             //alert("會亂碼嗎?")
             vm.host = '10.20.1.4';

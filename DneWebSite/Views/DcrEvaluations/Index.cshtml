@@ -14,7 +14,7 @@
                     <li class="pull-left"><a href="@Url.Action("Create", "DcrEvaluations")" class="btn btn-primary">新增DCR可行性評估案件</a></li>
                     <li class="pull-right"><a href="@Url.Action("DownloadDcrEvaluationList", "DcrEvaluations")" class="btn btn-default">匯出Excel</a></li>
                     <li class="pull-right">
-                        @if (!User.Identity.IsAuthenticated)
+                    @if (!User.Identity.IsAuthenticated)
                     {
                         <a href="/account/login?ReturnUrl=%2FDcrEvaluations" class="btn btn-success">管理</a>
                     }
