@@ -21,20 +21,20 @@
             //    bodyOutputType: 'directive',
             //    timeout:4000
             //});
-            //toaster.pop({
-            //    type: 'info',
-            //    title: '踴躍參與106年員工廉政問卷調查',
-            //    body: '郵件主旨:台灣趨勢研究股份有限公司',
-            //    timeout: 5000
-            //});
+            toaster.pop({
+                type: 'success',
+                title: '資安小幫手',
+                body: '請記得重新開機，以完成Windows更新作業。',
+                timeout: 5000
+            });
 
             //alert("會亂碼嗎?")
             vm.host = '10.20.1.4';
             vm.host2 = '10.144.101.5';
-            vm.goToHome = function () {
-		   	    //ui-router $state.go可以跳到router.js定義的state路徑名稱
-		   	    $state.go('home');
-		   	}
+      //      vm.goToHome = function () {
+		   	//    //ui-router $state.go可以跳到router.js定義的state路徑名稱
+		   	//    $state.go('home');
+		   	//}
         }])
      .directive('diHtml', [function () {
          return {

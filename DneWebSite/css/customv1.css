@@ -487,7 +487,21 @@ File Description: Place here your custom CSS styles
 
 
 .parallax-bg-integrity {
-    background: url("../images/integrity/integrity.jpg") 30% 50% no-repeat;
+    background: url("../images/Resource-Audit.jpg") 20% 90% no-repeat;
+    padding:100px;
+}
+
+.fixed-image-orgControl {
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 250px;
+}
+.affix-menu {
+    padding-top: 0px;
+}
+.list-icons-padding {
+    list-style: none;
+    padding-left: 25px;
 }
 
 .float-side-menu{

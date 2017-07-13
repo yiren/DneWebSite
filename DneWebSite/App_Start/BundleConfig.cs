@@ -32,7 +32,7 @@ namespace DneWebSite
 
                    ));
 
-            bundles.Add(new ScriptBundle("~/script")
+            bundles.Add(new ScriptBundle("~/script/tt")
                 .Include(
                     "~/Scripts/jquery-2.1.1.min.js",
                     "~/plugins/template/bootstrap/js/bootstrap.min.js",
@@ -46,7 +46,7 @@ namespace DneWebSite
                     "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/js/templatev1.js",
                     "~/js/qTip2.js",
-                    "~/plugins/bowerPackage/angular/angular.js",
+                    "~/plugins/bowerPackage/angular/angular.min.js",
                     "~/plugins/bowerPackage/angular-ui-router/release/angular-ui-router.min.js",
                     "~/plugins/bowerPackage/angular-animate/angular-animate.min.js",
                     "~/plugins/template/fullcalendar/lib/moment.min.js",

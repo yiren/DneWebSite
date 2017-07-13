@@ -482,13 +482,37 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="client\controllers\integrityController.js" />
+    <Content Include="client\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="client\controllers\calendar\calViewController.min.js">
+      <DependentUpon>calViewController.js</DependentUpon>
+    </Content>
+    <Content Include="client\controllers\common\modalController.min.js">
+      <DependentUpon>modalController.js</DependentUpon>
+    </Content>
+    <Content Include="client\controllers\homeController.min.js">
+      <DependentUpon>homeController.js</DependentUpon>
+    </Content>
+    <Content Include="client\controllers\meetingGridController.min.js">
+      <DependentUpon>meetingGridController.js</DependentUpon>
+    </Content>
+    <Content Include="client\controllers\orgCtrlController.js" />
     <Content Include="client\controllers\meetingGridController.js" />
+    <Content Include="client\controllers\orgCtrlController.min.js">
+      <DependentUpon>orgCtrlController.js</DependentUpon>
+    </Content>
     <Content Include="client\controllers\postGridController.js" />
+    <Content Include="client\controllers\postGridController.min.js">
+      <DependentUpon>postGridController.js</DependentUpon>
+    </Content>
+    <Content Include="client\router.min.js">
+      <DependentUpon>router.js</DependentUpon>
+    </Content>
     <Content Include="client\templates\engineering\dcr\dcrList.html" />
     <Content Include="client\templates\error\underConstruction.html" />
     <Content Include="client\templates\home\coreduty.html" />
-    <Content Include="client\templates\home\integrity.html" />
+    <Content Include="client\templates\home\orgControl.html" />
     <Content Include="client\templates\home\personnelDownload.html" />
     <Content Include="client\templates\home\popup.html" />
     <Content Include="client\templates\regular\books.html" />
@@ -745,7 +769,9 @@
     <Content Include="Content\themes\cupertino\jquery-ui.cupertino.css" />
     <Content Include="Content\themes\cupertino\jquery-ui.cupertino.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\032575-tcb-1280x420-audit-v2.jpg" />
     <Content Include="images\admin-1.jpg" />
+    <Content Include="images\audit.jpg" />
     <Content Include="images\background-1.jpg" />
     <Content Include="images\background-2.jpg" />
     <Content Include="images\background-3.jpg" />
@@ -770,7 +796,9 @@
     <Content Include="images\home\Playing\finland.jpg" />
     <Content Include="images\home\Playing\motherday2017-N.jpg" />
     <Content Include="images\home\Playing\tissue.jpg" />
+    <Content Include="images\home\Playing\tpc_front_door.jpg" />
     <Content Include="images\home\Playing\windpower.jpg" />
+    <Content Include="images\I.A.-Graphic.jpg" />
     <Content Include="images\integrity\integrity.jpg" />
     <Content Include="images\jogging.jpg" />
     <Content Include="images\loader.gif" />
@@ -784,6 +812,7 @@
     <Content Include="images\portfolio-2.png" />
     <Content Include="images\portfolio-3.png" />
     <Content Include="images\reactor.png" />
+    <Content Include="images\Resource-Audit.jpg" />
     <Content Include="images\sitemap-1.jpg" />
     <Content Include="images\sitemap-2.jpg" />
     <Content Include="images\sitemap-3.jpg" />
@@ -1337,6 +1366,7 @@
     <Content Include="plugins\bowerPackage\angularjs-toaster\package.json" />
     <Content Include="plugins\bowerPackage\angularjs-toaster\README.md" />
     <Content Include="plugins\bowerPackage\angularjs-toaster\toaster.scss" />
+    <None Include="bundleconfig.json" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

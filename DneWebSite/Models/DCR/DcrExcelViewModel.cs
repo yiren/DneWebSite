@@ -70,7 +70,7 @@ namespace DneWebSite.Models.DCR
 
         [Column("(核安會)審覆日期")]
         public string SafeRegReviewDate { get; set; }
-        [Column("(核安會)結果")]
+        [Column("(核安會)審查結果")]
         public string SafeRegReviewResult { get; set; }
 
         [Column("(核技處)會辦組別")]
@@ -93,7 +93,7 @@ namespace DneWebSite.Models.DCR
         public string AECApprovalDate { get; set; }
         [Column("(AEC)回覆文號")]
         public string AECApprovalDoc { get; set; }
-        [Column("(AEC)審查結果")]
+        [Column("(AEC)回覆結果")]
         public string AECComment { get; set; }
 
         [Column("回覆電廠日期")]

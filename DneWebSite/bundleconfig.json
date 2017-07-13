@@ -1,0 +1,50 @@
+[
+  {
+    "outputFileName": "client/controllers/orgCtrlController.min.js",
+    "inputFiles": [
+      "client/controllers/orgCtrlController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/controllers/postGridController.min.js",
+    "inputFiles": [
+      "client/controllers/postGridController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/controllers/meetingGridController.min.js",
+    "inputFiles": [
+      "client/controllers/meetingGridController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/controllers/homeController.min.js",
+    "inputFiles": [
+      "client/controllers/homeController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/controllers/common/modalController.min.js",
+    "inputFiles": [
+      "client/controllers/common/modalController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/controllers/calendar/calViewController.min.js",
+    "inputFiles": [
+      "client/controllers/calendar/calViewController.js"
+    ]
+  },
+  {
+    "outputFileName": "client/router.min.js",
+    "inputFiles": [
+      "client/router.js"
+    ]
+  },
+  {
+    "outputFileName": "client/app.min.js",
+    "inputFiles": [
+      "client/app.js"
+    ]
+  }
+]

@@ -5,7 +5,7 @@
 
 
     <div class="banner">
-        <div class="fixed-image section light-translucent-bg" style="background-image:url('../../../images/integrity/integrity.jpg');background-position:center">
+        <div class="fixed-image-orgContrl section light-translucent-bg" style="background-image:url('../../../images/Resource-Audit.jpg');background-position:center;height:200px">
             <div class="container">
                 <div class="space-top"></div>
 
@@ -13,27 +13,21 @@
         </div>
     </div>
 
-    <section class="container main-container icons-page" ng-controller="integrityCtrl as g">
+    <section class="container main-container icons-page" ng-controller="orgCtrl as g">
         <div class="row">
 
             <!-- sidebar start -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="sidebar">
                     <div class="block clearfix">
-                        <h4>廉政宣導</h4>
+                        <h4>內部控制專區</h4>
                         <div class="separator"></div>
                         <nav class="affix-menu scrollspy">
                             <ul class="smooth-scroll nav nav-pills nav-stacked">
-
-                                <li><a href="#law" du-smooth-scroll du-scrollspy>政風法令</a></li>
-                                <li><a href="#notification" du-smooth-scroll du-scrollspy>廉政會報</a></li>
-                                <li><a href="#secret" du-smooth-scroll du-scrollspy>工務機密維護</a></li>
-                                <li><a href="#moral" du-smooth-scroll du-scrollspy>員工廉政倫理規範</a></li>
-                                <li><a href="#example" du-smooth-scroll du-scrollspy>廉政案例宣導</a></li>
-                                <li><a href="#application" du-smooth-scroll du-scrollspy>公務人員財產申報</a></li>
-                                <li><a href="#relatives" du-smooth-scroll du-scrollspy>民法親等表</a></li>
-
-
+                                <li><a href="http://10.16.10.128" target="_blank">公司內控宣導資料</a></li>
+                                <li><a href="#controlDoc" du-smooth-scroll du-scrollspy>內控文件</a></li>
+                                <li><a href="#levelControl" du-smooth-scroll du-scrollspy>分級檢核</a></li>
+                                <li><a href="http://10.20.1.4/資料/1關於本處/內控專區/巡迴檢核作業及其他" target="_blank">巡迴檢核作業及其他</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -47,7 +41,7 @@
                 <div> <!--一定要有一層Div當作Container-->
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a href data-toggle="collapse" tabindex="0" class="accordion-toggle" ng-class="{collapsed:!isOpen}" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+                            <a data-toggle="collapse" tabindex="0" class="accordion-toggle" ng-class="{collapsed:!isOpen}" ng-click="toggleOpen()" uib-accordion-transclude="heading">
                                 <!---->
                                 <span uib-accordion-header>
                                     {{heading}}
@@ -63,7 +57,8 @@
             </script>
             <div class="main col-md-9">
 
-                <div id="law">
+
+                <div>
 
                     <uib-accordion close-others="false">
 
