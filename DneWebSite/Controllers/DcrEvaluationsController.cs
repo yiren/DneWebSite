@@ -102,7 +102,7 @@ namespace DneWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection,FurtherDCRReview")] DcrEvaluation dcrEvaluation)
+        public ActionResult Edit([Bind(Include = "DcrEvaluationId,DcrEvaluationNo,Plant,Classification,Subject,SourceNo,DneNo,ReceivedDate,MainSection,Engineer,AssistSection,CloseDate,IsClosed,Note,DcrStatus,LastModifiedBy,LastModifiedDate,SubmitToOperDepDate,OperDepReviewDate,OperDepReviewResult,HasOperDep,SubmitToSafeDepDate,SafeDepReviewDate,SafeDepReviewResult,HasSafeDep, AssistSections, AssistSectionReviewResult, AssistSectionReviewDate, HasAssistSection,FurtherDCRReview")] DcrEvaluation dcrEvaluation)
         {
             if (ModelState.IsValid)
             {
