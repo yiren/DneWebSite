@@ -46,6 +46,9 @@
     <link href="~/plugins/bowerPackage/angularjs-toaster/toaster.css" rel="stylesheet">
 
 
+    <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
+    <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
+
     <!-- qTip2 -->
 
     <link href="~/plugins/bowerPackage/qtip2/jquery.qtip.css" rel="stylesheet">
@@ -182,8 +185,10 @@
                                                 <ul class="dropdown-menu">
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">龍門計畫業務</a>
+                                                    
                                                         <ul class="dropdown-menu">
                                                             <li><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
+                                                            <li><a ng-href="http://{{h.host}}/資料/2工程業務/1龍門計畫業務/4龍門計畫暫緩辦理事項" target="_blank">龍門計畫暫緩辦理事項</a></li>
                                                             <li class="dropdown">
                                                                 <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO相關業務</a>
                                                                 <ul class="dropdown-menu">
@@ -191,7 +196,7 @@
 
                                                                     <li><a href="http://10.20.1.5/source/2lco/asp/ddasp.asp" target="_blank">送LCO品質文件清單</a></li>
                                                                     <li><a ng-href="http://{{h.host2}}/support/" target="_blank">電氣Raceway Support管制表</a></li>
-
+                                                                    
                                                                 </ul>
                                                             </li>
                                                             
@@ -211,9 +216,13 @@
                                                         </ul>
                                                     </li>
                                                     <li>
-                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/5核電廠主管作業觀察" target="_blank">核電廠主管作業觀察</a>
-
+                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/6GOSP績效指標" target="_blank">工程設計與支援績效指標</a>
                                                     </li>
+                                                    <li>
+                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/5核電廠主管作業觀察" target="_blank">核電廠主管作業觀察</a>
+                                                    </li>
+
+
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">WANO</a>
                                                         <ul class="dropdown-menu">
@@ -234,6 +243,9 @@
                                                             
                                                             <li><a href="http://10.20.1.7/document" target="_blank">SEO管制文件查詢(台北主機測試中)</a></li>
                                                             <li><a href="http://10.20.1.6" target="_blank">龍門軟體構型管理系統(測試版)</a></li>
+                                                            
+                                                            <li><a ui-sref="gosp">工程設計與支援績效指標(測試中)</a></li>
+                                                            <li><a href="http://10.20.1.6:8080" target="_blank">投票系統(必須使用Chrome)</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -489,7 +501,7 @@
     <script src="~/client/controllers/calendar/calViewController.min.js"></script>
     <script src="~/client/controllers/common/modalController.min.js"></script>
     <script src="~/client/controllers/orgCtrlController.min.js"></script>
-
+    <script src="~/client/controllers/gospController.min.js"></script>
 
     <script type="text/javascript">
 

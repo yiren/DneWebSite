@@ -1,0 +1,48 @@
+﻿@model DneWebSite.Models.DneGOSP.GOSPEngineering
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_DataLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <h2>刪除 @Model.CurrentSeason 績效</h2>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentSeason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentSeason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="刪除本績效" class="btn btn-danger" /> |
+            @Html.ActionLink("回上一頁", "Index")
+        </div>
+    }
+</div>

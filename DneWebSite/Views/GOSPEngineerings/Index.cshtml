@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DneWebSite.Models.DneGOSP.GOSPEngineering>
+
+@{
+    ViewBag.Title = "清單";
+    Layout = "~/Views/Shared/_DataLayout.cshtml";
+}
+<div class="container">
+    <h1 class="text-center">工程及設計領域績效管理介面</h1>
+   
+    <p>
+        <a href="@Url.Action("Create")" class="btn btn-primary">新增當季績效</a>
+    </p>
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSeason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentSeason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯", "Edit", new { id = item.EngineeringId }) 
+                    |
+                    @Html.ActionLink("刪除", "Delete", new { id = item.EngineeringId })
+                    <!--|
+                    @Html.ActionLink("Details", "Details", new { id = item.EngineeringId }) 
+                        -->
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

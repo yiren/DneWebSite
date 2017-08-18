@@ -1,0 +1,43 @@
+﻿@model DneWebSite.Models.DneGOSP.GOSPEngineering
+
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_DataLayout.cshtml";
+}
+
+<h2>Single</h2>
+
+<div>
+    <h4>GOSPEngineering</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentSeason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentSeason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EngineeringId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

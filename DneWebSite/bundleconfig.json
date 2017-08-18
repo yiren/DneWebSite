@@ -46,5 +46,11 @@
     "inputFiles": [
       "client/app.js"
     ]
+  },
+  {
+    "outputFileName": "client/controllers/gospController.min.js",
+    "inputFiles": [
+      "client/controllers/gospController.js"
+    ]
   }
 ]

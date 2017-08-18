@@ -4,6 +4,7 @@ using DneWebSite.Models.bulletin;
 
 namespace DneWebSite.MigrationsBulltin
 {
+    using DneWebSite.Models.DneGOSP;
     using Models.DCR;
     using System;
     using System.Data.Entity;
@@ -20,6 +21,48 @@ namespace DneWebSite.MigrationsBulltin
 
         protected override void Seed(DneWebSite.Models.bulletin.BulletinDbContext context)
         {
+
+            if (!context.GOSPEngineerings.Any())
+            {
+
+
+
+                var gosp = new GOSPEngineering
+                {
+                    EngineeringId = Guid.NewGuid(),
+                    CurrentSeason = "106年第二季",
+                    LastModifiedBy="JJ古貽仁",
+                    LastModifiedDate="2017/08/14"
+                };
+                gosp.GOSPScores = new List<GOSPScore>
+                {
+                    new GOSPScore
+                    {
+                        EngineeringId=gosp.EngineeringId,
+                        Plant="核一廠"
+                    },
+                    new GOSPScore
+                    {
+                        
+                        EngineeringId=gosp.EngineeringId,
+                        Plant="核二廠"
+                    },
+                    new GOSPScore
+                    {
+
+                        EngineeringId=gosp.EngineeringId,
+                        Plant="核三廠"
+                    },
+                    new GOSPScore
+                    {
+
+                        EngineeringId=gosp.EngineeringId,
+                        Plant="龍門"
+                    }
+                };
+                context.GOSPEngineerings.AddOrUpdate(gosp);
+                context.SaveChanges();
+            }
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -32,7 +75,7 @@ namespace DneWebSite.MigrationsBulltin
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            
+
             //if (!context.DcrEvaluations.Any())
             //{
             //    context.DcrEvaluations.Add(new DcrEvaluation()
@@ -112,8 +155,8 @@ namespace DneWebSite.MigrationsBulltin
 
             //    });
             //}
-            
-            
+
+
             ////context.Posts.RemoveRange(totalPosts);
             //context.SaveChanges();
 

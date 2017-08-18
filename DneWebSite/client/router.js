@@ -81,7 +81,12 @@
                         templateUrl: '/../client/templates/home/orgControl.html',
                         controller: 'homeCtrl'
                     })
-
+                    //gosp
+                    .state('gosp', {
+                        url: '/gosp',
+                        templateUrl: '/../client/templates/engineering/gosp/gosp.html',
+                        controller: 'homeCtrl as h'
+                    })
                     ;
             }]);
     

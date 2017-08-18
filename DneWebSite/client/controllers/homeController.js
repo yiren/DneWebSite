@@ -4,14 +4,14 @@
 	angular.module('main')
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog','toaster', function ($scope,$log, $state, ngDialog, toaster) {
             //首頁popup視窗
-            //$scope.$on('$viewContentLoaded', function () {
-            //    //call it here
-            //    //console.log("preload");
-            //    ngDialog.open({
-            //        template: "client/templates/home/popup.html",
-            //        width:700
-            //    });
-            //});
+            $scope.$on('$viewContentLoaded', function () {
+                //call it here
+                console.log("preload");
+                ngDialog.open({
+                    template: "client/templates/home/popup.html",
+                    width:700
+                });
+            });
             var vm = this;
             //舊網主機位址
             //toaster.pop({
@@ -23,9 +23,9 @@
             //});
             //toaster.pop({
             //    type: 'success',
-            //    title: '資安小幫手',
-            //    body: '請記得重新開機，以完成Windows更新作業。',
-            //    timeout: 5000
+            //    title: '106年下半年社交工程',
+            //    body: '預計於8月15日 08:00 開始進行測試，至8月30日16:00 結束。',
+            //    timeout: 8000
             //});
 
             //alert("會亂碼嗎?")

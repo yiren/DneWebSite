@@ -1,6 +1,7 @@
 ﻿using DneWebSite.Models.common;
 using DneWebSite.Models.common.DBInitializer;
 using DneWebSite.Models.DCR;
+using DneWebSite.Models.DneGOSP;
 using DneWebSite.Models.dneMeeting;
 using DneWebSite.Models.WANO;
 using System;
@@ -31,6 +32,7 @@ namespace DneWebSite.Models.bulletin
         public DbSet<Dcr> Dcrs { get; set; }
 
         public DbSet<DcrEvaluation> DcrEvaluations { get; set; }
-
+        public DbSet<GOSPEngineering> GOSPEngineerings { get; set; }
+        public DbSet<GOSPScore> GOSPScores { get; set; }
     }
 }
