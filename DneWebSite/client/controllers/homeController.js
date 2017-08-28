@@ -4,14 +4,14 @@
 	angular.module('main')
         .controller('homeCtrl', ['$scope','$log', '$state','ngDialog','toaster', function ($scope,$log, $state, ngDialog, toaster) {
             //首頁popup視窗
-            $scope.$on('$viewContentLoaded', function () {
-                //call it here
-                console.log("preload");
-                ngDialog.open({
-                    template: "client/templates/home/popup.html",
-                    width:700
-                });
-            });
+            //$scope.$on('$viewContentLoaded', function () {
+            //    //call it here
+            //    console.log("preload");
+            //    ngDialog.open({
+            //        template: "client/templates/home/popup.html",
+            //        width:700
+            //    });
+            //});
             var vm = this;
             //舊網主機位址
             //toaster.pop({

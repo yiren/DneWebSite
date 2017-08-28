@@ -18,7 +18,7 @@ namespace DneWebSite.Controllers
         // GET: GOSPEngineerings
         public ActionResult Index()
         {
-            return View(db.GOSPEngineerings.Include(g=>g.GOSPScores).OrderByDescending(p => p.CurrentSeason).ThenByDescending(p => p.LastModifiedDate).ToList());
+            return View(db.GOSPEngineerings.AsNoTracking().Include(g => g.GOSPScores).OrderByDescending(p => p.CreateDate).ToList());
         }
 
         public ActionResult Single()

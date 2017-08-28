@@ -18,7 +18,7 @@ using Webdiyer.WebControls.Mvc;
 
 namespace DneWebSite.Controllers
 {
-    [Authorize]
+    //[Authorize]
     //[ClaimsAuthorize(ClaimType = "role", ClaimValue = "Dcr")]
     public class DcrsController : Controller
     {

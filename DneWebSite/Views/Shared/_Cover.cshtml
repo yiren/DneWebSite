@@ -45,7 +45,7 @@
     
     <link href="~/plugins/bowerPackage/angularjs-toaster/toaster.css" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" />
     <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
     <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
 
@@ -480,7 +480,7 @@
     <!-- page wrapper start -->
     <!-- ================ -->
 
-
+    <div id="popup"></div>
 
     @RenderBody()
 
@@ -489,7 +489,7 @@
     
     
     @Scripts.Render("/script/tt")
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
    <!--
     <script src="~/plugins/bowerPackage/angular/angular.js"></script>-->
     <script src="~/client/app.min.js"></script>
@@ -505,7 +505,10 @@
 
     <script type="text/javascript">
 
-
+        BootstrapDialog.show({
+            title:"106年度下半年度社交工程",
+            message: $('#popup').load('../../client/templates/home/popup.html')
+        }); 
         var $buoop = {
             vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,
             text: "請升級至IE9以上版本或是使用Chrome瀏覽本網站"

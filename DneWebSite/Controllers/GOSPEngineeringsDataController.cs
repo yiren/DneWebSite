@@ -81,14 +81,14 @@ namespace DneWebSite.Controllers
                 values = dcrReviewScore
             };
             allScores.Add(dcrReviewScoreObject);
-            var dcrDefectScore = gospScore.Select(r => r.DcrReviewScore);
+            var dcrDefectScore = gospScore.Select(r => r.DcrDefectScore);
             var dcrDefectScoreObject = new
             {
                 name = displayNamePair.First(v => v.Key == "DcrDefectScore").Value,
                 values = dcrDefectScore
             };
             allScores.Add(dcrDefectScoreObject);
-            var dcrCloseScore = gospScore.Select(r => r.DcrReviewScore);
+            var dcrCloseScore = gospScore.Select(r => r.DcrCloseScore);
             var dcrCloseScoreObject = new
             {
                 name = displayNamePair.First(v => v.Key == "DcrCloseScore").Value,
@@ -108,7 +108,7 @@ namespace DneWebSite.Controllers
                 name = displayNamePair.First(v => v.Key == "FcrScore").Value,
                 values = fcrScore
             };
-            allScores.Add(evaPerformScoreObject);
+            allScores.Add(fcrScoreObject);
             var backlogScore = gospScore.Select(r => r.BacklogScore);
             var backlogScoreObject = new
             {
