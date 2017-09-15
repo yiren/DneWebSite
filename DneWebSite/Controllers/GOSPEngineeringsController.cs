@@ -8,23 +8,38 @@ using System.Web;
 using System.Web.Mvc;
 using DneWebSite.Models.DneGOSP;
 using DneWebSite.Models.bulletin;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using DneWebSite.Helper;
 
 namespace DneWebSite.Controllers
 {
+    [ClaimsAuthorize(ClaimType = "role", ClaimValue = "GOSP")]
     public class GOSPEngineeringsController : Controller
     {
+        public GOSPEngineeringsController(ApplicationUserManager userManager)
+        {
+            _userManager = userManager;
+        }
         private BulletinDbContext db = new BulletinDbContext();
-
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
         // GET: GOSPEngineerings
         public ActionResult Index()
         {
             return View(db.GOSPEngineerings.AsNoTracking().Include(g => g.GOSPScores).OrderByDescending(p => p.CreateDate).ToList());
         }
 
-        public ActionResult Single()
-        {
-            return View(db.GOSPEngineerings.OrderByDescending(p => p.CurrentSeason).ThenByDescending(p => p.LastModifiedDate).First());
-        }
 
         // GET: GOSPEngineerings/Details/5
         public ActionResult Details(Guid? id)
@@ -56,7 +71,8 @@ namespace DneWebSite.Controllers
         public ActionResult Create(GOSPEngineering gosp)
         {           
             gosp.EngineeringId = Guid.NewGuid();
-            gosp.LastModifiedBy = "test";
+            var user = UserManager.FindByName(User.Identity.Name);
+            gosp.LastModifiedBy = user.FullName;
             gosp.CreateDate= DateTime.Now.ToString("yyyy/MM/dd");
             gosp.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
             foreach (var item in gosp.GOSPScores)
@@ -91,7 +107,8 @@ namespace DneWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(GOSPEngineering gOSPEngineering)
         {
-            gOSPEngineering.LastModifiedBy = "test2";
+            var user = UserManager.FindByName(User.Identity.Name);
+            gOSPEngineering.LastModifiedBy = user.FullName;
             gOSPEngineering.LastModifiedDate = DateTime.Now.ToString("yyyy/MM/dd");
             db.Entry(gOSPEngineering).State = EntityState.Modified;
             foreach (var score in gOSPEngineering.GOSPScores)

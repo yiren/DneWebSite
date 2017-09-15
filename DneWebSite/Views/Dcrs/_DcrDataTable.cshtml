@@ -1,6 +1,6 @@
 ﻿@model PagedList<DneWebSite.Models.DCR.Dcr>
 
-<table class="table table-condensed table-bordered table-striped table-responsive table-hover">
+<table class="table table-condensed table-bordered table-responsive table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Plant)
@@ -54,193 +54,193 @@
 
     @foreach (var item in Model)
     {
+        var bgc = (item.IsClosed) ? "background:#EEEEEE" : "";
+                <tr style="@bgc">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Plant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DcrNo)
+                        @if (User.Identity.IsAuthenticated)
+                    {
+                            <div><a href="/dcrs/edit/@item.DcrId" class="btn btn-info">編輯基本資料</a></div>
+                            <div><a href="/dcrs/delete/@item.DcrId" class="btn btn-danger">刪除DCR</a></div>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Classification)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DcrEvaluationNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SourceNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DneNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReceivedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MainSection)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Engineer)
+                    </td>
+                    <td>
 
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Plant)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DcrNo)
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <div><a href="/dcrs/edit/@item.DcrId" class="btn btn-info">編輯基本資料</a></div>
-                        <div><a href="/dcrs/delete/@item.DcrId" class="btn btn-danger">刪除DCR</a></div>
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Classification)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DcrEvaluationNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SourceNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DneNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceivedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MainSection)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Engineer)
-            </td>
-            <td>
-                
-                    <p>
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#assist-@item.DcrId">核技處審查情況</button>
-                    </p>
-
-                
-                @if (item.HasOperDep)
-                {
-                    <p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#operDep-@item.DcrId">核發處審查情況</button>
-                    </p>
-
-                }
-                @if (item.HasSafeDep)
-                {
-
-                    <p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#safeDep-@item.DcrId">核安處審查情況</button>
-                    </p>
+                        <p>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#assist-@item.DcrId">核技處審查情況</button>
+                        </p>
 
 
-                }
+                        @if (item.HasOperDep)
+                    {
+                            <p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#operDep-@item.DcrId">核發處審查情況</button>
+                            </p>
 
-                @if (item.HasSafeReg)
-                {
-                    <p>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#safeReg-@item.DcrId">核安會審查情況</button>
-                    </p>
-                }
-                @if (item.HasAEC)
-                {
-                    <p>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aec-@item.DcrId">AEC陳報情況</button>
-                    </p>
-                }
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <div><a href="/dcrs/editreview/@item.DcrId" class="btn btn-default">編輯送審資料</a></div>
-                }
-                <!-- Modal -->
-                <div class="modal fade" id="assist-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h3 class="modal-title" id="assistDepLabel">核技處審查情況</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4><span class="text-success">會辦組別:</span>@item.AssistSections</h4>
-                                <h4><span class="text-success">彙總日期:</span>@item.AssistSectionReviewDate</h4>
-                                <h4><span class="text-success">審查結果:</span>@item.AssistSectionReviewResult</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                        }
+                        @if (item.HasSafeDep)
+                    {
+
+                            <p>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#safeDep-@item.DcrId">核安處審查情況</button>
+                            </p>
+
+
+                        }
+
+                        @if (item.HasSafeReg)
+                    {
+                            <p>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#safeReg-@item.DcrId">核安會審查情況</button>
+                            </p>
+                        }
+                        @if (item.HasAEC)
+                    {
+                            <p>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aec-@item.DcrId">AEC陳報情況</button>
+                            </p>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                    {
+                            <div><a href="/dcrs/editreview/@item.DcrId" class="btn btn-default">編輯送審資料</a></div>
+                        }
+                        <!-- Modal -->
+                        <div class="modal fade" id="assist-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title" id="assistDepLabel">核技處審查情況</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><span class="text-success">會辦組別:</span>@item.AssistSections</h4>
+                                        <h4><span class="text-success">彙總日期:</span>@item.AssistSectionReviewDate</h4>
+                                        <h4><span class="text-success">審查結果:</span>@item.AssistSectionReviewResult</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="operDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h3 class="modal-title" id="newOperDepLabel">核發處審查情況</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4><span class="text-success">送會日期:</span>@item.SubmitToOperDepDate</h4>
-                                <h4><span class="text-success">審覆日期:</span>@item.OperDepReviewDate</h4>
-                                <h4><span class="text-success">結果:</span>@item.OperDepReviewResult</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="safeDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h3 class="modal-title" id="newSafeDepLabel">核安處審查情況</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeDepDate</h4>
-                                <h4><span class="text-success">審覆日期:</span>@item.SafeDepReviewDate</h4>
-                                <h4><span class="text-success">結果:</span>@item.SafeDepReviewResult</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="operDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title" id="newOperDepLabel">核發處審查情況</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><span class="text-success">送會日期:</span>@item.SubmitToOperDepDate</h4>
+                                        <h4><span class="text-success">審覆日期:</span>@item.OperDepReviewDate</h4>
+                                        <h4><span class="text-success">結果:</span>@item.OperDepReviewResult</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="safeReg-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h3 class="modal-title" id="newSafeRegLabel">核安會審查情況</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeRegDate</h4>
-                                <h4><span class="text-success">審覆日期:</span>@item.SafeRegReviewDate</h4>
-                                <h4><span class="text-success">結果:</span>@item.SafeRegReviewResult</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="aec-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h3 class="modal-title" id="newAecLabel">AEC陳報情況</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4><span class="text-success">陳報日期:</span>@item.SubmitToAECDate</h4>
-                                <h4><span class="text-success">陳報文號:</span>@item.SubmitDocNo</h4>
-                                <h4><span class="text-success">核准日期:</span>@item.AECApprovalDate</h4>
-                                <h4><span class="text-success">核准文號:</span>@item.AECApprovalDoc</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                        <div class="modal fade" id="safeDep-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title" id="newSafeDepLabel">核安處審查情況</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeDepDate</h4>
+                                        <h4><span class="text-success">審覆日期:</span>@item.SafeDepReviewDate</h4>
+                                        <h4><span class="text-success">結果:</span>@item.SafeDepReviewResult</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </td>
+                        <div class="modal fade" id="safeReg-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title" id="newSafeRegLabel">核安會審查情況</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><span class="text-success">送會日期:</span>@item.SubmitToSafeRegDate</h4>
+                                        <h4><span class="text-success">審覆日期:</span>@item.SafeRegReviewDate</h4>
+                                        <h4><span class="text-success">結果:</span>@item.SafeRegReviewResult</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="aec-@item.DcrId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title" id="newAecLabel">AEC陳報情況</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><span class="text-success">陳報日期:</span>@item.SubmitToAECDate</h4>
+                                        <h4><span class="text-success">陳報文號:</span>@item.SubmitDocNo</h4>
+                                        <h4><span class="text-success">核准日期:</span>@item.AECApprovalDate</h4>
+                                        <h4><span class="text-success">核准文號:</span>@item.AECApprovalDoc</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
 
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.CloseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DcrStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
 
-            
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CloseDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DcrStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Note)
+                    </td>
 
-        </tr>
-    }
+
+
+                </tr>
+            }
 
 </table>
 

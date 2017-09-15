@@ -30,24 +30,24 @@ namespace DneWebSite.Controllers
         public ActionResult Index(int page=1)
         {
             var dbQuery = db.Dcrs
+                .AsNoTracking()
                 .OrderBy(d => d.IsClosed)
                 .ThenByDescending(d => d.ReceivedDate)
-                .ThenByDescending(d => d.DcrNo)
-                .ThenByDescending(d => d.MainSection)
-                .ToPagedList(page, 5);
+                .ThenByDescending(d => d.DcrNo);
+                
 
 
-            InMemoryData.DcrDataForExcelExport(dbQuery);
+            InMemoryData.DcrDataForExcelExport(dbQuery.ToList());
 
-
+            var data = dbQuery.ToPagedList(page, 5);
 
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_DcrList", dbQuery);
+                return PartialView("_DcrList", data);
             }
 
-            return View(dbQuery);
+            return View(data);
         }
 
        

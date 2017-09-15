@@ -189,16 +189,7 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
                                                             <li><a ng-href="http://{{h.host}}/資料/2工程業務/1龍門計畫業務/4龍門計畫暫緩辦理事項" target="_blank">龍門計畫暫緩辦理事項</a></li>
-                                                            <li class="dropdown">
-                                                                <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO相關業務</a>
-                                                                <ul class="dropdown-menu">
-
-
-                                                                    <li><a href="http://10.20.1.5/source/2lco/asp/ddasp.asp" target="_blank">送LCO品質文件清單</a></li>
-                                                                    <li><a ng-href="http://{{h.host2}}/support/" target="_blank">電氣Raceway Support管制表</a></li>
-                                                                    
-                                                                </ul>
-                                                            </li>
+                                                            
                                                             
                                                         </ul>
 
@@ -215,9 +206,7 @@
                                                             <li><a href="@Url.Action("Index","DcrEvaluations")" target="_blank">DCR可行性案件管制追蹤</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li>
-                                                        <a ng-href="http://{{h.host}}/資料/2工程業務/6GOSP績效指標" target="_blank">工程設計與支援績效指標</a>
-                                                    </li>
+                                                    <li><a ui-sref="gosp">工程設計與支援績效指標</a></li>
                                                     <li>
                                                         <a ng-href="http://{{h.host}}/資料/2工程業務/5核電廠主管作業觀察" target="_blank">核電廠主管作業觀察</a>
                                                     </li>
@@ -244,7 +233,7 @@
                                                             <li><a href="http://10.20.1.7/document" target="_blank">SEO管制文件查詢(台北主機測試中)</a></li>
                                                             <li><a href="http://10.20.1.6" target="_blank">龍門軟體構型管理系統(測試版)</a></li>
                                                             
-                                                            <li><a ui-sref="gosp">工程設計與支援績效指標(測試中)</a></li>
+                                                            
                                                             <li><a href="http://10.20.1.6:8080" target="_blank">投票系統(必須使用Chrome)</a></li>
                                                         </ul>
                                                     </li>
@@ -281,7 +270,7 @@
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO業務相關系統</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a ng-href="http://{{h.host2}}/overtime/" target="_blank">SEO(AE)加班請假管理系統</a></li>
+                                                            
                                                             <li><a ng-href="http://{{h.host2}}/seo/" target="_blank">編號暨文件修改登錄</a></li>
                                                             <li><a ng-href="http://{{h.host2}}/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
                                                         </ul>
@@ -492,6 +481,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
    <!--
     <script src="~/plugins/bowerPackage/angular/angular.js"></script>-->
+
+
     <script src="~/client/app.min.js"></script>
     <script src="~/client/router.min.js"></script>
      
@@ -505,9 +496,15 @@
 
     <script type="text/javascript">
 
+        //BootstrapDialog.show({
+        //    title:"106年度下半年度社交工程",
+        //    message: $('#popup').load('../../client/templates/home/popup.html')
+        //}); 
         BootstrapDialog.show({
-            title:"106年度下半年度社交工程",
-            message: $('#popup').load('../../client/templates/home/popup.html')
+            size: BootstrapDialog.SIZE_LARGE,
+            type: BootstrapDialog.TYPE_DANGER,
+            title: "重大資通安全通報-蜻蜓2.0（Dragonfly2.0）",
+            message: $('#popup').load('../../client/templates/home/cybersecurity.html')
         }); 
         var $buoop = {
             vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,

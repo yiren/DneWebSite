@@ -30,7 +30,11 @@
 
             //alert("會亂碼嗎?")
             vm.host = '10.20.1.4';
+            //vm.host = '10.20.1.3';
+            //vm.host2 = '10.20.1.7';
             vm.host2 = '10.144.101.5';
+
+            //vm.host ='\\10.20.1.30\backup\10.20.1.4\資料'
       //      vm.goToHome = function () {
 		   	//    //ui-router $state.go可以跳到router.js定義的state路徑名稱
 		   	//    $state.go('home');
