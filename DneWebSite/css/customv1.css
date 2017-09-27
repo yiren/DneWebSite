@@ -509,18 +509,18 @@ File Description: Place here your custom CSS styles
 }
 @media (min-width: 700px) {
     .container {
-        width: 800px;
+        width: 900px;
     }
 }
 
 @media (min-width: 990px) {
   .container {
-    width: 1160px;
+    width: 1150px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    width: 1440px;
+    width: 1380px;
   }
 }

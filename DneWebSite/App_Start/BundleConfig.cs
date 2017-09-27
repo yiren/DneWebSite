@@ -42,8 +42,8 @@ namespace DneWebSite
                     "~/plugins/template/rs-plugin/js/jquery.themepunch.revolution.min.js",
                     "~/plugins/template/rs-plugin/js/jquery.themepunch.tools.min.js",
                     "~/plugins/bowerPackage/qtip2/jquery.qtip.min.js",
-                    "~/Content/bootstrap-material-design/dist/js/material.min.js",
-                    "~/Content/bootstrap-material-design/dist/js/ripples.min.js",
+                    //"~/Content/bootstrap-material-design/dist/js/material.min.js",
+                    //"~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/js/templatev1.js",
                     "~/js/qTip2.js",
                     "~/plugins/bowerPackage/angular/angular.min.js",
@@ -59,6 +59,7 @@ namespace DneWebSite
                     "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",
                     "~/plugins/bowerPackage/ng-dialog/js/ngDialog.min.js",
                     "~/plugins/bowerPackage/angularjs-toaster/toaster.min.js"
+                    
                     //"~/client/app.js",
                     //"~/client/router.js",
                     //"~/client/controllers/homeController.js",

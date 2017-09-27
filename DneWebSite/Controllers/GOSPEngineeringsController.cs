@@ -17,6 +17,10 @@ namespace DneWebSite.Controllers
     [ClaimsAuthorize(ClaimType = "role", ClaimValue = "GOSP")]
     public class GOSPEngineeringsController : Controller
     {
+        public GOSPEngineeringsController()
+        {
+
+        }
         public GOSPEngineeringsController(ApplicationUserManager userManager)
         {
             _userManager = userManager;

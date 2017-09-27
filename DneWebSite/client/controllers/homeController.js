@@ -22,10 +22,10 @@
             //    timeout:4000
             //});
             //toaster.pop({
-            //    type: 'success',
-            //    title: '106年下半年社交工程',
-            //    body: '預計於8月15日 08:00 開始進行測試，至8月30日16:00 結束。',
-            //    timeout: 8000
+            //    type: 'info',
+            //    title: '安裝Adobe Flash更新程式注意事項',
+            //    body: '建議取消勾選「將Google Chrome設為預設瀏覽器」，Google Chrome與本公司公文系統不相容。',
+            //    timeout: 6000
             //});
 
             //alert("會亂碼嗎?")
