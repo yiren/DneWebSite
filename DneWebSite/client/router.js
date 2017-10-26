@@ -87,6 +87,13 @@
                         templateUrl: '/../client/templates/engineering/gosp/gosp.html',
                         controller: 'homeCtrl as h'
                     })
+                    //risk
+                    .state('riskmanagement', {
+                        url: '/riskmanagement',
+                        templateUrl: '/../client/templates/home/riskmanagement.html',
+                        controller:'homeCtrl as h'
+                    }
+                    )
                     ;
             }]);
     

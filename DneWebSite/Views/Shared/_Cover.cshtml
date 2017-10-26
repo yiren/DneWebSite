@@ -13,7 +13,7 @@
     <link href="~/plugins/template/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
-    <link href="~/plugins/bowerPackage/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Fonttello CSS -->
     <link href="~/plugins/template/fontello/css/fontello.css" rel="stylesheet">
@@ -151,7 +151,10 @@
                                                             <li><a ui-sref="orgControl">分級檢核</a></li>
                                                         </ul>
                                                     </li>
-
+                                                    <li>
+                                                        <a ui-sref="riskmanagement">風險管理資訊平台</a>
+                                                    </li>
+                                                    
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">電話簿</a>
                                                         <ul class="dropdown-menu">
@@ -497,15 +500,20 @@
     <script type="text/javascript">
 
         //BootstrapDialog.show({
+        //    title:"單一登入系統異常",
+        //    message: '資訊系統處處理中'
+        //}); 
+
+        //BootstrapDialog.show({
         //    title:"106年度下半年度社交工程",
         //    message: $('#popup').load('../../client/templates/home/popup.html')
         //}); 
-        //BootstrapDialog.show({
-        //    size: BootstrapDialog.SIZE_LARGE,
-        //    type: BootstrapDialog.TYPE_DANGER,
-        //    title: "重大資通安全通報-蜻蜓2.0（Dragonfly2.0）",
-        //    message: $('#popup').load('../../client/templates/home/cybersecurity.html')
-        //}); 
+        BootstrapDialog.show({
+            size: BootstrapDialog.SIZE_WIDE,
+            type: BootstrapDialog.TYPE_PRIMARY,
+            title: "請同仁儘速更新Outlook設定",
+            message: $('#popup').load('../../client/templates/home/announce.html')
+        }); 
         var $buoop = {
             vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,
             text: "請升級至IE9以上版本或是使用Chrome瀏覽本網站"

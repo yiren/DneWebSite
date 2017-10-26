@@ -28,6 +28,13 @@
             //    timeout: 6000
             //});
 
+            //toaster.pop({
+            //    type: 'info',
+            //    title: '安裝Adobe Flash更新程式注意事項',
+            //    body: '建議取消勾選「將Google Chrome設為預設瀏覽器」，Google Chrome與本公司公文系統不相容。',
+            //    timeout: 6000
+            //});
+
             //alert("會亂碼嗎?")
             vm.host = '10.20.1.4';
             //vm.host = '10.20.1.3';
