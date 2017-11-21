@@ -482,6 +482,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeetingRespository\MeetingRepository.cs" />
     <Compile Include="Models\PostRespository\PostsRespository.cs" />
+    <Compile Include="Models\Training\Course.cs" />
+    <Compile Include="Models\Training\Student.cs" />
     <Compile Include="Models\ViewModel\MeetingGridViewModel.cs" />
     <Compile Include="Models\ViewModel\PostGridViewModel.cs" />
     <Compile Include="Models\WANO\Item.cs" />
