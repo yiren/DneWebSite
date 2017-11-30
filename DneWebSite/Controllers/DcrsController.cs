@@ -33,7 +33,9 @@ namespace DneWebSite.Controllers
                 .AsNoTracking()
                 .OrderBy(d => d.IsClosed)
                 .ThenByDescending(d => d.ReceivedDate)
-                .ThenByDescending(d => d.DcrNo);
+                .ThenByDescending(d=>d.Plant)
+                .ThenByDescending(d => d.DcrNo)
+                .ThenByDescending(d=>d.MainSection);
                 
 
 

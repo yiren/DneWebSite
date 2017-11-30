@@ -29,16 +29,18 @@ namespace DneWebSite.Controllers
                 .ThenByDescending(d => d.Plant)
                 .ThenByDescending(d => d.DcrEvaluationNo)
                 .ThenByDescending(d => d.MainSection)
-                .ToPagedList(page, 5);
+                ;
 
-            InMemoryData.DcrEvaluationDataForExcelExport(dbQuery);
+            InMemoryData.DcrEvaluationDataForExcelExport(dbQuery.ToList());
+
+            var data = dbQuery.ToPagedList(page, 5);
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_DcrEvaluationList", dbQuery);
+                return PartialView("_DcrEvaluationList", data);
             }
 
-            return View(dbQuery);
+            return View(data);
         }
 
         // GET: DcrEvaluations/Details/5
