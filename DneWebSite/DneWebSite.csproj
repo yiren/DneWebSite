@@ -482,7 +482,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeetingRespository\MeetingRepository.cs" />
     <Compile Include="Models\PostRespository\PostsRespository.cs" />
-  
     <Compile Include="Models\ViewModel\MeetingGridViewModel.cs" />
     <Compile Include="Models\ViewModel\PostGridViewModel.cs" />
     <Compile Include="Models\WANO\Item.cs" />
@@ -827,6 +826,10 @@
     <Content Include="images\home\Playing\fatherday_2017-E.jpg" />
     <Content Include="images\home\Playing\fatherday_2017.jpg" />
     <Content Include="images\home\Playing\finland.jpg" />
+    <Content Include="images\home\Playing\gov_promote.png" />
+    <Content Include="images\home\Playing\gov_promotev2.png" />
+    <Content Include="images\home\Playing\gov_promote_v1.jpg" />
+    <Content Include="images\home\Playing\gov_promote_v2.jpg" />
     <Content Include="images\home\Playing\motherday2017-N.jpg" />
     <Content Include="images\home\Playing\tissue.jpg" />
     <Content Include="images\home\Playing\tpc_front_door.jpg" />
