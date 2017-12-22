@@ -480,6 +480,11 @@
     <Compile Include="Models\dneMeeting\Meeting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Manhour\Employee.cs" />
+    <Compile Include="Models\Manhour\EmployeeTask.cs" />
+    <Compile Include="Models\Manhour\ManhourDbContext.cs" />
+    <Compile Include="Models\Manhour\Section.cs" />
+    <Compile Include="Models\Manhour\Task.cs" />
     <Compile Include="Models\MeetingRespository\MeetingRepository.cs" />
     <Compile Include="Models\PostRespository\PostsRespository.cs" />
     <Compile Include="Models\ViewModel\MeetingGridViewModel.cs" />

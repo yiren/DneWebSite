@@ -23,19 +23,18 @@ namespace DneWebSite.Controllers
         // GET: DcrEvaluations
         public ActionResult Index(int page=1)
         {
-            var dbQuery = db.DcrEvaluations.AsNoTracking();
+            var dbQuery = db.DcrEvaluations.AsNoTracking()
+                            .OrderBy(d => d.IsClosed)
+                            .ThenByDescending(d => d.ReceivedDate)
+                            .ThenByDescending(d => d.CloseDate)
+                            .ThenByDescending(d => d.Plant)
+                            .ThenByDescending(d => d.DcrEvaluationNo)
+                            .ThenByDescending(d => d.MainSection);
                 
 
             InMemoryData.DcrEvaluationDataForExcelExport(dbQuery.ToList());
 
-            var data = dbQuery
-                       .OrderBy(d => d.IsClosed)
-                       .ThenByDescending(d => d.ReceivedDate)
-                       .ThenByDescending(d=>d.CloseDate)
-                       .ThenByDescending(d => d.Plant)
-                       .ThenByDescending(d => d.DcrEvaluationNo)
-                       .ThenByDescending(d => d.MainSection)
-                       .ToPagedList(page, 5);
+            var data = dbQuery.ToPagedList(page, 5);
 
             if (Request.IsAjaxRequest())
             {
