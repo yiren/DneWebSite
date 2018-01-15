@@ -19,6 +19,29 @@ namespace DneWebSite
                     //"~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/Scripts/bootstrap.min.js"));
             //css  
+
+            bundles.Add(new StyleBundle("~/home/css").Include(
+                    "~/plugins/template/bootstrap/css/bootstrap.css",
+                    //"~/node_modules/font-awesome/css/font-awesome.min.css",
+                    //"~/node_modules/angular-ui-grid/ui-grid.min.css",
+                    //"~/plugins/template/fontello/css/fontello.css",
+                    "~/plugins/template/rs-plugin/css/settings.css",
+                    "~/plugins/template/rs-plugin/css/extralayers.css",
+                    "~/css/shortcode_timeline1.css",
+                    "~/css/animations.css",
+                    "~/node_modules/fullcalendar/dist/fullcalendar.min.css",
+                    
+                    "~/node_modules/angularjs-toaster/toaster.css",
+                    "~/node_modules/ng-dialog/css/ngDialog.min.css",
+                    "~/node_modules/ng-dialog/css/ngDialog-theme-default.min.css",
+                    "~/css/stylev1.css",
+                    "~/css/skins/green.css",
+                    "~/css/customv1.css"
+                )
+
+                );
+
+
             bundles.Add(new StyleBundle("~/css/base").Include(
                     "~/Content/bootstrap.min.css",
                     "~/Content/bootstrap.theme.min.css",
@@ -27,8 +50,8 @@ namespace DneWebSite
                     //"~/Content/bootstrap-material-design/dist/css/ripples.min.css",
                     "~/Content/themes/base/jquery-ui.min.css",
                     "~/Content/themes/cupertino/jquery-ui.cupertino.min.css",
-                    
-                   "~/plugins/bowerPackage/fontawesome/css/font-awesome.min.css"
+
+                   "~/node_modules/font-awesome/css/font-awesome.min.css"
 
                    ));
 
@@ -46,28 +69,32 @@ namespace DneWebSite
                     //"~/Content/bootstrap-material-design/dist/js/ripples.min.js",
                     "~/js/templatev1.js",
                     "~/js/qTip2.js",
-                    "~/plugins/bowerPackage/angular/angular.min.js",
-                    "~/plugins/bowerPackage/angular-ui-router/release/angular-ui-router.min.js",
-                    "~/plugins/bowerPackage/angular-animate/angular-animate.min.js",
-                    "~/plugins/template/fullcalendar/lib/moment.min.js",
-                    "~/plugins/bowerPackage/angular-ui-calendar/src/calendar.js",
-                    "~/plugins/bowerPackage/fullcalendar/dist/fullcalendar.min.js",
-                    "~/plugins/bowerPackage/fullcalendar/dist/gcal.js",
-                    "~/plugins/bowerPackage/fullcalendar/dist/lang-all.js",
-                    "~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.js",
-                    "~/plugins/bowerPackage/angular-scroll/angular-scroll.min.js",
-                    "~/plugins/bowerPackage/angular-bootstrap/ui-bootstrap-tpls.js",
-                    "~/plugins/bowerPackage/ng-dialog/js/ngDialog.min.js",
-                    "~/plugins/bowerPackage/angularjs-toaster/toaster.min.js"
+                    "~/node_modules/angular/angular.min.js",
+                    "~/node_modules/angular-ui-router/release/angular-ui-router.min.js",
+                    "~/node_modules/angular-animate/angular-animate.min.js",
+                    "~/node_modules/moment/min/moment.min.js",
+                    "~/node_modules/angular-ui-calendar/src/calendar.js",
+                    "~/node_modules/fullcalendar/dist/fullcalendar.min.js",
+                    "~/node_modules/fullcalendar/dist/gcal.js",
+                    "~/node_modules/fullcalendar/dist/lang-all.js",
+                    "~/node_modules/angular-ui-grid/ui-grid.min.js",
+                    "~/node_modules/angular-scroll/angular-scroll.min.js",
                     
-                    //"~/client/app.js",
-                    //"~/client/router.js",
-                    //"~/client/controllers/homeController.js",
-                    //"~/client/controllers/meetingGridController.js",
-                    //"~/client/controllers/postGridController.js",
-                    //"~/client/controllers/calendar/calViewController.js",
-                    //"~/client/controllers/common/modalController.js",
-                    //"~/client/controllers/integrityController.js"
+                    "~/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js",
+                    
+                    "~/node_modules/ng-dialog/js/ngDialog.min.js",
+                    "~/node_modules/angularjs-toaster/toaster.min.js",
+
+                    "~/client/app.js",
+                    "~/client/router.js",
+                    "~/client/controllers/homeController.js",
+                    "~/client/controllers/meetingGridController.js",
+                    "~/client/controllers/postGridController.js",
+                    "~/client/controllers/calendar/calViewController.js",
+                    "~/client/controllers/common/modalController.js",
+                    "~/client/controllers/integrityController.js",
+                    "~/client/controllers/orgCtrlController.min.js",
+                    "~/client/controllers/gospController.min.js"
 
                 ));
 

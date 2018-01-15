@@ -5,63 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>核能技術處</title>
-  
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="~/images/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="~/plugins/template/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Font Awesome CSS -->
-    <link href="~/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Fonttello CSS -->
-    <link href="~/plugins/template/fontello/css/fontello.css" rel="stylesheet">
-
-    <!-- Plugins -->
-    <link href="~/plugins/template/rs-plugin/css/settings.css" media="screen" rel="stylesheet">
-    <link href="~/plugins/template/rs-plugin/css/extralayers.css" media="screen" rel="stylesheet">
-
-    <!-- TimeLine CSS -->
-    <link href="~/css/shortcode_timeline1.css" rel="stylesheet">
-    <!--
-    <link href="~/Content/materialize/css/materialize.min.css" rel="stylesheet" />
-    -->
-    
-    <link href="~/css/animations.css" rel="stylesheet">
-
-
-
-    <!-- FullCalendar -->
-
-    <link href="~/plugins/bowerPackage/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-
-
-    <!-- UI Grid -->
-
-    <link href="~/plugins/bowerPackage/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
-
-    <!--Angular Toaster-->
-    
-    <link href="~/plugins/bowerPackage/angularjs-toaster/toaster.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" />
-    <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
-    <link href="~/plugins/bowerPackage/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
+    @Styles.Render("~/home/css")
 
-    <!-- qTip2 -->
-
-    <link href="~/plugins/bowerPackage/qtip2/jquery.qtip.css" rel="stylesheet">
-
-
-    <!-- iDea core CSS file -->
-    <link href="~/css/stylev1.css" rel="stylesheet">
-
-    <!-- Color Scheme (In order to change the color scheme, replace the red.css with the color scheme that you prefer)-->
-    <link href="~/css/skins/green.css" rel="stylesheet">
-
-    <!-- Custom css -->
-    <link href="~/css/customv1.css" rel="stylesheet">
+    <link href="~/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
+    <link href="~/plugins/template/fontello/css/fontello.css" rel="stylesheet">
     <!--
     <link href="~/Content/mdl-v1.1.2/material.min.css" rel="stylesheet" />
     -->
@@ -154,7 +107,7 @@
                                                     <li>
                                                         <a ui-sref="riskmanagement">風險管理資訊平台</a>
                                                     </li>
-                                                    
+
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">電話簿</a>
                                                         <ul class="dropdown-menu">
@@ -188,12 +141,12 @@
                                                 <ul class="dropdown-menu">
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">龍門計畫業務</a>
-                                                    
+
                                                         <ul class="dropdown-menu">
                                                             <li><a ui-sref="lungmenIntro">龍門計畫簡介</a></li>
                                                             <li><a ng-href="http://{{h.host}}/資料/2工程業務/1龍門計畫業務/4龍門計畫暫緩辦理事項" target="_blank">龍門計畫暫緩辦理事項</a></li>
-                                                            
-                                                            
+
+
                                                         </ul>
 
                                                     </li>
@@ -232,11 +185,11 @@
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">網頁測試(中)</a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="http://10.20.1.3/lcts/" target="_blank">Lungmen CTS(離線版)</a></li>
-                                                            
+
                                                             <li><a href="http://10.20.1.7/document" target="_blank">SEO管制文件查詢(台北主機測試中)</a></li>
                                                             <li><a href="http://10.20.1.6/lungscm" target="_blank">龍門軟體構型管理系統(測試版)</a></li>
-                                                            
-                                                            
+
+
                                                             <li><a href="http://10.20.1.6:8080" target="_blank">投票系統(必須使用Chrome)</a></li>
                                                         </ul>
                                                     </li>
@@ -273,7 +226,7 @@
                                                     <li class="dropdown">
                                                         <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">SEO業務相關系統</a>
                                                         <ul class="dropdown-menu">
-                                                            
+
                                                             <li><a ng-href="http://{{h.host2}}/seo/" target="_blank">編號暨文件修改登錄</a></li>
                                                             <li><a ng-href="http://{{h.host2}}/drawing/" target="_blank">圖檔查詢及修改作業系統</a></li>
                                                         </ul>
@@ -478,42 +431,42 @@
 
 
 
-    
+
     <!--updated by 2017/12/22-->
     @Scripts.Render("/script/tt")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
-   <!--
-    <script src="~/plugins/bowerPackage/angular/angular.js"></script>-->
+    <!--
+        <script src="~/plugins/bowerPackage/angular/angular.js"></script>
 
 
-    <script src="~/client/app.min.js"></script>
-    <script src="~/client/router.min.js"></script>
-     
-    <script src="~/client/controllers/homeController.min.js" charset="UTF-8"></script>
-    <script src="~/client/controllers/meetingGridController.min.js" ></script>
-    <script src="~/client/controllers/postGridController.min.js"></script>
-    <script src="~/client/controllers/calendar/calViewController.min.js"></script>
-    <script src="~/client/controllers/common/modalController.min.js"></script>
-    <script src="~/client/controllers/orgCtrlController.min.js"></script>
-    <script src="~/client/controllers/gospController.min.js"></script>
+        <script src="~/client/app.min.js"></script>
+        <script src="~/client/router.min.js"></script>
 
+        <script src="~/client/controllers/homeController.min.js" charset="UTF-8"></script>
+        <script src="~/client/controllers/meetingGridController.min.js" ></script>
+        <script src="~/client/controllers/postGridController.min.js"></script>
+        <script src="~/client/controllers/calendar/calViewController.min.js"></script>
+        <script src="~/client/controllers/common/modalController.min.js"></script>
+        <script src="~/client/controllers/orgCtrlController.min.js"></script>
+        <script src="~/client/controllers/gospController.min.js"></script>
+    -->
     <script type="text/javascript">
 
         //BootstrapDialog.show({
         //    title:"單一登入系統異常",
         //    message: '資訊系統處處理中'
-        //}); 
+        //});
 
         //BootstrapDialog.show({
         //    title:"106年度下半年度社交工程",
         //    message: $('#popup').load('../../client/templates/home/popup.html')
-        //}); 
+        //});
         //BootstrapDialog.show({
         //    size: BootstrapDialog.SIZE_WIDE,
         //    type: BootstrapDialog.TYPE_PRIMARY,
         //    title: "請同仁儘速更新Outlook設定",
         //    message: $('#popup').load('../../client/templates/home/announce.html')
-        //}); 
+        //});
         var $buoop = {
             vs: { i: 8, f: 25, o: 12.1, s: 7 }, c: 2,
             text: "請升級至IE9以上版本或是使用Chrome瀏覽本網站"
